@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view>
+    <t-button type="primary">按钮</t-button>
+</view>
