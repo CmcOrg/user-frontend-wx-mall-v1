@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "t-button": "tdesign-miniprogram/button/button"
+    "t-avatar": "tdesign-miniprogram/avatar/avatar"
   }
 }

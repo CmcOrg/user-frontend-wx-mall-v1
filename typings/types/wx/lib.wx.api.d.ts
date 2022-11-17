@@ -29,7 +29,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface AccessOption {
         /** 要判断是否存在的文件/目录路径 (本地路径) */
         path: string
@@ -40,7 +39,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AccessSuccessCallback
     }
-
     /** 帐号信息 */
     interface AccountInfo {
         /** 小程序帐号信息 */
@@ -48,7 +46,6 @@ declare namespace WechatMiniprogram {
         /** 插件帐号信息（仅在插件中调用时包含这一项） */
         plugin: Plugin
     }
-
     interface AddArcOption {
         /** 终点 */
         end: MapPostion
@@ -71,7 +68,6 @@ declare namespace WechatMiniprogram {
         /** 线宽 */
         width?: number
     }
-
     interface AddCardOption {
         /** 需要添加的卡券列表 */
         cardList: AddCardRequestInfo[]
@@ -82,7 +78,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddCardSuccessCallback
     }
-
     /** 需要添加的卡券列表 */
     interface AddCardRequestInfo {
         /** 卡券的扩展参数。需将 CardExt 对象 JSON 序列化为**字符串**传入 */
@@ -90,7 +85,6 @@ declare namespace WechatMiniprogram {
         /** 卡券 ID */
         cardId: string
     }
-
     /** 卡券添加结果列表 */
     interface AddCardResponseInfo {
         /** 卡券的扩展参数，结构请参考下文 */
@@ -102,13 +96,11 @@ declare namespace WechatMiniprogram {
         /** 是否成功 */
         isSuccess: boolean
     }
-
     interface AddCardSuccessCallbackResult {
         /** 卡券添加结果列表 */
         cardList: AddCardResponseInfo[]
         errMsg: string
     }
-
     interface AddCustomLayerOption {
         /** 个性化图层id */
         layerId: string
@@ -119,7 +111,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddCustomLayerSuccessCallback
     }
-
     interface AddFileToFavoritesOption {
         /** 要收藏的文件地址，必须为本地路径或临时路径 */
         filePath: string
@@ -132,7 +123,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddFileToFavoritesSuccessCallback
     }
-
     interface AddGroundOverlayOption {
         /** 图片覆盖的经纬度范围 */
         bounds: MapBounds
@@ -153,7 +143,6 @@ declare namespace WechatMiniprogram {
         /** 图层绘制顺序 */
         zIndex?: number
     }
-
     interface AddMarkersOption {
         /** 同传入 map 组件的 marker 属性 */
         markers: any[]
@@ -166,7 +155,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddMarkersSuccessCallback
     }
-
     interface AddPhoneCalendarOption {
         /** 开始时间的 unix 时间戳 */
         startTime: number
@@ -191,7 +179,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddPhoneCalendarSuccessCallback
     }
-
     interface AddPhoneContactOption {
         /** 名字 */
         firstName: string
@@ -264,7 +251,6 @@ declare namespace WechatMiniprogram {
         /** 工作电话 */
         workPhoneNumber?: string
     }
-
     interface AddPhoneRepeatCalendarOption {
         /** 开始时间的 unix 时间戳 (1970年1月1日开始所经过的秒数) */
         startTime: number
@@ -299,7 +285,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddPhoneRepeatCalendarSuccessCallback
     }
-
     interface AddServiceOption {
         /** 描述service的Object */
         service: BLEPeripheralService
@@ -310,7 +295,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AddServiceSuccessCallback
     }
-
     interface AddVideoToFavoritesOption {
         /** 要收藏的视频地址，必须为本地路径或临时路径 */
         videoPath: string
@@ -323,7 +307,6 @@ declare namespace WechatMiniprogram {
         /** 缩略图路径，若留空则使用视频首帧 */
         thumbPath?: string
     }
-
     interface AddVisualLayerOption {
         /** 可视化图层id（[创建图层指引](https://lbs.qq.com/dev/console/layers/layerEdit)) */
         layerId: string
@@ -340,7 +323,6 @@ declare namespace WechatMiniprogram {
         /** 图层绘制顺序 */
         zIndex?: number
     }
-
     /** 广播自定义参数 */
     interface AdvertiseReqObj {
         /** 需要基础库： `2.20.1`
@@ -356,12 +338,10 @@ declare namespace WechatMiniprogram {
         /** 要广播的服务 UUID 列表。使用 16/32 位 UUID 时请参考注意事项。 */
         serviceUuids?: string[]
     }
-
     /** animationData */
     interface AnimationExportResult {
         actions: IAnyObject[]
     }
-
     /** 动画效果 */
     interface AnimationOption {
         /** 动画变化时间，单位 ms */
@@ -375,7 +355,6 @@ declare namespace WechatMiniprogram {
          * - 'easeInOut': 动画以低速开始和结束; */
         timingFunc?: 'linear' | 'easeIn' | 'easeOut' | 'easeInOut'
     }
-
     interface AppAuthorizeSetting {
         /** 允许微信使用相册的开关（仅 iOS 有效） */
         albumAuthorized: 'authorized' | 'denied' | 'not determined'
@@ -400,7 +379,6 @@ declare namespace WechatMiniprogram {
         /** 允许微信读写日历的开关 */
         phoneCalendarAuthorized: 'authorized' | 'denied' | 'not determined'
     }
-
     interface AppBaseInfo {
         /** 客户端基础库版本 */
         SDKVersion: string
@@ -419,13 +397,11 @@ declare namespace WechatMiniprogram {
          * - 'light': 浅色主题; */
         theme?: 'dark' | 'light'
     }
-
     /** 当前小程序运行的宿主环境 */
     interface AppBaseInfoHost {
         /** 宿主 app（第三方App） 对应的 appId （当小程序运行在第三方App环境时才返回） */
         appId: string
     }
-
     interface AppendFileFailCallbackResult {
         /** 错误信息
          *
@@ -436,7 +412,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface AppendFileOption {
         /** 要追加的文本或二进制数据 */
         data: string | ArrayBuffer
@@ -475,7 +450,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AppendFileSuccessCallback
     }
-
     interface Asset {
         src: string
         /** 可选值：
@@ -483,7 +457,6 @@ declare namespace WechatMiniprogram {
          * - 'image': 图片; */
         type: 'font' | 'image'
     }
-
     /** 需要基础库： `2.19.0`
      *
      * AudioBuffer接口表示存在内存里的一段短小的音频资源，利用[WebAudioContext.decodeAudioData](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.decodeAudioData.html)方法从一个音频文件构建，或者利用 [AudioContext.createBuffer](#)从原始数据构建。把音频放入AudioBuffer后，可以传入到一个 AudioBufferSourceNode进行播放。 */
@@ -497,7 +470,6 @@ declare namespace WechatMiniprogram {
         /** 存储在缓存区的PCM数据的采样率（单位为sample/s) */
         sampleRate: number
     }
-
     interface AuthPrivateMessageOption {
         /** shareTicket。可以从 wx.onShow 中获取。详情 [shareTicket](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) */
         shareTicket: string
@@ -508,7 +480,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AuthPrivateMessageSuccessCallback
     }
-
     interface AuthPrivateMessageSuccessCallbackResult {
         /** 经过加密的activityId，解密后可得到原始的activityId。若解密后得到的activityId可以与开发者后台的活动id对应上则验证通过，否则表明valid字段不可靠（被篡改） 详细见[加密数据解密算法](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html) */
         encryptedData: string
@@ -519,7 +490,6 @@ declare namespace WechatMiniprogram {
         /** 验证是否通过 */
         valid: boolean
     }
-
     /** 用户授权设置信息，详情参考[权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) */
     interface AuthSetting {
         /** 是否授权系统日历，对应接口 [wx.addPhoneRepeatCalendar](https://developers.weixin.qq.com/miniprogram/dev/api/device/calendar/wx.addPhoneRepeatCalendar.html)、[wx.addPhoneCalendar](https://developers.weixin.qq.com/miniprogram/dev/api/device/calendar/wx.addPhoneCalendar.html) */
@@ -547,7 +517,6 @@ declare namespace WechatMiniprogram {
         /** 是否授权保存到相册 [wx.saveImageToPhotosAlbum](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.saveImageToPhotosAlbum.html), [wx.saveVideoToPhotosAlbum](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.saveVideoToPhotosAlbum.html) */
         'scope.writePhotosAlbum'?: boolean
     }
-
     interface AuthorizeForMiniProgramOption {
         /** 需要获取权限的 scope，详见 [scope 列表](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html#scope-列表)
          *
@@ -563,7 +532,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AuthorizeForMiniProgramSuccessCallback
     }
-
     interface AuthorizeOption {
         /** 需要获取权限的 scope，详见 [scope 列表](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html#scope-列表) */
         scope: string
@@ -574,7 +542,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: AuthorizeSuccessCallback
     }
-
     /** 设备特征列表 */
     interface BLECharacteristic {
         /** 该特征支持的操作类型 */
@@ -582,7 +549,6 @@ declare namespace WechatMiniprogram {
         /** 蓝牙设备特征的 UUID */
         uuid: string
     }
-
     /** 该特征支持的操作类型 */
     interface BLECharacteristicProperties {
         /** 该特征是否支持 indicate 操作 */
@@ -598,7 +564,6 @@ declare namespace WechatMiniprogram {
         /** 该特征是否支持无回复写操作 */
         writeNoResponse: boolean
     }
-
     interface BLEPeripheralServerCloseOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: FileSystemManagerCloseCompleteCallback
@@ -607,7 +572,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FileSystemManagerCloseSuccessCallback
     }
-
     /** 描述service的Object */
     interface BLEPeripheralService {
         /** characteristics列表 */
@@ -615,7 +579,6 @@ declare namespace WechatMiniprogram {
         /** 蓝牙服务的 UUID */
         uuid: string
     }
-
     /** 设备服务列表 */
     interface BLEService {
         /** 该服务是否为主服务 */
@@ -623,7 +586,6 @@ declare namespace WechatMiniprogram {
         /** 蓝牙设备服务的 UUID */
         uuid: string
     }
-
     /** BackgroundAudioManager 实例，可通过 [wx.getBackgroundAudioManager](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.getBackgroundAudioManager.html) 获取。
      *
      * **示例代码**
@@ -674,7 +636,6 @@ declare namespace WechatMiniprogram {
         /** 页面链接，原生音频播放器中的分享功能，分享出去的卡片简介，也将使用该值。 */
         webUrl: string
     }
-
     interface BatchGetStorageOption {
         /** 本地缓存中指定的 keyList */
         keyList: string[]
@@ -685,7 +646,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: BatchGetStorageSuccessCallback
     }
-
     interface BatchSetStorageOption {
         /** { key, value } */
         kvList: IAnyObject
@@ -696,7 +656,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: BatchSetStorageSuccessCallback
     }
-
     /** Beacon 设备 */
     interface BeaconInfo {
         /** Beacon 设备的距离，单位 m。iOS 上，proximity 为 0 时，accuracy 为 -1。 */
@@ -718,7 +677,6 @@ declare namespace WechatMiniprogram {
         /** Beacon 设备广播的 UUID */
         uuid: string
     }
-
     /** 需要基础库： `2.20.1`
      *
      * 以 beacon 设备形式广播的参数。 */
@@ -732,12 +690,10 @@ declare namespace WechatMiniprogram {
         /** 用于判断距离设备 1 米时 RSSI 大小的参考值 */
         measuredPower?: number
     }
-
     interface BindWifiOption {
         /** 当前 wifi 网络的 BSSID ，可通过 wx.getConnectedWifi 获取 */
         BSSID: string
     }
-
     interface BlueToothDevice {
         /** 当前蓝牙设备的信号强度，单位 dBm */
         RSSI: number
@@ -756,7 +712,6 @@ declare namespace WechatMiniprogram {
         /** 当前蓝牙设备的广播数据段中的 ServiceData 数据段 */
         serviceData: IAnyObject
     }
-
     /** 搜索到的设备列表 */
     interface BluetoothDeviceInfo {
         /** 用于区分设备的 id */
@@ -764,7 +719,6 @@ declare namespace WechatMiniprogram {
         /** 蓝牙设备名称，某些设备可能没有 */
         name: string
     }
-
     interface BlurOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: BlurCompleteCallback
@@ -773,7 +727,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: BlurSuccessCallback
     }
-
     interface BoundingClientRectCallbackResult {
         /** 节点的下边界坐标 */
         bottom: number
@@ -792,7 +745,6 @@ declare namespace WechatMiniprogram {
         /** 节点的宽度 */
         width: number
     }
-
     /** 目标边界 */
     interface BoundingClientRectResult {
         /** 下边界 */
@@ -808,7 +760,6 @@ declare namespace WechatMiniprogram {
         /** 宽度 */
         width: number
     }
-
     /** 需要基础库： `2.24.0`
      *
      * 缓存管理器。全局只有唯一实例，一旦被创建出来即表示接入缓存管理器。其有以下几个能力：
@@ -840,7 +791,6 @@ declare namespace WechatMiniprogram {
          * - 2: 未知; */
         state: 0 | 1 | 2
     }
-
     interface CameraContextStartRecordOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartRecordCompleteCallback
@@ -859,7 +809,6 @@ declare namespace WechatMiniprogram {
         /** 超过录制时长上限时会结束录像并触发此回调，录像异常退出时也会触发此回调 */
         timeoutCallback?: StartRecordTimeoutCallback
     }
-
     interface CameraContextStopRecordOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopRecordCompleteCallback
@@ -870,7 +819,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CameraContextStopRecordSuccessCallback
     }
-
     interface CameraFrameListenerStartOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartCompleteCallback
@@ -885,7 +833,6 @@ declare namespace WechatMiniprogram {
          * 可选参数。如果需要在 iOS ExperimentalWorker 内监听摄像头帧数据，则需要传入对应 Worker 对象。详情 [Worker.getCameraFrameData](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.getCameraFrameData.html) */
         worker?: Worker
     }
-
     /** 需要基础库： `2.7.0`
      *
      * Canvas 实例，可通过 [SelectorQuery](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.html) 获取。
@@ -903,7 +850,6 @@ declare namespace WechatMiniprogram {
         /** 画布宽度 */
         width: number
     }
-
     /** @deprecated 基础库版本 [2.9.0](https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html) 起已废弃，请使用 [RenderingContext](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/RenderingContext.html) 替换
      *
      * canvas 组件的绘图上下文。CanvasContext 是旧版的接口， 新版 Canvas 2D 接口与 Web 一致。 */
@@ -972,7 +918,6 @@ declare namespace WechatMiniprogram {
          * 边框颜色。用法同 [CanvasContext.setStrokeStyle()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setStrokeStyle.html)。 */
         strokeStyle: string | CanvasGradient
     }
-
     interface CanvasGetImageDataOption {
         /** 画布标识，传入 [canvas](https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html) 组件的 `canvas-id` 属性。 */
         canvasId: string
@@ -991,7 +936,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CanvasGetImageDataSuccessCallback
     }
-
     interface CanvasGetImageDataSuccessCallbackResult {
         /** 图像像素点数据，一维数组，每四项表示一个像素点的 rgba */
         data: Uint8ClampedArray
@@ -1001,7 +945,6 @@ declare namespace WechatMiniprogram {
         width: number
         errMsg: string
     }
-
     interface CanvasPutImageDataOption {
         /** 画布标识，传入 [canvas](https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html) 组件的 canvas-id 属性。 */
         canvasId: string
@@ -1022,7 +965,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CanvasPutImageDataSuccessCallback
     }
-
     interface CanvasToTempFilePathOption {
         /** 画布标识，传入 [canvas](https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html) 组件实例 （canvas type="2d" 时使用该属性）。 */
         canvas?: IAnyObject
@@ -1071,13 +1013,11 @@ declare namespace WechatMiniprogram {
          * 指定的画布区域的左上角纵坐标 */
         y?: number
     }
-
     interface CanvasToTempFilePathSuccessCallbackResult {
         /** 生成文件的临时路径 (本地路径) */
         tempFilePath: string
         errMsg: string
     }
-
     /** characteristics列表 */
     interface Characteristic {
         /** characteristic 的 UUID */
@@ -1091,7 +1031,6 @@ declare namespace WechatMiniprogram {
         /** 特征对应的二进制值 */
         value?: ArrayBuffer
     }
-
     /** 描述符数据 */
     interface CharacteristicDescriptor {
         /** Descriptor 的 UUID */
@@ -1101,7 +1040,6 @@ declare namespace WechatMiniprogram {
         /** 描述符数据 */
         value?: ArrayBuffer
     }
-
     /** 特征权限 */
     interface CharacteristicPermission {
         /** 加密读请求 */
@@ -1113,7 +1051,6 @@ declare namespace WechatMiniprogram {
         /** 可写 */
         writeable?: boolean
     }
-
     /** 特征支持的操作 */
     interface CharacteristicProperties {
         /** 回包 */
@@ -1127,7 +1064,6 @@ declare namespace WechatMiniprogram {
         /** 无回复写 */
         writeNoResponse?: boolean
     }
-
     interface CheckIsOpenAccessibilityOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: CheckIsOpenAccessibilityCompleteCallback
@@ -1136,12 +1072,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CheckIsOpenAccessibilitySuccessCallback
     }
-
     interface CheckIsOpenAccessibilitySuccessCallbackOption {
         /** iOS 上开启辅助功能旁白，安卓开启 talkback 时返回 true */
         open: boolean
     }
-
     interface CheckIsSoterEnrolledInDeviceOption {
         /** 认证方式
          *
@@ -1157,14 +1091,12 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CheckIsSoterEnrolledInDeviceSuccessCallback
     }
-
     interface CheckIsSoterEnrolledInDeviceSuccessCallbackResult {
         /** 错误信息 */
         errMsg: string
         /** 是否已录入信息 */
         isEnrolled: boolean
     }
-
     interface CheckIsSupportSoterAuthenticationOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: CheckIsSupportSoterAuthenticationCompleteCallback
@@ -1173,7 +1105,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CheckIsSupportSoterAuthenticationSuccessCallback
     }
-
     interface CheckIsSupportSoterAuthenticationSuccessCallbackResult {
         /** 该设备支持的可被SOTER识别的生物识别方式
          *
@@ -1184,7 +1115,6 @@ declare namespace WechatMiniprogram {
         supportMode: Array<'fingerPrint' | 'facial' | 'speech'>
         errMsg: string
     }
-
     interface CheckSessionOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: CheckSessionCompleteCallback
@@ -1193,7 +1123,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CheckSessionSuccessCallback
     }
-
     interface ChooseAddressOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseAddressCompleteCallback
@@ -1202,7 +1131,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseAddressSuccessCallback
     }
-
     interface ChooseAddressSuccessCallbackResult {
         /** 国标收货地址第二级地址 */
         cityName: string
@@ -1227,7 +1155,6 @@ declare namespace WechatMiniprogram {
         /** 收货人姓名 */
         userName: string
     }
-
     interface ChooseContactOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseContactCompleteCallback
@@ -1236,7 +1163,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseContactSuccessCallback
     }
-
     interface ChooseContactSuccessCallbackOption {
         /** 联系人姓名 */
         displayName: string
@@ -1245,7 +1171,6 @@ declare namespace WechatMiniprogram {
         /** 选定联系人的所有手机号（部分 Android 系统只能选联系人而不能选特定手机号） */
         phoneNumberList: string
     }
-
     /** 返回选择的文件的本地临时文件对象数组 */
     interface ChooseFile {
         /** 选择的文件名称 */
@@ -1264,7 +1189,6 @@ declare namespace WechatMiniprogram {
          * - 'file': 选择了除图片和视频的文件; */
         type: 'video' | 'image' | 'file'
     }
-
     interface ChooseImageOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseImageCompleteCallback
@@ -1287,7 +1211,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseImageSuccessCallback
     }
-
     interface ChooseImageSuccessCallbackResult {
         /** 图片的本地临时文件路径列表 (本地路径) */
         tempFilePaths: string[]
@@ -1297,7 +1220,6 @@ declare namespace WechatMiniprogram {
         tempFiles: ImageFile[]
         errMsg: string
     }
-
     interface ChooseInvoiceOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseInvoiceCompleteCallback
@@ -1306,13 +1228,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseInvoiceSuccessCallback
     }
-
     interface ChooseInvoiceSuccessCallbackResult {
         /** 用户选中的发票信息，格式为一个 JSON 字符串，包含三个字段： card_id：所选发票卡券的 cardId，encrypt_code：所选发票卡券的加密 code，报销方可以通过 cardId 和 encryptCode 获得报销发票的信息，app_id： 发票方的 appId。 */
         invoiceInfo: string
         errMsg: string
     }
-
     interface ChooseInvoiceTitleOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseInvoiceTitleCompleteCallback
@@ -1321,7 +1241,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseInvoiceTitleSuccessCallback
     }
-
     interface ChooseInvoiceTitleSuccessCallbackResult {
         /** 银行账号 */
         bankAccount: string
@@ -1344,7 +1263,6 @@ declare namespace WechatMiniprogram {
          * - 1: 个人; */
         type: 0 | 1
     }
-
     interface ChooseLicensePlateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseLicensePlateCompleteCallback
@@ -1353,13 +1271,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseLicensePlateSuccessCallback
     }
-
     interface ChooseLicensePlateSuccessCallbackResult {
         /** 用户选择的车牌号 */
         plateNumber: string
         errMsg: string
     }
-
     interface ChooseLocationOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChooseLocationCompleteCallback
@@ -1376,7 +1292,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseLocationSuccessCallback
     }
-
     interface ChooseLocationSuccessCallbackResult {
         /** 详细地址 */
         address: string
@@ -1388,7 +1303,6 @@ declare namespace WechatMiniprogram {
         name: string
         errMsg: string
     }
-
     interface ChooseMediaOption {
         /** 仅在 sourceType 为 camera 时生效，使用前置或后置摄像头
          *
@@ -1422,7 +1336,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseMediaSuccessCallback
     }
-
     interface ChooseMediaSuccessCallbackResult {
         /** 本地临时文件列表 */
         tempFiles: MediaFile[]
@@ -1430,7 +1343,6 @@ declare namespace WechatMiniprogram {
         type: string
         errMsg: string
     }
-
     interface ChooseMessageFileOption {
         /** 最多可以选择的文件个数，可以 0～100 */
         count: number
@@ -1453,13 +1365,11 @@ declare namespace WechatMiniprogram {
          * - 'file': 可以选择除了图片和视频之外的其它的文件; */
         type?: 'all' | 'video' | 'image' | 'file'
     }
-
     interface ChooseMessageFileSuccessCallbackResult {
         /** 返回选择的文件的本地临时文件对象数组 */
         tempFiles: ChooseFile[]
         errMsg: string
     }
-
     interface ChoosePoiOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ChoosePoiCompleteCallback
@@ -1468,7 +1378,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChoosePoiSuccessCallback
     }
-
     interface ChoosePoiSuccessCallbackResult {
         /** 详细地址 */
         address: string
@@ -1484,7 +1393,6 @@ declare namespace WechatMiniprogram {
         type: number
         errMsg: string
     }
-
     interface ChooseVideoOption {
         /** 默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效
          *
@@ -1511,7 +1419,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ChooseVideoSuccessCallback
     }
-
     interface ChooseVideoSuccessCallbackResult {
         /** 选定视频的时间长度 */
         duration: number
@@ -1525,7 +1432,6 @@ declare namespace WechatMiniprogram {
         width: number
         errMsg: string
     }
-
     interface ClearOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ClearCompleteCallback
@@ -1534,7 +1440,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ClearSuccessCallback
     }
-
     interface ClearStorageOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ClearStorageCompleteCallback
@@ -1543,7 +1448,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ClearStorageSuccessCallback
     }
-
     /** 菜单按钮的布局位置信息 */
     interface ClientRect {
         /** 下边界坐标，单位：px */
@@ -1559,7 +1463,6 @@ declare namespace WechatMiniprogram {
         /** 宽度，单位：px */
         width: number
     }
-
     interface CloseBLEConnectionOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -1570,7 +1473,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CloseBLEConnectionSuccessCallback
     }
-
     interface CloseBluetoothAdapterOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: CloseBluetoothAdapterCompleteCallback
@@ -1579,7 +1481,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CloseBluetoothAdapterSuccessCallback
     }
-
     interface CloseFailCallbackResult {
         /** 错误信息
          *
@@ -1587,7 +1488,6 @@ declare namespace WechatMiniprogram {
          * - 'bad file descriptor': 无效的文件描述符; */
         errMsg: string
     }
-
     interface CloseSocketOption {
         /** 一个数字值表示关闭连接的状态号，表示连接被关闭的原因。 */
         code?: number
@@ -1600,12 +1500,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CloseSocketSuccessCallback
     }
-
     interface CloseSyncOption {
         /** 需要被关闭的文件描述符。fd 通过 [FileSystemManager.open](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.open.html) 或 [FileSystemManager.openSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.openSync.html) 接口获得 */
         fd: string
     }
-
     /** 颜色。可以用以下几种方式来表示 canvas 中使用的颜色：
      *
      * - RGB 颜色： 如 `'rgb(255, 0, 0)'`
@@ -1781,13 +1679,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CompressImageSuccessCallback
     }
-
     interface CompressImageSuccessCallbackResult {
         /** 压缩后图片的临时文件路径 (本地路径) */
         tempFilePath: string
         errMsg: string
     }
-
     interface CompressVideoOption {
         /** 码率，单位 kbps */
         bitrate: number
@@ -1811,7 +1707,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CompressVideoSuccessCallback
     }
-
     interface CompressVideoSuccessCallbackResult {
         /** 压缩后的大小，单位 kB */
         size: string
@@ -1819,7 +1714,6 @@ declare namespace WechatMiniprogram {
         tempFilePath: string
         errMsg: string
     }
-
     interface ConnectSocketOption {
         /** 开发者服务器 wss 接口地址 */
         url: string
@@ -1848,7 +1742,6 @@ declare namespace WechatMiniprogram {
          * 超时时间，单位为毫秒 */
         timeout?: number
     }
-
     interface ConnectWifiOption {
         /** Wi-Fi 设备 SSID */
         SSID: string
@@ -1871,18 +1764,15 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ConnectWifiSuccessCallback
     }
-
     /** 一个字典对象，它指定是否应该禁用规范化(默认启用规范化) */
     interface Constraints {
         /** 如果指定为true则禁用标准化，默认为false */
         disableNormalization?: boolean
     }
-
     interface ContextCallbackResult {
         /** 节点对应的 Context 对象 */
         context: IAnyObject
     }
-
     interface CopyFileFailCallbackResult {
         /** 错误信息
          *
@@ -1893,7 +1783,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface CopyFileOption {
         /** 目标文件路径，支持本地路径 */
         destPath: string
@@ -1906,7 +1795,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CopyFileSuccessCallback
     }
-
     interface CreateBLEConnectionOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -1919,7 +1807,6 @@ declare namespace WechatMiniprogram {
         /** 超时时间，单位 ms，不填表示不会超时 */
         timeout?: number
     }
-
     interface CreateBLEPeripheralServerOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: CreateBLEPeripheralServerCompleteCallback
@@ -1928,7 +1815,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: CreateBLEPeripheralServerSuccessCallback
     }
-
     interface CreateBLEPeripheralServerSuccessCallbackResult {
         /** [BLEPeripheralServer](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.html)
          *
@@ -1936,7 +1822,6 @@ declare namespace WechatMiniprogram {
         server: BLEPeripheralServer
         errMsg: string
     }
-
     interface CreateCacheManagerOption {
         /** 额外的缓存处理 */
         extra?: ExtraOption
@@ -1952,14 +1837,12 @@ declare namespace WechatMiniprogram {
         /** 全局 origin */
         origin?: string
     }
-
     interface CreateInnerAudioContextOption {
         /** 需要基础库： `2.19.0`
          *
          * 是否使用 WebAudio 作为底层音频驱动，默认关闭。对于短音频、播放频繁的音频建议开启此选项，开启后将获得更优的性能表现。由于开启此选项后也会带来一定的内存增长，因此对于长音频建议关闭此选项。 */
         useWebAudioImplement?: boolean
     }
-
     /** 选项 */
     interface CreateIntersectionObserverOption {
         /** 初始的相交比例，如果调用时检测到的相交比例与这个值不相等且达到阈值，则会触发一次监听器的回调函数。 */
@@ -1971,12 +1854,10 @@ declare namespace WechatMiniprogram {
         /** 一个数值数组，包含所有阈值。 */
         thresholds?: number[]
     }
-
     interface CreateInterstitialAdOption {
         /** 广告单元 id */
         adUnitId: string
     }
-
     interface CreateMediaRecorderOption {
         /** 指定录制的时长（s)，到达自动停止。最大 7200，最小 5 */
         duration?: number
@@ -1987,7 +1868,6 @@ declare namespace WechatMiniprogram {
         /** 视频比特率（kbps），最小值 600，最大值 3000 */
         videoBitsPerSecond?: number
     }
-
     interface CreateOffscreenCanvasOption {
         /** 在自定义组件下，当前组件实例的 this */
         compInst?: Component.TrivialInstance | Page.TrivialInstance
@@ -2002,7 +1882,6 @@ declare namespace WechatMiniprogram {
         /** 画布宽度 */
         width?: number
     }
-
     interface CreateRewardedVideoAdOption {
         /** 广告单元 id */
         adUnitId: string
@@ -2011,7 +1890,6 @@ declare namespace WechatMiniprogram {
          * 是否启用多例模式，默认为false */
         multiton?: boolean
     }
-
     /** 可选参数 */
     interface CreateWorkerOption {
         /** 需要基础库： `2.13.0`
@@ -2019,7 +1897,6 @@ declare namespace WechatMiniprogram {
          * 是否使用实验worker。在iOS下，实验worker的JS运行效率比非实验worker提升近十倍，如需在worker内进行重度计算的建议开启此选项。同时，实验worker存在极小概率会在系统资源紧张时被系统回收，因此建议配合 worker.onProcessKilled 事件使用，在worker被回收后可重新创建一个。 */
         useExperimentalWorker?: boolean
     }
-
     interface CurrentState {
         /** 当前缓存中的日志条数 */
         logCount: number
@@ -2030,7 +1907,6 @@ declare namespace WechatMiniprogram {
         /** 当前缓存中已使用空间，以字节为单位 */
         size: number
     }
-
     /** 弹幕内容 */
     interface Danmu {
         /** 弹幕文字 */
@@ -2038,7 +1914,6 @@ declare namespace WechatMiniprogram {
         /** 弹幕颜色 */
         color?: string
     }
-
     /** 可选的字体描述符 */
     interface DescOption {
         /** 字体样式，可选值为 normal / italic / oblique */
@@ -2048,7 +1923,6 @@ declare namespace WechatMiniprogram {
         /** 字体粗细，可选值为 normal / bold / 100 / 200../ 900 */
         weight?: string
     }
-
     /** 描述符的权限 */
     interface DescriptorPermission {
         /** 读 */
@@ -2056,7 +1930,6 @@ declare namespace WechatMiniprogram {
         /** 写 */
         write?: boolean
     }
-
     /** 指定 marker 移动到的目标点 */
     interface DestinationOption {
         /** 纬度 */
@@ -2064,7 +1937,6 @@ declare namespace WechatMiniprogram {
         /** 经度 */
         longitude: number
     }
-
     interface DetectFaceOption {
         /** 人脸图像像素点数据，每四项表示一个像素点的 RGBA */
         frameBuffer: ArrayBuffer
@@ -2088,7 +1960,6 @@ declare namespace WechatMiniprogram {
          * - 0: 表示输入的图片是来自一个连续视频的每一帧图像; */
         sourceType?: 1 | 0
     }
-
     interface DeviceInfo {
         /** 应用（微信APP）二进制接口类型（仅 Android 支持） */
         abi: string
@@ -2107,7 +1978,6 @@ declare namespace WechatMiniprogram {
         /** 操作系统及版本 */
         system: string
     }
-
     interface DisableAlertBeforeUnloadOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: DisableAlertBeforeUnloadCompleteCallback
@@ -2116,7 +1986,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: DisableAlertBeforeUnloadSuccessCallback
     }
-
     interface DownloadFileOption {
         /** 下载资源的 url */
         url: string
@@ -2137,7 +2006,6 @@ declare namespace WechatMiniprogram {
          * 超时时间，单位为毫秒 */
         timeout?: number
     }
-
     interface DownloadFileSuccessCallbackResult {
         /** 用户文件路径 (本地路径)。传入 filePath 时会返回，跟传入的 filePath 一致 */
         filePath: string
@@ -2151,7 +2019,6 @@ declare namespace WechatMiniprogram {
         tempFilePath: string
         errMsg: string
     }
-
     interface DownloadTaskOnProgressUpdateListenerResult {
         /** 下载进度百分比 */
         progress: number
@@ -2160,7 +2027,6 @@ declare namespace WechatMiniprogram {
         /** 已经下载的数据长度，单位 Bytes */
         totalBytesWritten: number
     }
-
     interface EditImageOption {
         /** 图片路径，图片的路径，支持本地路径、代码包路径 */
         src: string
@@ -2171,13 +2037,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: EditImageSuccessCallback
     }
-
     interface EditImageSuccessCallbackResult {
         /** 编辑后图片的临时文件路径 (本地路径) */
         tempFilePath: string
         errMsg: string
     }
-
     interface EnableAlertBeforeUnloadOption {
         /** 询问对话框内容 */
         message: string
@@ -2188,13 +2052,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: EnableAlertBeforeUnloadSuccessCallback
     }
-
     /** 文件读取结果。res.entries 是一个对象，key是文件路径，value是一个对象 FileItem ，表示该文件的读取结果。每个 FileItem 包含 data （文件内容） 和 errMsg （错误信息） 属性。 */
     interface EntriesResult {
         /** 文件路径 */
         [path: string]: ZipFileItem
     }
-
     /** 要读取的压缩包内的文件列表（当传入"all" 时表示读取压缩包内所有文件） */
     interface EntryItem {
         /** 压缩包内文件路径 */
@@ -2230,7 +2092,6 @@ declare namespace WechatMiniprogram {
         /** 从文件指定位置开始读，如果不指定，则从文件头开始读。读取的范围应该是左闭右开区间 [position, position+length)。有效范围：[0, fileLength - 1]。单位：byte */
         position?: number
     }
-
     interface Err {
         /** 错误信息 */
         errMsg: string
@@ -2239,7 +2100,6 @@ declare namespace WechatMiniprogram {
          * errno 错误码，错误码的详细说明参考 [Errno错误码](https://developers.weixin.qq.com/miniprogram/dev/framework/usability/PublicErrno.html) */
         errno: number
     }
-
     interface ExitFullScreenOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ExitFullScreenCompleteCallback
@@ -2248,7 +2108,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ExitFullScreenSuccessCallback
     }
-
     interface ExitMiniProgramOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ExitMiniProgramCompleteCallback
@@ -2257,7 +2116,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ExitMiniProgramSuccessCallback
     }
-
     interface ExitPictureInPictureOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ExitPictureInPictureCompleteCallback
@@ -2266,7 +2124,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ExitPictureInPictureSuccessCallback
     }
-
     interface ExitVoIPChatOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ExitVoIPChatCompleteCallback
@@ -2275,13 +2132,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ExitVoIPChatSuccessCallback
     }
-
     /** 客服信息 */
     interface ExtInfoOption {
         /** 客服链接 */
         url: string
     }
-
     /** 额外的缓存处理 */
     interface ExtraOption {
         /** 需要缓存的 wx api 接口，不传则表示支持缓存的接口全都做缓存处理。返回的如果是缓存数据，开发者可通过 fromCache 标记区分
@@ -2292,12 +2147,10 @@ declare namespace WechatMiniprogram {
          * - 'wx.getSetting': ; */
         apiList?: Array<'wx.login' | 'wx.checkSession' | 'wx.getSetting'>
     }
-
     interface ExtractDataSourceOption {
         /** 视频源地址，只支持本地文件 */
         source: string
     }
-
     /** 人脸角度信息，取值范围 [-1, 1]，数值越接近 0 表示越正对摄像头 */
     interface FaceAngel {
         /** 仰俯角（点头） */
@@ -2307,7 +2160,6 @@ declare namespace WechatMiniprogram {
         /** 偏航角（摇头） */
         yaw: number
     }
-
     /** 人脸置信度，取值范围 [0, 1]，数值越大置信度越高（遮挡越少） */
     interface FaceConf {
         /** 整体可信度 */
@@ -2321,7 +2173,6 @@ declare namespace WechatMiniprogram {
         /** 右眼可信度 */
         rightEye: number
     }
-
     interface FaceDetectOption {
         /** 图像像素点数据，每四项表示一个像素点的 RGBA */
         frameBuffer: ArrayBuffer
@@ -2344,7 +2195,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FaceDetectSuccessCallback
     }
-
     interface FaceDetectSuccessCallbackResult {
         /** 人脸角度信息，取值范围 [-1, 1]，数值越接近 0 表示越正对摄像头 */
         angleArray: FaceAngel
@@ -2362,7 +2212,6 @@ declare namespace WechatMiniprogram {
         y: number
         errMsg: string
     }
-
     /** 需要基础库： `2.25.0`
      *
      * 人脸检测配置。用法详情[指南文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/visionkit/face.html)。安卓微信8.0.25开始支持，iOS微信8.0.24开始支持。 */
@@ -2376,7 +2225,6 @@ declare namespace WechatMiniprogram {
          * - 2: 通过摄像头实时检测; */
         mode: 1 | 2
     }
-
     interface Fields {
         /** 需要基础库： `2.1.0`
          *
@@ -2405,7 +2253,6 @@ declare namespace WechatMiniprogram {
         /** 是否返回节点尺寸（`width` `height`） */
         size?: boolean
     }
-
     interface FileItem {
         /** 文件保存时的时间戳，从1970/01/01 08:00:00 到当前时间的秒数 */
         createTime: number
@@ -2414,7 +2261,6 @@ declare namespace WechatMiniprogram {
         /** 本地文件大小，以字节为单位 */
         size: number
     }
-
     interface FileSystemManagerCloseOption {
         /** 需要被关闭的文件描述符。fd 通过 [FileSystemManager.open](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.open.html) 或 [FileSystemManager.openSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.openSync.html) 接口获得 */
         fd: string
@@ -2425,7 +2271,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FileSystemManagerCloseSuccessCallback
     }
-
     interface FileSystemManagerGetFileInfoOption {
         /** 要读取的文件路径 (本地路径) */
         filePath: string
@@ -2436,13 +2281,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FileSystemManagerGetFileInfoSuccessCallback
     }
-
     interface FileSystemManagerGetFileInfoSuccessCallbackResult {
         /** 文件大小，以字节为单位 */
         size: number
         errMsg: string
     }
-
     interface FileSystemManagerGetSavedFileListOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSavedFileListCompleteCallback
@@ -2451,13 +2294,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FileSystemManagerGetSavedFileListSuccessCallback
     }
-
     interface FileSystemManagerGetSavedFileListSuccessCallbackResult {
         /** 文件数组 */
         fileList: FileItem[]
         errMsg: string
     }
-
     interface FileSystemManagerRemoveSavedFileOption {
         /** 需要删除的文件路径 (本地路径) */
         filePath: string
@@ -2468,7 +2309,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveSavedFileSuccessCallback
     }
-
     interface FileSystemManagerSaveFileOption {
         /** 临时存储文件路径 (本地路径) */
         tempFilePath: string
@@ -2481,7 +2321,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SaveFileSuccessCallback
     }
-
     /** 打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数 */
     interface ForwardMaterials {
         /** 文件名 */
@@ -2493,7 +2332,6 @@ declare namespace WechatMiniprogram {
         /** 文件的mimetype类型 */
         type: string
     }
-
     /** 视频帧数据，若取不到则返回 null。当缓冲区为空的时候可能暂停取不到数据。 */
     interface FrameDataOptions {
         /** 帧数据 */
@@ -2507,7 +2345,6 @@ declare namespace WechatMiniprogram {
         /** 帧数据宽度 */
         width: number
     }
-
     interface FromScreenLocationOption {
         /** x 坐标值 */
         x: number
@@ -2520,7 +2357,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FromScreenLocationSuccessCallback
     }
-
     interface FstatFailCallbackResult {
         /** 错误信息
          *
@@ -2529,7 +2365,6 @@ declare namespace WechatMiniprogram {
          * - 'fail permission denied': 指定的 fd 路径没有读权限; */
         errMsg: string
     }
-
     interface FstatOption {
         /** 文件描述符。fd 通过 [FileSystemManager.open](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.open.html) 或 [FileSystemManager.openSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.openSync.html) 接口获得 */
         fd: string
@@ -2540,7 +2375,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FstatSuccessCallback
     }
-
     interface FstatSuccessCallbackResult {
         /** [Stats](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.html)
          *
@@ -2548,12 +2382,10 @@ declare namespace WechatMiniprogram {
         stats: Stats
         errMsg: string
     }
-
     interface FstatSyncOption {
         /** 文件描述符。fd 通过 [FileSystemManager.open](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.open.html) 或 [FileSystemManager.openSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.openSync.html) 接口获得 */
         fd: string
     }
-
     interface FtruncateFailCallbackResult {
         /** 错误信息
          *
@@ -2564,7 +2396,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface FtruncateOption {
         /** 文件描述符。fd 通过 [FileSystemManager.open](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.open.html) 或 [FileSystemManager.openSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.openSync.html) 接口获得 */
         fd: string
@@ -2577,19 +2408,16 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FtruncateSuccessCallback
     }
-
     interface FtruncateSyncOption {
         /** 文件描述符。fd 通过 [FileSystemManager.open](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.open.html) 或 [FileSystemManager.openSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.openSync.html) 接口获得 */
         fd: string
         /** 截断位置，默认0。如果 length 小于文件长度（单位：字节），则只有前面 length 个字节会保留在文件中，其余内容会被删除；如果 length 大于文件长度，则会对其进行扩展，并且扩展部分将填充空字节（'\0'） */
         length: number
     }
-
     interface GeneralCallbackResult {
         /** 错误信息 */
         errMsg: string
     }
-
     interface GetAtqaOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetAtqaCompleteCallback
@@ -2598,13 +2426,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetAtqaSuccessCallback
     }
-
     interface GetAtqaSuccessCallbackResult {
         /** 返回 ATQA/SENS_RES 数据 */
         atqa: ArrayBuffer
         errMsg: string
     }
-
     interface GetAvailableAudioSourcesOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetAvailableAudioSourcesCompleteCallback
@@ -2613,7 +2439,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetAvailableAudioSourcesSuccessCallback
     }
-
     interface GetAvailableAudioSourcesSuccessCallbackResult {
         /** 支持的音频输入源列表，可在 [RecorderManager.start()](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.start.html) 接口中使用。返回值定义参考 https://developer.android.com/reference/kotlin/android/media/MediaRecorder.AudioSource
          *
@@ -2634,7 +2459,6 @@ declare namespace WechatMiniprogram {
             | 'voice_recognition'>
         errMsg: string
     }
-
     interface GetBLEDeviceCharacteristicsOption {
         /** 蓝牙设备 id。需要已经通过 [wx.createBLEConnection](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.createBLEConnection.html) 建立连接 */
         deviceId: string
@@ -2647,13 +2471,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBLEDeviceCharacteristicsSuccessCallback
     }
-
     interface GetBLEDeviceCharacteristicsSuccessCallbackResult {
         /** 设备特征列表 */
         characteristics: BLECharacteristic[]
         errMsg: string
     }
-
     interface GetBLEDeviceRSSIOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -2664,13 +2486,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBLEDeviceRSSISuccessCallback
     }
-
     interface GetBLEDeviceRSSISuccessCallbackResult {
         /** 信号强度，单位 dBm */
         RSSI: number
         errMsg: string
     }
-
     interface GetBLEDeviceServicesOption {
         /** 蓝牙设备 id。需要已经通过 [wx.createBLEConnection](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.createBLEConnection.html) 建立连接 */
         deviceId: string
@@ -2681,13 +2501,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBLEDeviceServicesSuccessCallback
     }
-
     interface GetBLEDeviceServicesSuccessCallbackResult {
         /** 设备服务列表 */
         services: BLEService[]
         errMsg: string
     }
-
     interface GetBLEMTUOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -2704,13 +2522,11 @@ declare namespace WechatMiniprogram {
          * - 'writeNoResponse': 无回复写; */
         writeType?: 'write' | 'writeNoResponse'
     }
-
     interface GetBLEMTUSuccessCallbackResult {
         /** 最大传输单元 */
         mtu: number
         errMsg: string
     }
-
     interface GetBackgroundAudioPlayerStateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetBackgroundAudioPlayerStateCompleteCallback
@@ -2719,7 +2535,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBackgroundAudioPlayerStateSuccessCallback
     }
-
     interface GetBackgroundAudioPlayerStateSuccessCallbackResult {
         /** 选定音频的播放位置（单位：s），只有在音乐播放中时返回 */
         currentPosition: number
@@ -2738,7 +2553,6 @@ declare namespace WechatMiniprogram {
         status: 0 | 1 | 2
         errMsg: string
     }
-
     interface GetBackgroundFetchDataOption {
         /** 缓存数据类别，取值为 periodic 或 pre */
         fetchType: string
@@ -2749,7 +2563,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBackgroundFetchDataSuccessCallback
     }
-
     interface GetBackgroundFetchDataSuccessCallbackResult {
         /** 缓存数据 */
         fetchedData: string
@@ -2763,7 +2576,6 @@ declare namespace WechatMiniprogram {
         timeStamp: number
         errMsg: string
     }
-
     interface GetBackgroundFetchTokenOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetBackgroundFetchTokenCompleteCallback
@@ -2772,14 +2584,12 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBackgroundFetchTokenSuccessCallback
     }
-
     interface GetBackgroundFetchTokenSuccessCallbackResult {
         /** 接口调用结果 */
         errMsg: string
         /** 自定义的登录态 */
         token: number
     }
-
     interface GetBatteryInfoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetBatteryInfoCompleteCallback
@@ -2788,7 +2598,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBatteryInfoSuccessCallback
     }
-
     interface GetBatteryInfoSuccessCallbackResult {
         /** 是否正在充电中 */
         isCharging: boolean
@@ -2796,14 +2605,12 @@ declare namespace WechatMiniprogram {
         level: number
         errMsg: string
     }
-
     interface GetBatteryInfoSyncResult {
         /** 是否正在充电中 */
         isCharging: boolean
         /** 设备电量，范围 1 - 100 */
         level: number
     }
-
     interface GetBeaconsOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetBeaconsCompleteCallback
@@ -2812,13 +2619,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBeaconsSuccessCallback
     }
-
     interface GetBeaconsSuccessCallbackResult {
         /** Beacon 设备列表 */
         beacons: BeaconInfo[]
         errMsg: string
     }
-
     interface GetBluetoothAdapterStateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetBluetoothAdapterStateCompleteCallback
@@ -2827,7 +2632,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBluetoothAdapterStateSuccessCallback
     }
-
     interface GetBluetoothAdapterStateSuccessCallbackResult {
         /** 蓝牙适配器是否可用 */
         available: boolean
@@ -2835,7 +2639,6 @@ declare namespace WechatMiniprogram {
         discovering: boolean
         errMsg: string
     }
-
     interface GetBluetoothDevicesOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetBluetoothDevicesCompleteCallback
@@ -2844,13 +2647,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetBluetoothDevicesSuccessCallback
     }
-
     interface GetBluetoothDevicesSuccessCallbackResult {
         /** UUID 对应的已连接设备列表 */
         devices: BlueToothDevice[]
         errMsg: string
     }
-
     interface GetCenterLocationOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetCenterLocationCompleteCallback
@@ -2861,7 +2662,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetCenterLocationSuccessCallback
     }
-
     interface GetCenterLocationSuccessCallbackResult {
         /** 纬度 */
         latitude: number
@@ -2869,7 +2669,6 @@ declare namespace WechatMiniprogram {
         longitude: number
         errMsg: string
     }
-
     interface GetChannelsLiveInfoOption {
         /** 视频号 id，以“sph”开头的id，可在视频号助手获取 */
         finderUserName: string
@@ -2880,7 +2679,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetChannelsLiveInfoSuccessCallback
     }
-
     interface GetChannelsLiveInfoSuccessCallbackResult {
         /** 直播主题 */
         description: string
@@ -2896,7 +2694,6 @@ declare namespace WechatMiniprogram {
         status: number
         errMsg: string
     }
-
     interface GetChannelsLiveNoticeInfoOption {
         /** 视频号 id，以“sph”开头的id，可在视频号助手获取 */
         finderUserName: string
@@ -2907,7 +2704,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetChannelsLiveNoticeInfoSuccessCallback
     }
-
     interface GetChannelsLiveNoticeInfoSuccessCallbackResult {
         /** 直播封面 */
         headUrl: string
@@ -2927,7 +2723,6 @@ declare namespace WechatMiniprogram {
         status: number
         errMsg: string
     }
-
     interface GetChannelsShareKeyOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetChannelsShareKeyCompleteCallback
@@ -2936,7 +2731,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetChannelsShareKeySuccessCallback
     }
-
     interface GetChannelsShareKeySuccessCallbackResult {
         /** 推广员 */
         promoter: PromoterResult
@@ -2944,7 +2738,6 @@ declare namespace WechatMiniprogram {
         sharerOpenId: string
         errMsg: string
     }
-
     interface GetClipboardDataOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetClipboardDataCompleteCallback
@@ -2953,12 +2746,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetClipboardDataSuccessCallback
     }
-
     interface GetClipboardDataSuccessCallbackOption {
         /** 剪贴板的内容 */
         data: string
     }
-
     interface GetConnectedBluetoothDevicesOption {
         /** 蓝牙设备主服务的 UUID 列表（支持 16/32/128 位 UUID） */
         services: string[]
@@ -2969,13 +2760,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetConnectedBluetoothDevicesSuccessCallback
     }
-
     interface GetConnectedBluetoothDevicesSuccessCallbackResult {
         /** 搜索到的设备列表 */
         devices: BluetoothDeviceInfo[]
         errMsg: string
     }
-
     interface GetConnectedWifiOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetConnectedWifiCompleteCallback
@@ -2988,7 +2777,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetConnectedWifiSuccessCallback
     }
-
     interface GetConnectedWifiSuccessCallbackResult {
         /** [WifiInfo](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/WifiInfo.html)
          *
@@ -2996,7 +2784,6 @@ declare namespace WechatMiniprogram {
         wifi: WifiInfo
         errMsg: string
     }
-
     interface GetContentsOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetContentsCompleteCallback
@@ -3005,7 +2792,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetContentsSuccessCallback
     }
-
     interface GetContentsSuccessCallbackResult {
         /** 表示内容的delta对象 */
         delta: IAnyObject
@@ -3015,7 +2801,6 @@ declare namespace WechatMiniprogram {
         text: string
         errMsg: string
     }
-
     interface GetExtConfigOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetExtConfigCompleteCallback
@@ -3024,13 +2809,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetExtConfigSuccessCallback
     }
-
     interface GetExtConfigSuccessCallbackResult {
         /** 第三方平台自定义的数据 */
         extConfig: IAnyObject
         errMsg: string
     }
-
     interface GetFileInfoFailCallbackResult {
         /** 错误信息
          *
@@ -3038,7 +2821,6 @@ declare namespace WechatMiniprogram {
          * - 'fail file not exist': 指定的 filePath 找不到文件; */
         errMsg: string
     }
-
     interface GetFuzzyLocationOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetFuzzyLocationCompleteCallback
@@ -3049,7 +2831,6 @@ declare namespace WechatMiniprogram {
         /** wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 */
         type?: string
     }
-
     interface GetFuzzyLocationSuccessCallbackResult {
         /** 纬度，范围为 -90~90，负数表示南纬 */
         latitude: number
@@ -3057,7 +2838,6 @@ declare namespace WechatMiniprogram {
         longitude: number
         errMsg: string
     }
-
     interface GetGroupEnterInfoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetGroupEnterInfoCompleteCallback
@@ -3066,7 +2846,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetGroupEnterInfoSuccessCallback
     }
-
     interface GetGroupEnterInfoSuccessCallbackResult {
         /** 需要基础库： `2.7.0`
          *
@@ -3079,7 +2858,6 @@ declare namespace WechatMiniprogram {
         /** 加密算法的初始向量，详细见[加密数据解密算法](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html) */
         iv: string
     }
-
     interface GetHCEStateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetHCEStateCompleteCallback
@@ -3088,7 +2866,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetHCEStateSuccessCallback
     }
-
     interface GetHistoricalBytesOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetHistoricalBytesCompleteCallback
@@ -3097,13 +2874,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetHistoricalBytesSuccessCallback
     }
-
     interface GetHistoricalBytesSuccessCallbackResult {
         /** 返回历史二进制数据 */
         histBytes: ArrayBuffer
         errMsg: string
     }
-
     interface GetImageInfoOption {
         /** 图片的路径，支持网络路径、本地路径、代码包路径 */
         src: string
@@ -3114,7 +2889,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetImageInfoSuccessCallback
     }
-
     interface GetImageInfoSuccessCallbackResult {
         /** 图片原始高度，单位px。不考虑旋转。 */
         height: number
@@ -3157,7 +2931,6 @@ declare namespace WechatMiniprogram {
         width: number
         errMsg: string
     }
-
     interface GetLatestUserKeyOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetLatestUserKeyCompleteCallback
@@ -3166,7 +2939,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetLatestUserKeySuccessCallback
     }
-
     interface GetLatestUserKeySuccessCallbackResult {
         /** 用户加密密钥 */
         encryptKey: string
@@ -3178,7 +2950,6 @@ declare namespace WechatMiniprogram {
         version: number
         errMsg: string
     }
-
     interface GetLocalIPAddressOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetLocalIPAddressCompleteCallback
@@ -3187,7 +2958,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetLocalIPAddressSuccessCallback
     }
-
     interface GetLocalIPAddressSuccessCallbackResult {
         /** 错误信息 */
         errMsg: string
@@ -3196,7 +2966,6 @@ declare namespace WechatMiniprogram {
         /** 本机局域网子网掩码，基础库 2.24.0 开始支持 */
         netmask: string
     }
-
     interface GetLocationOption {
         /** 需要基础库： `1.6.0`
          *
@@ -3219,7 +2988,6 @@ declare namespace WechatMiniprogram {
         /** wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 */
         type?: string
     }
-
     interface GetLocationSuccessCallbackResult {
         /** 位置的精确度，反应与真实位置之间的接近程度，可以理解成10即与真实位置相差10m，越小越精确 */
         accuracy: number
@@ -3243,14 +3011,12 @@ declare namespace WechatMiniprogram {
         verticalAccuracy: number
         errMsg: string
     }
-
     interface GetLogManagerOption {
         /** 需要基础库： `2.3.2`
          *
          * 取值为0/1，取值为0表示会把 `App`、`Page` 的生命周期函数和 `wx` 命名空间下的函数调用写入日志，取值为1则不会。默认值是 0 */
         level?: number
     }
-
     interface GetMaxTransceiveLengthOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetMaxTransceiveLengthCompleteCallback
@@ -3259,13 +3025,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetMaxTransceiveLengthSuccessCallback
     }
-
     interface GetMaxTransceiveLengthSuccessCallbackResult {
         /** 最大传输长度 */
         length: number
         errMsg: string
     }
-
     interface GetNetworkTypeOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetNetworkTypeCompleteCallback
@@ -3274,7 +3038,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetNetworkTypeSuccessCallback
     }
-
     interface GetNetworkTypeSuccessCallbackResult {
         /** 需要基础库： `2.22.1`
          *
@@ -3295,7 +3058,6 @@ declare namespace WechatMiniprogram {
         signalStrength: number
         errMsg: string
     }
-
     interface GetRandomValuesOption {
         /** 整数，生成随机数的字节数，最大 1048576 */
         length: number
@@ -3306,13 +3068,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetRandomValuesSuccessCallback
     }
-
     interface GetRandomValuesSuccessCallbackResult {
         /** 随机数内容，长度为传入的字节数 */
         randomValues: ArrayBuffer
         errMsg: string
     }
-
     interface GetRegionOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetRegionCompleteCallback
@@ -3321,7 +3081,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetRegionSuccessCallback
     }
-
     interface GetRegionSuccessCallbackResult {
         /** 东北角经纬度 */
         northeast: MapPostion
@@ -3329,7 +3088,6 @@ declare namespace WechatMiniprogram {
         southwest: MapPostion
         errMsg: string
     }
-
     interface GetRotateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetRotateCompleteCallback
@@ -3338,13 +3096,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetRotateSuccessCallback
     }
-
     interface GetRotateSuccessCallbackResult {
         /** 旋转角 */
         rotate: number
         errMsg: string
     }
-
     interface GetSakOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSakCompleteCallback
@@ -3353,13 +3109,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSakSuccessCallback
     }
-
     interface GetSakSuccessCallbackResult {
         /** 返回 SAK/SEL_RES 数据 */
         sak: number
         errMsg: string
     }
-
     interface GetSavedFileInfoOption {
         /** 文件路径 (本地路径) */
         filePath: string
@@ -3370,7 +3124,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSavedFileInfoSuccessCallback
     }
-
     interface GetSavedFileInfoSuccessCallbackResult {
         /** 文件保存时的时间戳，从1970/01/01 08:00:00 到该时刻的秒数 */
         createTime: number
@@ -3378,7 +3131,6 @@ declare namespace WechatMiniprogram {
         size: number
         errMsg: string
     }
-
     interface GetScaleOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetScaleCompleteCallback
@@ -3387,13 +3139,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetScaleSuccessCallback
     }
-
     interface GetScaleSuccessCallbackResult {
         /** 缩放值 */
         scale: number
         errMsg: string
     }
-
     interface GetScreenBrightnessOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetScreenBrightnessCompleteCallback
@@ -3402,12 +3152,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetScreenBrightnessSuccessCallback
     }
-
     interface GetScreenBrightnessSuccessCallbackOption {
         /** 屏幕亮度值，范围 0 ~ 1，0 最暗，1 最亮 */
         value: number
     }
-
     interface GetScreenRecordingStateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetScreenRecordingStateCompleteCallback
@@ -3416,7 +3164,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetScreenRecordingStateSuccessCallback
     }
-
     interface GetScreenRecordingStateSuccessCallbackResult {
         /** 录屏状态
          *
@@ -3426,7 +3173,6 @@ declare namespace WechatMiniprogram {
         state: 'on' | 'off'
         errMsg: string
     }
-
     interface GetSelectedTextRangeOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSelectedTextRangeCompleteCallback
@@ -3435,7 +3181,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSelectedTextRangeSuccessCallback
     }
-
     interface GetSelectedTextRangeSuccessCallbackResult {
         /** 输入框光标结束位置 */
         end: number
@@ -3443,7 +3188,6 @@ declare namespace WechatMiniprogram {
         start: number
         errMsg: string
     }
-
     interface GetSelectionTextOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSelectionTextCompleteCallback
@@ -3452,13 +3196,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSelectionTextSuccessCallback
     }
-
     interface GetSelectionTextSuccessCallbackResult {
         /** 纯文本内容 */
         text: string
         errMsg: string
     }
-
     interface GetSettingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSettingCompleteCallback
@@ -3471,7 +3213,6 @@ declare namespace WechatMiniprogram {
          * 是否同时获取用户订阅消息的订阅状态，默认不获取。注意：withSubscriptions 只返回用户勾选过订阅面板中的“总是保持以上选择，不再询问”的订阅消息。 */
         withSubscriptions?: boolean
     }
-
     interface GetSettingSuccessCallbackResult {
         /** [AuthSetting](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/setting/AuthSetting.html)
          *
@@ -3489,7 +3230,6 @@ declare namespace WechatMiniprogram {
         miniprogramAuthSetting?: AuthSetting
         errMsg: string
     }
-
     interface GetShareInfoOption {
         /** shareTicket */
         shareTicket: string
@@ -3504,7 +3244,6 @@ declare namespace WechatMiniprogram {
          * 超时时间，单位 ms */
         timeout?: number
     }
-
     interface GetSkewOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSkewCompleteCallback
@@ -3513,13 +3252,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSkewSuccessCallback
     }
-
     interface GetSkewSuccessCallbackResult {
         /** 倾斜角 */
         skew: number
         errMsg: string
     }
-
     interface GetStorageInfoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetStorageInfoCompleteCallback
@@ -3528,7 +3265,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetStorageInfoSuccessCallback
     }
-
     interface GetStorageInfoSuccessCallbackOption {
         /** 当前占用的空间大小, 单位 KB */
         currentSize: number
@@ -3537,7 +3273,6 @@ declare namespace WechatMiniprogram {
         /** 限制的空间大小，单位 KB */
         limitSize: number
     }
-
     interface GetStorageInfoSyncOption {
         /** 当前占用的空间大小, 单位 KB */
         currentSize: number
@@ -3546,7 +3281,6 @@ declare namespace WechatMiniprogram {
         /** 限制的空间大小，单位 KB */
         limitSize: number
     }
-
     interface GetStorageOption<T = any> {
         /** 本地缓存中指定的 key */
         key: string
@@ -3561,13 +3295,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetStorageSuccessCallback<T>
     }
-
     interface GetStorageSuccessCallbackResult<T = any> {
         /** key对应的内容 */
         data: T
         errMsg: string
     }
-
     interface GetSystemInfoAsyncOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSystemInfoAsyncCompleteCallback
@@ -3576,7 +3308,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSystemInfoAsyncSuccessCallback
     }
-
     interface GetSystemInfoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSystemInfoCompleteCallback
@@ -3585,7 +3316,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetSystemInfoSuccessCallback
     }
-
     interface GetUserInfoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetUserInfoCompleteCallback
@@ -3603,7 +3333,6 @@ declare namespace WechatMiniprogram {
         /** 是否带上登录态信息。当 withCredentials 为 true 时，要求此前有调用过 wx.login 且登录态尚未过期，此时返回的数据会包含 encryptedData, iv 等敏感信息；当 withCredentials 为 false 时，不要求有登录态，返回的数据不包含 encryptedData, iv 等敏感信息。 */
         withCredentials?: boolean
     }
-
     interface GetUserInfoSuccessCallbackResult {
         /** 需要基础库： `2.7.0`
          *
@@ -3623,7 +3352,6 @@ declare namespace WechatMiniprogram {
         userInfo: UserInfo
         errMsg: string
     }
-
     interface GetUserProfileOption {
         /** 声明获取用户个人信息后的用途，不超过30个字符 */
         desc: string
@@ -3641,7 +3369,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetUserProfileSuccessCallback
     }
-
     interface GetUserProfileSuccessCallbackResult {
         /** 需要基础库： `2.10.4`
          *
@@ -3671,7 +3398,6 @@ declare namespace WechatMiniprogram {
         userInfo: UserInfo
         errMsg: string
     }
-
     interface GetVideoInfoOption {
         /** 视频文件路径，可以是临时文件路径也可以是永久文件路径 */
         src: string
@@ -3682,7 +3408,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetVideoInfoSuccessCallback
     }
-
     interface GetVideoInfoSuccessCallbackResult {
         /** 视频码率，单位 kbps */
         bitrate: number
@@ -3720,7 +3445,6 @@ declare namespace WechatMiniprogram {
         width: number
         errMsg: string
     }
-
     interface GetWeRunDataOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetWeRunDataCompleteCallback
@@ -3729,7 +3453,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetWeRunDataSuccessCallback
     }
-
     interface GetWeRunDataSuccessCallbackResult {
         /** 需要基础库： `2.7.0`
          *
@@ -3741,7 +3464,6 @@ declare namespace WechatMiniprogram {
         iv: string
         errMsg: string
     }
-
     interface GetWifiListOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetWifiListCompleteCallback
@@ -3750,7 +3472,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: GetWifiListSuccessCallback
     }
-
     interface HideHomeButtonOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: HideHomeButtonCompleteCallback
@@ -3759,7 +3480,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideHomeButtonSuccessCallback
     }
-
     interface HideKeyboardOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: HideKeyboardCompleteCallback
@@ -3768,7 +3488,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideKeyboardSuccessCallback
     }
-
     interface HideLoadingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: HideLoadingCompleteCallback
@@ -3781,7 +3500,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideLoadingSuccessCallback
     }
-
     interface HideNavigationBarLoadingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: HideNavigationBarLoadingCompleteCallback
@@ -3790,7 +3508,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideNavigationBarLoadingSuccessCallback
     }
-
     interface HideShareMenuOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: HideShareMenuCompleteCallback
@@ -3803,7 +3520,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideShareMenuSuccessCallback
     }
-
     interface HideTabBarOption {
         /** 是否需要动画效果 */
         animation?: boolean
@@ -3814,7 +3530,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideTabBarSuccessCallback
     }
-
     interface HideTabBarRedDotOption {
         /** tabBar 的哪一项，从左边算起 */
         index: number
@@ -3825,7 +3540,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideTabBarRedDotSuccessCallback
     }
-
     interface HideToastOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: HideToastCompleteCallback
@@ -3838,13 +3552,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: HideToastSuccessCallback
     }
-
     /** 检测结果 */
     interface HitTestRes {
         /** 包含位置、旋转、放缩信息的矩阵，以列为主序 */
         transform: Float32Array
     }
-
     /** 需要基础库： `2.7.0`
      *
      * 图片对象 */
@@ -3864,7 +3576,6 @@ declare namespace WechatMiniprogram {
         /** 图片的真实宽度 */
         width: number
     }
-
     /** 需要基础库： `2.9.0`
      *
      * ImageData 对象 */
@@ -3876,7 +3587,6 @@ declare namespace WechatMiniprogram {
         /** 使用像素描述 ImageData 的实际宽度 */
         width: number
     }
-
     /** 需要基础库： `1.2.0`
      *
      * 图片的本地临时文件列表 */
@@ -3886,7 +3596,6 @@ declare namespace WechatMiniprogram {
         /** 本地临时文件大小，单位 B */
         size: number
     }
-
     interface IncludePointsOption {
         /** 要显示在可视区域内的坐标点列表 */
         points: MapPostion[]
@@ -3899,7 +3608,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: IncludePointsSuccessCallback
     }
-
     interface InitFaceDetectOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: InitFaceDetectCompleteCallback
@@ -3908,7 +3616,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: InitFaceDetectSuccessCallback
     }
-
     interface InitMarkerClusterOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: InitMarkerClusterCompleteCallback
@@ -3989,7 +3696,6 @@ declare namespace WechatMiniprogram {
          * 音量。范围 0~1。默认为 1 */
         volume: number
     }
-
     interface InnerAudioContextOnErrorListenerResult {
         /** 可选值：
          * - 10001: 系统错误;
@@ -4000,7 +3706,6 @@ declare namespace WechatMiniprogram {
         errCode: 10001 | 10002 | 10003 | 10004 | -1
         errMsg: string
     }
-
     interface InsertDividerOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: InsertDividerCompleteCallback
@@ -4009,7 +3714,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: InsertDividerSuccessCallback
     }
-
     interface InsertImageOption {
         /** 图片地址，仅支持 http(s)、base64、云图片(2.8.0)、临时文件(2.8.3)。 */
         src: string
@@ -4032,7 +3736,6 @@ declare namespace WechatMiniprogram {
         /** 图片宽度（pixels/百分比) */
         width?: string
     }
-
     interface InsertTextOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: InsertTextCompleteCallback
@@ -4043,7 +3746,6 @@ declare namespace WechatMiniprogram {
         /** 文本内容 */
         text?: string
     }
-
     interface IntersectionObserverObserveCallbackResult {
         /** 目标边界 */
         boundingClientRect: BoundingClientRectResult
@@ -4060,7 +3762,6 @@ declare namespace WechatMiniprogram {
         /** 相交检测时的时间戳 */
         time: number
     }
-
     /** 相交区域的边界 */
     interface IntersectionRectResult {
         /** 下边界 */
@@ -4076,7 +3777,6 @@ declare namespace WechatMiniprogram {
         /** 宽度 */
         width: number
     }
-
     interface InterstitialAdOnErrorListenerResult {
         /** 错误码
          *
@@ -4094,7 +3794,6 @@ declare namespace WechatMiniprogram {
         /** 错误信息 */
         errMsg: string
     }
-
     interface IsBluetoothDevicePairedOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -4105,7 +3804,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: IsBluetoothDevicePairedSuccessCallback
     }
-
     interface IsConnectedOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: IsConnectedCompleteCallback
@@ -4114,7 +3812,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: IsConnectedSuccessCallback
     }
-
     interface Join1v1ChatOption {
         /** 呼叫方信息 */
         caller: VoIP1v1ChatUser
@@ -4147,7 +3844,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: Join1v1ChatSuccessCallback
     }
-
     interface JoinVoIPChatOption {
         /** 小游戏内此房间/群聊的 ID。同一时刻传入相同 groupId 的用户会进入到同个实时语音房间。 */
         groupId: string
@@ -4172,7 +3868,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: JoinVoIPChatSuccessCallback
     }
-
     interface JoinVoIPChatSuccessCallbackResult {
         /** 错误码 */
         errCode: number
@@ -4181,14 +3876,12 @@ declare namespace WechatMiniprogram {
         /** 在此通话中的成员 openId 名单 */
         openIdList: string[]
     }
-
     interface KVArray {
         /** key 本地缓存中指定的 key */
         key: string
         /** data 需要存储的内容。只支持原生类型、Date、及能够通过`JSON.stringify`序列化的对象。 */
         value: any
     }
-
     /** 启动参数 */
     interface LaunchOptionsApp {
         /** 需要基础库： `2.20.0`
@@ -4226,7 +3919,6 @@ declare namespace WechatMiniprogram {
         /** shareTicket，详见[获取更多转发信息](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) */
         shareTicket?: string
     }
-
     interface LivePlayerContextRequestFullScreenOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: RequestFullScreenCompleteCallback
@@ -4242,7 +3934,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RequestFullScreenSuccessCallback
     }
-
     interface LivePlayerContextSnapshotOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SnapshotCompleteCallback
@@ -4259,7 +3950,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: LivePlayerContextSnapshotSuccessCallback
     }
-
     interface LivePlayerContextSnapshotSuccessCallbackResult {
         /** 图片的高度 */
         height: string
@@ -4269,7 +3959,6 @@ declare namespace WechatMiniprogram {
         width: string
         errMsg: string
     }
-
     interface LivePusherContextSnapshotOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SnapshotCompleteCallback
@@ -4286,7 +3975,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: LivePusherContextSnapshotSuccessCallback
     }
-
     interface LivePusherContextSnapshotSuccessCallbackResult {
         /** 图片的高度 */
         height: string
@@ -4296,7 +3984,6 @@ declare namespace WechatMiniprogram {
         width: string
         errMsg: string
     }
-
     interface LivePusherContextStartOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartCompleteCallback
@@ -4305,12 +3992,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartSuccessCallback
     }
-
     interface LoadFontFaceCompleteCallbackResult {
         /** 加载字体结果 */
         status: string
     }
-
     interface LoadFontFaceOption {
         /** 定义的字体名称 */
         family: string
@@ -4331,7 +4016,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: LoadFontFaceSuccessCallback
     }
-
     interface LocalInfo {
         /** 接收消息的 socket 的地址 */
         address: string
@@ -4340,7 +4024,6 @@ declare namespace WechatMiniprogram {
         /** 端口号 */
         port: number
     }
-
     interface LoginOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: LoginCompleteCallback
@@ -4353,13 +4036,11 @@ declare namespace WechatMiniprogram {
          * 超时时间，单位ms */
         timeout?: number
     }
-
     interface LoginSuccessCallbackResult {
         /** 用户登录凭证（有效期五分钟）。开发者需要在开发者服务器后台调用 [auth.code2Session](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)，使用 code 换取 openid、unionid、session_key 等信息 */
         code: string
         errMsg: string
     }
-
     interface MakeBluetoothPairOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -4374,7 +4055,6 @@ declare namespace WechatMiniprogram {
         /** 超时时间，单位 ms */
         timeout?: number
     }
-
     interface MakePhoneCallOption {
         /** 需要拨打的电话号码 */
         phoneNumber: string
@@ -4385,7 +4065,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: MakePhoneCallSuccessCallback
     }
-
     /** 广播的制造商信息。仅安卓支持，iOS 因系统限制无法定制。 */
     interface ManufacturerData {
         /** 制造商ID，0x 开头的十六进制 */
@@ -4393,7 +4072,6 @@ declare namespace WechatMiniprogram {
         /** 制造商信息 */
         manufacturerSpecificData?: ArrayBuffer
     }
-
     /** 图片覆盖的经纬度范围 */
     interface MapBounds {
         /** 东北角经纬度 */
@@ -4401,14 +4079,12 @@ declare namespace WechatMiniprogram {
         /** 西南角经纬度 */
         southwest: MapPostion
     }
-
     interface MapPostion {
         /** 纬度 */
         latitude: number
         /** 经度 */
         longitude: number
     }
-
     /** 用来扩展（或收缩）参照节点布局区域的边界 */
     interface Margins {
         /** 节点布局区域的下边界 */
@@ -4420,7 +4096,6 @@ declare namespace WechatMiniprogram {
         /** 节点布局区域的上边界 */
         top?: number
     }
-
     /** 匹配到的缓存 */
     interface MatchCache {
         /** 缓存 id */
@@ -4434,13 +4109,11 @@ declare namespace WechatMiniprogram {
         /** 命中的规则 id */
         ruleId: string
     }
-
     /** MediaAudioPlayer 实例，可通过 [wx.createMediaAudioPlayer](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.createMediaAudioPlayer.html) 接口获取实例。 */
     interface MediaAudioPlayer {
         /** 音量。范围 0~1。默认为 1 */
         volume: number
     }
-
     /** 本地临时文件列表 */
     interface MediaFile {
         /** 视频的时间长度 */
@@ -4462,12 +4135,10 @@ declare namespace WechatMiniprogram {
         /** 视频的宽度 */
         width: number
     }
-
     interface MediaQueryObserverObserveCallbackResult {
         /** 页面的当前状态是否满足所指定的 media query */
         matches: boolean
     }
-
     /** 需要预览的资源列表 */
     interface MediaSource {
         /** 图片或视频的地址 */
@@ -4481,7 +4152,6 @@ declare namespace WechatMiniprogram {
          * - 'video': 视频; */
         type?: 'image' | 'video'
     }
-
     /** 需要基础库： `2.9.0`
      *
      * 可通过 [MediaContainer.extractDataSource](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.extractDataSource.html) 返回。
@@ -4499,7 +4169,6 @@ declare namespace WechatMiniprogram {
         /** 音量，音频轨道下有效，可写 */
         volume: number
     }
-
     /** 小程序帐号信息 */
     interface MiniProgram {
         /** 小程序 appId */
@@ -4518,7 +4187,6 @@ declare namespace WechatMiniprogram {
          * 线上小程序版本号 */
         version: string
     }
-
     interface MkdirFailCallbackResult {
         /** 错误信息
          *
@@ -4529,7 +4197,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface MkdirOption {
         /** 创建的目录路径 (本地路径) */
         dirPath: string
@@ -4544,7 +4211,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: MkdirSuccessCallback
     }
-
     interface MoveAlongOption {
         /** 平滑移动的时间 */
         duration: number
@@ -4561,7 +4227,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: MoveAlongSuccessCallback
     }
-
     interface MoveToLocationOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: MoveToLocationCompleteCallback
@@ -4578,7 +4243,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: MoveToLocationSuccessCallback
     }
-
     /** 静音设置 */
     interface MuteConfig {
         /** 是否静音耳机 */
@@ -4586,7 +4250,6 @@ declare namespace WechatMiniprogram {
         /** 是否静音麦克风 */
         muteMicrophone?: boolean
     }
-
     interface MuteOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: MuteCompleteCallback
@@ -4595,13 +4258,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: MuteSuccessCallback
     }
-
     /** 需要基础库： `2.11.2` */
     interface NFCAdapter {
         /** 标签类型枚举 */
         tech: TechType
     }
-
     interface NavigateBackMiniProgramOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: NavigateBackMiniProgramCompleteCallback
@@ -4612,7 +4273,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: NavigateBackMiniProgramSuccessCallback
     }
-
     interface NavigateBackOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: NavigateBackCompleteCallback
@@ -4623,7 +4283,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: NavigateBackSuccessCallback
     }
-
     interface NavigateToMiniProgramOption {
         /** 要打开的小程序 appId */
         appId?: string
@@ -4649,7 +4308,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: NavigateToMiniProgramSuccessCallback
     }
-
     interface NavigateToOption {
         /** 需要跳转的应用内非 tabBar 的页面的路径 (代码包路径), 路径后可以带参数。参数与路径之间使用 `?` 分隔，参数键与参数值用 `=` 相连，不同参数用 `&` 分隔；如 'path?key=value&key2=value2' */
         url: string
@@ -4662,7 +4320,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: NavigateToSuccessCallback
     }
-
     interface NavigateToSuccessCallbackResult {
         /** [EventChannel](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.html)
          *
@@ -4670,7 +4327,6 @@ declare namespace WechatMiniprogram {
         eventChannel: EventChannel
         errMsg: string
     }
-
     interface NdefCloseOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: NdefCloseCompleteCallback
@@ -4679,7 +4335,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: NdefCloseSuccessCallback
     }
-
     interface NdefConnectOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ConnectCompleteCallback
@@ -4688,12 +4343,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ConnectSuccessCallback
     }
-
     interface NodeCallbackResult {
         /** 节点对应的 Node 实例 */
         node: IAnyObject
     }
-
     interface NotifyBLECharacteristicValueChangeOption {
         /** 蓝牙特征的 UUID */
         characteristicId: string
@@ -4714,7 +4367,6 @@ declare namespace WechatMiniprogram {
          * 设置特征订阅类型，有效值有 `notification` 和 `indication` */
         type?: string
     }
-
     /** media query 描述符 */
     interface ObserveDescriptor {
         /** 页面高度（ px 为单位） */
@@ -4732,7 +4384,6 @@ declare namespace WechatMiniprogram {
         /** 页面宽度（ px 为单位） */
         width: number
     }
-
     /** 设置 type 监听单个类型的指标，设置 entryTypes 监听多个类型指标。 */
     interface ObserveOption {
         /** 指标类型列表。不能和 type 同时使用。 */
@@ -4745,7 +4396,6 @@ declare namespace WechatMiniprogram {
          * - 'script': 脚本; */
         type?: 'navigation' | 'render' | 'script'
     }
-
     /** 需要基础库： `2.7.0`
      *
      * 离屏 canvas 实例，可通过 [wx.createOffscreenCanvas](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.createOffscreenCanvas.html) 创建。 */
@@ -4755,7 +4405,6 @@ declare namespace WechatMiniprogram {
         /** 画布宽度 */
         width: number
     }
-
     interface OnAccelerometerChangeListenerResult {
         /** X 轴 */
         x: number
@@ -4764,7 +4413,6 @@ declare namespace WechatMiniprogram {
         /** Z 轴 */
         z: number
     }
-
     interface OnBLECharacteristicValueChangeListenerResult {
         /** 蓝牙特征的 UUID */
         characteristicId: string
@@ -4775,21 +4423,18 @@ declare namespace WechatMiniprogram {
         /** 特征最新的值 */
         value: ArrayBuffer
     }
-
     interface OnBLEConnectionStateChangeListenerResult {
         /** 是否处于已连接状态 */
         connected: boolean
         /** 蓝牙设备 id */
         deviceId: string
     }
-
     interface OnBLEMTUChangeListenerResult {
         /** 蓝牙设备 id */
         deviceId: string
         /** 最大传输单元 */
         mtu: number
     }
-
     interface OnBLEPeripheralConnectionStateChangedListenerResult {
         /** 连接目前状态 */
         connected: boolean
@@ -4798,7 +4443,6 @@ declare namespace WechatMiniprogram {
         /** server 的 UUID */
         serverId: string
     }
-
     interface OnBackgroundFetchDataListenerResult {
         /** 缓存数据类别，取值为 periodic 或 pre */
         fetchType: string
@@ -4813,31 +4457,26 @@ declare namespace WechatMiniprogram {
         /** 客户端拿到缓存数据的时间戳 */
         timeStamp: number
     }
-
     interface OnBeaconServiceChangeListenerResult {
         /** 服务目前是否可用 */
         available: boolean
         /** 目前是否处于搜索状态 */
         discovering: boolean
     }
-
     interface OnBeaconUpdateListenerResult {
         /** 当前搜寻到的所有 Beacon 设备列表 */
         beacons: BeaconInfo[]
     }
-
     interface OnBluetoothAdapterStateChangeListenerResult {
         /** 蓝牙适配器是否可用 */
         available: boolean
         /** 蓝牙适配器是否处于搜索状态 */
         discovering: boolean
     }
-
     interface OnBluetoothDeviceFoundListenerResult {
         /** 新搜索到的设备列表 */
         devices: BlueToothDevice[]
     }
-
     interface OnCameraFrameCallbackResult {
         /** 图像像素点数据，一维数组，每四项表示一个像素点的 rgba */
         data: ArrayBuffer
@@ -4846,7 +4485,6 @@ declare namespace WechatMiniprogram {
         /** 图像数据矩形的宽度 */
         width: number
     }
-
     interface OnCharacteristicReadRequestListenerResult {
         /** 唯一标识码，调用 [writeCharacteristicValue](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.writeCharacteristicValue.html) 时使用 */
         callbackId: number
@@ -4855,14 +4493,12 @@ declare namespace WechatMiniprogram {
         /** 蓝牙特征对应服务的 UUID */
         serviceId: string
     }
-
     interface OnCharacteristicSubscribedListenerResult {
         /** 蓝牙特征的 UUID */
         characteristicId: string
         /** 蓝牙特征对应服务的 UUID */
         serviceId: string
     }
-
     interface OnCharacteristicWriteRequestListenerResult {
         /** 唯一标识码，调用 [writeCharacteristicValue](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.writeCharacteristicValue.html) 时使用 */
         callbackId: number
@@ -4873,17 +4509,14 @@ declare namespace WechatMiniprogram {
         /** 请求写入特征的二进制数据值 */
         value: ArrayBuffer
     }
-
     interface OnCheckForUpdateListenerResult {
         /** 是否有新版本 */
         hasUpdate: boolean
     }
-
     interface OnChunkReceivedListenerResult {
         /** 开发者服务器每次返回新chunk时的Response */
         res: Result
     }
-
     interface OnCompassChangeListenerResult {
         /** 需要基础库： `2.4.0`
          *
@@ -4892,12 +4525,10 @@ declare namespace WechatMiniprogram {
         /** 面对的方向度数 */
         direction: number
     }
-
     interface OnCopyUrlListenerResult {
         /** 用短链打开小程序时当前页面携带的查询字符串。小程序中使用时，应在进入页面时调用 `wx.onCopyUrl` 自定义 `query`，退出页面时调用 `wx.offCopyUrl`，防止影响其它页面。 */
         query: string
     }
-
     interface OnDeviceMotionChangeListenerResult {
         /** 当 手机坐标 X/Y 和 地球 X/Y 重合时，绕着 Z 轴转动的夹角为 alpha，范围值为 [0, 2*PI)。逆时针转动为正。 */
         alpha: number
@@ -4906,26 +4537,22 @@ declare namespace WechatMiniprogram {
         /** 当手机 X/Z 和地球 X/Z 重合时，绕着 Y 轴转动的夹角为 gamma。范围值为 [-1*PI/2, PI/2)。右边朝着地球表面转动为正。 */
         gamma: number
     }
-
     interface OnDiscoveredListenerResult {
         /** NdefMessage 数组，消息格式为 {id: ArrayBuffer, type: ArrayBuffer, payload: ArrayBuffer} */
         messages: any[]
         /** tech 数组，用于匹配NFC卡片具体可以使用什么标准（NfcA等实例）处理 */
         techs: any[]
     }
-
     interface OnFrameRecordedListenerResult {
         /** 录音分片数据 */
         frameBuffer: ArrayBuffer
         /** 当前帧是否正常录音结束前的最后一帧 */
         isLastFrame: boolean
     }
-
     interface OnGetWifiListListenerResult {
         /** Wi-Fi 列表数据 */
         wifiList: WifiInfo[]
     }
-
     interface OnGyroscopeChangeListenerResult {
         /** x 轴的角速度 */
         x: number
@@ -4934,7 +4561,6 @@ declare namespace WechatMiniprogram {
         /** z 轴的角速度 */
         z: number
     }
-
     interface OnHCEMessageListenerResult {
         /** `messageType=1` 时 ,客户端接收到 NFC 设备的指令 */
         data: ArrayBuffer
@@ -4947,17 +4573,14 @@ declare namespace WechatMiniprogram {
         /** `messageType=2` 时，原因 */
         reason: number
     }
-
     interface OnHeadersReceivedListenerResult {
         /** 开发者服务器返回的 HTTP Response Header */
         header: IAnyObject
     }
-
     interface OnKeyboardHeightChangeListenerResult {
         /** 键盘高度 */
         height: number
     }
-
     interface OnLazyLoadErrorListenerResult {
         /** 详细信息 */
         errMsg: string
@@ -4966,7 +4589,6 @@ declare namespace WechatMiniprogram {
         /** 'subpackage' 失败类型 */
         type: string
     }
-
     interface OnLocalServiceFoundListenerResult {
         /** 服务的 ip 地址 */
         ip: string
@@ -4977,19 +4599,16 @@ declare namespace WechatMiniprogram {
         /** 服务的类型 */
         serviceType: string
     }
-
     interface OnLocalServiceLostListenerResult {
         /** 服务的名称 */
         serviceName: string
         /** 服务的类型 */
         serviceType: string
     }
-
     interface OnLocationChangeErrorListenerResult {
         /** 错误码 */
         errCode: number
     }
-
     interface OnLocationChangeListenerResult {
         /** 位置的精确度 */
         accuracy: number
@@ -5012,7 +4631,6 @@ declare namespace WechatMiniprogram {
          * 垂直精度，单位 m（Android 无法获取，返回 0） */
         verticalAccuracy: number
     }
-
     interface OnMemoryWarningListenerResult {
         /** 内存告警等级，只有 Android 才有，对应系统宏定义
          *
@@ -5022,7 +4640,6 @@ declare namespace WechatMiniprogram {
          * - 15: TRIM_MEMORY_RUNNING_CRITICAL; */
         level: 5 | 10 | 15
     }
-
     interface OnNetworkStatusChangeListenerResult {
         /** 当前是否有网络连接 */
         isConnected: boolean
@@ -5038,14 +4655,12 @@ declare namespace WechatMiniprogram {
          * - 'none': 无网络; */
         networkType: 'wifi' | '2g' | '3g' | '4g' | '5g' | 'unknown' | 'none'
     }
-
     interface OnNetworkWeakChangeListenerResult {
         /** 当前网络类型 */
         networkType: string
         /** 当前是否处于弱网状态 */
         weakNet: boolean
     }
-
     interface OnOpenListenerResult {
         /** 需要基础库： `2.0.0`
          *
@@ -5056,7 +4671,6 @@ declare namespace WechatMiniprogram {
          * 网络请求过程中一些调试信息 */
         profile: SocketProfile
     }
-
     interface OnPageNotFoundListenerResult {
         /** 是否本次启动的首个页面（例如从分享等入口进来，首个页面是开发者配置的分享页面） */
         isEntryPage: boolean
@@ -5065,7 +4679,6 @@ declare namespace WechatMiniprogram {
         /** 打开不存在页面的 query 参数 */
         query: IAnyObject
     }
-
     interface OnScreenRecordingStateChangedListenerResult {
         /** 录屏状态
          *
@@ -5074,14 +4687,12 @@ declare namespace WechatMiniprogram {
          * - 'stop': 结束录屏; */
         state: 'start' | 'stop'
     }
-
     interface OnSocketOpenListenerResult {
         /** 需要基础库： `2.0.0`
          *
          * 连接成功的 HTTP 响应 Header */
         header: IAnyObject
     }
-
     interface OnStopListenerResult {
         /** 录音总时长，单位：ms */
         duration: number
@@ -5090,7 +4701,6 @@ declare namespace WechatMiniprogram {
         /** 录音文件的临时路径 (本地路径) */
         tempFilePath: string
     }
-
     interface OnThemeChangeListenerResult {
         /** 系统当前的主题，取值为`light`或`dark`
          *
@@ -5099,21 +4709,18 @@ declare namespace WechatMiniprogram {
          * - 'light': 浅色主题; */
         theme: 'dark' | 'light'
     }
-
     interface OnUnhandledRejectionListenerResult {
         /** 被拒绝的 Promise 对象 */
         promise: Promise<any>
         /** 拒绝原因，一般是一个 Error 对象 */
         reason: string
     }
-
     interface OnVoIPChatInterruptedListenerResult {
         /** 错误码 */
         errCode: number
         /** 调用结果（错误原因） */
         errMsg: string
     }
-
     interface OnVoIPChatMembersChangedListenerResult {
         /** 错误码 */
         errCode: number
@@ -5122,7 +4729,6 @@ declare namespace WechatMiniprogram {
         /** 还在实时语音通话中的成员 openId 名单 */
         openIdList: string[]
     }
-
     interface OnVoIPChatSpeakersChangedListenerResult {
         /** 错误码 */
         errCode: number
@@ -5131,7 +4737,6 @@ declare namespace WechatMiniprogram {
         /** 还在实时语音通话中的成员 openId 名单 */
         openIdList: string[]
     }
-
     interface OnVoIPChatStateChangedListenerResult {
         /** 事件码 */
         code: number
@@ -5142,7 +4747,6 @@ declare namespace WechatMiniprogram {
         /** 调用结果 */
         errMsg: string
     }
-
     interface OnVoIPVideoMembersChangedListenerResult {
         /** 错误码 */
         errCode: number
@@ -5151,25 +4755,21 @@ declare namespace WechatMiniprogram {
         /** 开启视频的成员名单 */
         openIdList: string[]
     }
-
     interface OnWifiConnectedListenerResult {
         /** [WifiInfo](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/WifiInfo.html)
          *
          * Wi-Fi 信息 */
         wifi: WifiInfo
     }
-
     interface OnWifiConnectedWithPartialInfoListenerResult {
         /** [WifiInfo](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/WifiInfo.html)
          *
          * 只包含 SSID 属性的 WifiInfo 对象 */
         wifi: WifiInfo
     }
-
     interface OnWindowResizeListenerResult {
         size: Size
     }
-
     interface OpenAppAuthorizeSettingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: OpenAppAuthorizeSettingCompleteCallback
@@ -5178,7 +4778,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenAppAuthorizeSettingSuccessCallback
     }
-
     interface OpenBluetoothAdapterOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: OpenBluetoothAdapterCompleteCallback
@@ -5195,7 +4794,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenBluetoothAdapterSuccessCallback
     }
-
     interface OpenCardOption {
         /** 需要打开的卡券列表 */
         cardList: OpenCardRequestInfo[]
@@ -5206,7 +4804,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenCardSuccessCallback
     }
-
     /** 需要打开的卡券列表 */
     interface OpenCardRequestInfo {
         /** 卡券 ID */
@@ -5214,7 +4811,6 @@ declare namespace WechatMiniprogram {
         /** 由 [wx.addCard](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/card/wx.addCard.html) 的返回对象中的加密 code 通过解密后得到，解密请参照：[code 解码接口](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1499332673_Unm7V) */
         code: string
     }
-
     interface OpenChannelsActivityOption {
         /** 视频 feedId */
         feedId: string
@@ -5227,7 +4823,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenChannelsActivitySuccessCallback
     }
-
     interface OpenChannelsEventOption {
         /** 活动 id */
         eventId: string
@@ -5240,7 +4835,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenChannelsEventSuccessCallback
     }
-
     interface OpenChannelsLiveOption {
         /** 视频号 id，以“sph”开头的id，可在视频号助手获取 */
         finderUserName: string
@@ -5255,7 +4849,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenChannelsLiveSuccessCallback
     }
-
     interface OpenChannelsUserProfileOption {
         /** 视频号 id */
         finderUserName: string
@@ -5266,7 +4859,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenChannelsUserProfileSuccessCallback
     }
-
     interface OpenCustomerServiceChatOption {
         /** 企业ID */
         corpId: string
@@ -5287,7 +4879,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenCustomerServiceChatSuccessCallback
     }
-
     interface OpenDocumentOption {
         /** 文件路径 (本地路径) ，可通过 downloadFile 获得 */
         filePath: string
@@ -5315,7 +4906,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenDocumentSuccessCallback
     }
-
     interface OpenEmbeddedMiniProgramOption {
         /** 要打开的小程序 appId */
         appId: string
@@ -5347,7 +4937,6 @@ declare namespace WechatMiniprogram {
          * - 'unionProduct': 校验目标打开链接是否为[小程序联盟](https://developers.weixin.qq.com/doc/ministore/union/brief-introduction.html)商品。; */
         verify?: 'binding' | 'unionProduct'
     }
-
     interface OpenFailCallbackResult {
         /** 错误信息
          *
@@ -5355,7 +4944,6 @@ declare namespace WechatMiniprogram {
          * - 'fail no such file or directory "${filePath}"': 上级目录不存在; */
         errMsg: string
     }
-
     interface OpenLocationOption {
         /** 纬度，范围为-90~90，负数表示南纬。使用 gcj02 国测局坐标系 */
         latitude: number
@@ -5374,7 +4962,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenLocationSuccessCallback
     }
-
     interface OpenMapAppOption {
         /** 目的地名称 */
         destination: string
@@ -5389,7 +4976,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenMapAppSuccessCallback
     }
-
     interface OpenOption {
         /** 文件路径 (本地路径) */
         filePath: string
@@ -5428,7 +5014,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenSuccessCallback
     }
-
     interface OpenSettingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: OpenSettingCompleteCallback
@@ -5441,7 +5026,6 @@ declare namespace WechatMiniprogram {
          * 是否同时获取用户订阅消息的订阅状态，默认不获取。注意：withSubscriptions 只返回用户勾选过订阅面板中的“总是保持以上选择，不再询问”的订阅消息。 */
         withSubscriptions?: boolean
     }
-
     interface OpenSettingSuccessCallbackResult {
         /** [AuthSetting](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/setting/AuthSetting.html)
          *
@@ -5455,13 +5039,11 @@ declare namespace WechatMiniprogram {
         subscriptionsSetting: SubscriptionsSetting
         errMsg: string
     }
-
     interface OpenSuccessCallbackResult {
         /** 文件描述符 */
         fd: string
         errMsg: string
     }
-
     interface OpenSyncOption {
         /** 文件路径 (本地路径) */
         filePath: string
@@ -5494,7 +5076,6 @@ declare namespace WechatMiniprogram {
             | 'w+'
             | 'wx+'
     }
-
     interface OpenSystemBluetoothSettingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: OpenSystemBluetoothSettingCompleteCallback
@@ -5503,7 +5084,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenSystemBluetoothSettingSuccessCallback
     }
-
     interface OpenVideoEditorOption {
         /** 视频源的路径，只支持本地路径 */
         filePath: string
@@ -5514,7 +5094,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: OpenVideoEditorSuccessCallback
     }
-
     interface OpenVideoEditorSuccessCallbackResult {
         /** 剪辑后生成的视频文件的时长，单位毫秒（ms） */
         duration: number
@@ -5526,7 +5105,6 @@ declare namespace WechatMiniprogram {
         tempThumbPath: string
         errMsg: string
     }
-
     interface PageScrollToOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PageScrollToCompleteCallback
@@ -5562,7 +5140,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PauseBGMSuccessCallback
     }
-
     interface PauseBackgroundAudioOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PauseBackgroundAudioCompleteCallback
@@ -5571,7 +5148,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PauseBackgroundAudioSuccessCallback
     }
-
     interface PauseOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PauseCompleteCallback
@@ -5580,7 +5156,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PauseSuccessCallback
     }
-
     interface PauseVoiceOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PauseVoiceCompleteCallback
@@ -5589,7 +5164,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PauseVoiceSuccessCallback
     }
-
     /** 单条性能数据。具体数据口径请参考[性能数据文档]((performance/perf_data##_1-4-%E9%80%9A%E8%BF%87-wx-getPerformance-%E5%9C%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%86%85%E8%8E%B7%E5%8F%96)) */
     interface PerformanceEntry {
         /** 需要基础库： `2.24.0`
@@ -5704,7 +5278,6 @@ declare namespace WechatMiniprogram {
          * 渲染层执行渲染开始时间。仅 firstRender 指标有效。 */
         viewLayerRenderStartTime: number
     }
-
     /** 需要基础库： `2.11.0`
      *
      * PerformanceObserver 对象，用于监听性能相关事件 */
@@ -5712,7 +5285,6 @@ declare namespace WechatMiniprogram {
         /** 获取当前支持的所有性能指标类型 */
         supportedEntryTypes: any[]
     }
-
     /** 平面跟踪配置 */
     interface PlaneTrack {
         /** 平面跟踪配置模式
@@ -5723,7 +5295,6 @@ declare namespace WechatMiniprogram {
          * - 3: 检测横向和纵向平面，只有 v2 版本支持; */
         mode: 1 | 2 | 3
     }
-
     interface PlayBGMOption {
         /** 加入背景混音的资源地址 */
         url: string
@@ -5734,7 +5305,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PlayBGMSuccessCallback
     }
-
     interface PlayBackgroundAudioOption {
         /** 音乐链接，目前支持的格式有 m4a, aac, mp3, wav */
         dataUrl: string
@@ -5749,7 +5319,6 @@ declare namespace WechatMiniprogram {
         /** 音乐标题 */
         title?: string
     }
-
     interface PlayOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PlayCompleteCallback
@@ -5758,7 +5327,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PlaySuccessCallback
     }
-
     interface PlayVoiceOption {
         /** 需要播放的语音文件的文件路径 (本地路径) */
         filePath: string
@@ -5773,7 +5341,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PlayVoiceSuccessCallback
     }
-
     /** 插件帐号信息（仅在插件中调用时包含这一项） */
     interface Plugin {
         /** 插件 appId */
@@ -5781,7 +5348,6 @@ declare namespace WechatMiniprogram {
         /** 插件版本号 */
         version: string
     }
-
     interface PluginLoginOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PluginLoginCompleteCallback
@@ -5790,13 +5356,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PluginLoginSuccessCallback
     }
-
     interface PluginLoginSuccessCallbackResult {
         /** 用于换取 openpid 的凭证（有效期五分钟）。插件开发者可以用此 code 在开发者服务器后台调用 [auth.getPluginOpenPId](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/user-info/auth.getPluginOpenPId.html) 换取 openpid。 */
         code: string
         errMsg: string
     }
-
     interface PreloadAssetsOption {
         data: Asset[]
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -5806,7 +5370,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PreloadAssetsSuccessCallback
     }
-
     interface PreloadSkylineViewOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PreloadSkylineViewCompleteCallback
@@ -5815,7 +5378,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PreloadSkylineViewSuccessCallback
     }
-
     interface PreloadWebviewOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: PreloadWebviewCompleteCallback
@@ -5824,7 +5386,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PreloadWebviewSuccessCallback
     }
-
     interface PreviewImageOption {
         /** 需要预览的图片链接列表。[2.2.3](https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html) 起支持云文件ID。 */
         urls: string[]
@@ -5845,7 +5406,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PreviewImageSuccessCallback
     }
-
     interface PreviewMediaOption {
         /** 需要预览的资源列表 */
         sources: MediaSource[]
@@ -5866,7 +5426,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: PreviewMediaSuccessCallback
     }
-
     /** 推广员 */
     interface PromoterResult {
         /** 推广员昵称 */
@@ -5876,7 +5435,6 @@ declare namespace WechatMiniprogram {
         /** 推广员 openid */
         promoterOpenId: string
     }
-
     interface ReLaunchOption {
         /** 需要跳转的应用内页面路径 (代码包路径)，路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2' */
         url: string
@@ -5887,7 +5445,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReLaunchSuccessCallback
     }
-
     interface ReadBLECharacteristicValueOption {
         /** 蓝牙特征的 UUID */
         characteristicId: string
@@ -5902,7 +5459,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReadBLECharacteristicValueSuccessCallback
     }
-
     interface ReadCompressedFileFailCallbackResult {
         /** 错误信息
          *
@@ -5912,7 +5468,6 @@ declare namespace WechatMiniprogram {
          * - 'fail permission denied, open ${dirPath}': 指定的 filePath 路径没有读权限; */
         errMsg: string
     }
-
     interface ReadCompressedFileOption {
         /** 文件压缩类型，目前仅支持 'br'。
          *
@@ -5928,13 +5483,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReadCompressedFileSuccessCallback
     }
-
     interface ReadCompressedFileSuccessCallbackResult {
         /** 文件内容 */
         data: ArrayBuffer
         errMsg: string
     }
-
     interface ReadCompressedFileSyncOption {
         /** 文件压缩类型，目前仅支持 'br'。
          *
@@ -5944,7 +5497,6 @@ declare namespace WechatMiniprogram {
         /** 要读取的文件的路径 (本地用户文件或代码包文件) */
         filePath: string
     }
-
     interface ReadFailCallbackResult {
         /** 错误信息
          *
@@ -5957,7 +5509,6 @@ declare namespace WechatMiniprogram {
          * - 'bad file descriptor': 无效的文件描述符; */
         errMsg: string
     }
-
     interface ReadFileFailCallbackResult {
         /** 错误信息
          *
@@ -5968,7 +5519,6 @@ declare namespace WechatMiniprogram {
          * - 'native buffer exceed size limit': 文件大小超出上限（100M）; */
         errMsg: string
     }
-
     interface ReadFileOption {
         /** 要读取的文件的路径 (本地路径) */
         filePath: string
@@ -6013,13 +5563,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReadFileSuccessCallback
     }
-
     interface ReadFileSuccessCallbackResult {
         /** 文件内容 */
         data: string | ArrayBuffer
         errMsg: string
     }
-
     interface ReadOption {
         /** 数据写入的缓冲区，必须是 ArrayBuffer 实例 */
         arrayBuffer: ArrayBuffer
@@ -6038,7 +5586,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReadSuccessCallback
     }
-
     /** 文件读取结果。 通过 [FileSystemManager.readSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readSync.html) 接口返回 */
     interface ReadResult {
         /** 被写入的缓存区的对象，即接口入参的 arrayBuffer */
@@ -6046,7 +5593,6 @@ declare namespace WechatMiniprogram {
         /** 实际读取的字节数 */
         bytesRead: number
     }
-
     interface ReadSuccessCallbackResult {
         /** 被写入的缓存区的对象，即接口入参的 arrayBuffer */
         arrayBuffer: ArrayBuffer
@@ -6054,7 +5600,6 @@ declare namespace WechatMiniprogram {
         bytesRead: number
         errMsg: string
     }
-
     interface ReadSyncOption {
         /** 数据写入的缓冲区，必须是 ArrayBuffer 实例 */
         arrayBuffer: ArrayBuffer
@@ -6067,7 +5612,6 @@ declare namespace WechatMiniprogram {
         /** 文件读取的起始位置，如不传或传 null，则会从当前文件指针的位置读取。如果 position 是正整数，则文件指针位置会保持不变并从 position 读取文件。 */
         position?: number
     }
-
     interface ReadZipEntryFailCallbackResult {
         /** 错误信息
          *
@@ -6077,7 +5621,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface ReadZipEntryOption {
         /** 要读取的压缩包内的文件列表（当传入"all" 时表示读取压缩包内所有文件） */
         entries: EntryItem[] | 'all'
@@ -6116,13 +5659,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReadZipEntrySuccessCallback
     }
-
     interface ReadZipEntrySuccessCallbackResult {
         /** 文件读取结果。res.entries 是一个对象，key是文件路径，value是一个对象 FileItem ，表示该文件的读取结果。每个 FileItem 包含 data （文件内容） 和 errMsg （错误信息） 属性。 */
         entries: EntriesResult
         errMsg: string
     }
-
     interface ReaddirFailCallbackResult {
         /** 错误信息
          *
@@ -6133,7 +5674,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface ReaddirOption {
         /** 要读取的目录路径 (本地路径) */
         dirPath: string
@@ -6144,13 +5684,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ReaddirSuccessCallback
     }
-
     interface ReaddirSuccessCallbackResult {
         /** 指定目录下的文件名数组。 */
         files: string[]
         errMsg: string
     }
-
     interface RecorderManagerStartOption {
         /** 需要基础库： `2.1.0`
          *
@@ -6215,7 +5753,6 @@ declare namespace WechatMiniprogram {
             | 44100
             | 48000
     }
-
     interface RedirectToOption {
         /** 需要跳转的应用内非 tabBar 的页面的路径 (代码包路径), 路径后可以带参数。参数与路径之间使用 `?` 分隔，参数键与参数值用 `=` 相连，不同参数用 `&` 分隔；如 'path?key=value&key2=value2' */
         url: string
@@ -6226,7 +5763,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RedirectToSuccessCallback
     }
-
     interface RedoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: RedoCompleteCallback
@@ -6235,7 +5771,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RedoSuccessCallback
     }
-
     /** 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 `{}`。(参见后文注意) */
     interface ReferrerInfo {
         /** 来源小程序、公众号或 App 的 appId */
@@ -6243,7 +5778,6 @@ declare namespace WechatMiniprogram {
         /** 来源小程序传过来的数据，scene=1037或1038时支持 */
         extraData: IAnyObject
     }
-
     /** 参照区域的边界 */
     interface RelativeRectResult {
         /** 下边界 */
@@ -6255,7 +5789,6 @@ declare namespace WechatMiniprogram {
         /** 上边界 */
         top: number
     }
-
     /** 发送端地址信息 */
     interface RemoteInfo {
         /** 发送消息的 socket 的地址 */
@@ -6267,7 +5800,6 @@ declare namespace WechatMiniprogram {
         /** message 的大小，单位：字节 */
         size: number
     }
-
     interface RemoveArcOption {
         /** 圆弧 id */
         id: number
@@ -6278,7 +5810,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveArcSuccessCallback
     }
-
     interface RemoveCustomLayerOption {
         /** 个性化图层id */
         layerId: string
@@ -6289,7 +5820,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveCustomLayerSuccessCallback
     }
-
     interface RemoveFormatOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: RemoveFormatCompleteCallback
@@ -6298,7 +5828,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveFormatSuccessCallback
     }
-
     interface RemoveGroundOverlayOption {
         /** 图片图层 id */
         id: string
@@ -6309,7 +5838,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveGroundOverlaySuccessCallback
     }
-
     interface RemoveMarkersOption {
         /** marker 的 id 集合。 */
         markerIds: any[]
@@ -6320,7 +5848,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveMarkersSuccessCallback
     }
-
     interface RemoveSavedFileFailCallbackResult {
         /** 错误信息
          *
@@ -6328,7 +5855,6 @@ declare namespace WechatMiniprogram {
          * - 'fail file not exist': 指定的 tempFilePath 找不到文件; */
         errMsg: string
     }
-
     interface RemoveServiceOption {
         /** service 的 UUID */
         serviceId: string
@@ -6339,7 +5865,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveServiceSuccessCallback
     }
-
     interface RemoveStorageOption {
         /** 本地缓存中指定的 key */
         key: string
@@ -6350,7 +5875,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveStorageSuccessCallback
     }
-
     interface RemoveTabBarBadgeOption {
         /** tabBar 的哪一项，从左边算起 */
         index: number
@@ -6361,7 +5885,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveTabBarBadgeSuccessCallback
     }
-
     interface RemoveVisualLayerOption {
         /** 可视化图层id */
         layerId: string
@@ -6372,7 +5895,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveVisualLayerSuccessCallback
     }
-
     interface RenameFailCallbackResult {
         /** 错误信息
          *
@@ -6381,7 +5903,6 @@ declare namespace WechatMiniprogram {
          * - 'fail no such file or directory, rename ${oldPath} -> ${newPath}': 源文件不存在，或目标文件路径的上层目录不存在; */
         errMsg: string
     }
-
     interface RenameOption {
         /** 新文件路径，支持本地路径 */
         newPath: string
@@ -6394,7 +5915,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RenameSuccessCallback
     }
-
     /** Canvas 绘图上下文。
      *
      * ****
@@ -6495,7 +6015,6 @@ declare namespace WechatMiniprogram {
          * 超时时间，单位为毫秒。默认值为 60000 */
         timeout?: number
     }
-
     interface RequestOrderPaymentOption {
         /** 随机字符串，长度为32个字符以下 */
         nonceStr: string
@@ -6523,7 +6042,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RequestOrderPaymentSuccessCallback
     }
-
     interface RequestPaymentOption {
         /** 随机字符串，长度为32个字符以下 */
         nonceStr: string
@@ -6547,7 +6065,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RequestPaymentSuccessCallback
     }
-
     interface RequestPictureInPictureOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: RequestPictureInPictureCompleteCallback
@@ -6556,7 +6073,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RequestPictureInPictureSuccessCallback
     }
-
     interface RequestPluginPaymentOption {
         /** 需要显示在页面中的金额，单位为分 */
         fee: number
@@ -6578,7 +6094,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RequestPluginPaymentSuccessCallback
     }
-
     /** 需要基础库： `2.10.4`
      *
      * 网络请求过程中一些调试信息，[查看详细说明](https://developers.weixin.qq.com/miniprogram/dev/framework/performance/network.html) */
@@ -6634,14 +6149,12 @@ declare namespace WechatMiniprogram {
         /** 传输层根据多个请求评估的当前网络的 rtt（仅供参考） */
         transportRttEstimate: number
     }
-
     interface RequestSubscribeDeviceMessageFailCallbackResult {
         /** 接口调用失败错误码，有可能为空 */
         errCode: number
         /** 接口调用失败错误信息 */
         errMsg: string
     }
-
     interface RequestSubscribeDeviceMessageOption {
         /** 设备型号 id 。通过微信公众平台注册设备获得。 */
         modelId: string
@@ -6658,22 +6171,18 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RequestSubscribeDeviceMessageSuccessCallback
     }
-
     interface RequestSubscribeDeviceMessageSuccessCallbackResult {
         /** [TEMPLATE_ID]是动态的键，即模板id，值包括'accept'、'reject'、'ban'、'filter'、'acceptWithAudio'。'accept'表示用户同意订阅该条id对应的模板消息，'reject'表示用户拒绝订阅该条id对应的模板消息，'ban'表示已被后台封禁，'acceptWithAudio' 表示用户接收订阅消息并开启了语音提醒，'filter'表示该模板因为模板标题同名被后台过滤。例如 { errMsg: "requestSubscribeDeviceMessage:ok", zun-LzcQyW-edafCVvzPkK4de2Rllr1fFpw2A_x0oXE: "accept"} 表示用户同意订阅zun-LzcQyW-edafCVvzPkK4de2Rllr1fFpw2A_x0oXE这条消息 */
         [TEMPLATE_ID: string]: string
-
         /** 接口调用成功时errMsg值为'requestSubscribeDeviceMessage:ok' */
         errMsg: string
     }
-
     interface RequestSubscribeMessageFailCallbackResult {
         /** 接口调用失败错误码 */
         errCode: number
         /** 接口调用失败错误信息 */
         errMsg: string
     }
-
     interface RequestSubscribeMessageOption {
         /** 需要订阅的消息模板的id的集合，一次调用最多可订阅3条消息（注意：iOS客户端7.0.6版本、Android客户端7.0.7版本之后的一次性订阅/长期订阅才支持多个模板消息，iOS客户端7.0.5版本、Android客户端7.0.6版本之前的一次订阅只支持一个模板消息）消息模板id在[微信公众平台(mp.weixin.qq.com)-功能-订阅消息]中配置。每个tmplId对应的模板标题需要不相同，否则会被过滤。 */
         tmplIds: any[]
@@ -6715,18 +6224,15 @@ declare namespace WechatMiniprogram {
         statusCode: number
         errMsg: string
     }
-
     interface ReserveChannelsLiveOption {
         /** 预告 id，通过 getChannelsLiveNoticeInfo 接口获取 */
         noticeId: string
     }
-
     /** 开发者服务器每次返回新chunk时的Response */
     interface Result {
         /** 返回的chunk buffer */
         data: ArrayBuffer
     }
-
     interface ResumeBGMOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ResumeBGMCompleteCallback
@@ -6735,7 +6241,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ResumeBGMSuccessCallback
     }
-
     interface ResumeOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ResumeCompleteCallback
@@ -6744,14 +6249,12 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ResumeSuccessCallback
     }
-
     interface RewardedVideoAdOnCloseListenerResult {
         /** 需要基础库： `2.1.0`
          *
          * 视频是否是在用户完整观看的情况下被关闭的 */
         isEnded: boolean
     }
-
     interface RewardedVideoAdOnErrorListenerResult {
         /** 需要基础库： `2.2.2`
          *
@@ -6771,7 +6274,6 @@ declare namespace WechatMiniprogram {
         /** 错误信息 */
         errMsg: string
     }
-
     interface RmdirFailCallbackResult {
         /** 错误信息
          *
@@ -6782,7 +6284,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface RmdirOption {
         /** 要删除的目录路径 (本地路径) */
         dirPath: string
@@ -6797,7 +6298,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RmdirSuccessCallback
     }
-
     interface SafeArea {
         /** 安全区域右下角纵坐标 */
         bottom: number
@@ -6812,7 +6312,6 @@ declare namespace WechatMiniprogram {
         /** 安全区域的宽度，单位逻辑像素 */
         width: number
     }
-
     interface SaveFileFailCallbackResult {
         /** 错误信息
          *
@@ -6824,13 +6323,11 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface SaveFileSuccessCallbackResult {
         /** 存储后的文件路径 (本地路径) */
         savedFilePath: string
         errMsg: string
     }
-
     interface SaveFileToDiskOption {
         /** 待保存文件路径 */
         filePath: string
@@ -6841,7 +6338,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SaveFileToDiskSuccessCallback
     }
-
     interface SaveImageToPhotosAlbumOption {
         /** 图片文件路径，可以是临时文件路径或永久文件路径 (本地路径) ，不支持网络路径 */
         filePath: string
@@ -6852,7 +6348,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SaveImageToPhotosAlbumSuccessCallback
     }
-
     interface SaveVideoToPhotosAlbumOption {
         /** 视频文件路径，可以是临时文件路径也可以是永久文件路径 (本地路径) */
         filePath: string
@@ -6863,7 +6358,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SaveVideoToPhotosAlbumSuccessCallback
     }
-
     interface ScanCodeOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ScanCodeCompleteCallback
@@ -6886,7 +6380,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ScanCodeSuccessCallback
     }
-
     interface ScanCodeSuccessCallbackResult {
         /** 所扫码的字符集 */
         charSet: string
@@ -6940,7 +6433,6 @@ declare namespace WechatMiniprogram {
             | 'CODE_25'
         errMsg: string
     }
-
     interface ScrollOffsetCallbackResult {
         /** 节点的 dataset */
         dataset: IAnyObject
@@ -6951,7 +6443,6 @@ declare namespace WechatMiniprogram {
         /** 节点的竖直滚动位置 */
         scrollTop: number
     }
-
     interface ScrollToOption {
         /** 是否启用滚动动画 */
         animated?: boolean
@@ -6994,7 +6485,6 @@ declare namespace WechatMiniprogram {
         /** 设置是否显示滚动条 */
         showScrollbar: boolean
     }
-
     interface SeekBackgroundAudioOption {
         /** 音乐位置，单位：秒 */
         position: number
@@ -7005,7 +6495,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SeekBackgroundAudioSuccessCallback
     }
-
     interface SendHCEMessageOption {
         /** 二进制数据 */
         data: ArrayBuffer
@@ -7016,7 +6505,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SendHCEMessageSuccessCallback
     }
-
     interface SendMessageOption {
         /** SEI消息 */
         msg: string
@@ -7027,7 +6515,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SendMessageSuccessCallback
     }
-
     interface SendSmsOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SendSmsCompleteCallback
@@ -7040,7 +6527,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SendSmsSuccessCallback
     }
-
     interface SendSocketMessageOption {
         /** 需要发送的内容 */
         data: string | ArrayBuffer
@@ -7051,7 +6537,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SendSocketMessageSuccessCallback
     }
-
     interface SetBGMVolumeOption {
         /** 音量大小，范围是 0-1 */
         volume: string
@@ -7062,12 +6547,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetBGMVolumeSuccessCallback
     }
-
     interface SetBLEMTUFailCallbackResult {
         /** 最终协商的 MTU 值。如果协商失败则无此参数。安卓客户端 8.0.9 开始支持。 */
         mtu: number
     }
-
     interface SetBLEMTUOption {
         /** 蓝牙设备 id */
         deviceId: string
@@ -7080,13 +6563,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetBLEMTUSuccessCallback
     }
-
     interface SetBLEMTUSuccessCallbackResult {
         /** 最终协商的 MTU 值，与传入参数一致。安卓客户端 8.0.9 开始支持。 */
         mtu: number
         errMsg: string
     }
-
     interface SetBackgroundColorOption {
         /** 窗口的背景色，必须为十六进制颜色值 */
         backgroundColor?: string
@@ -7101,7 +6582,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetBackgroundColorSuccessCallback
     }
-
     interface SetBackgroundFetchTokenOption {
         /** 自定义的登录态 */
         token: string
@@ -7112,7 +6592,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetBackgroundFetchTokenSuccessCallback
     }
-
     interface SetBackgroundTextStyleOption {
         /** 下拉背景字体、loading 图的样式。
          *
@@ -7127,7 +6606,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetBackgroundTextStyleSuccessCallback
     }
-
     interface SetBoundaryOption {
         /** 东北角经纬度 */
         northeast: MapPostion
@@ -7140,7 +6618,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetBoundarySuccessCallback
     }
-
     interface SetCenterOffsetOption {
         /** 偏移量，两位数组 */
         offset: number[]
@@ -7151,7 +6628,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetCenterOffsetSuccessCallback
     }
-
     interface SetClipboardDataOption {
         /** 剪贴板的内容 */
         data: string
@@ -7162,7 +6638,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetClipboardDataSuccessCallback
     }
-
     interface SetContentsOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SetContentsCompleteCallback
@@ -7175,7 +6650,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetContentsSuccessCallback
     }
-
     interface SetEnable1v1ChatOption {
         /** 是否开启 */
         enable: boolean
@@ -7198,7 +6672,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetEnable1v1ChatSuccessCallback
     }
-
     interface SetEnableDebugOption {
         /** 是否打开调试 */
         enableDebug: boolean
@@ -7209,7 +6682,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetEnableDebugSuccessCallback
     }
-
     interface SetInnerAudioOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SetInnerAudioOptionCompleteCallback
@@ -7224,7 +6696,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetInnerAudioOptionSuccessCallback
     }
-
     interface SetKeepScreenOnOption {
         /** 是否保持屏幕常亮 */
         keepScreenOn: boolean
@@ -7235,7 +6706,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetKeepScreenOnSuccessCallback
     }
-
     interface SetLocMarkerIconOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SetLocMarkerIconCompleteCallback
@@ -7246,7 +6716,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetLocMarkerIconSuccessCallback
     }
-
     interface SetMICVolumeOption {
         /** 音量大小，范围是 0.0-1.0 */
         volume: number
@@ -7257,7 +6726,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetMICVolumeSuccessCallback
     }
-
     interface SetNavigationBarColorOption {
         /** 背景颜色值，有效值为十六进制颜色 */
         backgroundColor: string
@@ -7272,7 +6740,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetNavigationBarColorSuccessCallback
     }
-
     interface SetNavigationBarTitleOption {
         /** 页面标题 */
         title: string
@@ -7283,7 +6750,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetNavigationBarTitleSuccessCallback
     }
-
     interface SetScreenBrightnessOption {
         /** 屏幕亮度值，范围 0 ~ 1，0 最暗，1 最亮。在安卓端支持传入特殊值 -1，表示屏幕亮度跟随系统变化 */
         value: number
@@ -7294,7 +6760,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetScreenBrightnessSuccessCallback
     }
-
     interface SetStorageOption<T = any> {
         /** 需要存储的内容。只支持原生类型、Date、及能够通过`JSON.stringify`序列化的对象。 */
         data: T
@@ -7311,7 +6776,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetStorageSuccessCallback
     }
-
     interface SetTabBarBadgeOption {
         /** tabBar 的哪一项，从左边算起 */
         index: number
@@ -7324,7 +6788,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetTabBarBadgeSuccessCallback
     }
-
     interface SetTabBarItemOption {
         /** tabBar 的哪一项，从左边算起 */
         index: number
@@ -7341,7 +6804,6 @@ declare namespace WechatMiniprogram {
         /** tab 上的按钮文字 */
         text?: string
     }
-
     interface SetTabBarStyleOption {
         /** tab 的背景色，HexColor */
         backgroundColor?: string
@@ -7358,7 +6820,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetTabBarStyleSuccessCallback
     }
-
     interface SetTimeoutOption {
         /** 设置超时时间 (ms) */
         timeout: number
@@ -7369,7 +6830,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetTimeoutSuccessCallback
     }
-
     interface SetTopBarTextOption {
         /** 置顶栏文字 */
         text: string
@@ -7380,7 +6840,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetTopBarTextSuccessCallback
     }
-
     interface SetVisualEffectOnCaptureOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SetVisualEffectOnCaptureCompleteCallback
@@ -7391,7 +6850,6 @@ declare namespace WechatMiniprogram {
         /** 截屏/录屏时的表现，仅支持 none / hidden，传入 hidden 则表示在截屏/录屏时隐藏屏幕 */
         visualEffect?: string
     }
-
     interface SetWifiListOption {
         /** 提供预设的 Wi-Fi 信息列表 */
         wifiList: WifiData[]
@@ -7402,7 +6860,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetWifiListSuccessCallback
     }
-
     interface SetWindowSizeOption {
         /** 窗口高度，以像素为单位 */
         height: number
@@ -7415,7 +6872,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetWindowSizeSuccessCallback
     }
-
     interface SetZoomOption {
         /** 缩放级别，范围[1, maxZoom]。zoom 可取小数，精确到小数后一位。maxZoom 可在 bindinitdone 返回值中获取。 */
         zoom: number
@@ -7426,13 +6882,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SetZoomSuccessCallback
     }
-
     interface SetZoomSuccessCallbackResult {
         /** 实际设置的缩放级别。由于系统限制，某些机型可能无法设置成指定值，会改用最接近的可设值。 */
         zoom: number
         errMsg: string
     }
-
     interface ShareFileMessageOption {
         /** 要分享的文件地址，必须为本地路径或临时路径 */
         filePath: string
@@ -7445,7 +6899,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShareFileMessageSuccessCallback
     }
-
     interface ShareToWeRunOption {
         /** 运动数据列表 */
         recordList: WxaSportRecord[]
@@ -7456,7 +6909,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShareToWeRunSuccessCallback
     }
-
     interface ShareVideoMessageOption {
         /** 要分享的视频地址，必须为本地路径或临时路径 */
         videoPath: string
@@ -7469,7 +6921,6 @@ declare namespace WechatMiniprogram {
         /** 缩略图路径，若留空则使用视频首帧 */
         thumbPath?: string
     }
-
     interface ShowActionSheetOption {
         /** 按钮的文字数组，数组长度最大为 6 */
         itemList: string[]
@@ -7486,13 +6937,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowActionSheetSuccessCallback
     }
-
     interface ShowActionSheetSuccessCallbackResult {
         /** 用户点击的按钮序号，从上到下的顺序，从0开始 */
         tapIndex: number
         errMsg: string
     }
-
     interface ShowLoadingOption {
         /** 提示的内容 */
         title: string
@@ -7505,7 +6954,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowLoadingSuccessCallback
     }
-
     interface ShowModalOption {
         /** 取消按钮的文字颜色，必须是 16 进制格式的颜色字符串 */
         cancelColor?: string
@@ -7536,7 +6984,6 @@ declare namespace WechatMiniprogram {
         /** 提示的标题 */
         title?: string
     }
-
     interface ShowModalSuccessCallbackResult {
         /** 需要基础库： `1.1.0`
          *
@@ -7548,7 +6995,6 @@ declare namespace WechatMiniprogram {
         content: string
         errMsg: string
     }
-
     interface ShowNavigationBarLoadingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ShowNavigationBarLoadingCompleteCallback
@@ -7557,7 +7003,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowNavigationBarLoadingSuccessCallback
     }
-
     interface ShowRedPackageOption {
         /** 封面地址 */
         url: string
@@ -7568,7 +7013,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowRedPackageSuccessCallback
     }
-
     interface ShowShareImageMenuOption {
         /** 要分享的图片地址，必须为本地路径或临时路径 */
         path: string
@@ -7579,7 +7023,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowShareImageMenuSuccessCallback
     }
-
     interface ShowShareMenuOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ShowShareMenuCompleteCallback
@@ -7594,7 +7037,6 @@ declare namespace WechatMiniprogram {
         /** 是否使用带 shareTicket 的转发[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) */
         withShareTicket?: boolean
     }
-
     interface ShowTabBarOption {
         /** 是否需要动画效果 */
         animation?: boolean
@@ -7605,7 +7047,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowTabBarSuccessCallback
     }
-
     interface ShowTabBarRedDotOption {
         /** tabBar 的哪一项，从左边算起 */
         index: number
@@ -7616,7 +7057,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowTabBarRedDotSuccessCallback
     }
-
     interface ShowToastOption {
         /** 提示的内容 */
         title: string
@@ -7643,14 +7083,12 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ShowToastSuccessCallback
     }
-
     interface Size {
         /** 变化后的窗口高度，单位 px */
         windowHeight: number
         /** 变化后的窗口宽度，单位 px */
         windowWidth: number
     }
-
     /** 需要基础库： `2.10.4`
      *
      * 网络请求过程中一些调试信息 */
@@ -7672,7 +7110,6 @@ declare namespace WechatMiniprogram {
         /** 单次连接的耗时，包括 connect ，tls */
         rtt: number
     }
-
     interface SocketTaskCloseOption {
         /** 一个数字值表示关闭连接的状态号，表示连接被关闭的原因。 */
         code?: number
@@ -7685,19 +7122,16 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: FileSystemManagerCloseSuccessCallback
     }
-
     interface SocketTaskOnCloseListenerResult {
         /** 一个数字值表示关闭连接的状态号，表示连接被关闭的原因。 */
         code: number
         /** 一个可读的字符串，表示连接被关闭的原因。 */
         reason: string
     }
-
     interface SocketTaskOnMessageListenerResult {
         /** 服务器返回的消息 */
         data: string | ArrayBuffer
     }
-
     interface SocketTaskSendOption {
         /** 需要发送的内容 */
         data: string | ArrayBuffer
@@ -7708,7 +7142,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SendSuccessCallback
     }
-
     interface StartAccelerometerOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartAccelerometerCompleteCallback
@@ -7726,7 +7159,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartAccelerometerSuccessCallback
     }
-
     interface StartAdvertisingObject {
         /** 广播自定义参数 */
         advertiseRequest: AdvertiseReqObj
@@ -7744,7 +7176,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartAdvertisingSuccessCallback
     }
-
     interface StartBeaconDiscoveryOption {
         /** Beacon 设备广播的 UUID 列表 */
         uuids: string[]
@@ -7757,7 +7188,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartBeaconDiscoverySuccessCallback
     }
-
     interface StartBluetoothDevicesDiscoveryOption {
         /** 是否允许重复上报同一设备。如果允许重复上报，则 [wx.onBlueToothDeviceFound](#) 方法会多次上报同一设备，但是 RSSI 值会有不同。 */
         allowDuplicatesKey?: boolean
@@ -7779,7 +7209,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartBluetoothDevicesDiscoverySuccessCallback
     }
-
     interface StartCompassOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartCompassCompleteCallback
@@ -7788,7 +7217,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartCompassSuccessCallback
     }
-
     interface StartDeviceMotionListeningOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartDeviceMotionListeningCompleteCallback
@@ -7804,7 +7232,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartDeviceMotionListeningSuccessCallback
     }
-
     interface StartDiscoveryOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartDiscoveryCompleteCallback
@@ -7813,7 +7240,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartDiscoverySuccessCallback
     }
-
     interface StartGyroscopeOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartGyroscopeCompleteCallback
@@ -7829,7 +7255,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartGyroscopeSuccessCallback
     }
-
     interface StartHCEOption {
         /** 需要注册到系统的 AID 列表 */
         aid_list: string[]
@@ -7840,7 +7265,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartHCESuccessCallback
     }
-
     interface StartLocalServiceDiscoveryFailCallbackResult {
         /** 错误信息
          *
@@ -7849,7 +7273,6 @@ declare namespace WechatMiniprogram {
          * - 'scan task already exist': 在当前 startLocalServiceDiscovery 发起的搜索未停止的情况下，再次调用 startLocalServiceDiscovery; */
         errMsg: string
     }
-
     interface StartLocalServiceDiscoveryOption {
         /** 要搜索的服务类型 */
         serviceType: string
@@ -7860,7 +7283,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartLocalServiceDiscoverySuccessCallback
     }
-
     interface StartLocationUpdateBackgroundOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartLocationUpdateBackgroundCompleteCallback
@@ -7871,7 +7293,6 @@ declare namespace WechatMiniprogram {
         /** wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 */
         type?: string
     }
-
     interface StartLocationUpdateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartLocationUpdateCompleteCallback
@@ -7882,7 +7303,6 @@ declare namespace WechatMiniprogram {
         /** wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标 */
         type?: string
     }
-
     interface StartPreviewOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartPreviewCompleteCallback
@@ -7891,7 +7311,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartPreviewSuccessCallback
     }
-
     interface StartPullDownRefreshOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartPullDownRefreshCompleteCallback
@@ -7900,20 +7319,17 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartPullDownRefreshSuccessCallback
     }
-
     interface StartRecordSuccessCallbackResult {
         /** 录音文件的临时路径 (本地路径) */
         tempFilePath: string
         errMsg: string
     }
-
     interface StartRecordTimeoutCallbackResult {
         /** 封面图片文件的临时路径 (本地路径) */
         tempThumbPath: string
         /** 视频的文件的临时路径 (本地路径) */
         tempVideoPath: string
     }
-
     interface StartSoterAuthenticationOption {
         /** 挑战因子。挑战因子为调用者为此次生物鉴权准备的用于签名的字符串关键识别信息，将作为 `resultJSON` 的一部分，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数。 */
         challenge: string
@@ -7933,7 +7349,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartSoterAuthenticationSuccessCallback
     }
-
     interface StartSoterAuthenticationSuccessCallbackResult {
         /** 生物认证方式 */
         authMode: string
@@ -7946,7 +7361,6 @@ declare namespace WechatMiniprogram {
         /** 用SOTER安全密钥对 `resultJSON` 的签名(SHA256 with RSA/PSS, saltlen=20) */
         resultJSONSignature: string
     }
-
     interface StartWifiOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartWifiCompleteCallback
@@ -7955,7 +7369,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StartWifiSuccessCallback
     }
-
     interface StatFailCallbackResult {
         /** 错误信息
          *
@@ -7965,7 +7378,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface StatOption {
         /** 文件/目录路径 (本地路径) */
         path: string
@@ -7980,7 +7392,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StatSuccessCallback
     }
-
     interface StatSuccessCallbackResult {
         /** [Stats](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.html)|Array.&lt;[Stats](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.html)&gt;
          *
@@ -7988,7 +7399,6 @@ declare namespace WechatMiniprogram {
         stats: Stats | Stats[]
         errMsg: string
     }
-
     /** 描述文件状态的对象 */
     interface Stats {
         /** 文件最近一次被存取或被执行的时间，UNIX 时间戳，对应 POSIX stat.st_atime */
@@ -8000,7 +7410,6 @@ declare namespace WechatMiniprogram {
         /** 文件大小，单位：B，对应 POSIX stat.st_size */
         size: number
     }
-
     interface StepOption {
         /** 动画延迟时间，单位 ms */
         delay?: number
@@ -8026,7 +7435,6 @@ declare namespace WechatMiniprogram {
             | 'step-end'
         transformOrigin?: string
     }
-
     interface StopAccelerometerOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopAccelerometerCompleteCallback
@@ -8035,7 +7443,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopAccelerometerSuccessCallback
     }
-
     interface StopAdvertisingOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopAdvertisingCompleteCallback
@@ -8044,7 +7451,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopAdvertisingSuccessCallback
     }
-
     interface StopBGMOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopBGMCompleteCallback
@@ -8053,7 +7459,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopBGMSuccessCallback
     }
-
     interface StopBackgroundAudioOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopBackgroundAudioCompleteCallback
@@ -8062,7 +7467,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopBackgroundAudioSuccessCallback
     }
-
     interface StopBeaconDiscoveryOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopBeaconDiscoveryCompleteCallback
@@ -8071,7 +7475,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopBeaconDiscoverySuccessCallback
     }
-
     interface StopBluetoothDevicesDiscoveryOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopBluetoothDevicesDiscoveryCompleteCallback
@@ -8080,7 +7483,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopBluetoothDevicesDiscoverySuccessCallback
     }
-
     interface StopCompassOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopCompassCompleteCallback
@@ -8089,7 +7491,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopCompassSuccessCallback
     }
-
     interface StopDeviceMotionListeningOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopDeviceMotionListeningCompleteCallback
@@ -8098,7 +7499,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopDeviceMotionListeningSuccessCallback
     }
-
     interface StopDiscoveryOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopDiscoveryCompleteCallback
@@ -8107,7 +7507,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopDiscoverySuccessCallback
     }
-
     interface StopFaceDetectOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopFaceDetectCompleteCallback
@@ -8116,7 +7515,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopFaceDetectSuccessCallback
     }
-
     interface StopGyroscopeOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopGyroscopeCompleteCallback
@@ -8125,7 +7523,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopGyroscopeSuccessCallback
     }
-
     interface StopHCEOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopHCECompleteCallback
@@ -8134,7 +7531,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopHCESuccessCallback
     }
-
     interface StopLocalServiceDiscoveryFailCallbackResult {
         /** 错误信息
          *
@@ -8142,7 +7538,6 @@ declare namespace WechatMiniprogram {
          * - 'task not found': 在当前没有处在搜索服务中的情况下调用 stopLocalServiceDiscovery; */
         errMsg: string
     }
-
     interface StopLocalServiceDiscoveryOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopLocalServiceDiscoveryCompleteCallback
@@ -8151,7 +7546,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopLocalServiceDiscoverySuccessCallback
     }
-
     interface StopLocationUpdateOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopLocationUpdateCompleteCallback
@@ -8160,7 +7554,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopLocationUpdateSuccessCallback
     }
-
     interface StopOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopCompleteCallback
@@ -8169,7 +7562,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopSuccessCallback
     }
-
     interface StopPreviewOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopPreviewCompleteCallback
@@ -8178,7 +7570,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopPreviewSuccessCallback
     }
-
     interface StopPullDownRefreshOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopPullDownRefreshCompleteCallback
@@ -8187,7 +7578,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopPullDownRefreshSuccessCallback
     }
-
     interface StopRecordSuccessCallbackResult {
         /** 封面图片文件的临时路径 (本地路径) */
         tempThumbPath: string
@@ -8195,7 +7585,6 @@ declare namespace WechatMiniprogram {
         tempVideoPath: string
         errMsg: string
     }
-
     interface StopVoiceOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopVoiceCompleteCallback
@@ -8204,7 +7593,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopVoiceSuccessCallback
     }
-
     interface StopWifiOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopWifiCompleteCallback
@@ -8213,7 +7601,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: StopWifiSuccessCallback
     }
-
     interface SubscribeVoIPVideoMembersOption {
         /** 订阅的成员列表 */
         openIdList: string[]
@@ -8259,7 +7646,6 @@ declare namespace WechatMiniprogram {
          *  - itemSettings 只返回用户勾选过订阅面板中的“总是保持以上选择，不再询问”的订阅消息。 */
         itemSettings?: IAnyObject
     }
-
     interface SwitchCameraOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: SwitchCameraCompleteCallback
@@ -8268,7 +7654,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SwitchCameraSuccessCallback
     }
-
     interface SwitchTabOption {
         /** 需要跳转的 tabBar 页面的路径 (代码包路径)（需在 app.json 的 [tabBar](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#tabbar) 字段定义的页面），路径后不能带参数。 */
         url: string
@@ -8279,7 +7664,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SwitchTabSuccessCallback
     }
-
     interface SystemInfo {
         /** 需要基础库： `1.1.0`
          *
@@ -8409,7 +7793,6 @@ declare namespace WechatMiniprogram {
          * - 'light': 浅色主题; */
         theme?: 'dark' | 'light'
     }
-
     /** 需要基础库： `2.12.3`
      *
      * 当前小程序运行的宿主环境 */
@@ -8417,7 +7800,6 @@ declare namespace WechatMiniprogram {
         /** 宿主 app 对应的 appId */
         appId: string
     }
-
     interface SystemSetting {
         /** 蓝牙的系统开关 */
         bluetoothEnabled: boolean
@@ -8432,7 +7814,6 @@ declare namespace WechatMiniprogram {
         /** Wi-Fi 的系统开关 */
         wifiEnabled: boolean
     }
-
     interface TCPSocketConnectOption {
         /** 套接字要连接的地址 */
         address: string
@@ -8441,7 +7822,6 @@ declare namespace WechatMiniprogram {
         /** 套接字要连接的超时时间，默认为 2s */
         timeout?: number
     }
-
     interface TCPSocketOnMessageListenerResult {
         /** 接收端地址信息 */
         localInfo: LocalInfo
@@ -8450,7 +7830,6 @@ declare namespace WechatMiniprogram {
         /** 发送端地址信息 */
         remoteInfo: RemoteInfo
     }
-
     interface TakePhotoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: TakePhotoCompleteCallback
@@ -8470,13 +7849,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: TakePhotoSuccessCallback
     }
-
     interface TakePhotoSuccessCallbackResult {
         /** 照片文件的临时路径 (本地路径)，安卓是jpg图片格式，ios是png */
         tempImagePath: string
         errMsg: string
     }
-
     /** 标签类型枚举 */
     interface TechType {
         /** 对应IsoDep实例，实例支持ISO-DEP (ISO 14443-4)标准的读写 */
@@ -8496,12 +7873,10 @@ declare namespace WechatMiniprogram {
         /** 对应NfcV实例，实例支持NFC-V (ISO 15693)标准的读写 */
         nfcV: string
     }
-
     interface TextMetrics {
         /** 文本的宽度 */
         width: number
     }
-
     interface ToScreenLocationOption {
         /** 纬度 */
         latitude: number
@@ -8514,7 +7889,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ToScreenLocationSuccessCallback
     }
-
     interface ToScreenLocationSuccessCallbackResult {
         /** x 坐标值 */
         x: number
@@ -8522,7 +7896,6 @@ declare namespace WechatMiniprogram {
         y: number
         errMsg: string
     }
-
     interface ToggleTorchOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: ToggleTorchCompleteCallback
@@ -8531,7 +7904,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: ToggleTorchSuccessCallback
     }
-
     /** 跟踪能力配置，目前不同的跟踪能力之间是互斥的，默认使用平面跟踪能力。需要注意目前 track 中不同的跟踪配置存在互斥关系（比如 marker 跟踪配置和 OSD 跟踪配置不能同时存在），请按需配置。 */
     interface Track {
         /** 平面跟踪配置 */
@@ -8549,7 +7921,6 @@ declare namespace WechatMiniprogram {
          * marker 跟踪配置 */
         marker?: boolean
     }
-
     interface TransceiveOption {
         /** 需要传递的二进制数据 */
         data: ArrayBuffer
@@ -8560,12 +7931,10 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: TransceiveSuccessCallback
     }
-
     interface TransceiveSuccessCallbackResult {
         data: ArrayBuffer
         errMsg: string
     }
-
     interface TranslateMarkerOption {
         /** 移动过程中是否自动旋转 marker */
         autoRotate: boolean
@@ -8590,7 +7959,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: TranslateMarkerSuccessCallback
     }
-
     interface TruncateFailCallbackResult {
         /** 错误信息
          *
@@ -8602,7 +7970,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface TruncateOption {
         /** 要截断的文件路径 (本地路径) */
         filePath: string
@@ -8615,21 +7982,18 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: TruncateSuccessCallback
     }
-
     interface TruncateSyncOption {
         /** 要截断的文件路径 (本地路径) */
         filePath: string
         /** 截断位置，默认0。如果 length 小于文件长度（字节），则只有前面 length 个字节会保留在文件中，其余内容会被删除；如果 length 大于文件长度，则会对其进行扩展，并且扩展部分将填充空字节（'\0'） */
         length?: number
     }
-
     interface UDPSocketConnectOption {
         /** 要发消息的地址 */
         address: string
         /** 要发送消息的端口号 */
         port: number
     }
-
     interface UDPSocketOnMessageListenerResult {
         /** 接收端地址信息，2.18.0 起支持 */
         localInfo: LocalInfo
@@ -8638,7 +8002,6 @@ declare namespace WechatMiniprogram {
         /** 发送端地址信息 */
         remoteInfo: RemoteInfo
     }
-
     interface UDPSocketSendOption {
         /** 要发消息的地址。在基础库 <= 2.9.3 版本必须是和本机同网段的 IP 地址，或安全域名列表内的域名地址；之后版本可以是任意 IP 和域名 */
         address: string
@@ -8653,7 +8016,6 @@ declare namespace WechatMiniprogram {
         /** 向指定地址发消息时，是否要开启广播，基础库 2.24.0 开始支持 */
         setBroadcast?: boolean
     }
-
     interface UndoOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: UndoCompleteCallback
@@ -8662,7 +8024,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: UndoSuccessCallback
     }
-
     interface UnlinkFailCallbackResult {
         /** 错误信息
          *
@@ -8673,7 +8034,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface UnlinkOption {
         /** 要删除的文件路径 (本地路径) */
         filePath: string
@@ -8684,7 +8044,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: UnlinkSuccessCallback
     }
-
     interface UnzipFailCallbackResult {
         /** 错误信息
          *
@@ -8693,7 +8052,6 @@ declare namespace WechatMiniprogram {
          * - 'fail no such file or directory, unzip ${zipFilePath} -> "${destPath}': 源文件不存在，或目标文件路径的上层目录不存在; */
         errMsg: string
     }
-
     interface UnzipOption {
         /** 目标目录路径, 支持本地路径 */
         targetPath: string
@@ -8706,7 +8064,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: UnzipSuccessCallback
     }
-
     /** 参数列表 */
     interface UpdatableMessageFrontEndParameter {
         /** 参数名 */
@@ -8714,7 +8071,6 @@ declare namespace WechatMiniprogram {
         /** 参数值 */
         value: string
     }
-
     /** 需要基础库： `2.4.0`
      *
      * 动态消息的模板信息 */
@@ -8722,7 +8078,6 @@ declare namespace WechatMiniprogram {
         /** 参数列表 */
         parameterList: UpdatableMessageFrontEndParameter[]
     }
-
     interface UpdateGroundOverlayOption {
         /** 图片覆盖的经纬度范围 */
         bounds: MapBounds
@@ -8743,7 +8098,6 @@ declare namespace WechatMiniprogram {
         /** 图层绘制顺序 */
         zIndex?: number
     }
-
     interface UpdateShareMenuOption {
         /** 需要基础库： `2.4.0`
          *
@@ -8774,7 +8128,6 @@ declare namespace WechatMiniprogram {
         /** 是否使用带 shareTicket 的转发[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html) */
         withShareTicket?: boolean
     }
-
     interface UpdateVoIPChatMuteConfigOption {
         /** 静音设置 */
         muteConfig: MuteConfig
@@ -8785,7 +8138,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: UpdateVoIPChatMuteConfigSuccessCallback
     }
-
     interface UpdateWeChatAppOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: UpdateWeChatAppCompleteCallback
@@ -8794,7 +8146,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: UpdateWeChatAppSuccessCallback
     }
-
     interface UploadFileOption {
         /** 要上传文件资源的路径 (本地路径) */
         filePath: string
@@ -8817,7 +8168,6 @@ declare namespace WechatMiniprogram {
          * 超时时间，单位为毫秒 */
         timeout?: number
     }
-
     interface UploadFileSuccessCallbackResult {
         /** 开发者服务器返回的数据 */
         data: string
@@ -8825,7 +8175,6 @@ declare namespace WechatMiniprogram {
         statusCode: number
         errMsg: string
     }
-
     interface UploadTaskOnProgressUpdateListenerResult {
         /** 上传进度百分比 */
         progress: number
@@ -8834,7 +8183,6 @@ declare namespace WechatMiniprogram {
         /** 已经上传的数据长度，单位 Bytes */
         totalBytesSent: number
     }
-
     /** @warning **用户头像昵称获取规则已调整，参考 [用户信息接口调整说明](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)**
      *
      * 用户信息 */
@@ -8864,7 +8212,6 @@ declare namespace WechatMiniprogram {
         /** 用户所在省份。不再返回，参考 [相关公告](https://developers.weixin.qq.com/community/develop/doc/00028edbe3c58081e7cc834705b801) */
         province: string
     }
-
     /** 需要基础库： `2.20.0`
      *
      * 相机对象 */
@@ -8876,7 +8223,6 @@ declare namespace WechatMiniprogram {
         /** 视图矩阵 */
         viewMatrix: Float32Array
     }
-
     interface VKConfig {
         /** 跟踪能力配置，目前不同的跟踪能力之间是互斥的，默认使用平面跟踪能力。需要注意目前 track 中不同的跟踪配置存在互斥关系（比如 marker 跟踪配置和 OSD 跟踪配置不能同时存在），请按需配置。 */
         track: Track
@@ -8893,7 +8239,6 @@ declare namespace WechatMiniprogram {
          * - 'v2': v2提供真实物理距离的 ar 定位功能，提供平面识别功能，用户在平面范围点击放置虚拟物体的功能，具有[有限的机型支持](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/visionkit/plane.html#%E9%99%84%E5%BD%95)。iOS 设备在基础库 2.22.0 开始支持v2。安卓设备在基础库 2.25.1 开始支持v2，另外，安卓v2不支持竖直平面。; */
         version?: 'v1' | 'v2'
     }
-
     /** 需要基础库： `2.25.0`
      *
      * 人脸 anchor
@@ -8924,7 +8269,6 @@ declare namespace WechatMiniprogram {
          * - 3: 人脸; */
         type: 3
     }
-
     /** 需要基础库： `2.20.0`
      *
      * vision kit 会话对象。 */
@@ -8936,14 +8280,12 @@ declare namespace WechatMiniprogram {
         /** 生成时间 */
         timestamp: number
     }
-
     interface VKMarker {
         /** marker id */
         markerId: number
         /** 图片路径 */
         path: string
     }
-
     /** 需要基础库： `2.24.5`
      *
      * marker anchor
@@ -8966,7 +8308,6 @@ declare namespace WechatMiniprogram {
          * - 1: marker; */
         type: 1
     }
-
     /** 需要基础库： `2.24.5`
      *
      * OSD anchor
@@ -8991,7 +8332,6 @@ declare namespace WechatMiniprogram {
          * - 2: OSD; */
         type: 2
     }
-
     /** 相对视窗的位置信息，取值范围为 [0, 1]，0 为左/上边缘，1 为右/下边缘 */
     interface VKOrigin {
         /** 横坐标 */
@@ -8999,7 +8339,6 @@ declare namespace WechatMiniprogram {
         /** 纵坐标 */
         y: number
     }
-
     /** 需要基础库： `2.22.0`
      *
      * 平面 anchor，只有 v2 版本支持
@@ -9023,7 +8362,6 @@ declare namespace WechatMiniprogram {
          * - 0: 平面; */
         type: 0
     }
-
     /** 人脸 106 个关键点的坐标 */
     interface VKPoint {
         /** 横坐标 */
@@ -9031,7 +8369,6 @@ declare namespace WechatMiniprogram {
         /** 纵坐标 */
         y: number
     }
-
     /** 需要基础库： `2.20.0`
      *
      * vision kit 会话对象。 */
@@ -9048,14 +8385,12 @@ declare namespace WechatMiniprogram {
          * - 2: 暂停中; */
         state: 0 | 1 | 2
     }
-
     interface VKSize {
         /** 高度 */
         height: number
         /** 宽度 */
         width: number
     }
-
     interface VibrateLongOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: VibrateLongCompleteCallback
@@ -9064,7 +8399,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: VibrateLongSuccessCallback
     }
-
     interface VibrateShortFailCallbackResult {
         /** 错误信息
          *
@@ -9072,7 +8406,6 @@ declare namespace WechatMiniprogram {
          * - 'style is not support': 当前设备不支持设置震动等级; */
         errMsg: string
     }
-
     interface VibrateShortOption {
         /** 需要基础库： `2.13.0`
          *
@@ -9085,7 +8418,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: VibrateShortSuccessCallback
     }
-
     interface VideoContextRequestFullScreenOption {
         /** 需要基础库： `1.7.0`
          *
@@ -9097,7 +8429,6 @@ declare namespace WechatMiniprogram {
          * - -90: 屏幕顺时针90度; */
         direction?: 0 | 90 | -90
     }
-
     interface VideoDecoderStartOption {
         /** 需要解码的视频源文件。基础库 2.13.0 以下的版本只支持本地路径。 2.13.0 开始支持 http:// 和 https:// 协议的远程路径。 */
         source: string
@@ -9112,7 +8443,6 @@ declare namespace WechatMiniprogram {
         /** 解码模式。0：按 pts 解码；1：以最快速度解码 */
         mode?: number
     }
-
     interface VoIP1v1ChatUser {
         /** 昵称 */
         nickname: string
@@ -9153,7 +8483,6 @@ declare namespace WechatMiniprogram {
         /** 当前WebAudio上下文的状态。可能的值如下：suspended（暂停）、running（正在运行）、closed（已关闭）。需要注意的是，不要在 audioContext close后再访问state属性 */
         state: string
     }
-
     /** 需要基础库： `2.19.0`
      *
      * 一类音频处理模块，不同的Node具备不同的功能，如GainNode(音量调整)等。一个WebAudioContextNode可以通过上下文来创建。
@@ -9200,7 +8529,6 @@ declare namespace WechatMiniprogram {
         /** 表示在与position (positionX、positionY和positionZ)值相同的笛卡尔坐标系中侦听器向后方向的水平位置。 */
         upZ: number
     }
-
     /** 提供预设的 Wi-Fi 信息列表 */
     interface WifiData {
         /** Wi-Fi 的 BSSID */
@@ -9210,7 +8538,6 @@ declare namespace WechatMiniprogram {
         /** Wi-Fi 设备密码 */
         password?: string
     }
-
     /** Wifi 信息
      *
      * **注意**
@@ -9232,7 +8559,6 @@ declare namespace WechatMiniprogram {
         /** Wi-Fi 信号强度, 安卓取值 0 ～ 100 ，iOS 取值 0 ～ 1 ，值越大强度越大 */
         signalStrength: number
     }
-
     interface WindowInfo {
         /** 设备像素比 */
         pixelRatio: number
@@ -9281,18 +8607,15 @@ declare namespace WechatMiniprogram {
         /** worker内的环境变量 */
         env: WorkerEnv
     }
-
     /** worker内的环境变量 */
     interface WorkerEnv {
         /** 文件系统中的用户目录路径 (本地路径) */
         USER_DATA_PATH: string
     }
-
     interface WorkerOnMessageListenerResult {
         /** 主线程/Worker 线程向当前线程发送的消息 */
         message: IAnyObject
     }
-
     interface WriteBLECharacteristicValueOption {
         /** 蓝牙特征的 UUID */
         characteristicId: string
@@ -9315,7 +8638,6 @@ declare namespace WechatMiniprogram {
          * - 'writeNoResponse': 强制无回复写，不支持时报错; */
         writeType?: 'write' | 'writeNoResponse'
     }
-
     interface WriteCharacteristicValueObject {
         /** 蓝牙特征的 UUID */
         characteristicId: string
@@ -9334,7 +8656,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WriteCharacteristicValueSuccessCallback
     }
-
     interface WriteFailCallbackResult {
         /** 错误信息
          *
@@ -9344,7 +8665,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface WriteFileFailCallbackResult {
         /** 错误信息
          *
@@ -9355,7 +8675,6 @@ declare namespace WechatMiniprogram {
          * - 'fail sdcard not mounted': Android sdcard 挂载失败; */
         errMsg: string
     }
-
     interface WriteFileOption {
         /** 要写入的文本或二进制数据 */
         data: string | ArrayBuffer
@@ -9394,7 +8713,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WriteFileSuccessCallback
     }
-
     interface WriteNdefMessageOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: WriteNdefMessageCompleteCallback
@@ -9409,7 +8727,6 @@ declare namespace WechatMiniprogram {
         /** uri 数组 */
         uris?: any[]
     }
-
     interface WriteOption {
         /** 写入的内容，类型为 String 或 ArrayBuffer */
         data: string | ArrayBuffer
@@ -9454,19 +8771,16 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WriteSuccessCallback
     }
-
     /** 文件写入结果。 通过 [FileSystemManager.writeSync](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.writeSync.html) 接口返回 */
     interface WriteResult {
         /** 实际被写入到文件中的字节数（注意，被写入的字节数不一定与被写入的字符串字符数相同） */
         bytesWritten: number
     }
-
     interface WriteSuccessCallbackResult {
         /** 实际被写入到文件中的字节数（注意，被写入的字节数不一定与被写入的字符串字符数相同） */
         bytesWritten: number
         errMsg: string
     }
-
     interface WriteSyncOption {
         /** 写入的内容，类型为 String 或 ArrayBuffer */
         data: string | ArrayBuffer
@@ -9505,7 +8819,6 @@ declare namespace WechatMiniprogram {
         /** 指定文件开头的偏移量，即数据要被写入的位置。当 position 不传或者传入非 Number 类型的值时，数据会被写入当前指针所在位置。 */
         position?: number
     }
-
     interface WxGetFileInfoOption {
         /** 本地文件路径 (本地路径) */
         filePath: string
@@ -9522,7 +8835,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WxGetFileInfoSuccessCallback
     }
-
     interface WxGetFileInfoSuccessCallbackResult {
         /** 按照传入的 digestAlgorithm 计算得出的的文件摘要 */
         digest: string
@@ -9530,7 +8842,6 @@ declare namespace WechatMiniprogram {
         size: number
         errMsg: string
     }
-
     interface WxGetSavedFileListOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: GetSavedFileListCompleteCallback
@@ -9539,13 +8850,11 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WxGetSavedFileListSuccessCallback
     }
-
     interface WxGetSavedFileListSuccessCallbackResult {
         /** 文件数组，每一项是一个 FileItem */
         fileList: FileItem[]
         errMsg: string
     }
-
     interface WxRemoveSavedFileOption {
         /** 需要删除的文件路径 (本地路径) */
         filePath: string
@@ -9556,7 +8865,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: RemoveSavedFileSuccessCallback
     }
-
     interface WxSaveFileOption {
         /** 需要保存的文件的临时路径 (本地路径) */
         tempFilePath: string
@@ -9567,7 +8875,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: SaveFileSuccessCallback
     }
-
     interface WxStartRecordOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StartRecordCompleteCallback
@@ -9576,7 +8883,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WxStartRecordSuccessCallback
     }
-
     interface WxStopRecordOption {
         /** 接口调用结束的回调函数（调用成功、失败都会执行） */
         complete?: StopRecordCompleteCallback
@@ -9585,7 +8891,6 @@ declare namespace WechatMiniprogram {
         /** 接口调用成功的回调函数 */
         success?: WxStopRecordSuccessCallback
     }
-
     /** 运动数据列表 */
     interface WxaSportRecord {
         /** 消耗卡路里 */
@@ -9597,7 +8902,6 @@ declare namespace WechatMiniprogram {
         /** 运动项目id */
         typeId: number
     }
-
     /** 帧纹理对象 */
     interface YUVTextureRes {
         /** UV 分量纹理 */
@@ -9605,7 +8909,6 @@ declare namespace WechatMiniprogram {
         /** Y 分量纹理 */
         yTexture: WebGLTexture
     }
-
     /** 文件路径 */
     interface ZipFileItem {
         /** 文件内容 */
@@ -9613,7 +8916,6 @@ declare namespace WechatMiniprogram {
         /** 错误信息 */
         errMsg: string
     }
-
     interface Animation {
         /** [Object Animation.export()](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.export.html)
          *
@@ -9621,7 +8923,6 @@ declare namespace WechatMiniprogram {
          *
          * 导出动画队列。**export 方法每次调用后会清掉之前的动画操作。** */
         export(): AnimationExportResult
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.backgroundColor(string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.backgroundColor.html)
          *
          * 在插件中使用：支持
@@ -9631,7 +8932,6 @@ declare namespace WechatMiniprogram {
             /** 颜色值 */
             value: string
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.bottom(number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.bottom.html)
          *
          * 在插件中使用：支持
@@ -9641,7 +8941,6 @@ declare namespace WechatMiniprogram {
             /** 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 */
             value: number | string
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.height(number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.height.html)
          *
          * 在插件中使用：支持
@@ -9651,7 +8950,6 @@ declare namespace WechatMiniprogram {
             /** 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 */
             value: number | string
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.left(number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.left.html)
          *
          * 在插件中使用：支持
@@ -9661,21 +8959,18 @@ declare namespace WechatMiniprogram {
             /** 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 */
             value: number | string
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.matrix()](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.matrix.html)
          *
          * 在插件中使用：支持
          *
          * 同 [transform-function matrix](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix) */
         matrix(): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.matrix3d()](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.matrix3d.html)
          *
          * 在插件中使用：支持
          *
          * 同 [transform-function matrix3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix3d) */
         matrix3d(): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.opacity(number value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.opacity.html)
          *
          * 在插件中使用：支持
@@ -9685,7 +8980,6 @@ declare namespace WechatMiniprogram {
             /** 透明度，范围 0-1 */
             value: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.right(number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.right.html)
          *
          * 在插件中使用：支持
@@ -9695,7 +8989,6 @@ declare namespace WechatMiniprogram {
             /** 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 */
             value: number | string
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.rotate(number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotate.html)
          *
          * 在插件中使用：支持
@@ -9705,7 +8998,6 @@ declare namespace WechatMiniprogram {
             /** 旋转的角度。范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.rotate3d(number x, number y, number z, number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotate3d.html)
          *
          * 在插件中使用：支持
@@ -9721,7 +9013,6 @@ declare namespace WechatMiniprogram {
             /** 旋转的角度。范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.rotateX(number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateX.html)
          *
          * 在插件中使用：支持
@@ -9731,7 +9022,6 @@ declare namespace WechatMiniprogram {
             /** 旋转的角度。范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.rotateY(number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateY.html)
          *
          * 在插件中使用：支持
@@ -9741,7 +9031,6 @@ declare namespace WechatMiniprogram {
             /** 旋转的角度。范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.rotateZ(number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.rotateZ.html)
          *
          * 在插件中使用：支持
@@ -9751,7 +9040,6 @@ declare namespace WechatMiniprogram {
             /** 旋转的角度。范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.scale(number sx, number sy)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scale.html)
          *
          * 在插件中使用：支持
@@ -9763,7 +9051,6 @@ declare namespace WechatMiniprogram {
             /** 在 Y 轴缩放 sy 倍数 */
             sy?: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.scale3d(number sx, number sy, number sz)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scale3d.html)
          *
          * 在插件中使用：支持
@@ -9777,7 +9064,6 @@ declare namespace WechatMiniprogram {
             /** z 轴的缩放倍数 */
             sz: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.scaleX(number scale)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleX.html)
          *
          * 在插件中使用：支持
@@ -9787,7 +9073,6 @@ declare namespace WechatMiniprogram {
             /** X 轴的缩放倍数 */
             scale: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.scaleY(number scale)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleY.html)
          *
          * 在插件中使用：支持
@@ -9797,7 +9082,6 @@ declare namespace WechatMiniprogram {
             /** Y 轴的缩放倍数 */
             scale: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.scaleZ(number scale)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.scaleZ.html)
          *
          * 在插件中使用：支持
@@ -9807,7 +9091,6 @@ declare namespace WechatMiniprogram {
             /** Z 轴的缩放倍数 */
             scale: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.skew(number ax, number ay)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skew.html)
          *
          * 在插件中使用：支持
@@ -9819,7 +9102,6 @@ declare namespace WechatMiniprogram {
             /** 对 Y 轴坐标倾斜的角度，范围 [-180, 180] */
             ay: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.skewX(number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skewX.html)
          *
          * 在插件中使用：支持
@@ -9829,7 +9111,6 @@ declare namespace WechatMiniprogram {
             /** 倾斜的角度，范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.skewY(number angle)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.skewY.html)
          *
          * 在插件中使用：支持
@@ -9839,14 +9120,12 @@ declare namespace WechatMiniprogram {
             /** 倾斜的角度，范围 [-180, 180] */
             angle: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.step(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.step.html)
          *
          * 在插件中使用：支持
          *
          * 表示一组动画完成。可以在一组动画中调用任意多个动画方法，一组动画中的所有动画会同时开始，一组动画完成后才会进行下一组动画。 */
         step(option?: StepOption): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.top(number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.top.html)
          *
          * 在插件中使用：支持
@@ -9856,7 +9135,6 @@ declare namespace WechatMiniprogram {
             /** 长度值，如果传入 number 则默认使用 px，可传入其他自定义单位的长度值 */
             value: number | string
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.translate(number tx, number ty)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translate.html)
          *
          * 在插件中使用：支持
@@ -9868,7 +9146,6 @@ declare namespace WechatMiniprogram {
             /** 在 Y 轴平移的距离，单位为 px */
             ty?: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.translate3d(number tx, number ty, number tz)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translate3d.html)
          *
          * 在插件中使用：支持
@@ -9882,7 +9159,6 @@ declare namespace WechatMiniprogram {
             /** 在 Z 轴平移的距离，单位为 px */
             tz?: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.translateX(number translation)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateX.html)
          *
          * 在插件中使用：支持
@@ -9892,7 +9168,6 @@ declare namespace WechatMiniprogram {
             /** 在 X 轴平移的距离，单位为 px */
             translation: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.translateY(number translation)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateY.html)
          *
          * 在插件中使用：支持
@@ -9902,7 +9177,6 @@ declare namespace WechatMiniprogram {
             /** 在 Y 轴平移的距离，单位为 px */
             translation: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.translateZ(number translation)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.translateZ.html)
          *
          * 在插件中使用：支持
@@ -9912,7 +9186,6 @@ declare namespace WechatMiniprogram {
             /** 在 Z 轴平移的距离，单位为 px */
             translation: number
         ): Animation
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) Animation.width(number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.width.html)
          *
          * 在插件中使用：支持
@@ -9923,7 +9196,6 @@ declare namespace WechatMiniprogram {
             value: number | string
         ): Animation
     }
-
     interface AudioBuffer {
         /** [AudioBuffer.copyFromChannel()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.copyFromChannel.html)
          *
@@ -9931,7 +9203,6 @@ declare namespace WechatMiniprogram {
          *
          * 从AudioBuffer的指定频道复制到数组终端。 */
         copyFromChannel(): void
-
         /** [AudioBuffer.copyToChannel(Float32Array source, number channelNumber, number startInChannel)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.copyToChannel.html)
          *
          * 在插件中使用：不支持
@@ -9949,7 +9220,6 @@ declare namespace WechatMiniprogram {
             /** 复制偏移数据量 */
             startInChannel: number
         ): void
-
         /** [Float32Array AudioBuffer.getChannelData(number channel)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.getChannelData.html)
          *
          * 在插件中使用：不支持
@@ -9960,7 +9230,6 @@ declare namespace WechatMiniprogram {
             channel: number
         ): Float32Array
     }
-
     interface AudioContext {
         /** [AudioContext.pause()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.pause.html)
          *
@@ -9969,7 +9238,6 @@ declare namespace WechatMiniprogram {
          *
          * 暂停音频。 */
         pause(): void
-
         /** [AudioContext.play()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.play.html)
          *
          * 在插件中使用：支持
@@ -9977,7 +9245,6 @@ declare namespace WechatMiniprogram {
          *
          * 播放音频。 */
         play(): void
-
         /** [AudioContext.seek(number position)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.seek.html)
          *
          * 在插件中使用：支持
@@ -9988,7 +9255,6 @@ declare namespace WechatMiniprogram {
             /** 跳转位置，单位 s */
             position: number
         ): void
-
         /** [AudioContext.setSrc(string src)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.setSrc.html)
          *
          * 在插件中使用：支持
@@ -10000,7 +9266,6 @@ declare namespace WechatMiniprogram {
             src: string
         ): void
     }
-
     interface BLEPeripheralServer {
         /** [BLEPeripheralServer.addService(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.addService.html)
          *
@@ -10010,7 +9275,6 @@ declare namespace WechatMiniprogram {
          *
          * 添加服务。 */
         addService(option: AddServiceOption): void
-
         /** [BLEPeripheralServer.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.close.html)
          *
          * 需要基础库： `2.10.3`
@@ -10103,7 +9367,6 @@ declare namespace WechatMiniprogram {
             /** onCharacteristicWriteRequest 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffCharacteristicWriteRequestCallback
         ): void
-
         /** [BLEPeripheralServer.onCharacteristicReadRequest(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.onCharacteristicReadRequest.html)
          *
          * 需要基础库： `2.10.3`
@@ -10115,7 +9378,6 @@ declare namespace WechatMiniprogram {
             /** 已连接的设备请求读当前外围设备的特征值事件的监听函数 */
             listener: OnCharacteristicReadRequestCallback
         ): void
-
         /** [BLEPeripheralServer.onCharacteristicSubscribed(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.onCharacteristicSubscribed.html)
          *
          * 需要基础库： `2.13.0`
@@ -10127,7 +9389,6 @@ declare namespace WechatMiniprogram {
             /** 特征订阅事件的监听函数 */
             listener: OnCharacteristicSubscribedCallback
         ): void
-
         /** [BLEPeripheralServer.onCharacteristicUnsubscribed(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.onCharacteristicUnsubscribed.html)
          *
          * 需要基础库： `2.13.0`
@@ -10139,7 +9400,6 @@ declare namespace WechatMiniprogram {
             /** 取消特征订阅事件的监听函数 */
             listener: OnCharacteristicUnsubscribedCallback
         ): void
-
         /** [BLEPeripheralServer.onCharacteristicWriteRequest(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.onCharacteristicWriteRequest.html)
          *
          * 需要基础库： `2.10.3`
@@ -10151,7 +9411,6 @@ declare namespace WechatMiniprogram {
             /** 已连接的设备请求写当前外围设备的特征值事件的监听函数 */
             listener: OnCharacteristicWriteRequestCallback
         ): void
-
         /** [BLEPeripheralServer.removeService(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.removeService.html)
          *
          * 需要基础库： `2.10.3`
@@ -10160,7 +9419,6 @@ declare namespace WechatMiniprogram {
          *
          * 移除服务。 */
         removeService(option: RemoveServiceOption): void
-
         /** [BLEPeripheralServer.startAdvertising(Object Object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.startAdvertising.html)
          *
          * 需要基础库： `2.10.3`
@@ -10177,7 +9435,6 @@ declare namespace WechatMiniprogram {
          * - iOS 同时只能发起一个广播，安卓支持同时发起多个广播。
          * - 传 beacon 参数时，不能同时传入 deviceName，serviceUuids，manufacturerData 参数。 */
         startAdvertising(Object: StartAdvertisingObject): void
-
         /** [BLEPeripheralServer.stopAdvertising(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.stopAdvertising.html)
          *
          * 需要基础库： `2.10.3`
@@ -10186,7 +9443,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止广播。 */
         stopAdvertising(option?: StopAdvertisingOption): void
-
         /** [BLEPeripheralServer.writeCharacteristicValue(Object Object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/BLEPeripheralServer.writeCharacteristicValue.html)
          *
          * 需要基础库： `2.10.3`
@@ -10196,7 +9452,6 @@ declare namespace WechatMiniprogram {
          * 往指定特征写入二进制数据值，并通知已连接的主机，从机的特征值已发生变化，该接口会处理是走回包还是走订阅。 */
         writeCharacteristicValue(Object: WriteCharacteristicValueObject): void
     }
-
     interface BackgroundAudioError {
         /** 错误信息
          *
@@ -10217,7 +9472,6 @@ declare namespace WechatMiniprogram {
          * | 10004 |  | 格式错误 |
          * | -1 |  | 未知错误 | */ errCode: number
     }
-
     interface BackgroundAudioManager {
         /** [BackgroundAudioManager.onCanplay(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onCanplay.html)
          *
@@ -10228,7 +9482,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频进入可播放状态事件的监听函数 */
             listener: OnCanplayCallback
         ): void
-
         /** [BackgroundAudioManager.onEnded(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onEnded.html)
          *
          * 在插件中使用：支持
@@ -10238,7 +9491,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频自然播放结束事件的监听函数 */
             listener: OnEndedCallback
         ): void
-
         /** [BackgroundAudioManager.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onError.html)
          *
          * 在插件中使用：支持
@@ -10248,7 +9500,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频播放错误事件的监听函数 */
             listener: BackgroundAudioManagerOnErrorCallback
         ): void
-
         /** [BackgroundAudioManager.onNext(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onNext.html)
          *
          * 在插件中使用：支持
@@ -10258,7 +9509,6 @@ declare namespace WechatMiniprogram {
             /** 用户在系统音乐播放面板点击下一曲事件的监听函数 */
             listener: OnNextCallback
         ): void
-
         /** [BackgroundAudioManager.onPause(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onPause.html)
          *
          * 在插件中使用：支持
@@ -10268,7 +9518,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频暂停事件的监听函数 */
             listener: OnPauseCallback
         ): void
-
         /** [BackgroundAudioManager.onPlay(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onPlay.html)
          *
          * 在插件中使用：支持
@@ -10278,7 +9527,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频播放事件的监听函数 */
             listener: OnPlayCallback
         ): void
-
         /** [BackgroundAudioManager.onPrev(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onPrev.html)
          *
          * 在插件中使用：支持
@@ -10288,7 +9536,6 @@ declare namespace WechatMiniprogram {
             /** 用户在系统音乐播放面板点击上一曲事件的监听函数 */
             listener: OnPrevCallback
         ): void
-
         /** [BackgroundAudioManager.onSeeked(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onSeeked.html)
          *
          * 在插件中使用：支持
@@ -10298,7 +9545,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频完成跳转操作事件的监听函数 */
             listener: OnSeekedCallback
         ): void
-
         /** [BackgroundAudioManager.onSeeking(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onSeeking.html)
          *
          * 在插件中使用：支持
@@ -10308,7 +9554,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频开始跳转操作事件的监听函数 */
             listener: OnSeekingCallback
         ): void
-
         /** [BackgroundAudioManager.onStop(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onStop.html)
          *
          * 在插件中使用：支持
@@ -10318,7 +9563,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频停止事件的监听函数 */
             listener: InnerAudioContextOnStopCallback
         ): void
-
         /** [BackgroundAudioManager.onTimeUpdate(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onTimeUpdate.html)
          *
          * 在插件中使用：支持
@@ -10328,7 +9572,6 @@ declare namespace WechatMiniprogram {
             /** 背景音频播放进度更新事件的监听函数 */
             listener: OnTimeUpdateCallback
         ): void
-
         /** [BackgroundAudioManager.onWaiting(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.onWaiting.html)
          *
          * 在插件中使用：支持
@@ -10338,21 +9581,18 @@ declare namespace WechatMiniprogram {
             /** 音频加载中事件的监听函数 */
             listener: OnWaitingCallback
         ): void
-
         /** [BackgroundAudioManager.pause()](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.pause.html)
          *
          * 在插件中使用：支持
          *
          * 暂停音乐 */
         pause(): void
-
         /** [BackgroundAudioManager.play()](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.play.html)
          *
          * 在插件中使用：支持
          *
          * 播放音乐 */
         play(): void
-
         /** [BackgroundAudioManager.seek(number currentTime)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.seek.html)
          *
          * 在插件中使用：支持
@@ -10362,7 +9602,6 @@ declare namespace WechatMiniprogram {
             /** 跳转的位置，单位 s。精确到小数点后 3 位，即支持 ms 级别精确度 */
             currentTime: number
         ): void
-
         /** [BackgroundAudioManager.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.stop.html)
          *
          * 在插件中使用：支持
@@ -10370,7 +9609,6 @@ declare namespace WechatMiniprogram {
          * 停止音乐 */
         stop(): void
     }
-
     interface BeaconError {
         /** 错误信息
          *
@@ -10397,7 +9635,6 @@ declare namespace WechatMiniprogram {
          * | 11005 | system error | 系统错误 |
          * | 11006 | invalid data | 参数不正确 | */ errCode: number
     }
-
     interface BluetoothError {
         /** 错误信息
          *
@@ -10436,7 +9673,6 @@ declare namespace WechatMiniprogram {
          * | 10012 | operate time out | 连接超时 |
          * | 10013 | invalid_data | 连接 deviceId 为空或者是格式不正确 | */ errCode: number
     }
-
     interface CacheManager {
         /** [Array.&lt;string&gt; CacheManager.addRules(Object rules)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.addRules.html)
          *
@@ -10449,7 +9685,6 @@ declare namespace WechatMiniprogram {
             /** 规则列表 */
             rules: IAnyObject
         ): string[]
-
         /** [CacheManager.clearCaches()](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.clearCaches.html)
          *
          * 需要基础库： `2.24.0`
@@ -10458,7 +9693,6 @@ declare namespace WechatMiniprogram {
          *
          * 清空所有缓存。 */
         clearCaches(): void
-
         /** [CacheManager.clearRules()](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.clearRules.html)
          *
          * 需要基础库： `2.24.0`
@@ -10467,7 +9701,6 @@ declare namespace WechatMiniprogram {
          *
          * 清空所有规则，同时会删除对应规则下所有缓存。 */
         clearRules(): void
-
         /** [CacheManager.deleteCache(string id)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.deleteCache.html)
          *
          * 需要基础库： `2.24.0`
@@ -10479,7 +9712,6 @@ declare namespace WechatMiniprogram {
             /** 缓存 id */
             id: string
         ): void
-
         /** [CacheManager.deleteCaches(Array.&lt;string&gt; ids)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.deleteCaches.html)
          *
          * 需要基础库： `2.24.0`
@@ -10491,7 +9723,6 @@ declare namespace WechatMiniprogram {
             /** 缓存 id 列表 */
             ids: string[]
         ): void
-
         /** [CacheManager.deleteRule(string id)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.deleteRule.html)
          *
          * 需要基础库： `2.24.0`
@@ -10503,7 +9734,6 @@ declare namespace WechatMiniprogram {
             /** 规则 id */
             id: string
         ): void
-
         /** [CacheManager.deleteRules(Array.&lt;string&gt; ids)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.deleteRules.html)
          *
          * 需要基础库： `2.24.0`
@@ -10515,7 +9745,6 @@ declare namespace WechatMiniprogram {
             /** 规则 id 列表 */
             ids: string[]
         ): void
-
         /** [CacheManager.off(string eventName, function handler)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.off.html)
          *
          * 需要基础库： `2.24.0`
@@ -10581,7 +9810,6 @@ declare namespace WechatMiniprogram {
             /** 事件句柄 */
             handler: (...args: any[]) => any
         ): void
-
         /** [CacheManager.start()](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.start.html)
          *
          * 需要基础库： `2.24.0`
@@ -10590,7 +9818,6 @@ declare namespace WechatMiniprogram {
          *
          * 开启缓存，仅在 mode 为 none 时生效，调用后缓存管理器的 state 会置为 1。 */
         start(): void
-
         /** [CacheManager.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.stop.html)
          *
          * 需要基础库： `2.24.0`
@@ -10748,7 +9975,6 @@ declare namespace WechatMiniprogram {
             rule: IAnyObject
         ): string
     }
-
     interface CameraContext {
         /** [CameraContext.setZoom(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.setZoom.html)
          *
@@ -10758,21 +9984,18 @@ declare namespace WechatMiniprogram {
          *
          * 设置缩放级别 */
         setZoom(option: SetZoomOption): void
-
         /** [CameraContext.startRecord(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.startRecord.html)
          *
          * 在插件中使用：支持
          *
          * 开始录像 */
         startRecord(option: CameraContextStartRecordOption): void
-
         /** [CameraContext.stopRecord(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.stopRecord.html)
          *
          * 在插件中使用：支持
          *
          * 结束录像 */
         stopRecord(option: CameraContextStopRecordOption): void
-
         /** [CameraContext.takePhoto(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.takePhoto.html)
          *
          * 在插件中使用：支持
@@ -10806,7 +10029,6 @@ declare namespace WechatMiniprogram {
             callback: OnCameraFrameCallback
         ): CameraFrameListener
     }
-
     interface CameraFrameListener {
         /** [CameraFrameListener.start(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.start.html)
          *
@@ -10814,7 +10036,6 @@ declare namespace WechatMiniprogram {
          *
          * 开始监听帧数据 */
         start(option?: CameraFrameListenerStartOption): void
-
         /** [CameraFrameListener.stop(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraFrameListener.stop.html)
          *
          * 在插件中使用：不支持
@@ -10822,7 +10043,6 @@ declare namespace WechatMiniprogram {
          * 停止监听帧数据 */
         stop(option?: StopOption): void
     }
-
     interface Canvas {
         /** [Canvas.cancelAnimationFrame(number requestID)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.cancelAnimationFrame.html)
          *
@@ -10832,7 +10052,6 @@ declare namespace WechatMiniprogram {
          *
          * 取消由 requestAnimationFrame 添加到计划中的动画帧请求。支持在 2D Canvas 和 WebGL Canvas 下使用, 但不支持混用 2D 和 WebGL 的方法。 */
         cancelAnimationFrame(requestID: number): void
-
         /** [[ImageData](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/ImageData.html) Canvas.createImageData()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createImageData.html)
          *
          * 需要基础库： `2.9.0`
@@ -10841,7 +10060,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建一个 ImageData 对象。仅支持在 2D Canvas 中使用。 */
         createImageData(): ImageData
-
         /** [[Image](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Image.html) Canvas.createImage()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createImage.html)
          *
          * 需要基础库： `2.7.0`
@@ -10850,7 +10068,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建一个图片对象。 支持在 2D Canvas 和 WebGL Canvas 下使用, 但不支持混用 2D 和 WebGL 的方法。 */
         createImage(): Image
-
         /** [[Path2D](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Path2D.html) Canvas.createPath2D([Path2D](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Path2D.html) path)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.createPath2D.html)
          *
          * 需要基础库： `2.11.0`
@@ -10862,7 +10079,6 @@ declare namespace WechatMiniprogram {
             /** [Path2D](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Path2D.html) */
             path: Path2D
         ): Path2D
-
         /** [[RenderingContext](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/RenderingContext.html) Canvas.getContext(string contextType)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.getContext.html)
          *
          * 需要基础库： `2.7.0`
@@ -10875,7 +10091,6 @@ declare namespace WechatMiniprogram {
          *
          * 支持获取 2D 和 WebGL 绘图上下文 */
         getContext(contextType: string): any
-
         /** [number Canvas.requestAnimationFrame(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.requestAnimationFrame.html)
          *
          * 需要基础库： `2.7.0`
@@ -10887,7 +10102,6 @@ declare namespace WechatMiniprogram {
             /** 执行的 callback */
             callback: (...args: any[]) => any
         ): number
-
         /** [string Canvas.toDataURL(string type, number encoderOptions)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Canvas.toDataURL.html)
          *
          * 需要基础库： `2.11.0`
@@ -10902,7 +10116,6 @@ declare namespace WechatMiniprogram {
             encoderOptions: number
         ): string
     }
-
     interface CanvasContext {
         /** [CanvasContext.arc(number x, number y, number r, number sAngle, number eAngle, boolean counterclockwise)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.arc.html)
          *
@@ -10987,7 +10200,6 @@ declare namespace WechatMiniprogram {
             /** 弧度的方向是否是逆时针 */
             counterclockwise?: boolean
         ): void
-
         /** [CanvasContext.arcTo(number x1, number y1, number x2, number y2, number radius)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.arcTo.html)
          *
          * 需要基础库： `1.9.90`
@@ -11243,7 +10455,6 @@ declare namespace WechatMiniprogram {
          *
          * ![](@program/dev/image/canvas/close-path.png) */
         closePath(): void
-
         /** [CanvasContext.createPattern(string image, string repetition)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.createPattern.html)
          *
          * 需要基础库： `1.9.90`
@@ -12297,7 +11508,6 @@ declare namespace WechatMiniprogram {
              * - 'normal': ; */
             textBaseline: 'top' | 'bottom' | 'middle' | 'normal'
         ): void
-
         /** [CanvasContext.setTransform(number scaleX, number skewX, number skewY, number scaleY, number translateX, number translateY)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.setTransform.html)
          *
          * 需要基础库： `1.9.90`
@@ -12400,7 +11610,6 @@ declare namespace WechatMiniprogram {
             /** 矩形路径的高度 */
             height: number
         ): void
-
         /** [CanvasContext.strokeText(string text, number x, number y, number maxWidth)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.strokeText.html)
          *
          * 需要基础库： `1.9.90`
@@ -12421,7 +11630,6 @@ declare namespace WechatMiniprogram {
             /** 需要绘制的最大宽度，可选 */
             maxWidth?: number
         ): void
-
         /** [CanvasContext.transform(number scaleX, number skewX, number skewY, number scaleY, number translateX, number translateY)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.transform.html)
          *
          * 需要基础库： `1.9.90`
@@ -12477,7 +11685,6 @@ declare namespace WechatMiniprogram {
             /** 竖直坐标平移量 */
             y: number
         ): void
-
         /** [Object CanvasContext.measureText(string text)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.measureText.html)
          *
          * 需要基础库： `1.9.90`
@@ -12563,7 +11770,6 @@ declare namespace WechatMiniprogram {
             y1: number
         ): CanvasGradient
     }
-
     interface CanvasGradient {
         /** [CanvasGradient.addColorStop(number stop, string color)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasGradient.addColorStop.html)
          *
@@ -12602,7 +11808,6 @@ declare namespace WechatMiniprogram {
             color: string
         ): void
     }
-
     interface CloseSyncError {
         /** 错误信息
          *
@@ -12615,7 +11820,6 @@ declare namespace WechatMiniprogram {
          * | - | - |
          * | bad file descriptor | 无效的文件描述符 | */ errCode: number
     }
-
     interface Console {
         /** [console.debug()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.debug.html)
          *
@@ -12626,7 +11830,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。 */
             ...args: any[]
         ): void
-
         /** [console.error()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.error.html)
          *
          * 在插件中使用：不支持
@@ -12636,7 +11839,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。 */
             ...args: any[]
         ): void
-
         /** [console.group(string label)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.group.html)
          *
          * 在插件中使用：不支持
@@ -12650,7 +11852,6 @@ declare namespace WechatMiniprogram {
             /** 分组标记，可选。 */
             label?: string
         ): void
-
         /** [console.groupEnd()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.groupEnd.html)
          *
          * 在插件中使用：不支持
@@ -12661,7 +11862,6 @@ declare namespace WechatMiniprogram {
          *
          * 仅在工具中有效，在 vConsole 中为空函数实现。 */
         groupEnd(): void
-
         /** [console.info()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.info.html)
          *
          * 在插件中使用：不支持
@@ -12671,7 +11871,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。 */
             ...args: any[]
         ): void
-
         /** [console.log()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.log.html)
          *
          * 在插件中使用：不支持
@@ -12681,7 +11880,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。 */
             ...args: any[]
         ): void
-
         /** [console.warn()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/console.warn.html)
          *
          * 在插件中使用：不支持
@@ -12692,7 +11890,6 @@ declare namespace WechatMiniprogram {
             ...args: any[]
         ): void
     }
-
     interface DownloadTask {
         /** [DownloadTask.abort()](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.abort.html)
          *
@@ -12744,7 +11941,6 @@ declare namespace WechatMiniprogram {
             /** onProgressUpdate 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: DownloadTaskOffProgressUpdateCallback
         ): void
-
         /** [DownloadTask.onHeadersReceived(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.onHeadersReceived.html)
          *
          * 需要基础库： `2.1.0`
@@ -12756,7 +11952,6 @@ declare namespace WechatMiniprogram {
             /** HTTP Response Header 事件的监听函数 */
             listener: OnHeadersReceivedCallback
         ): void
-
         /** [DownloadTask.onProgressUpdate(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/download/DownloadTask.onProgressUpdate.html)
          *
          * 需要基础库： `1.4.0`
@@ -12769,7 +11964,6 @@ declare namespace WechatMiniprogram {
             listener: DownloadTaskOnProgressUpdateCallback
         ): void
     }
-
     interface EditorContext {
         /** [EditorContext.blur(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.blur.html)
          *
@@ -12779,7 +11973,6 @@ declare namespace WechatMiniprogram {
          *
          * 编辑器失焦，同时收起键盘。 */
         blur(option?: BlurOption): void
-
         /** [EditorContext.clear(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.clear.html)
          *
          * 需要基础库： `2.7.0`
@@ -12788,7 +11981,6 @@ declare namespace WechatMiniprogram {
          *
          * 清空编辑器内容 */
         clear(option?: ClearOption): void
-
         /** [EditorContext.format(string name, string value)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.format.html)
          *
          * 需要基础库： `2.7.0`
@@ -12833,7 +12025,6 @@ declare namespace WechatMiniprogram {
             /** 值 */
             value?: string
         ): void
-
         /** [EditorContext.getContents(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.getContents.html)
          *
          * 需要基础库： `2.7.0`
@@ -12842,7 +12033,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取编辑器内容 */
         getContents(option?: GetContentsOption): void
-
         /** [EditorContext.getSelectionText(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.getSelectionText.html)
          *
          * 需要基础库： `2.10.2`
@@ -12851,7 +12041,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取编辑器已选区域内的纯文本内容。当编辑器失焦或未选中一段区间时，返回内容为空。 */
         getSelectionText(option?: GetSelectionTextOption): void
-
         /** [EditorContext.insertDivider(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertDivider.html)
          *
          * 需要基础库： `2.7.0`
@@ -12884,7 +12073,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         insertImage(option: InsertImageOption): void
-
         /** [EditorContext.insertText(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.insertText.html)
          *
          * 需要基础库： `2.7.0`
@@ -12893,7 +12081,6 @@ declare namespace WechatMiniprogram {
          *
          * 覆盖当前选区，设置一段文本 */
         insertText(option: InsertTextOption): void
-
         /** [EditorContext.redo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.redo.html)
          *
          * 需要基础库： `2.7.0`
@@ -12902,7 +12089,6 @@ declare namespace WechatMiniprogram {
          *
          * 恢复 */
         redo(option?: RedoOption): void
-
         /** [EditorContext.removeFormat(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.removeFormat.html)
          *
          * 需要基础库： `2.7.0`
@@ -12911,7 +12097,6 @@ declare namespace WechatMiniprogram {
          *
          * 清除当前选区的样式 */
         removeFormat(option?: RemoveFormatOption): void
-
         /** [EditorContext.scrollIntoView()](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.scrollIntoView.html)
          *
          * 需要基础库： `2.8.3`
@@ -12920,7 +12105,6 @@ declare namespace WechatMiniprogram {
          *
          * 使得编辑器光标处滚动到窗口可视区域内。 */
         scrollIntoView(): void
-
         /** [EditorContext.setContents(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.setContents.html)
          *
          * 需要基础库： `2.7.0`
@@ -12929,7 +12113,6 @@ declare namespace WechatMiniprogram {
          *
          * 初始化编辑器内容，html和delta同时存在时仅delta生效 */
         setContents(option: SetContentsOption): void
-
         /** [EditorContext.undo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/editor/EditorContext.undo.html)
          *
          * 需要基础库： `2.7.0`
@@ -12939,7 +12122,6 @@ declare namespace WechatMiniprogram {
          * 撤销 */
         undo(option?: UndoOption): void
     }
-
     interface EntryList {
         /** [Array.&lt;[PerformanceEntry](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceEntry.html)&gt; EntryList.getEntries()](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/EntryList.getEntries.html)
          *
@@ -12949,7 +12131,6 @@ declare namespace WechatMiniprogram {
          *
          * 该方法返回当前列表中的所有性能数据 */
         getEntries(): PerformanceEntry[]
-
         /** [Array.&lt;[PerformanceEntry](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceEntry.html)&gt; EntryList.getEntriesByName(string name, string entryType)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/EntryList.getEntriesByName.html)
          *
          * 需要基础库： `2.11.0`
@@ -12961,7 +12142,6 @@ declare namespace WechatMiniprogram {
             name: string,
             entryType?: string
         ): PerformanceEntry[]
-
         /** [Array.&lt;[PerformanceEntry](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceEntry.html)&gt; EntryList.getEntriesByType(string entryType)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/EntryList.getEntriesByType.html)
          *
          * 需要基础库： `2.11.0`
@@ -12971,7 +12151,6 @@ declare namespace WechatMiniprogram {
          * 获取当前列表中所有类型为 [entryType] 的性能数据 */
         getEntriesByType(entryType: string): PerformanceEntry[]
     }
-
     interface EventChannel {
         /** [EventChannel.emit(string eventName, any args)](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.emit.html)
          *
@@ -12986,7 +12165,6 @@ declare namespace WechatMiniprogram {
             /** 事件参数 */
             ...args: any
         ): void
-
         /** [EventChannel.off(string eventName, function fn)](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.off.html)
          *
          * 需要基础库： `2.7.3`
@@ -13000,7 +12178,6 @@ declare namespace WechatMiniprogram {
             /** 事件监听函数 */
             fn: EventCallback
         ): void
-
         /** [EventChannel.on(string eventName, function fn)](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.on.html)
          *
          * 需要基础库： `2.7.3`
@@ -13014,7 +12191,6 @@ declare namespace WechatMiniprogram {
             /** 事件监听函数 */
             fn: EventCallback
         ): void
-
         /** [EventChannel.once(string eventName, function fn)](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.once.html)
          *
          * 需要基础库： `2.7.3`
@@ -13029,7 +12205,6 @@ declare namespace WechatMiniprogram {
             fn: EventCallback
         ): void
     }
-
     interface FileSystemManager {
         /** [Array.&lt;string&gt; FileSystemManager.readdirSync(string dirPath)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readdirSync.html)
          *
@@ -13427,14 +12602,12 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         ftruncate(option: FtruncateOption): void
-
         /** [FileSystemManager.getFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getFileInfo.html)
          *
          * 在插件中使用：不支持
          *
          * 获取该小程序下的 本地临时文件 或 本地缓存文件 信息 */
         getFileInfo(option: FileSystemManagerGetFileInfoOption): void
-
         /** [FileSystemManager.getSavedFileList(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getSavedFileList.html)
          *
          * 在插件中使用：不支持
@@ -13725,7 +12898,6 @@ declare namespace WechatMiniprogram {
 }
          ``` */
         readdir(option: ReaddirOption): void
-
         /** [FileSystemManager.removeSavedFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.removeSavedFile.html)
          *
          * 在插件中使用：不支持
@@ -13874,14 +13046,12 @@ declare namespace WechatMiniprogram {
              * 是否递归删除目录。如果为 true，则删除该目录和该目录下的所有子目录以及文件。 */
             recursive?: boolean
         ): void
-
         /** [FileSystemManager.saveFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFile.html)
          *
          * 在插件中使用：不支持
          *
          * 保存临时文件到本地。此接口会移动临时文件，因此调用成功后，tempFilePath 将不可用。 */
         saveFile(option: FileSystemManagerSaveFileOption): void
-
         /** [FileSystemManager.stat(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.stat.html)
          *
          * 在插件中使用：需要基础库 `2.19.2`
@@ -14176,7 +13346,6 @@ declare namespace WechatMiniprogram {
          console.log(stats)
          ``` */
         fstatSync(option: FstatSyncOption): Stats
-
         /** [[Stats](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.html)|Array.&lt;[Stats](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.html)&gt; FileSystemManager.statSync(string path, boolean recursive)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.statSync.html)
          *
          * 在插件中使用：需要基础库 `2.19.2`
@@ -14234,7 +13403,6 @@ declare namespace WechatMiniprogram {
          console.log(fd)
          ``` */
         openSync(option: OpenSyncOption): string
-
         /** [string FileSystemManager.saveFileSync(string tempFilePath, string filePath)](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFileSync.html)
          *
          * 在插件中使用：不支持
@@ -14380,7 +13548,6 @@ declare namespace WechatMiniprogram {
          ``` */
         truncateSync(option: TruncateSyncOption): undefined
     }
-
     interface FstatSyncError {
         /** 错误信息
          *
@@ -14395,7 +13562,6 @@ declare namespace WechatMiniprogram {
          * | bad file descriptor | 无效的文件描述符 |
          * | fail permission denied | 指定的 fd 路径没有读权限 | */ errCode: number
     }
-
     interface FtruncateSyncError {
         /** 错误信息
          *
@@ -14414,7 +13580,6 @@ declare namespace WechatMiniprogram {
          * | fail the maximum size of the file storage limit is exceeded | 存储空间不足 |
          * | fail sdcard not mounted | android sdcard 挂载失败 | */ errCode: number
     }
-
     interface InnerAudioContext {
         /** [InnerAudioContext.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.destroy.html)
          *
@@ -14632,7 +13797,6 @@ declare namespace WechatMiniprogram {
             /** onWaiting 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffWaitingCallback
         ): void
-
         /** [InnerAudioContext.onCanplay(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onCanplay.html)
          *
          * 在插件中使用：支持
@@ -14642,7 +13806,6 @@ declare namespace WechatMiniprogram {
             /** 音频进入可以播放状态的事件的监听函数 */
             listener: OnCanplayCallback
         ): void
-
         /** [InnerAudioContext.onEnded(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onEnded.html)
          *
          * 在插件中使用：支持
@@ -14652,7 +13815,6 @@ declare namespace WechatMiniprogram {
             /** 音频自然播放至结束的事件的监听函数 */
             listener: OnEndedCallback
         ): void
-
         /** [InnerAudioContext.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onError.html)
          *
          * 在插件中使用：支持
@@ -14667,7 +13829,6 @@ declare namespace WechatMiniprogram {
             /** 音频播放错误事件的监听函数 */
             listener: InnerAudioContextOnErrorCallback
         ): void
-
         /** [InnerAudioContext.onPause(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onPause.html)
          *
          * 在插件中使用：支持
@@ -14677,7 +13838,6 @@ declare namespace WechatMiniprogram {
             /** 音频暂停事件的监听函数 */
             listener: OnPauseCallback
         ): void
-
         /** [InnerAudioContext.onPlay(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onPlay.html)
          *
          * 在插件中使用：支持
@@ -14687,7 +13847,6 @@ declare namespace WechatMiniprogram {
             /** 音频播放事件的监听函数 */
             listener: OnPlayCallback
         ): void
-
         /** [InnerAudioContext.onSeeked(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onSeeked.html)
          *
          * 在插件中使用：支持
@@ -14697,7 +13856,6 @@ declare namespace WechatMiniprogram {
             /** 音频完成跳转操作的事件的监听函数 */
             listener: OnSeekedCallback
         ): void
-
         /** [InnerAudioContext.onSeeking(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onSeeking.html)
          *
          * 在插件中使用：支持
@@ -14707,7 +13865,6 @@ declare namespace WechatMiniprogram {
             /** 音频进行跳转操作的事件的监听函数 */
             listener: OnSeekingCallback
         ): void
-
         /** [InnerAudioContext.onStop(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onStop.html)
          *
          * 在插件中使用：支持
@@ -14717,7 +13874,6 @@ declare namespace WechatMiniprogram {
             /** 音频停止事件的监听函数 */
             listener: InnerAudioContextOnStopCallback
         ): void
-
         /** [InnerAudioContext.onTimeUpdate(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onTimeUpdate.html)
          *
          * 在插件中使用：支持
@@ -14727,7 +13883,6 @@ declare namespace WechatMiniprogram {
             /** 音频播放进度更新事件的监听函数 */
             listener: OnTimeUpdateCallback
         ): void
-
         /** [InnerAudioContext.onWaiting(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.onWaiting.html)
          *
          * 在插件中使用：支持
@@ -14737,21 +13892,18 @@ declare namespace WechatMiniprogram {
             /** 音频加载中事件的监听函数 */
             listener: OnWaitingCallback
         ): void
-
         /** [InnerAudioContext.pause()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.pause.html)
          *
          * 在插件中使用：支持
          *
          * 暂停。暂停后的音频再播放会从暂停处开始播放 */
         pause(): void
-
         /** [InnerAudioContext.play()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.play.html)
          *
          * 在插件中使用：支持
          *
          * 播放 */
         play(): void
-
         /** [InnerAudioContext.seek(number position)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.seek.html)
          *
          * 在插件中使用：支持
@@ -14761,7 +13913,6 @@ declare namespace WechatMiniprogram {
             /** 跳转的时间，单位 s。精确到小数点后 3 位，即支持 ms 级别精确度 */
             position: number
         ): void
-
         /** [InnerAudioContext.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/InnerAudioContext.stop.html)
          *
          * 在插件中使用：支持
@@ -14769,7 +13920,6 @@ declare namespace WechatMiniprogram {
          * 停止。停止后的音频再播放会从头开始播放。 */
         stop(): void
     }
-
     interface IntersectionObserver {
         /** [IntersectionObserver.disconnect()](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.disconnect.html)
          *
@@ -14777,7 +13927,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止监听。回调函数将不再触发 */
         disconnect(): void
-
         /** [IntersectionObserver.observe(string targetSelector, function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.observe.html)
          *
          * 在插件中使用：支持
@@ -14789,7 +13938,6 @@ declare namespace WechatMiniprogram {
             /** 监听相交状态变化的回调函数 */
             callback: IntersectionObserverObserveCallback
         ): void
-
         /** [[IntersectionObserver](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.html) IntersectionObserver.relativeTo(string selector, Object margins)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.relativeTo.html)
          *
          * 在插件中使用：支持
@@ -14830,7 +13978,6 @@ declare namespace WechatMiniprogram {
             margins?: Margins
         ): IntersectionObserver
     }
-
     interface InterstitialAd {
         /** [InterstitialAd.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.destroy.html)
          *
@@ -14897,7 +14044,6 @@ declare namespace WechatMiniprogram {
             /** onLoad 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffLoadCallback
         ): void
-
         /** [InterstitialAd.onClose(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onClose.html)
          *
          * 在插件中使用：不支持
@@ -14907,7 +14053,6 @@ declare namespace WechatMiniprogram {
             /** 插屏广告关闭事件的监听函数 */
             listener: UDPSocketOnCloseCallback
         ): void
-
         /** [InterstitialAd.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onError.html)
          *
          * 在插件中使用：不支持
@@ -14934,7 +14079,6 @@ declare namespace WechatMiniprogram {
             /** 插屏错误事件的监听函数 */
             listener: InterstitialAdOnErrorCallback
         ): void
-
         /** [InterstitialAd.onLoad(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onLoad.html)
          *
          * 在插件中使用：不支持
@@ -14944,7 +14088,6 @@ declare namespace WechatMiniprogram {
             /** 插屏广告加载事件的监听函数 */
             listener: OnLoadCallback
         ): void
-
         /** [Promise InterstitialAd.load()](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.load.html)
          *
          * 需要基础库： `2.8.0`
@@ -14953,7 +14096,6 @@ declare namespace WechatMiniprogram {
          *
          * 加载插屏广告。 */
         load(): Promise<any>
-
         /** [Promise InterstitialAd.show()](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.show.html)
          *
          * 在插件中使用：不支持
@@ -14973,7 +14115,6 @@ declare namespace WechatMiniprogram {
          * | 2005  | 广告调用异常  | 插屏广告实例不允许跨页面调用 | */
         show(): Promise<any>
     }
-
     interface IsoDep {
         /** [IsoDep.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.close.html)
          *
@@ -14983,7 +14124,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [IsoDep.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -14992,7 +14132,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [IsoDep.getHistoricalBytes(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.getHistoricalBytes.html)
          *
          * 需要基础库： `2.11.2`
@@ -15001,7 +14140,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取复位信息 */
         getHistoricalBytes(option?: GetHistoricalBytesOption): void
-
         /** [IsoDep.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -15010,7 +14148,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [IsoDep.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -15019,7 +14156,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [IsoDep.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -15028,7 +14164,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [IsoDep.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -15038,7 +14173,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface Join1v1ChatError {
         /** 错误信息
          *
@@ -15075,7 +14209,6 @@ declare namespace WechatMiniprogram {
          * | -3 |  | 加入会话期间退出（可能是用户主动退出，或者退后台、来电等原因），因此加入失败 |
          * | -1000 |  | 系统错误 | */ errCode: number
     }
-
     interface JoinVoIPChatError {
         /** 错误信息
          *
@@ -15094,7 +14227,6 @@ declare namespace WechatMiniprogram {
          * | -3 | 加入会话期间退出（可能是用户主动退出，或者退后台、来电等原因），因此加入失败 |  |
          * | -1000 | 系统错误 |  | */ errCode: number
     }
-
     interface LivePlayerContext {
         /** [LivePlayerContext.exitFullScreen(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.exitFullScreen.html)
          *
@@ -15102,21 +14234,18 @@ declare namespace WechatMiniprogram {
          *
          * 退出全屏 */
         exitFullScreen(option?: ExitFullScreenOption): void
-
         /** [LivePlayerContext.exitPictureInPicture(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.exitPictureInPicture.html)
          *
          * 在插件中使用：支持
          *
          * 退出小窗，该方法可在任意页面调用 */
         exitPictureInPicture(option?: ExitPictureInPictureOption): void
-
         /** [LivePlayerContext.mute(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.mute.html)
          *
          * 在插件中使用：支持
          *
          * 静音 */
         mute(option?: MuteOption): void
-
         /** [LivePlayerContext.pause(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.pause.html)
          *
          * 需要基础库： `1.9.90`
@@ -15125,14 +14254,12 @@ declare namespace WechatMiniprogram {
          *
          * 暂停 */
         pause(option?: PauseOption): void
-
         /** [LivePlayerContext.play(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.play.html)
          *
          * 在插件中使用：支持
          *
          * 播放 */
         play(option?: PlayOption): void
-
         /** [LivePlayerContext.requestFullScreen(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.requestFullScreen.html)
          *
          * 在插件中使用：支持
@@ -15141,7 +14268,6 @@ declare namespace WechatMiniprogram {
         requestFullScreen(
             option: LivePlayerContextRequestFullScreenOption
         ): void
-
         /** [LivePlayerContext.requestPictureInPicture(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.requestPictureInPicture.html)
          *
          * 需要基础库： `2.15.0`
@@ -15150,7 +14276,6 @@ declare namespace WechatMiniprogram {
          *
          * 进入小窗 */
         requestPictureInPicture(option?: RequestPictureInPictureOption): void
-
         /** [LivePlayerContext.resume(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.resume.html)
          *
          * 需要基础库： `1.9.90`
@@ -15159,7 +14284,6 @@ declare namespace WechatMiniprogram {
          *
          * 恢复 */
         resume(option?: ResumeOption): void
-
         /** [LivePlayerContext.snapshot(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.snapshot.html)
          *
          * 需要基础库： `2.7.1`
@@ -15168,7 +14292,6 @@ declare namespace WechatMiniprogram {
          *
          * 截图 */
         snapshot(option: LivePlayerContextSnapshotOption): void
-
         /** [LivePlayerContext.stop(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.stop.html)
          *
          * 在插件中使用：支持
@@ -15176,7 +14299,6 @@ declare namespace WechatMiniprogram {
          * 停止 */
         stop(option?: StopOption): void
     }
-
     interface LivePusherContext {
         /** [LivePusherContext.exitPictureInPicture(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.exitPictureInPicture.html)
          *
@@ -15186,14 +14308,12 @@ declare namespace WechatMiniprogram {
          *
          * 退出小窗，该方法可在任意页面调用 */
         exitPictureInPicture(option?: ExitPictureInPictureOption): void
-
         /** [LivePusherContext.pause(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.pause.html)
          *
          * 在插件中使用：支持
          *
          * 暂停推流 */
         pause(option?: PauseOption): void
-
         /** [LivePusherContext.pauseBGM(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.pauseBGM.html)
          *
          * 需要基础库： `2.4.0`
@@ -15202,7 +14322,6 @@ declare namespace WechatMiniprogram {
          *
          * 暂停背景音 */
         pauseBGM(option?: PauseBGMOption): void
-
         /** [LivePusherContext.playBGM(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.playBGM.html)
          *
          * 需要基础库： `2.4.0`
@@ -15211,14 +14330,12 @@ declare namespace WechatMiniprogram {
          *
          * 播放背景音 */
         playBGM(option: PlayBGMOption): void
-
         /** [LivePusherContext.resume(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.resume.html)
          *
          * 在插件中使用：支持
          *
          * 恢复推流 */
         resume(option?: ResumeOption): void
-
         /** [LivePusherContext.resumeBGM(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.resumeBGM.html)
          *
          * 需要基础库： `2.4.0`
@@ -15227,7 +14344,6 @@ declare namespace WechatMiniprogram {
          *
          * 恢复背景音 */
         resumeBGM(option?: ResumeBGMOption): void
-
         /** [LivePusherContext.sendMessage(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.sendMessage.html)
          *
          * 需要基础库： `2.10.0`
@@ -15236,7 +14352,6 @@ declare namespace WechatMiniprogram {
          *
          * 发送SEI消息 */
         sendMessage(option: SendMessageOption): void
-
         /** [LivePusherContext.setBGMVolume(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.setBGMVolume.html)
          *
          * 需要基础库： `2.4.0`
@@ -15245,7 +14360,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置背景音音量 */
         setBGMVolume(option: SetBGMVolumeOption): void
-
         /** [LivePusherContext.setMICVolume(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.setMICVolume.html)
          *
          * 需要基础库： `2.10.0`
@@ -15254,7 +14368,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置麦克风音量 */
         setMICVolume(option: SetMICVolumeOption): void
-
         /** [LivePusherContext.snapshot(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.snapshot.html)
          *
          * 需要基础库： `1.9.90`
@@ -15263,14 +14376,12 @@ declare namespace WechatMiniprogram {
          *
          * 快照 */
         snapshot(option: LivePusherContextSnapshotOption): void
-
         /** [LivePusherContext.start(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.start.html)
          *
          * 在插件中使用：支持
          *
          * 开始推流，同时开启摄像头预览 */
         start(option?: LivePusherContextStartOption): void
-
         /** [LivePusherContext.startPreview(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.startPreview.html)
          *
          * 需要基础库： `2.7.0`
@@ -15279,14 +14390,12 @@ declare namespace WechatMiniprogram {
          *
          * 开启摄像头预览 */
         startPreview(option?: StartPreviewOption): void
-
         /** [LivePusherContext.stop(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stop.html)
          *
          * 在插件中使用：支持
          *
          * 停止推流，同时停止摄像头预览 */
         stop(option?: StopOption): void
-
         /** [LivePusherContext.stopBGM(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stopBGM.html)
          *
          * 需要基础库： `2.4.0`
@@ -15295,7 +14404,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止背景音 */
         stopBGM(option?: StopBGMOption): void
-
         /** [LivePusherContext.stopPreview(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.stopPreview.html)
          *
          * 需要基础库： `2.7.0`
@@ -15304,14 +14412,12 @@ declare namespace WechatMiniprogram {
          *
          * 关闭摄像头预览 */
         stopPreview(option?: StopPreviewOption): void
-
         /** [LivePusherContext.switchCamera(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.switchCamera.html)
          *
          * 在插件中使用：支持
          *
          * 切换前后摄像头 */
         switchCamera(option?: SwitchCameraOption): void
-
         /** [LivePusherContext.toggleTorch(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.toggleTorch.html)
          *
          * 需要基础库： `2.1.0`
@@ -15321,7 +14427,6 @@ declare namespace WechatMiniprogram {
          * 切换手电筒 */
         toggleTorch(option?: ToggleTorchOption): void
     }
-
     interface LogManager {
         /** [LogManager.debug()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.debug.html)
          *
@@ -15332,7 +14437,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb */
             ...args: any[]
         ): void
-
         /** [LogManager.info()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.info.html)
          *
          * 在插件中使用：不支持
@@ -15342,7 +14446,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb */
             ...args: any[]
         ): void
-
         /** [LogManager.log()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.log.html)
          *
          * 在插件中使用：不支持
@@ -15352,7 +14455,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。每次调用的参数的总大小不超过100Kb */
             ...args: any[]
         ): void
-
         /** [LogManager.warn()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.warn.html)
          *
          * 在插件中使用：不支持
@@ -15363,7 +14465,6 @@ declare namespace WechatMiniprogram {
             ...args: any[]
         ): void
     }
-
     interface MapContext {
         /** [MapContext.addArc(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.addArc.html)
          *
@@ -15373,7 +14474,6 @@ declare namespace WechatMiniprogram {
          *
          * 添加弧线，途经点与夹角必须设置一个。途经点必须在起终点有效坐标范围内，否则不能生成正确的弧线，同时设置夹角角度时，以夹角角度为准。夹角定义为起点到终点，与起点外切线逆时针旋转的角度。工具侧暂未支持。 */
         addArc(option: AddArcOption): void
-
         /** [MapContext.addCustomLayer(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.addCustomLayer.html)
          *
          * 需要基础库： `2.12.0`
@@ -15382,7 +14482,6 @@ declare namespace WechatMiniprogram {
          *
          * 添加个性化图层。图层创建[参考文档](https://lbs.qq.com/dev/console/customLayer/create) */
         addCustomLayer(option: AddCustomLayerOption): void
-
         /** [MapContext.addGroundOverlay(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.addGroundOverlay.html)
          *
          * 需要基础库： `2.14.0`
@@ -15391,7 +14490,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建自定义图片图层，图片会随着地图缩放而缩放。 */
         addGroundOverlay(option: AddGroundOverlayOption): void
-
         /** [MapContext.addMarkers(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.addMarkers.html)
          *
          * 需要基础库： `2.13.0`
@@ -15400,7 +14498,6 @@ declare namespace WechatMiniprogram {
          *
          * 添加 marker。 */
         addMarkers(option: AddMarkersOption): void
-
         /** [MapContext.addVisualLayer(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.addVisualLayer.html)
          *
          * 需要基础库： `2.20.1`
@@ -15409,7 +14506,6 @@ declare namespace WechatMiniprogram {
          *
          * 添加可视化图层。需要刷新时，interval 可设置的最小值为 15 s。 */
         addVisualLayer(option: AddVisualLayerOption): void
-
         /** [MapContext.fromScreenLocation(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.fromScreenLocation.html)
          *
          * 需要基础库： `2.14.0`
@@ -15418,14 +14514,12 @@ declare namespace WechatMiniprogram {
          *
          * 获取屏幕上的点对应的经纬度，坐标原点为地图左上角。 */
         fromScreenLocation(option: FromScreenLocationOption): void
-
         /** [MapContext.getCenterLocation(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getCenterLocation.html)
          *
          * 在插件中使用：支持
          *
          * 获取当前地图中心的经纬度。返回的是 gcj02 坐标系，可以用于 [wx.openLocation()](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.openLocation.html) */
         getCenterLocation(option: GetCenterLocationOption): void
-
         /** [MapContext.getRegion(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getRegion.html)
          *
          * 需要基础库： `1.4.0`
@@ -15434,7 +14528,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取当前地图的视野范围 */
         getRegion(option?: GetRegionOption): void
-
         /** [MapContext.getRotate(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getRotate.html)
          *
          * 需要基础库： `2.8.0`
@@ -15443,7 +14536,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取当前地图的旋转角 */
         getRotate(option?: GetRotateOption): void
-
         /** [MapContext.getScale(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getScale.html)
          *
          * 需要基础库： `1.4.0`
@@ -15452,7 +14544,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取当前地图的缩放级别 */
         getScale(option?: GetScaleOption): void
-
         /** [MapContext.getSkew(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.getSkew.html)
          *
          * 需要基础库： `2.8.0`
@@ -15461,7 +14552,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取当前地图的倾斜角 */
         getSkew(option?: GetSkewOption): void
-
         /** [MapContext.includePoints(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.includePoints.html)
          *
          * 需要基础库： `1.2.0`
@@ -15470,7 +14560,6 @@ declare namespace WechatMiniprogram {
          *
          * 缩放视野展示所有经纬度 */
         includePoints(option: IncludePointsOption): void
-
         /** [MapContext.initMarkerCluster(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.initMarkerCluster.html)
          *
          * 需要基础库： `2.13.0`
@@ -15479,7 +14568,6 @@ declare namespace WechatMiniprogram {
          *
          * 初始化点聚合的配置，未调用时采用默认配置。 */
         initMarkerCluster(option: InitMarkerClusterOption): void
-
         /** [MapContext.moveAlong(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.moveAlong.html)
          *
          * 需要基础库： `2.13.0`
@@ -15488,7 +14576,6 @@ declare namespace WechatMiniprogram {
          *
          * 沿指定路径移动 `marker`，用于轨迹回放等场景。动画完成时触发回调事件，若动画进行中，对同一 `marker` 再次调用 `moveAlong` 方法，前一次的动画将被打断。 */
         moveAlong(option: MoveAlongOption): void
-
         /** [MapContext.moveToLocation(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.moveToLocation.html)
          *
          * 需要基础库： `1.2.0`
@@ -15550,7 +14637,6 @@ declare namespace WechatMiniprogram {
             /** 事件的回调函数 */
             callback: (...args: any[]) => any
         ): void
-
         /** [MapContext.openMapApp(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.openMapApp.html)
          *
          * 需要基础库： `2.14.0`
@@ -15559,7 +14645,6 @@ declare namespace WechatMiniprogram {
          *
          * 拉起地图APP选择导航。 */
         openMapApp(option: OpenMapAppOption): void
-
         /** [MapContext.removeArc(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.removeArc.html)
          *
          * 需要基础库： `2.22.0`
@@ -15568,7 +14653,6 @@ declare namespace WechatMiniprogram {
          *
          * 删除弧线。工具侧暂未支持。 */
         removeArc(option: RemoveArcOption): void
-
         /** [MapContext.removeCustomLayer(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.removeCustomLayer.html)
          *
          * 需要基础库： `2.12.0`
@@ -15577,7 +14661,6 @@ declare namespace WechatMiniprogram {
          *
          * 移除个性化图层。 */
         removeCustomLayer(option: RemoveCustomLayerOption): void
-
         /** [MapContext.removeGroundOverlay(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.removeGroundOverlay.html)
          *
          * 需要基础库： `2.14.0`
@@ -15586,7 +14669,6 @@ declare namespace WechatMiniprogram {
          *
          * 移除自定义图片图层。 */
         removeGroundOverlay(option: RemoveGroundOverlayOption): void
-
         /** [MapContext.removeMarkers(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.removeMarkers.html)
          *
          * 需要基础库： `2.13.0`
@@ -15595,7 +14677,6 @@ declare namespace WechatMiniprogram {
          *
          * 移除 marker。 */
         removeMarkers(option: RemoveMarkersOption): void
-
         /** [MapContext.removeVisualLayer(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.removeVisualLayer.html)
          *
          * 需要基础库： `2.20.1`
@@ -15604,7 +14685,6 @@ declare namespace WechatMiniprogram {
          *
          * 移除可视化图层。 */
         removeVisualLayer(option: RemoveVisualLayerOption): void
-
         /** [MapContext.setBoundary(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.setBoundary.html)
          *
          * 需要基础库： `2.22.0`
@@ -15613,7 +14693,6 @@ declare namespace WechatMiniprogram {
          *
          * 限制地图的显示范围。此接口同时会限制地图的最小缩放整数级别。 */
         setBoundary(option: SetBoundaryOption): void
-
         /** [MapContext.setCenterOffset(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.setCenterOffset.html)
          *
          * 需要基础库： `2.10.0`
@@ -15622,7 +14701,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置地图中心点偏移，向后向下为增长，屏幕比例范围(0.25~0.75)，默认偏移为[0.5, 0.5] */
         setCenterOffset(option: SetCenterOffsetOption): void
-
         /** [MapContext.setLocMarkerIcon(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.setLocMarkerIcon.html)
          *
          * 需要基础库： `2.16.0`
@@ -15631,7 +14709,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置定位点图标，支持网络路径、本地路径、代码包路径 */
         setLocMarkerIcon(option: SetLocMarkerIconOption): void
-
         /** [MapContext.toScreenLocation(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.toScreenLocation.html)
          *
          * 需要基础库： `2.14.0`
@@ -15640,7 +14717,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取经纬度对应的屏幕坐标，坐标原点为地图左上角。 */
         toScreenLocation(option: ToScreenLocationOption): void
-
         /** [MapContext.translateMarker(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.translateMarker.html)
          *
          * 需要基础库： `1.2.0`
@@ -15649,7 +14725,6 @@ declare namespace WechatMiniprogram {
          *
          * 平移marker，带动画。 */
         translateMarker(option: TranslateMarkerOption): void
-
         /** [MapContext.updateGroundOverlay(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.updateGroundOverlay.html)
          *
          * 需要基础库： `2.14.0`
@@ -15659,7 +14734,6 @@ declare namespace WechatMiniprogram {
          * 更新自定义图片图层。 */
         updateGroundOverlay(option: UpdateGroundOverlayOption): void
     }
-
     interface MediaAudioPlayer {
         /** [Promise MediaAudioPlayer.addAudioSource([VideoDecoder](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.html) source)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/MediaAudioPlayer.addAudioSource.html)
          *
@@ -15672,14 +14746,12 @@ declare namespace WechatMiniprogram {
              * 视频解码器实例。作为音频源添加到音频播放器中 */
             source: VideoDecoder
         ): Promise<any>
-
         /** [Promise MediaAudioPlayer.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/MediaAudioPlayer.destroy.html)
          *
          * 在插件中使用：支持
          *
          * 销毁播放器 */
         destroy(): Promise<any>
-
         /** [Promise MediaAudioPlayer.removeAudioSource([VideoDecoder](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.html) source)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/MediaAudioPlayer.removeAudioSource.html)
          *
          * 在插件中使用：支持
@@ -15691,14 +14763,12 @@ declare namespace WechatMiniprogram {
              * 视频解码器实例 */
             source: VideoDecoder
         ): Promise<any>
-
         /** [Promise MediaAudioPlayer.start()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/MediaAudioPlayer.start.html)
          *
          * 在插件中使用：支持
          *
          * 启动播放器 */
         start(): Promise<any>
-
         /** [Promise MediaAudioPlayer.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/MediaAudioPlayer.stop.html)
          *
          * 在插件中使用：支持
@@ -15706,7 +14776,6 @@ declare namespace WechatMiniprogram {
          * 停止播放器 */
         stop(): Promise<any>
     }
-
     interface MediaContainer {
         /** [MediaContainer.addTrack([MediaTrack](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaTrack.html) track)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.addTrack.html)
          *
@@ -15721,7 +14790,6 @@ declare namespace WechatMiniprogram {
              * 要添加的音频或视频轨道 */
             track: MediaTrack
         ): void
-
         /** [MediaContainer.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.destroy.html)
          *
          * 需要基础库： `2.9.0`
@@ -15730,7 +14798,6 @@ declare namespace WechatMiniprogram {
          *
          * 将容器销毁，释放资源 */
         destroy(): void
-
         /** [MediaContainer.export()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.export.html)
          *
          * 需要基础库： `2.9.0`
@@ -15739,7 +14806,6 @@ declare namespace WechatMiniprogram {
          *
          * 将容器内的轨道合并并导出视频文件 */
         export(): void
-
         /** [MediaContainer.extractDataSource(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.extractDataSource.html)
          *
          * 需要基础库： `2.9.0`
@@ -15748,7 +14814,6 @@ declare namespace WechatMiniprogram {
          *
          * 将传入的视频源分离轨道。不会自动将轨道添加到待合成的容器里。 */
         extractDataSource(option: ExtractDataSourceOption): void
-
         /** [MediaContainer.removeTrack([MediaTrack](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaTrack.html) track)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.removeTrack.html)
          *
          * 需要基础库： `2.9.0`
@@ -15763,7 +14828,6 @@ declare namespace WechatMiniprogram {
             track: MediaTrack
         ): void
     }
-
     interface MediaQueryObserver {
         /** [MediaQueryObserver.disconnect()](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/MediaQueryObserver.disconnect.html)
          *
@@ -15771,7 +14835,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止监听。回调函数将不再触发 */
         disconnect(): void
-
         /** [MediaQueryObserver.observe(Object descriptor, function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/MediaQueryObserver.observe.html)
          *
          * 在插件中使用：支持
@@ -15784,7 +14847,6 @@ declare namespace WechatMiniprogram {
             callback: MediaQueryObserverObserveCallback
         ): void
     }
-
     interface MediaRecorder {
         /** [MediaRecorder.off(string eventName, function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.off.html)
          *
@@ -15799,7 +14861,6 @@ declare namespace WechatMiniprogram {
             /** 事件触发时执行的回调函数 */
             callback: (...args: any[]) => any
         ): void
-
         /** [MediaRecorder.on(string eventName, function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.on.html)
          *
          * 需要基础库： `2.11.0`
@@ -15820,7 +14881,6 @@ declare namespace WechatMiniprogram {
             /** 事件触发时执行的回调函数 */
             callback: (...args: any[]) => any
         ): void
-
         /** [Promise MediaRecorder.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.destroy.html)
          *
          * 需要基础库： `2.11.0`
@@ -15829,7 +14889,6 @@ declare namespace WechatMiniprogram {
          *
          * 销毁录制器 */
         destroy(): Promise<any>
-
         /** [Promise MediaRecorder.pause()](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.pause.html)
          *
          * 需要基础库： `2.11.0`
@@ -15838,7 +14897,6 @@ declare namespace WechatMiniprogram {
          *
          * 暂停录制 */
         pause(): Promise<any>
-
         /** [Promise MediaRecorder.requestFrame(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.requestFrame.html)
          *
          * 需要基础库： `2.11.0`
@@ -15847,7 +14905,6 @@ declare namespace WechatMiniprogram {
          *
          * 请求下一帧录制，在 callback 里完成一帧渲染后开始录制当前帧 */
         requestFrame(callback: (...args: any[]) => any): Promise<any>
-
         /** [Promise MediaRecorder.resume()](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.resume.html)
          *
          * 需要基础库： `2.11.0`
@@ -15856,7 +14913,6 @@ declare namespace WechatMiniprogram {
          *
          * 恢复录制 */
         resume(): Promise<any>
-
         /** [Promise MediaRecorder.start()](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.start.html)
          *
          * 需要基础库： `2.11.0`
@@ -15865,7 +14921,6 @@ declare namespace WechatMiniprogram {
          *
          * 开始录制 */
         start(): Promise<any>
-
         /** [Promise MediaRecorder.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/media-recorder/MediaRecorder.stop.html)
          *
          * 需要基础库： `2.11.0`
@@ -15875,7 +14930,6 @@ declare namespace WechatMiniprogram {
          * 结束录制 */
         stop(): Promise<any>
     }
-
     interface MifareClassic {
         /** [MifareClassic.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.close.html)
          *
@@ -15885,7 +14939,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [MifareClassic.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -15894,7 +14947,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [MifareClassic.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -15903,7 +14955,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [MifareClassic.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -15912,7 +14963,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [MifareClassic.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -15921,7 +14971,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [MifareClassic.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -15931,7 +14980,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface MifareUltralight {
         /** [MifareUltralight.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.close.html)
          *
@@ -15941,7 +14989,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [MifareUltralight.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -15950,7 +14997,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [MifareUltralight.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -15959,7 +15005,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [MifareUltralight.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -15968,7 +15013,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [MifareUltralight.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -15977,7 +15021,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [MifareUltralight.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -15987,7 +15030,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface NFCAdapter {
         /** [NFCAdapter.offDiscovered(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.offDiscovered.html)
          *
@@ -16009,7 +15051,6 @@ declare namespace WechatMiniprogram {
             /** onDiscovered 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffDiscoveredCallback
         ): void
-
         /** [NFCAdapter.onDiscovered(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.onDiscovered.html)
          *
          * 需要基础库： `2.11.2`
@@ -16021,21 +15062,18 @@ declare namespace WechatMiniprogram {
             /** 的监听函数 */
             listener: OnDiscoveredCallback
         ): void
-
         /** [NFCAdapter.startDiscovery(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.startDiscovery.html)
          *
          * 需要基础库： `2.11.2`
          *
          * 在插件中使用：支持 */
         startDiscovery(option?: StartDiscoveryOption): void
-
         /** [NFCAdapter.stopDiscovery(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.stopDiscovery.html)
          *
          * 需要基础库： `2.11.2`
          *
          * 在插件中使用：支持 */
         stopDiscovery(option?: StopDiscoveryOption): void
-
         /** [[IsoDep](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/IsoDep.html) NFCAdapter.getIsoDep()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getIsoDep.html)
          *
          * 需要基础库： `2.11.2`
@@ -16044,7 +15082,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取IsoDep实例，实例支持ISO-DEP (ISO 14443-4)标准的读写 */
         getIsoDep(): IsoDep
-
         /** [[MifareClassic](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareClassic.html) NFCAdapter.getMifareClassic()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getMifareClassic.html)
          *
          * 需要基础库： `2.11.2`
@@ -16053,7 +15090,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取MifareClassic实例，实例支持MIFARE Classic标签的读写 */
         getMifareClassic(): MifareClassic
-
         /** [[MifareUltralight](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/MifareUltralight.html) NFCAdapter.getMifareUltralight()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getMifareUltralight.html)
          *
          * 需要基础库： `2.11.2`
@@ -16062,7 +15098,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取MifareUltralight实例，实例支持MIFARE Ultralight标签的读写 */
         getMifareUltralight(): MifareUltralight
-
         /** [[Ndef](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.html) NFCAdapter.getNdef()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getNdef.html)
          *
          * 需要基础库： `2.11.2`
@@ -16071,7 +15106,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取Ndef实例，实例支持对NDEF格式的NFC标签上的NDEF数据的读写 */
         getNdef(): Ndef
-
         /** [[NfcA](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.html) NFCAdapter.getNfcA()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getNfcA.html)
          *
          * 需要基础库： `2.11.2`
@@ -16080,7 +15114,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取NfcA实例，实例支持NFC-A (ISO 14443-3A)标准的读写 */
         getNfcA(): NfcA
-
         /** [[NfcB](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.html) NFCAdapter.getNfcB()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getNfcB.html)
          *
          * 需要基础库： `2.11.2`
@@ -16089,7 +15122,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取NfcB实例，实例支持NFC-B (ISO 14443-3B)标准的读写 */
         getNfcB(): NfcB
-
         /** [[NfcF](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.html) NFCAdapter.getNfcF()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getNfcF.html)
          *
          * 需要基础库： `2.11.2`
@@ -16098,7 +15130,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取NfcF实例，实例支持NFC-F (JIS 6319-4)标准的读写 */
         getNfcF(): NfcF
-
         /** [[NfcV](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.html) NFCAdapter.getNfcV()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.getNfcV.html)
          *
          * 需要基础库： `2.11.2`
@@ -16108,7 +15139,6 @@ declare namespace WechatMiniprogram {
          * 获取NfcV实例，实例支持NFC-V (ISO 15693)标准的读写 */
         getNfcV(): NfcV
     }
-
     interface NFCError {
         /** 错误信息
          *
@@ -16135,7 +15165,6 @@ declare namespace WechatMiniprogram {
          * | 13005 |  | 返回的指令不合法 |
          * | 13006 |  | 注册AID失败 | */ errCode: number
     }
-
     interface Ndef {
         /** [Ndef.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.close.html)
          *
@@ -16145,7 +15174,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [Ndef.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -16154,7 +15182,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [Ndef.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -16163,7 +15190,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [Ndef.offNdefMessage(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.offNdefMessage.html)
          *
          * 需要基础库： `2.11.2`
@@ -16172,7 +15198,6 @@ declare namespace WechatMiniprogram {
          *
          * 取消监听 Ndef 消息 */
         offNdefMessage(callback: (...args: any[]) => any): void
-
         /** [Ndef.onNdefMessage(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.onNdefMessage.html)
          *
          * 需要基础库： `2.11.2`
@@ -16181,7 +15206,6 @@ declare namespace WechatMiniprogram {
          *
          * 监听 Ndef 消息 */
         onNdefMessage(callback: (...args: any[]) => any): void
-
         /** [Ndef.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -16190,7 +15214,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [Ndef.writeNdefMessage(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/Ndef.writeNdefMessage.html)
          *
          * 需要基础库： `2.11.2`
@@ -16200,7 +15223,6 @@ declare namespace WechatMiniprogram {
          * 重写 Ndef 标签内容 */
         writeNdefMessage(option: WriteNdefMessageOption): void
     }
-
     interface NfcA {
         /** [NfcA.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.close.html)
          *
@@ -16210,7 +15232,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [NfcA.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -16219,7 +15240,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [NfcA.getAtqa(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.getAtqa.html)
          *
          * 需要基础库： `2.11.2`
@@ -16228,7 +15248,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取ATQA信息 */
         getAtqa(option?: GetAtqaOption): void
-
         /** [NfcA.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -16237,7 +15256,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [NfcA.getSak(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.getSak.html)
          *
          * 需要基础库： `2.11.2`
@@ -16246,7 +15264,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取SAK信息 */
         getSak(option?: GetSakOption): void
-
         /** [NfcA.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -16255,7 +15272,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [NfcA.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -16264,7 +15280,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [NfcA.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcA.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -16274,7 +15289,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface NfcB {
         /** [NfcB.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.close.html)
          *
@@ -16284,7 +15298,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [NfcB.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -16293,7 +15306,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [NfcB.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -16302,7 +15314,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [NfcB.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -16311,7 +15322,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [NfcB.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -16320,7 +15330,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [NfcB.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcB.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -16330,7 +15339,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface NfcF {
         /** [NfcF.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.close.html)
          *
@@ -16340,7 +15348,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [NfcF.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -16349,7 +15356,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [NfcF.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -16358,7 +15364,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [NfcF.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -16367,7 +15372,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [NfcF.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -16376,7 +15380,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [NfcF.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcF.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -16386,7 +15389,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface NfcV {
         /** [NfcV.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.close.html)
          *
@@ -16396,7 +15398,6 @@ declare namespace WechatMiniprogram {
          *
          * 断开连接 */
         close(option?: NdefCloseOption): void
-
         /** [NfcV.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.connect.html)
          *
          * 需要基础库： `2.11.2`
@@ -16405,7 +15406,6 @@ declare namespace WechatMiniprogram {
          *
          * 连接 NFC 标签 */
         connect(option?: NdefConnectOption): void
-
         /** [NfcV.getMaxTransceiveLength(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.getMaxTransceiveLength.html)
          *
          * 需要基础库： `2.11.2`
@@ -16414,7 +15414,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取最大传输长度 */
         getMaxTransceiveLength(option?: GetMaxTransceiveLengthOption): void
-
         /** [NfcV.isConnected(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.isConnected.html)
          *
          * 需要基础库： `2.11.2`
@@ -16423,7 +15422,6 @@ declare namespace WechatMiniprogram {
          *
          * 检查是否已连接 */
         isConnected(option?: IsConnectedOption): void
-
         /** [NfcV.setTimeout(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.setTimeout.html)
          *
          * 需要基础库： `2.11.2`
@@ -16432,7 +15430,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置超时时间 */
         setTimeout(option: SetTimeoutOption): void
-
         /** [NfcV.transceive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NfcV.transceive.html)
          *
          * 需要基础库： `2.11.2`
@@ -16442,7 +15439,6 @@ declare namespace WechatMiniprogram {
          * 发送数据 */
         transceive(option: TransceiveOption): void
     }
-
     interface Nfcrwerror {
         /** 错误信息
          *
@@ -16485,7 +15481,6 @@ declare namespace WechatMiniprogram {
          * | 13017 | system internal error | 相关读写操作失败 |
          * | 13016 | connect fail | 连接失败 | */ errCode: number
     }
-
     interface NodesRef {
         /** [[SelectorQuery](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.html) NodesRef.boundingClientRect(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.boundingClientRect.html)
          *
@@ -16647,7 +15642,6 @@ declare namespace WechatMiniprogram {
             callback?: ScrollOffsetCallback
         ): SelectorQuery
     }
-
     interface OffscreenCanvas {
         /** [[Image](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/Image.html) OffscreenCanvas.createImage()](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.createImage.html)
          *
@@ -16661,7 +15655,6 @@ declare namespace WechatMiniprogram {
          *
          * 注意不允许混用 webgl 和 2d 画布创建的图片对象，使用时请注意尽量使用 canvas 自身的 `createImage` 创建图片对象。 */
         createImage(): Image
-
         /** [[RenderingContext](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/RenderingContext.html) OffscreenCanvas.getContext(string contextType)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.getContext.html)
          *
          * 需要基础库： `2.7.0`
@@ -16682,7 +15675,6 @@ declare namespace WechatMiniprogram {
             contextType: 'webgl' | '2d'
         ): any
     }
-
     interface OpenSyncError {
         /** 错误信息
          *
@@ -16695,7 +15687,6 @@ declare namespace WechatMiniprogram {
          * | - | - |
          * | fail no such file or directory "${filePath}" | 上级目录不存在 | */ errCode: number
     }
-
     interface Performance {
         /** [Array.&lt;[PerformanceEntry](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceEntry.html)&gt; Performance.getEntries()](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/Performance.getEntries.html)
          *
@@ -16705,7 +15696,6 @@ declare namespace WechatMiniprogram {
          *
          * 该方法返回当前缓冲区中的所有性能数据 */
         getEntries(): PerformanceEntry[]
-
         /** [Array.&lt;[PerformanceEntry](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceEntry.html)&gt; Performance.getEntriesByName(string name, string entryType)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/Performance.getEntriesByName.html)
          *
          * 需要基础库： `2.11.0`
@@ -16719,7 +15709,6 @@ declare namespace WechatMiniprogram {
             /** 类型 */
             entryType?: string
         ): PerformanceEntry[]
-
         /** [Array.&lt;[PerformanceEntry](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceEntry.html)&gt; Performance.getEntriesByType(string entryType)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/Performance.getEntriesByType.html)
          *
          * 需要基础库： `2.11.0`
@@ -16731,7 +15720,6 @@ declare namespace WechatMiniprogram {
             /** 类型 */
             entryType: string
         ): PerformanceEntry[]
-
         /** [Performance.setBufferSize(number size)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/Performance.setBufferSize.html)
          *
          * 需要基础库： `2.11.0`
@@ -16740,7 +15728,6 @@ declare namespace WechatMiniprogram {
          *
          * 设置缓冲区大小，默认缓冲 30 条性能数据 */
         setBufferSize(size: number): void
-
         /** [[PerformanceObserver](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceObserver.html) Performance.createObserver(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/Performance.createObserver.html)
          *
          * 需要基础库： `2.11.0`
@@ -16753,7 +15740,6 @@ declare namespace WechatMiniprogram {
             callback: (...args: any[]) => any
         ): PerformanceObserver
     }
-
     interface PerformanceObserver {
         /** [PerformanceObserver.disconnect()](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceObserver.disconnect.html)
          *
@@ -16763,7 +15749,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止监听 */
         disconnect(): void
-
         /** [PerformanceObserver.observe(Object options)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/PerformanceObserver.observe.html)
          *
          * 需要基础库： `2.11.0`
@@ -16776,7 +15761,6 @@ declare namespace WechatMiniprogram {
             options: ObserveOption
         ): void
     }
-
     interface ReadCompressedFileSyncError {
         /** 错误信息
          *
@@ -16793,7 +15777,6 @@ declare namespace WechatMiniprogram {
          * | fail no such file or directory, open ${filePath} | 指定的 filePath 所在目录不存在 |
          * | fail permission denied, open ${dirPath} | 指定的 filePath 路径没有读权限 | */ errCode: number
     }
-
     interface ReadSyncError {
         /** 错误信息
          *
@@ -16814,7 +15797,6 @@ declare namespace WechatMiniprogram {
          * | fail the value of "length" is out of range | 传入的 length 不合法 |
          * | fail sdcard not mounted | android sdcard 挂载失败 | */ errCode: number
     }
-
     interface RealtimeLogManager {
         /** [Object RealtimeLogManager.getCurrentState()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.getCurrentState.html)
          *
@@ -16826,7 +15808,6 @@ declare namespace WechatMiniprogram {
          *
          * > 注意：基础库内部在对日志进行上报时会补充一些结构化数据，如果遇到上报溢出的情况也会补充警告日志，所以此方法获取到的当前占用信息会比预期的大一些。 */
         getCurrentState(): CurrentState
-
         /** [RealtimeLogManager.addFilterMsg(string msg)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.addFilterMsg.html)
          *
          * 需要基础库： `2.8.1`
@@ -16838,7 +15819,6 @@ declare namespace WechatMiniprogram {
             /** 是setFilterMsg的添加接口。用于设置多个过滤关键字。 */
             msg: string
         ): void
-
         /** [RealtimeLogManager.error()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.error.html)
          *
          * 需要基础库： `2.7.1`
@@ -16850,7 +15830,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。每次调用的参数的总大小不超过5Kb */
             ...args: any[]
         ): void
-
         /** [RealtimeLogManager.in(Page pageInstance)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.in.html)
          *
          * 需要基础库： `2.9.1`
@@ -16862,7 +15841,6 @@ declare namespace WechatMiniprogram {
             /** page实例 */
             pageInstance: Page.TrivialInstance
         ): void
-
         /** [RealtimeLogManager.info()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.info.html)
          *
          * 需要基础库： `2.7.1`
@@ -16874,7 +15852,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。每次调用的参数的总大小不超过5Kb */
             ...args: any[]
         ): void
-
         /** [RealtimeLogManager.setFilterMsg(string msg)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.setFilterMsg.html)
          *
          * 需要基础库： `2.7.3`
@@ -16886,7 +15863,6 @@ declare namespace WechatMiniprogram {
             /** 过滤关键字，最多不超过1Kb，可以在小程序管理后台根据设置的内容搜索得到对应的日志。 */
             msg: string
         ): void
-
         /** [RealtimeLogManager.warn()](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.warn.html)
          *
          * 需要基础库： `2.7.1`
@@ -16898,7 +15874,6 @@ declare namespace WechatMiniprogram {
             /** 日志内容，可以有任意多个。每次调用的参数的总大小不超过5Kb */
             ...args: any[]
         ): void
-
         /** [[RealtimeTagLogManager](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeTagLogManager.html) RealtimeLogManager.tag(string tagName)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.tag.html)
          *
          * 需要基础库： `2.16.0`
@@ -16911,7 +15886,6 @@ declare namespace WechatMiniprogram {
             tagName: string
         ): RealtimeTagLogManager
     }
-
     interface RealtimeTagLogManager {
         /** [RealtimeTagLogManager.addFilterMsg(string msg)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeTagLogManager.addFilterMsg.html)
          *
@@ -16924,7 +15898,6 @@ declare namespace WechatMiniprogram {
             /** 是setFilterMsg的添加接口。用于设置多个过滤关键字。 */
             msg: string
         ): void
-
         /** [RealtimeTagLogManager.error(string key, Object|Array.&lt;any&gt;|number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeTagLogManager.error.html)
          *
          * 需要基础库： `2.16.0`
@@ -16938,7 +15911,6 @@ declare namespace WechatMiniprogram {
             /** 日志的值，每次调用的参数的总大小不超过5Kb */
             value: IAnyObject | any[] | number | string
         ): void
-
         /** [RealtimeTagLogManager.info(string key, Object|Array.&lt;any&gt;|number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeTagLogManager.info.html)
          *
          * 需要基础库： `2.16.0`
@@ -16952,7 +15924,6 @@ declare namespace WechatMiniprogram {
             /** 日志的值，每次调用的参数的总大小不超过5Kb */
             value: IAnyObject | any[] | number | string
         ): void
-
         /** [RealtimeTagLogManager.setFilterMsg(string msg)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeTagLogManager.setFilterMsg.html)
          *
          * 需要基础库： `2.16.0`
@@ -16964,7 +15935,6 @@ declare namespace WechatMiniprogram {
             /** 过滤关键字，最多不超过1Kb，可以在小程序管理后台根据设置的内容搜索得到对应的日志。 */
             msg: string
         ): void
-
         /** [RealtimeTagLogManager.warn(string key, Object|Array.&lt;any&gt;|number|string value)](https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeTagLogManager.warn.html)
          *
          * 需要基础库： `2.16.0`
@@ -16979,7 +15949,6 @@ declare namespace WechatMiniprogram {
             value: IAnyObject | any[] | number | string
         ): void
     }
-
     interface RecorderManager {
         /** [RecorderManager.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onError.html)
          *
@@ -16990,7 +15959,6 @@ declare namespace WechatMiniprogram {
             /** 录音错误事件的监听函数 */
             listener: UDPSocketOnErrorCallback
         ): void
-
         /** [RecorderManager.onFrameRecorded(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onFrameRecorded.html)
          *
          * 在插件中使用：支持
@@ -17000,7 +15968,6 @@ declare namespace WechatMiniprogram {
             /** 已录制完指定帧大小的文件事件的监听函数 */
             listener: OnFrameRecordedCallback
         ): void
-
         /** [RecorderManager.onInterruptionBegin(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onInterruptionBegin.html)
          *
          * 需要基础库： `2.3.0`
@@ -17012,7 +15979,6 @@ declare namespace WechatMiniprogram {
             /** 录音因为受到系统占用而被中断开始事件的监听函数 */
             listener: OnInterruptionBeginCallback
         ): void
-
         /** [RecorderManager.onInterruptionEnd(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onInterruptionEnd.html)
          *
          * 需要基础库： `2.3.0`
@@ -17024,7 +15990,6 @@ declare namespace WechatMiniprogram {
             /** 录音中断结束事件的监听函数 */
             listener: OnInterruptionEndCallback
         ): void
-
         /** [RecorderManager.onPause(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onPause.html)
          *
          * 在插件中使用：支持
@@ -17034,7 +15999,6 @@ declare namespace WechatMiniprogram {
             /** 录音暂停事件的监听函数 */
             listener: OnPauseCallback
         ): void
-
         /** [RecorderManager.onResume(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onResume.html)
          *
          * 在插件中使用：支持
@@ -17044,7 +16008,6 @@ declare namespace WechatMiniprogram {
             /** 录音继续事件的监听函数 */
             listener: OnResumeCallback
         ): void
-
         /** [RecorderManager.onStart(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onStart.html)
          *
          * 在插件中使用：支持
@@ -17054,7 +16017,6 @@ declare namespace WechatMiniprogram {
             /** 录音开始事件的监听函数 */
             listener: OnStartCallback
         ): void
-
         /** [RecorderManager.onStop(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.onStop.html)
          *
          * 在插件中使用：支持
@@ -17064,21 +16026,18 @@ declare namespace WechatMiniprogram {
             /** 录音结束事件的监听函数 */
             listener: RecorderManagerOnStopCallback
         ): void
-
         /** [RecorderManager.pause()](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.pause.html)
          *
          * 在插件中使用：支持
          *
          * 暂停录音 */
         pause(): void
-
         /** [RecorderManager.resume()](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.resume.html)
          *
          * 在插件中使用：支持
          *
          * 继续录音 */
         resume(): void
-
         /** [RecorderManager.start(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.start.html)
          *
          * 在插件中使用：支持
@@ -17101,7 +16060,6 @@ declare namespace WechatMiniprogram {
          * | 44100  | 64000 ~ 320000 |
          * | 48000  | 64000 ~ 320000 | */
         start(option: RecorderManagerStartOption): void
-
         /** [RecorderManager.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.stop.html)
          *
          * 在插件中使用：支持
@@ -17109,7 +16067,6 @@ declare namespace WechatMiniprogram {
          * 停止录音 */
         stop(): void
     }
-
     interface RequestTask {
         /** [RequestTask.abort()](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.abort.html)
          *
@@ -17161,7 +16118,6 @@ declare namespace WechatMiniprogram {
             /** onHeadersReceived 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffHeadersReceivedCallback
         ): void
-
         /** [RequestTask.onChunkReceived(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.onChunkReceived.html)
          *
          * 需要基础库： `2.20.1`
@@ -17173,7 +16129,6 @@ declare namespace WechatMiniprogram {
             /** Transfer-Encoding Chunk Received 事件的监听函数 */
             listener: OnChunkReceivedCallback
         ): void
-
         /** [RequestTask.onHeadersReceived(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.onHeadersReceived.html)
          *
          * 需要基础库： `2.1.0`
@@ -17186,7 +16141,6 @@ declare namespace WechatMiniprogram {
             listener: OnHeadersReceivedCallback
         ): void
     }
-
     interface RewardedVideoAd {
         /** [Promise RewardedVideoAd.load()](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.load.html)
          *
@@ -17194,14 +16148,12 @@ declare namespace WechatMiniprogram {
          *
          * 加载激励视频广告。 */
         load(): Promise<any>
-
         /** [Promise RewardedVideoAd.show()](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.show.html)
          *
          * 在插件中使用：不支持
          *
          * 显示激励视频广告。激励视频广告将从屏幕下方推入。 */
         show(): Promise<any>
-
         /** [RewardedVideoAd.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.destroy.html)
          *
          * 需要基础库： `2.8.0`
@@ -17267,7 +16219,6 @@ declare namespace WechatMiniprogram {
             /** onLoad 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffLoadCallback
         ): void
-
         /** [RewardedVideoAd.onClose(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.onClose.html)
          *
          * 在插件中使用：不支持
@@ -17277,7 +16228,6 @@ declare namespace WechatMiniprogram {
             /** 用户点击 `关闭广告` 按钮的事件的监听函数 */
             listener: RewardedVideoAdOnCloseCallback
         ): void
-
         /** [RewardedVideoAd.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.onError.html)
          *
          * 在插件中使用：不支持
@@ -17304,7 +16254,6 @@ declare namespace WechatMiniprogram {
             /** 激励视频错误事件的监听函数 */
             listener: RewardedVideoAdOnErrorCallback
         ): void
-
         /** [RewardedVideoAd.onLoad(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.onLoad.html)
          *
          * 在插件中使用：不支持
@@ -17315,7 +16264,6 @@ declare namespace WechatMiniprogram {
             listener: OnLoadCallback
         ): void
     }
-
     interface ScrollViewContext {
         /** [ScrollViewContext.scrollIntoView(string selector)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ScrollViewContext.scrollIntoView.html)
          *
@@ -17328,7 +16276,6 @@ declare namespace WechatMiniprogram {
             /** 元素选择器 */
             selector: string
         ): void
-
         /** [ScrollViewContext.scrollTo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ScrollViewContext.scrollTo.html)
          *
          * 需要基础库： `2.14.4`
@@ -17338,7 +16285,6 @@ declare namespace WechatMiniprogram {
          * 滚动至指定位置 */
         scrollTo(option: ScrollToOption): void
     }
-
     interface SelectorQuery {
         /** [[NodesRef](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.html) SelectorQuery.exec(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.exec.html)
          *
@@ -17349,7 +16295,6 @@ declare namespace WechatMiniprogram {
             /** 回调函数 */
             callback?: (...args: any[]) => any
         ): NodesRef
-
         /** [[NodesRef](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.html) SelectorQuery.select(string selector)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.select.html)
          *
          * 在插件中使用：支持
@@ -17370,7 +16315,6 @@ declare namespace WechatMiniprogram {
             /** 选择器 */
             selector: string
         ): NodesRef
-
         /** [[NodesRef](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.html) SelectorQuery.selectAll(string selector)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.selectAll.html)
          *
          * 在插件中使用：支持
@@ -17391,7 +16335,6 @@ declare namespace WechatMiniprogram {
             /** 选择器 */
             selector: string
         ): NodesRef
-
         /** [[NodesRef](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/NodesRef.html) SelectorQuery.selectViewport()](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/SelectorQuery.selectViewport.html)
          *
          * 在插件中使用：支持
@@ -17424,7 +16367,6 @@ declare namespace WechatMiniprogram {
             component: Component.TrivialInstance | Page.TrivialInstance
         ): SelectorQuery
     }
-
     interface SocketTask {
         /** [SocketTask.close(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.close.html)
          *
@@ -17432,7 +16374,6 @@ declare namespace WechatMiniprogram {
          *
          * 关闭 WebSocket 连接 */
         close(option: SocketTaskCloseOption): void
-
         /** [SocketTask.onClose(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onClose.html)
          *
          * 在插件中使用：支持
@@ -17442,7 +16383,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 连接关闭事件的监听函数 */
             listener: SocketTaskOnCloseCallback
         ): void
-
         /** [SocketTask.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onError.html)
          *
          * 在插件中使用：支持
@@ -17452,7 +16392,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 错误事件的监听函数 */
             listener: UDPSocketOnErrorCallback
         ): void
-
         /** [SocketTask.onMessage(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onMessage.html)
          *
          * 在插件中使用：支持
@@ -17462,7 +16401,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 接受到服务器的消息事件的监听函数 */
             listener: SocketTaskOnMessageCallback
         ): void
-
         /** [SocketTask.onOpen(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.onOpen.html)
          *
          * 在插件中使用：支持
@@ -17472,7 +16410,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 连接打开事件的监听函数 */
             listener: OnOpenCallback
         ): void
-
         /** [SocketTask.send(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/SocketTask.send.html)
          *
          * 在插件中使用：支持
@@ -17480,7 +16417,6 @@ declare namespace WechatMiniprogram {
          * 通过 WebSocket 连接发送数据 */
         send(option: SocketTaskSendOption): void
     }
-
     interface Stats {
         /** [boolean Stats.isDirectory()](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isDirectory.html)
          *
@@ -17488,7 +16424,6 @@ declare namespace WechatMiniprogram {
          *
          * 判断当前文件是否一个目录 */
         isDirectory(): boolean
-
         /** [boolean Stats.isFile()](https://developers.weixin.qq.com/miniprogram/dev/api/file/Stats.isFile.html)
          *
          * 在插件中使用：需要基础库 `2.19.2`
@@ -17496,7 +16431,6 @@ declare namespace WechatMiniprogram {
          * 判断当前文件是否一个普通文件 */
         isFile(): boolean
     }
-
     interface TCPSocket {
         /** [TCPSocket.bindWifi(Object options)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.bindWifi.html)
          *
@@ -17506,14 +16440,12 @@ declare namespace WechatMiniprogram {
          *
          * 将 TCP Socket 绑定到当前 wifi 网络，成功后会触发 onBindWifi 事件（仅安卓支持） */
         bindWifi(options: BindWifiOption): void
-
         /** [TCPSocket.close()](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.close.html)
          *
          * 在插件中使用：不支持
          *
          * 关闭连接 */
         close(): void
-
         /** [TCPSocket.connect(Object options)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.connect.html)
          *
          * 在插件中使用：不支持
@@ -17617,7 +16549,6 @@ declare namespace WechatMiniprogram {
             /** onMessage 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: TCPSocketOffMessageCallback
         ): void
-
         /** [TCPSocket.onBindWifi(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.onBindWifi.html)
          *
          * 需要基础库： `2.25.0`
@@ -17629,7 +16560,6 @@ declare namespace WechatMiniprogram {
             /** 当一个 socket 绑定当前 wifi 网络成功时触发该事件的监听函数 */
             listener: OnBindWifiCallback
         ): void
-
         /** [TCPSocket.onClose(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.onClose.html)
          *
          * 在插件中使用：不支持
@@ -17639,7 +16569,6 @@ declare namespace WechatMiniprogram {
             /** 一旦 socket 完全关闭就发出该事件的监听函数 */
             listener: UDPSocketOnCloseCallback
         ): void
-
         /** [TCPSocket.onConnect(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.onConnect.html)
          *
          * 在插件中使用：不支持
@@ -17649,7 +16578,6 @@ declare namespace WechatMiniprogram {
             /** 当一个 socket 连接成功建立的时候触发该事件的监听函数 */
             listener: OnConnectCallback
         ): void
-
         /** [TCPSocket.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.onError.html)
          *
          * 在插件中使用：不支持
@@ -17659,7 +16587,6 @@ declare namespace WechatMiniprogram {
             /** 的监听函数 */
             listener: UDPSocketOnErrorCallback
         ): void
-
         /** [TCPSocket.onMessage(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.onMessage.html)
          *
          * 在插件中使用：不支持
@@ -17669,7 +16596,6 @@ declare namespace WechatMiniprogram {
             /** 当接收到数据的时触发该事件的监听函数 */
             listener: TCPSocketOnMessageCallback
         ): void
-
         /** [TCPSocket.write(string|ArrayBuffer data)](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.write.html)
          *
          * 在插件中使用：不支持
@@ -17680,7 +16606,6 @@ declare namespace WechatMiniprogram {
             data: string | ArrayBuffer
         ): void
     }
-
     interface TruncateSyncError {
         /** 错误信息
          *
@@ -17701,7 +16626,6 @@ declare namespace WechatMiniprogram {
          * | fail the maximum size of the file storage limit is exceeded | 存储空间不足 |
          * | fail sdcard not mounted | android sdcard 挂载失败 | */ errCode: number
     }
-
     interface UDPSocket {
         /** [UDPSocket.close()](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.close.html)
          *
@@ -17709,7 +16633,6 @@ declare namespace WechatMiniprogram {
          *
          * 关闭 UDP Socket 实例，相当于销毁。 在关闭之后，UDP Socket 实例不能再发送消息，每次调用 `UDPSocket.send` 将会触发错误事件，并且 message 事件回调函数也不会再也执行。在 `UDPSocket` 实例被创建后将被 Native 强引用，保证其不被 GC。在 `UDPSocket.close` 后将解除对其的强引用，让 UDPSocket 实例遵从 GC。 */
         close(): void
-
         /** [UDPSocket.connect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.connect.html)
          *
          * 需要基础库： `2.15.0`
@@ -17794,7 +16717,6 @@ declare namespace WechatMiniprogram {
             /** onMessage 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: UDPSocketOffMessageCallback
         ): void
-
         /** [UDPSocket.onClose(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onClose.html)
          *
          * 在插件中使用：需要基础库 `2.11.1`
@@ -17804,7 +16726,6 @@ declare namespace WechatMiniprogram {
             /** 关闭事件的监听函数 */
             listener: UDPSocketOnCloseCallback
         ): void
-
         /** [UDPSocket.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onError.html)
          *
          * 在插件中使用：需要基础库 `2.11.1`
@@ -17814,7 +16735,6 @@ declare namespace WechatMiniprogram {
             /** 错误事件的监听函数 */
             listener: UDPSocketOnErrorCallback
         ): void
-
         /** [UDPSocket.onListening(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onListening.html)
          *
          * 在插件中使用：需要基础库 `2.11.1`
@@ -17824,7 +16744,6 @@ declare namespace WechatMiniprogram {
             /** 开始监听数据包消息的事件的监听函数 */
             listener: OnListeningCallback
         ): void
-
         /** [UDPSocket.onMessage(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.onMessage.html)
          *
          * 在插件中使用：需要基础库 `2.11.1`
@@ -17834,14 +16753,12 @@ declare namespace WechatMiniprogram {
             /** 收到消息的事件的监听函数 */
             listener: UDPSocketOnMessageCallback
         ): void
-
         /** [UDPSocket.send(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.send.html)
          *
          * 在插件中使用：需要基础库 `2.11.1`
          *
          * 向指定的 IP 和 port 发送消息。基础库 2.9.0 起支持广播 (指定地址为 255.255.255.255)。 */
         send(option: UDPSocketSendOption): void
-
         /** [UDPSocket.setTTL(number ttl)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.setTTL.html)
          *
          * 需要基础库： `2.18.0`
@@ -17853,7 +16770,6 @@ declare namespace WechatMiniprogram {
             /** ttl 参数可以是 0 到 255 之间 */
             ttl: number
         ): void
-
         /** [UDPSocket.write()](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.write.html)
          *
          * 需要基础库： `2.15.0`
@@ -17862,7 +16778,6 @@ declare namespace WechatMiniprogram {
          *
          * 用法与 send 方法相同，如果没有预先调用 connect 则与 send 无差异（注意即使调用了 connect 也需要在本接口填入地址和端口参数） */
         write(): void
-
         /** [number UDPSocket.bind(number port)](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.bind.html)
          *
          * 在插件中使用：需要基础库 `2.11.1`
@@ -17875,7 +16790,6 @@ declare namespace WechatMiniprogram {
             port?: number
         ): number
     }
-
     interface UpdateManager {
         /** [UpdateManager.applyUpdate()](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/UpdateManager.applyUpdate.html)
          *
@@ -17887,7 +16801,6 @@ declare namespace WechatMiniprogram {
          *
          * [示例代码](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/UpdateManager.html#示例代码) */
         applyUpdate(): void
-
         /** [UpdateManager.onCheckForUpdate(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/UpdateManager.onCheckForUpdate.html)
          *
          * 在插件中使用：不支持
@@ -17901,7 +16814,6 @@ declare namespace WechatMiniprogram {
             /** 向微信后台请求检查更新结果事件的监听函数 */
             listener: OnCheckForUpdateCallback
         ): void
-
         /** [UpdateManager.onUpdateFailed(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/UpdateManager.onUpdateFailed.html)
          *
          * 在插件中使用：不支持
@@ -17915,7 +16827,6 @@ declare namespace WechatMiniprogram {
             /** 小程序更新失败事件的监听函数 */
             listener: OnUpdateFailedCallback
         ): void
-
         /** [UpdateManager.onUpdateReady(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/UpdateManager.onUpdateReady.html)
          *
          * 在插件中使用：不支持
@@ -17930,7 +16841,6 @@ declare namespace WechatMiniprogram {
             listener: OnUpdateReadyCallback
         ): void
     }
-
     interface UploadTask {
         /** [UploadTask.abort()](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.abort.html)
          *
@@ -17982,7 +16892,6 @@ declare namespace WechatMiniprogram {
             /** onProgressUpdate 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: UploadTaskOffProgressUpdateCallback
         ): void
-
         /** [UploadTask.onHeadersReceived(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onHeadersReceived.html)
          *
          * 需要基础库： `2.1.0`
@@ -17994,7 +16903,6 @@ declare namespace WechatMiniprogram {
             /** HTTP Response Header 事件的监听函数 */
             listener: OnHeadersReceivedCallback
         ): void
-
         /** [UploadTask.onProgressUpdate(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onProgressUpdate.html)
          *
          * 需要基础库： `1.4.0`
@@ -18007,7 +16915,6 @@ declare namespace WechatMiniprogram {
             listener: UploadTaskOnProgressUpdateCallback
         ): void
     }
-
     interface UserCryptoManager {
         /** [UserCryptoManager.getLatestUserKey(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/base/crypto/UserCryptoManager.getLatestUserKey.html)
          *
@@ -18050,7 +16957,6 @@ declare namespace WechatMiniprogram {
          ``` */
         getRandomValues(option: GetRandomValuesOption): void
     }
-
     interface VKCamera {
         /** [Float32Array VKCamera.getProjectionMatrix(number near, number far)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKCamera.getProjectionMatrix.html)
          *
@@ -18066,7 +16972,6 @@ declare namespace WechatMiniprogram {
             far: number
         ): Float32Array
     }
-
     interface VKFrame {
         /** [ArrayBuffer VKFrame.getCameraBuffer(number width, number height)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.getCameraBuffer.html)
          *
@@ -18081,7 +16986,6 @@ declare namespace WechatMiniprogram {
             /** 高度 */
             height: number
         ): ArrayBuffer
-
         /** [Float32Array VKFrame.getDisplayTransform()](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.getDisplayTransform.html)
          *
          * 需要基础库： `2.20.0`
@@ -18090,7 +16994,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取纹理调整矩阵。默认获取到的纹理是未经裁剪调整的纹理，此矩阵可用于在着色器中根据帧对象尺寸对纹理进行裁剪。 */
         getDisplayTransform(): Float32Array
-
         /** [Object VKFrame.getCameraTexture(WebGLRenderingContext gl)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.getCameraTexture.html)
          *
          * 需要基础库： `2.20.0`
@@ -18103,7 +17006,6 @@ declare namespace WechatMiniprogram {
             gl: WebGLRenderingContext
         ): YUVTextureRes
     }
-
     interface VKSession {
         /** [Array.&lt;Object&gt; VKSession.getAllMarker()](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.getAllMarker.html)
          *
@@ -18113,7 +17015,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取所有 marker，要求调 [wx.createVKSession](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/wx.createVKSession.html) 时传入的 track.marker 为 true */
         getAllMarker(): VKMarker[]
-
         /** [Array.&lt;Object&gt; VKSession.getAllOSDMarker()](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.getAllOSDMarker.html)
          *
          * 需要基础库： `2.24.5`
@@ -18122,7 +17023,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取所有 OSD marker，要求调 [wx.createVKSession](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/wx.createVKSession.html) 时传入的 track.OSD 为 true */
         getAllOSDMarker(): VKMarker[]
-
         /** [Array.&lt;Object&gt; VKSession.hitTest(number x, number y, Object reset)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.hitTest.html)
          *
          * 需要基础库： `2.20.0`
@@ -18138,7 +17038,6 @@ declare namespace WechatMiniprogram {
             /** 是否需要重新识别其他平面，v2 版本不再需要此参数 */
             reset: IAnyObject
         ): HitTestRes[]
-
         /** [VKSession.cancelAnimationFrame(number requestID)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.cancelAnimationFrame.html)
          *
          * 需要基础库： `2.20.0`
@@ -18147,7 +17046,6 @@ declare namespace WechatMiniprogram {
          *
          * 取消由 requestAnimationFrame 添加到计划中的动画帧请求。 */
         cancelAnimationFrame(requestID: number): void
-
         /** [VKSession.destroy()](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.destroy.html)
          *
          * 需要基础库： `2.20.0`
@@ -18156,7 +17054,6 @@ declare namespace WechatMiniprogram {
          *
          * 销毁会话。 */
         destroy(): void
-
         /** [VKSession.detectFace(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.detectFace.html)
          *
          * 需要基础库： `2.25.0`
@@ -18165,7 +17062,6 @@ declare namespace WechatMiniprogram {
          *
          * 静态图像人脸关键点检测。当 wx.createVKSession 参数传入 {track: {face: {mode: 2} } } 时可用。用法详情[指南文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/visionkit/face.html)。安卓微信8.0.25开始支持，iOS微信8.0.24开始支持。 */
         detectFace(option: DetectFaceOption): void
-
         /** [VKSession.off(string eventName, function fn)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.off.html)
          *
          * 需要基础库： `2.20.0`
@@ -18179,7 +17075,6 @@ declare namespace WechatMiniprogram {
             /** 事件监听函数 */
             fn: (...args: any[]) => any
         ): void
-
         /** [VKSession.on(string eventName, function fn)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.on.html)
          *
          * 需要基础库： `2.20.0`
@@ -18203,7 +17098,6 @@ declare namespace WechatMiniprogram {
             /** 事件监听函数 */
             fn: (...args: any[]) => any
         ): void
-
         /** [VKSession.removeMarker(number markerId)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.removeMarker.html)
          *
          * 需要基础库： `2.24.5`
@@ -18215,7 +17109,6 @@ declare namespace WechatMiniprogram {
             /** marker id */
             markerId: number
         ): void
-
         /** [VKSession.removeOSDMarker(number markerId)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.removeOSDMarker.html)
          *
          * 需要基础库： `2.24.5`
@@ -18227,7 +17120,6 @@ declare namespace WechatMiniprogram {
             /** marker id */
             markerId: number
         ): void
-
         /** [VKSession.start(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.start.html)
          *
          * 需要基础库： `2.20.0`
@@ -18239,7 +17131,6 @@ declare namespace WechatMiniprogram {
             /** 开启会话回调 */
             callback: VKSessionStartCallback
         ): void
-
         /** [VKSession.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.stop.html)
          *
          * 需要基础库： `2.20.0`
@@ -18248,7 +17139,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止会话。 */
         stop(): void
-
         /** [VKSession.updateOSDThreshold(number threshold)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.updateOSDThreshold.html)
          *
          * 需要基础库： `2.24.5`
@@ -18260,7 +17150,6 @@ declare namespace WechatMiniprogram {
             /** 阈值 */
             threshold: number
         ): void
-
         /** [[VKFrame](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.html) VKSession.getVKFrame(number width, number height)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.getVKFrame.html)
          *
          * 需要基础库： `2.20.0`
@@ -18274,7 +17163,6 @@ declare namespace WechatMiniprogram {
             /** 高度 */
             height: number
         ): VKFrame
-
         /** [number VKSession.addMarker(string path)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.addMarker.html)
          *
          * 需要基础库： `2.24.5`
@@ -18327,7 +17215,6 @@ declare namespace WechatMiniprogram {
             /** 图片路径，目前只支持本地用户图片 */
             path: string
         ): number
-
         /** [number VKSession.addOSDMarker(string path)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.addOSDMarker.html)
          *
          * 需要基础库： `2.24.5`
@@ -18368,7 +17255,6 @@ declare namespace WechatMiniprogram {
             /** 图片路径，目前只支持本地用户图片 */
             path: string
         ): number
-
         /** [number VKSession.requestAnimationFrame(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKSession.requestAnimationFrame.html)
          *
          * 需要基础库： `2.20.0`
@@ -18381,7 +17267,6 @@ declare namespace WechatMiniprogram {
             callback: (...args: any[]) => any
         ): number
     }
-
     interface VideoContext {
         /** [VideoContext.exitBackgroundPlayback()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.exitBackgroundPlayback.html)
          *
@@ -18391,7 +17276,6 @@ declare namespace WechatMiniprogram {
          *
          * 退出后台音频播放模式。 */
         exitBackgroundPlayback(): void
-
         /** [VideoContext.exitFullScreen()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.exitFullScreen.html)
          *
          * 需要基础库： `1.4.0`
@@ -18400,14 +17284,12 @@ declare namespace WechatMiniprogram {
          *
          * 退出全屏 */
         exitFullScreen(): void
-
         /** [VideoContext.exitPictureInPicture(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.exitPictureInPicture.html)
          *
          * 在插件中使用：支持
          *
          * 退出小窗，该方法可在任意页面调用 */
         exitPictureInPicture(option?: ExitPictureInPictureOption): void
-
         /** [VideoContext.hideStatusBar()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.hideStatusBar.html)
          *
          * 需要基础库： `2.1.0`
@@ -18416,21 +17298,18 @@ declare namespace WechatMiniprogram {
          *
          * 隐藏状态栏，仅在iOS全屏下有效 */
         hideStatusBar(): void
-
         /** [VideoContext.pause()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.pause.html)
          *
          * 在插件中使用：支持
          *
          * 暂停视频 */
         pause(): void
-
         /** [VideoContext.play()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.play.html)
          *
          * 在插件中使用：支持
          *
          * 播放视频 */
         play(): void
-
         /** [VideoContext.playbackRate(number rate)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.playbackRate.html)
          *
          * 需要基础库： `1.4.0`
@@ -18442,7 +17321,6 @@ declare namespace WechatMiniprogram {
             /** 倍率，支持 0.5/0.8/1.0/1.25/1.5，2.6.3 起支持 2.0 倍速 */
             rate: number
         ): void
-
         /** [VideoContext.requestBackgroundPlayback()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.requestBackgroundPlayback.html)
          *
          * 需要基础库： `2.14.3`
@@ -18451,7 +17329,6 @@ declare namespace WechatMiniprogram {
          *
          * 进入后台音频播放模式。 */
         requestBackgroundPlayback(): void
-
         /** [VideoContext.requestFullScreen(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.requestFullScreen.html)
          *
          * 需要基础库： `1.4.0`
@@ -18460,7 +17337,6 @@ declare namespace WechatMiniprogram {
          *
          * 进入全屏。若有自定义内容需在全屏时展示，需将内容节点放置到 video 节点内。 */
         requestFullScreen(option: VideoContextRequestFullScreenOption): void
-
         /** [VideoContext.seek(number position)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.seek.html)
          *
          * 在插件中使用：支持
@@ -18470,7 +17346,6 @@ declare namespace WechatMiniprogram {
             /** 跳转到的位置，单位 s */
             position: number
         ): void
-
         /** [VideoContext.sendDanmu(Object data)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.sendDanmu.html)
          *
          * 在插件中使用：支持
@@ -18480,7 +17355,6 @@ declare namespace WechatMiniprogram {
             /** 弹幕内容 */
             data: Danmu
         ): void
-
         /** [VideoContext.showStatusBar()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.showStatusBar.html)
          *
          * 需要基础库： `2.1.0`
@@ -18489,7 +17363,6 @@ declare namespace WechatMiniprogram {
          *
          * 显示状态栏，仅在iOS全屏下有效 */
         showStatusBar(): void
-
         /** [VideoContext.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.stop.html)
          *
          * 需要基础库： `1.7.0`
@@ -18499,7 +17372,6 @@ declare namespace WechatMiniprogram {
          * 停止视频 */
         stop(): void
     }
-
     interface VideoDecoder {
         /** [Object VideoDecoder.getFrameData()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.getFrameData.html)
          *
@@ -18509,7 +17381,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取下一帧的解码数据 */
         getFrameData(): FrameDataOptions
-
         /** [Promise VideoDecoder.remove()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.remove.html)
          *
          * 需要基础库： `2.11.0`
@@ -18518,7 +17389,6 @@ declare namespace WechatMiniprogram {
          *
          * 移除解码器 */
         remove(): Promise<any>
-
         /** [Promise VideoDecoder.seek(number position)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.seek.html)
          *
          * 需要基础库： `2.11.0`
@@ -18530,7 +17400,6 @@ declare namespace WechatMiniprogram {
             /** 跳转的解码位置，单位 ms */
             position: number
         ): Promise<any>
-
         /** [Promise VideoDecoder.start(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.start.html)
          *
          * 需要基础库： `2.11.0`
@@ -18539,7 +17408,6 @@ declare namespace WechatMiniprogram {
          *
          * 开始解码 */
         start(option: VideoDecoderStartOption): Promise<any>
-
         /** [Promise VideoDecoder.stop()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.stop.html)
          *
          * 需要基础库： `2.11.0`
@@ -18548,7 +17416,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止解码 */
         stop(): Promise<any>
-
         /** [VideoDecoder.off(string eventName, function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.off.html)
          *
          * 需要基础库： `2.11.0`
@@ -18562,7 +17429,6 @@ declare namespace WechatMiniprogram {
             /** 事件触发时执行的回调函数 */
             callback: (...args: any[]) => any
         ): void
-
         /** [VideoDecoder.on(string eventName, function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.on.html)
          *
          * 需要基础库： `2.11.0`
@@ -18584,7 +17450,6 @@ declare namespace WechatMiniprogram {
             callback: (...args: any[]) => any
         ): void
     }
-
     interface WebAudioContext {
         /** [AnalyserNode WebAudioContext.createAnalyser()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createAnalyser.html)
          *
@@ -18594,21 +17459,18 @@ declare namespace WechatMiniprogram {
          *
          * 创建一个 AnalyserNode 。可以用来获取音频时间和频率数据，以及实现数据可视化。 */
         createAnalyser(): AnalyserNode
-
         /** [BiquadFilterNode WebAudioContext.createBiquadFilter()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createBiquadFilter.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个BiquadFilterNode */
         createBiquadFilter(): BiquadFilterNode
-
         /** [BufferSourceNode WebAudioContext.createBufferSource()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createBufferSource.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个BufferSourceNode实例，通过AudioBuffer对象来播放音频数据。 */
         createBufferSource(): BufferSourceNode
-
         /** [ChannelMergerNode WebAudioContext.createChannelMerger(number numberOfInputs)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createChannelMerger.html)
          *
          * 在插件中使用：不支持
@@ -18618,7 +17480,6 @@ declare namespace WechatMiniprogram {
             /** 输出流中需要保持的输入流的个数 */
             numberOfInputs: number
         ): ChannelMergerNode
-
         /** [ChannelSplitterNode WebAudioContext.createChannelSplitter(number numberOfOutputs)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createChannelSplitter.html)
          *
          * 在插件中使用：不支持
@@ -18628,14 +17489,12 @@ declare namespace WechatMiniprogram {
             /** 要分别输出的输入音频流中的通道数 */
             numberOfOutputs: number
         ): ChannelSplitterNode
-
         /** [ConstantSourceNode WebAudioContext.createConstantSource()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createConstantSource.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个ConstantSourceNode */
         createConstantSource(): ConstantSourceNode
-
         /** [DelayNode WebAudioContext.createDelay(number maxDelayTime)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createDelay.html)
          *
          * 在插件中使用：不支持
@@ -18645,21 +17504,18 @@ declare namespace WechatMiniprogram {
             /** 最大延迟时间 */
             maxDelayTime: number
         ): DelayNode
-
         /** [DynamicsCompressorNode WebAudioContext.createDynamicsCompressor()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createDynamicsCompressor.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个DynamicsCompressorNode */
         createDynamicsCompressor(): DynamicsCompressorNode
-
         /** [GainNode WebAudioContext.createGain()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createGain.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个GainNode */
         createGain(): GainNode
-
         /** [IIRFilterNode WebAudioContext.createIIRFilter(Array.&lt;number&gt; feedforward, Array.&lt;number&gt; feedback)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createIIRFilter.html)
          *
          * 在插件中使用：不支持
@@ -18671,14 +17527,12 @@ declare namespace WechatMiniprogram {
             /** 一个浮点值数组，指定IIR滤波器传递函数的反馈(分母)系数。 */
             feedback: number[]
         ): IIRFilterNode
-
         /** [OscillatorNode WebAudioContext.createOscillator()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createOscillator.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个OscillatorNode */
         createOscillator(): OscillatorNode
-
         /** [PannerNode WebAudioContext.createPanner()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createPanner.html)
          *
          * 在插件中使用：不支持
@@ -18730,21 +17584,18 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         close(): Promise<any>
-
         /** [Promise WebAudioContext.resume()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.resume.html)
          *
          * 在插件中使用：不支持
          *
          * 同步恢复已经被暂停的WebAudioContext上下文 */
         resume(): Promise<any>
-
         /** [Promise WebAudioContext.suspend()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.suspend.html)
          *
          * 在插件中使用：不支持
          *
          * 同步暂停WebAudioContext上下文 */
         suspend(): Promise<any>
-
         /** [ScriptProcessorNode WebAudioContext.createScriptProcessor(number bufferSize, number numberOfInputChannels, number numberOfOutputChannels)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createScriptProcessor.html)
          *
          * 在插件中使用：不支持
@@ -18758,14 +17609,12 @@ declare namespace WechatMiniprogram {
             /** 用于指定输出node的声道的数量 */
             numberOfOutputChannels: number
         ): ScriptProcessorNode
-
         /** [WaveShaperNode WebAudioContext.createWaveShaper()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createWaveShaper.html)
          *
          * 在插件中使用：不支持
          *
          * 创建一个WaveShaperNode */
         createWaveShaper(): WaveShaperNode
-
         /** [[AudioBuffer](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.html) WebAudioContext.createBuffer(number numOfChannels, number length, number sampleRate)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createBuffer.html)
          *
          * 在插件中使用：不支持
@@ -18779,7 +17628,6 @@ declare namespace WechatMiniprogram {
             /** 线性音频样本的采样率，即每一秒包含的关键帧的个数 */
             sampleRate: number
         ): AudioBuffer
-
         /** [[AudioBuffer](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.html) WebAudioContext.decodeAudioData()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.decodeAudioData.html)
          *
          * 在插件中使用：不支持
@@ -18787,7 +17635,6 @@ declare namespace WechatMiniprogram {
          * 异步解码一段资源为AudioBuffer。 */
         decodeAudioData(): AudioBuffer
     }
-
     interface WifiError {
         /** 错误信息
          *
@@ -18828,7 +17675,6 @@ declare namespace WechatMiniprogram {
          * | 12013 | wifi config may be expired | 系统保存的 Wi-Fi 配置过期，建议忘记 Wi-Fi 后重试，仅 Android 支持 |
          * | 12014 | invalid WEP / WPA password | iOS 特有，无效的 WEP / WPA 密码 | */ errCode: number
     }
-
     interface Worker {
         /** [ArrayBuffer Worker.getCameraFrameData()](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.getCameraFrameData.html)
          *
@@ -18859,7 +17705,6 @@ declare namespace WechatMiniprogram {
          console.log(data)
          ``` */
         getCameraFrameData(): ArrayBuffer
-
         /** [Worker.onMessage(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.onMessage.html)
          *
          * 在插件中使用：不支持
@@ -18869,7 +17714,6 @@ declare namespace WechatMiniprogram {
             /** 主线程/Worker 线程向当前线程发送的消息的事件的监听函数 */
             listener: WorkerOnMessageCallback
         ): void
-
         /** [Worker.onProcessKilled(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.onProcessKilled.html)
          *
          * 在插件中使用：不支持
@@ -18912,7 +17756,6 @@ declare namespace WechatMiniprogram {
             /** 需要发送的消息。 */
             message: IAnyObject
         ): void
-
         /** [Worker.terminate()](https://developers.weixin.qq.com/miniprogram/dev/api/worker/Worker.terminate.html)
          *
          * 在插件中使用：不支持
@@ -18920,7 +17763,6 @@ declare namespace WechatMiniprogram {
          * 结束当前 Worker 线程。仅限在主线程 worker 对象上调用。 */
         terminate(): void
     }
-
     interface WriteSyncError {
         /** 错误信息
          *
@@ -18937,7 +17779,6 @@ declare namespace WechatMiniprogram {
          * | fail permission denied | 指定的 fd 路径没有写权限 |
          * | fail sdcard not mounted | android sdcard 挂载失败 | */ errCode: number
     }
-
     interface Wx {
         /** [Array.&lt;any&gt; wx.batchGetStorageSync(Array.&lt;string&gt; keyList)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.batchGetStorageSync.html)
          *
@@ -18967,7 +17808,6 @@ declare namespace WechatMiniprogram {
             /** 本地缓存中指定的 key 数组 */
             keyList: string[]
         ): any[]
-
         /** [ArrayBuffer wx.base64ToArrayBuffer(string base64)](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.base64ToArrayBuffer.html)
          *
          * 需要基础库： `1.1.0`
@@ -19053,7 +17893,6 @@ declare namespace WechatMiniprogram {
          console.log(appBaseInfo.theme)
          ``` */
         getAppBaseInfo(): AppBaseInfo
-
         /** [Object wx.getBatteryInfoSync()](https://developers.weixin.qq.com/miniprogram/dev/api/device/battery/wx.getBatteryInfoSync.html)
          *
          * 在插件中使用：需要基础库 `2.15.0`
@@ -19082,7 +17921,6 @@ declare namespace WechatMiniprogram {
          console.log(deviceInfo.system)
          ``` */
         getDeviceInfo(): DeviceInfo
-
         /** [Object wx.getEnterOptionsSync()](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/life-cycle/wx.getEnterOptionsSync.html)
          *
          * 需要基础库： `2.9.4`
@@ -19119,7 +17957,6 @@ declare namespace WechatMiniprogram {
          *
          * 部分版本在无 `referrerInfo` 的时候会返回 `undefined`，建议使用 `options.referrerInfo && options.referrerInfo.appId` 进行判断。 */
         getEnterOptionsSync(): LaunchOptionsApp
-
         /** [Object wx.getExptInfoSync(Array.&lt;string&gt; keys)](https://developers.weixin.qq.com/miniprogram/dev/api/data-analysis/wx.getExptInfoSync.html)
          *
          * 需要基础库： `2.17.0`
@@ -19157,7 +17994,6 @@ declare namespace WechatMiniprogram {
          console.log(extConfig)
          ``` */
         getExtConfigSync(): IAnyObject
-
         /** [Object wx.getLaunchOptionsSync()](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/life-cycle/wx.getLaunchOptionsSync.html)
          *
          * 需要基础库： `2.1.2`
@@ -19331,14 +18167,12 @@ declare namespace WechatMiniprogram {
          console.log(windowInfo.screenTop)
          ``` */
         getWindowInfo(): WindowInfo
-
         /** [[Animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html) wx.createAnimation(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/wx.createAnimation.html)
          *
          * 在插件中使用：需要基础库 `1.9.6`
          *
          * 创建一个动画实例 [animation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/animation/Animation.html)。调用实例的方法来描述动画。最后通过动画实例的 export 方法导出动画数据传递给组件的 animation 属性。 */
         createAnimation(option: StepOption): Animation
-
         /** [[AudioContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioContext.html) wx.createAudioContext(string id, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.createAudioContext.html)
          *
          * 在插件中使用：需要基础库 `1.9.6`
@@ -19351,7 +18185,6 @@ declare namespace WechatMiniprogram {
             /** 在自定义组件下，当前组件实例的this，以操作组件内 [audio](https://developers.weixin.qq.com/miniprogram/dev/component/audio.html) 组件 */
             component?: Component.TrivialInstance | Page.TrivialInstance
         ): AudioContext
-
         /** [[BackgroundAudioManager](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.html) wx.getBackgroundAudioManager()](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.getBackgroundAudioManager.html)
          *
          * 需要基础库： `1.2.0`
@@ -19395,7 +18228,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         createCacheManager(option: CreateCacheManagerOption): CacheManager
-
         /** [[CameraContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.html) wx.createCameraContext()](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/wx.createCameraContext.html)
          *
          * 需要基础库： `1.6.0`
@@ -19404,7 +18236,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建 [camera](https://developers.weixin.qq.com/miniprogram/dev/component/camera.html) 上下文 [CameraContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/CameraContext.html) 对象。 */
         createCameraContext(): CameraContext
-
         /** [[CanvasContext](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/CanvasContext.html) wx.createCanvasContext(string canvasId, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.createCanvasContext.html)
          *
          * 在插件中使用：需要基础库 `1.9.6`
@@ -19442,7 +18273,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         downloadFile(option: DownloadFileOption): DownloadTask
-
         /** [[FileSystemManager](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.html) wx.getFileSystemManager()](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileSystemManager.html)
          *
          * 需要基础库： `1.9.9`
@@ -19477,7 +18307,6 @@ declare namespace WechatMiniprogram {
         createInnerAudioContext(
             option?: CreateInnerAudioContextOption
         ): InnerAudioContext
-
         /** [[IntersectionObserver](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/IntersectionObserver.html) wx.createIntersectionObserver(Object component, Object options)](https://developers.weixin.qq.com/miniprogram/dev/api/wxml/wx.createIntersectionObserver.html)
          *
          * 需要基础库： `1.9.3`
@@ -19495,7 +18324,6 @@ declare namespace WechatMiniprogram {
             /** 选项 */
             options?: CreateIntersectionObserverOption
         ): IntersectionObserver
-
         /** [[InterstitialAd](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.html) wx.createInterstitialAd(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ad/wx.createInterstitialAd.html)
          *
          * 需要基础库： `2.6.0`
@@ -19504,7 +18332,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建插屏广告组件。请通过 [wx.getSystemInfoSync()](https://developers.weixin.qq.com/miniprogram/dev/api/base/system/wx.getSystemInfoSync.html) 返回对象的 SDKVersion 判断基础库版本号后再使用该 API。每次调用该方法创建插屏广告都会返回一个全新的实例（小程序端的插屏广告实例不允许跨页面使用）。 */
         createInterstitialAd(option: CreateInterstitialAdOption): InterstitialAd
-
         /** [[LivePlayerContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePlayerContext.html) wx.createLivePlayerContext(string id, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/wx.createLivePlayerContext.html)
          *
          * 需要基础库： `1.7.0`
@@ -19518,7 +18345,6 @@ declare namespace WechatMiniprogram {
             /** 在自定义组件下，当前组件实例的this，以操作组件内 [live-player](https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html) 组件 */
             component?: Component.TrivialInstance | Page.TrivialInstance
         ): LivePlayerContext
-
         /** [[LivePusherContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/LivePusherContext.html) wx.createLivePusherContext()](https://developers.weixin.qq.com/miniprogram/dev/api/media/live/wx.createLivePusherContext.html)
          *
          * 需要基础库： `1.7.0`
@@ -19546,7 +18372,6 @@ declare namespace WechatMiniprogram {
          logger.warn({str: 'hello world'}, 'warn log', 100, [1, 2, 3])
          ``` */
         getLogManager(option: GetLogManagerOption): LogManager
-
         /** [[MapContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/MapContext.html) wx.createMapContext(string mapId, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/media/map/wx.createMapContext.html)
          *
          * 在插件中使用：需要基础库 `1.9.6`
@@ -19599,7 +18424,6 @@ declare namespace WechatMiniprogram {
          *
          * - https://developers.weixin.qq.com/s/SF2duHmb7MjI */
         createMediaAudioPlayer(): MediaAudioPlayer
-
         /** [[MediaContainer](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/MediaContainer.html) wx.createMediaContainer()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-processing/wx.createMediaContainer.html)
          *
          * 需要基础库： `2.9.0`
@@ -19648,7 +18472,6 @@ declare namespace WechatMiniprogram {
             canvas: IAnyObject,
             options: CreateMediaRecorderOption
         ): MediaRecorder
-
         /** [[NFCAdapter](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.html) wx.getNFCAdapter()](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/wx.getNFCAdapter.html)
          *
          * 需要基础库： `2.11.2`
@@ -19661,7 +18484,6 @@ declare namespace WechatMiniprogram {
          *
          * [在微信开发者工具中查看示例](https://developers.weixin.qq.com/s/1WsbDwmb75ig) */
         getNFCAdapter(): NFCAdapter
-
         /** [[OffscreenCanvas](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.html) wx.createOffscreenCanvas(object object, number width, number height, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.createOffscreenCanvas.html)
          *
          * 需要基础库： `2.16.1`
@@ -19696,7 +18518,6 @@ declare namespace WechatMiniprogram {
             /** 在自定义组件下，当前组件实例的 this */
             component?: Component.TrivialInstance | Page.TrivialInstance
         ): OffscreenCanvas
-
         /** [[OffscreenCanvas](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.html) wx.createOffscreenCanvas(object object, number width, number height, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/wx.createOffscreenCanvas.html)
          *
          * 需要基础库： `2.16.1`
@@ -19792,7 +18613,6 @@ declare namespace WechatMiniprogram {
          logger.warn('key3', 'value3')
          ``` */
         getRealtimeLogManager(): RealtimeLogManager
-
         /** [[RecorderManager](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.html) wx.getRecorderManager()](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/wx.getRecorderManager.html)
          *
          * 需要基础库： `1.6.0`
@@ -19896,7 +18716,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         connectSocket(option: ConnectSocketOption): SocketTask
-
         /** [[TCPSocket](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/TCPSocket.html) wx.createTCPSocket()](https://developers.weixin.qq.com/miniprogram/dev/api/network/tcp/wx.createTCPSocket.html)
          *
          * 需要基础库： `2.18.0`
@@ -19912,7 +18731,6 @@ declare namespace WechatMiniprogram {
          * - 禁止与以下端口号连接：`1024 以下` `1099` `1433` `1521` `1719` `1720` `1723` `2049` `2375` `3128` `3306` `3389` `3659` `4045` `5060` `5061` `5432` `5984` `6379` `6000` `6566` `7001` `7002` `8000-8100` `8443` `8888` `9200` `9300` `10051` `10080` `11211` `27017` `27018` `27019`
          * - 每 5 分钟内最多创建 20 个 TCPSocket */
         createTCPSocket(): TCPSocket
-
         /** [[UDPSocket](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/UDPSocket.html) wx.createUDPSocket()](https://developers.weixin.qq.com/miniprogram/dev/api/network/udp/wx.createUDPSocket.html)
          *
          * 需要基础库： `2.7.0`
@@ -19921,7 +18739,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建一个 UDP Socket 实例。使用前请注意阅读[相关说明](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html)。 */
         createUDPSocket(): UDPSocket
-
         /** [[UpdateManager](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/UpdateManager.html) wx.getUpdateManager()](https://developers.weixin.qq.com/miniprogram/dev/api/base/update/wx.getUpdateManager.html)
          *
          * 需要基础库： `1.9.90`
@@ -19963,7 +18780,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         uploadFile(option: UploadFileOption): UploadTask
-
         /** [[UserCryptoManager](https://developers.weixin.qq.com/miniprogram/dev/api/base/crypto/UserCryptoManager.html) wx.getUserCryptoManager()](https://developers.weixin.qq.com/miniprogram/dev/api/base/crypto/wx.getUserCryptoManager.html)
          *
          * 需要基础库： `2.17.3`
@@ -20017,7 +18833,6 @@ declare namespace WechatMiniprogram {
 }
          ``` */
         createVKSession(option: VKConfig): VKSession
-
         /** [[VideoContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.html) wx.createVideoContext(string id, Object this)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.createVideoContext.html)
          *
          * 在插件中使用：需要基础库 `1.9.6`
@@ -20029,7 +18844,6 @@ declare namespace WechatMiniprogram {
             /** 在自定义组件下，当前组件实例的this，以操作组件内 [video](https://developers.weixin.qq.com/miniprogram/dev/component/video.html) 组件 */
             component?: Component.TrivialInstance | Page.TrivialInstance
         ): VideoContext
-
         /** [[VideoDecoder](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/VideoDecoder.html) wx.createVideoDecoder()](https://developers.weixin.qq.com/miniprogram/dev/api/media/video-decoder/wx.createVideoDecoder.html)
          *
          * 需要基础库： `2.11.0`
@@ -20038,7 +18852,6 @@ declare namespace WechatMiniprogram {
          *
          * 创建视频解码器，可逐帧获取解码后的数据 */
         createVideoDecoder(): VideoDecoder
-
         /** [[WebAudioContext](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.html) wx.createWebAudioContext()](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.createWebAudioContext.html)
          *
          * 需要基础库： `2.19.0`
@@ -20174,7 +18987,6 @@ declare namespace WechatMiniprogram {
              * - 'v2': v2 版本，目前只有 iOS 基础库 2.22.0 以上支持; */
             version: 'v1' | 'v2'
         ): boolean
-
         /** [string wx.arrayBufferToBase64(ArrayBuffer arrayBuffer)](https://developers.weixin.qq.com/miniprogram/dev/api/base/wx.arrayBufferToBase64.html)
          *
          * 需要基础库： `1.1.0`
@@ -20600,7 +19412,6 @@ declare namespace WechatMiniprogram {
         chooseAddress<T extends ChooseAddressOption = ChooseAddressOption>(
             option?: T
         ): PromisifySuccessResult<T, ChooseAddressOption>
-
         /** [wx.chooseContact(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/contact/wx.chooseContact.html)
          *
          * 需要基础库： `2.8.0`
@@ -20633,7 +19444,6 @@ declare namespace WechatMiniprogram {
         chooseImage<T extends ChooseImageOption = ChooseImageOption>(
             option?: T
         ): PromisifySuccessResult<T, ChooseImageOption>
-
         /** [wx.chooseInvoice(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/invoice/wx.chooseInvoice.html)
          *
          * 需要基础库： `2.3.0`
@@ -20934,7 +19744,6 @@ declare namespace WechatMiniprogram {
         compressImage<T extends CompressImageOption = CompressImageOption>(
             option: T
         ): PromisifySuccessResult<T, CompressImageOption>
-
         /** [wx.compressVideo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.compressVideo.html)
          *
          * 需要基础库： `2.11.0`
@@ -21039,7 +19848,6 @@ declare namespace WechatMiniprogram {
                 | Float32Array
                 | Float64Array
         ): void
-
         /** [wx.disableAlertBeforeUnload(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.disableAlertBeforeUnload.html)
          *
          * 需要基础库： `2.12.0`
@@ -21065,7 +19873,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         editImage(option: EditImageOption): void
-
         /** [wx.enableAlertBeforeUnload(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.enableAlertBeforeUnload.html)
          *
          * 需要基础库： `2.12.0`
@@ -21110,7 +19917,6 @@ declare namespace WechatMiniprogram {
         exitVoIPChat<T extends ExitVoIPChatOption = ExitVoIPChatOption>(
             option?: T
         ): PromisifySuccessResult<T, ExitVoIPChatOption>
-
         /** [wx.faceDetect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/face/wx.faceDetect.html)
          *
          * 需要基础库： `2.18.0`
@@ -21277,7 +20083,6 @@ declare namespace WechatMiniprogram {
         getBatteryInfo<T extends GetBatteryInfoOption = GetBatteryInfoOption>(
             option?: T
         ): PromisifySuccessResult<T, GetBatteryInfoOption>
-
         /** [wx.getBeacons(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.getBeacons.html)
          *
          * 需要基础库： `1.2.0`
@@ -21359,7 +20164,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取视频号直播信息 */
         getChannelsLiveInfo(option: GetChannelsLiveInfoOption): void
-
         /** [wx.getChannelsLiveNoticeInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/channels/wx.getChannelsLiveNoticeInfo.html)
          *
          * 需要基础库： `2.19.0`
@@ -21368,7 +20172,6 @@ declare namespace WechatMiniprogram {
          *
          * 获取视频号直播预告信息 */
         getChannelsLiveNoticeInfo(option: GetChannelsLiveNoticeInfoOption): void
-
         /** [wx.getChannelsShareKey(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/channels/wx.getChannelsShareKey.html)
          *
          * 需要基础库： `2.22.1`
@@ -22222,7 +21025,6 @@ declare namespace WechatMiniprogram {
         getUserProfile<T extends GetUserProfileOption = GetUserProfileOption>(
             option: T
         ): PromisifySuccessResult<T, GetUserProfileOption>
-
         /** [wx.getVideoInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/video/wx.getVideoInfo.html)
          *
          * 需要基础库： `2.11.0`
@@ -22284,7 +21086,6 @@ declare namespace WechatMiniprogram {
         getWeRunData<T extends GetWeRunDataOption = GetWeRunDataOption>(
             option?: T
         ): PromisifySuccessResult<T, GetWeRunDataOption>
-
         /** [wx.getWifiList(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.getWifiList.html)
          *
          * 需要基础库： `1.6.0`
@@ -22301,7 +21102,6 @@ declare namespace WechatMiniprogram {
         getWifiList<T extends GetWifiListOption = GetWifiListOption>(
             option?: T
         ): PromisifySuccessResult<T, GetWifiListOption>
-
         /** [wx.hideHomeButton(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideHomeButton.html)
          *
          * 需要基础库： `2.8.3`
@@ -22333,7 +21133,6 @@ declare namespace WechatMiniprogram {
         hideKeyboard<T extends HideKeyboardOption = HideKeyboardOption>(
             option?: T
         ): PromisifySuccessResult<T, HideKeyboardOption>
-
         /** [wx.hideLoading(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.hideLoading.html)
          *
          * 需要基础库： `1.1.0`
@@ -22382,7 +21181,6 @@ declare namespace WechatMiniprogram {
         hideShareMenu<T extends HideShareMenuOption = HideShareMenuOption>(
             option?: T
         ): PromisifySuccessResult<T, HideShareMenuOption>
-
         /** [wx.hideTabBar(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/tab-bar/wx.hideTabBar.html)
          *
          * 需要基础库： `1.9.0`
@@ -22413,7 +21211,6 @@ declare namespace WechatMiniprogram {
         hideToast<T extends HideToastOption = HideToastOption>(
             option?: T
         ): PromisifySuccessResult<T, HideToastOption>
-
         /** [wx.initFaceDetect(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ai/face/wx.initFaceDetect.html)
          *
          * 需要基础库： `2.18.0`
@@ -22443,7 +21240,6 @@ declare namespace WechatMiniprogram {
          *
          * 加入（创建）双人通话。 */
         join1v1Chat(option: Join1v1ChatOption): void
-
         /** [wx.joinVoIPChat(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/voip/wx.joinVoIPChat.html)
          *
          * 需要基础库： `2.7.0`
@@ -22544,7 +21340,6 @@ declare namespace WechatMiniprogram {
         makePhoneCall<T extends MakePhoneCallOption = MakePhoneCallOption>(
             option: T
         ): PromisifySuccessResult<T, MakePhoneCallOption>
-
         /** [wx.navigateBack(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateBack.html)
          *
          * 在插件中使用：需要基础库 `2.1.0`
@@ -23457,7 +22252,6 @@ declare namespace WechatMiniprogram {
             /** onUnhandledRejection 传入的监听函数。不传此参数则移除所有监听函数。 */
             listener?: OffUnhandledRejectionCallback
         ): void
-
         /** [wx.offUserCaptureScreen(function callback)](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.offUserCaptureScreen.html)
          *
          * 需要基础库： `2.9.3`
@@ -23655,7 +22449,6 @@ declare namespace WechatMiniprogram {
             /** 加速度数据事件的监听函数 */
             listener: OnAccelerometerChangeCallback
         ): void
-
         /** [wx.onAppHide(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onAppHide.html)
          *
          * 需要基础库： `2.1.2`
@@ -23667,7 +22460,6 @@ declare namespace WechatMiniprogram {
             /** 小程序切后台事件的监听函数 */
             listener: OnAppHideCallback
         ): void
-
         /** [wx.onAppShow(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onAppShow.html)
          *
          * 需要基础库： `2.1.2`
@@ -23707,7 +22499,6 @@ declare namespace WechatMiniprogram {
             /** 小程序切前台事件的监听函数 */
             listener: OnAppShowCallback
         ): void
-
         /** [wx.onAudioInterruptionBegin(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onAudioInterruptionBegin.html)
          *
          * 需要基础库： `2.6.2`
@@ -23719,7 +22510,6 @@ declare namespace WechatMiniprogram {
             /** 音频因为受到系统占用而被中断开始事件的监听函数 */
             listener: OnAudioInterruptionBeginCallback
         ): void
-
         /** [wx.onAudioInterruptionEnd(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onAudioInterruptionEnd.html)
          *
          * 需要基础库： `2.6.2`
@@ -23807,7 +22597,6 @@ declare namespace WechatMiniprogram {
             /** 蓝牙低功耗的最大传输单元变化事件的监听函数 */
             listener: OnBLEMTUChangeCallback
         ): void
-
         /** [wx.onBLEPeripheralConnectionStateChanged(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-peripheral/wx.onBLEPeripheralConnectionStateChanged.html)
          *
          * 需要基础库： `2.10.3`
@@ -23819,7 +22608,6 @@ declare namespace WechatMiniprogram {
             /** 当前外围设备被连接或断开连接事件的监听函数 */
             listener: OnBLEPeripheralConnectionStateChangedCallback
         ): void
-
         /** [wx.onBackgroundAudioPause(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.onBackgroundAudioPause.html)
          *
          * 在插件中使用：不支持
@@ -23830,7 +22618,6 @@ declare namespace WechatMiniprogram {
             /** 音乐暂停事件的监听函数 */
             listener: OnBackgroundAudioPauseCallback
         ): void
-
         /** [wx.onBackgroundAudioPlay(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.onBackgroundAudioPlay.html)
          *
          * 在插件中使用：不支持
@@ -23841,7 +22628,6 @@ declare namespace WechatMiniprogram {
             /** 音乐播放事件的监听函数 */
             listener: OnBackgroundAudioPlayCallback
         ): void
-
         /** [wx.onBackgroundAudioStop(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/wx.onBackgroundAudioStop.html)
          *
          * 在插件中使用：不支持
@@ -23852,7 +22638,6 @@ declare namespace WechatMiniprogram {
             /** 音乐停止事件的监听函数 */
             listener: OnBackgroundAudioStopCallback
         ): void
-
         /** [wx.onBackgroundFetchData(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/background-fetch/wx.onBackgroundFetchData.html)
          *
          * 需要基础库： `2.8.0`
@@ -23864,7 +22649,6 @@ declare namespace WechatMiniprogram {
             /** 收到 backgroundFetch 数据事件的监听函数 */
             listener: OnBackgroundFetchDataCallback
         ): void
-
         /** [wx.onBeaconServiceChange(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.onBeaconServiceChange.html)
          *
          * 需要基础库： `1.2.0`
@@ -23876,7 +22660,6 @@ declare namespace WechatMiniprogram {
             /** Beacon 服务状态变化事件的监听函数 */
             listener: OnBeaconServiceChangeCallback
         ): void
-
         /** [wx.onBeaconUpdate(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/ibeacon/wx.onBeaconUpdate.html)
          *
          * 需要基础库： `1.2.0`
@@ -23953,7 +22736,6 @@ declare namespace WechatMiniprogram {
             /** 搜索到新设备的事件的监听函数 */
             listener: OnBluetoothDeviceFoundCallback
         ): void
-
         /** [wx.onCompassChange(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/compass/wx.onCompassChange.html)
          *
          * 在插件中使用：不支持
@@ -23979,7 +22761,6 @@ declare namespace WechatMiniprogram {
             /** 罗盘数据变化事件的监听函数 */
             listener: OnCompassChangeCallback
         ): void
-
         /** [wx.onCopyUrl(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/share/wx.onCopyUrl.html)
          *
          * 需要基础库： `2.14.3`
@@ -23991,7 +22772,6 @@ declare namespace WechatMiniprogram {
             /** 用户点击右上角菜单的「复制链接」按钮时触发的事件的监听函数 */
             listener: OnCopyUrlCallback
         ): void
-
         /** [wx.onDeviceMotionChange(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/motion/wx.onDeviceMotionChange.html)
          *
          * 需要基础库： `2.3.0`
@@ -24003,7 +22783,6 @@ declare namespace WechatMiniprogram {
             /** 设备方向变化事件的监听函数 */
             listener: OnDeviceMotionChangeCallback
         ): void
-
         /** [wx.onError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onError.html)
          *
          * 需要基础库： `2.1.2`
@@ -24015,7 +22794,6 @@ declare namespace WechatMiniprogram {
             /** 小程序错误事件的监听函数 */
             listener: WxOnErrorCallback
         ): void
-
         /** [wx.onGetWifiList(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.onGetWifiList.html)
          *
          * 需要基础库： `1.6.0`
@@ -24027,7 +22805,6 @@ declare namespace WechatMiniprogram {
             /** 获取到 Wi-Fi 列表数据事件的监听函数 */
             listener: OnGetWifiListCallback
         ): void
-
         /** [wx.onGyroscopeChange(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/gyroscope/wx.onGyroscopeChange.html)
          *
          * 需要基础库： `2.3.0`
@@ -24039,7 +22816,6 @@ declare namespace WechatMiniprogram {
             /** 陀螺仪数据变化事件的监听函数 */
             listener: OnGyroscopeChangeCallback
         ): void
-
         /** [wx.onHCEMessage(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc-hce/wx.onHCEMessage.html)
          *
          * 需要基础库： `1.7.0`
@@ -24071,7 +22847,6 @@ declare namespace WechatMiniprogram {
             /** 键盘高度变化事件的监听函数 */
             listener: OnKeyboardHeightChangeCallback
         ): void
-
         /** [wx.onLazyLoadError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onLazyLoadError.html)
          *
          * 需要基础库： `2.24.3`
@@ -24090,7 +22865,6 @@ declare namespace WechatMiniprogram {
             /** 小程序异步组件加载失败事件的监听函数 */
             listener: OnLazyLoadErrorCallback
         ): void
-
         /** [wx.onLocalServiceDiscoveryStop(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.onLocalServiceDiscoveryStop.html)
          *
          * 需要基础库： `2.4.0`
@@ -24102,7 +22876,6 @@ declare namespace WechatMiniprogram {
             /** mDNS 服务停止搜索的事件的监听函数 */
             listener: OnLocalServiceDiscoveryStopCallback
         ): void
-
         /** [wx.onLocalServiceFound(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.onLocalServiceFound.html)
          *
          * 需要基础库： `2.4.0`
@@ -24114,7 +22887,6 @@ declare namespace WechatMiniprogram {
             /** mDNS 服务发现的事件的监听函数 */
             listener: OnLocalServiceFoundCallback
         ): void
-
         /** [wx.onLocalServiceLost(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.onLocalServiceLost.html)
          *
          * 需要基础库： `2.4.0`
@@ -24126,7 +22898,6 @@ declare namespace WechatMiniprogram {
             /** mDNS 服务离开的事件的监听函数 */
             listener: OnLocalServiceLostCallback
         ): void
-
         /** [wx.onLocalServiceResolveFail(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.onLocalServiceResolveFail.html)
          *
          * 需要基础库： `2.4.0`
@@ -24196,7 +22967,6 @@ declare namespace WechatMiniprogram {
             /** 实时地理位置变化事件的监听函数 */
             listener: OnLocationChangeCallback
         ): void
-
         /** [wx.onLocationChangeError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChangeError.html)
          *
          * 需要基础库： `2.19.5`
@@ -24208,7 +22978,6 @@ declare namespace WechatMiniprogram {
             /** 的监听函数 */
             listener: OnLocationChangeErrorCallback
         ): void
-
         /** [wx.onMemoryWarning(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/memory/wx.onMemoryWarning.html)
          *
          * 需要基础库： `2.0.2`
@@ -24274,7 +23043,6 @@ declare namespace WechatMiniprogram {
             /** 弱网状态变化事件的监听函数 */
             listener: OnNetworkWeakChangeCallback
         ): void
-
         /** [wx.onPageNotFound(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onPageNotFound.html)
          *
          * 需要基础库： `2.1.2`
@@ -24292,7 +23060,6 @@ declare namespace WechatMiniprogram {
             /** 小程序要打开的页面不存在事件的监听函数 */
             listener: OnPageNotFoundCallback
         ): void
-
         /** [wx.onScreenRecordingStateChanged(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.onScreenRecordingStateChanged.html)
          *
          * 需要基础库： `2.24.0`
@@ -24304,7 +23071,6 @@ declare namespace WechatMiniprogram {
             /** 用户录屏事件的监听函数 */
             listener: OnScreenRecordingStateChangedCallback
         ): void
-
         /** [wx.onSocketClose(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketClose.html)
          *
          * 在插件中使用：不支持
@@ -24316,7 +23082,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 连接关闭事件的监听函数 */
             listener: OnSocketCloseCallback
         ): void
-
         /** [wx.onSocketError(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketError.html)
          *
          * 在插件中使用：不支持
@@ -24328,7 +23093,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 错误事件的监听函数 */
             listener: OnSocketErrorCallback
         ): void
-
         /** [wx.onSocketMessage(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketMessage.html)
          *
          * 在插件中使用：不支持
@@ -24340,7 +23104,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 接受到服务器的消息事件的监听函数 */
             listener: OnSocketMessageCallback
         ): void
-
         /** [wx.onSocketOpen(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/network/websocket/wx.onSocketOpen.html)
          *
          * 在插件中使用：不支持
@@ -24352,7 +23115,6 @@ declare namespace WechatMiniprogram {
             /** WebSocket 连接打开事件的监听函数 */
             listener: OnSocketOpenCallback
         ): void
-
         /** [wx.onThemeChange(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onThemeChange.html)
          *
          * 需要基础库： `2.11.0`
@@ -24368,7 +23130,6 @@ declare namespace WechatMiniprogram {
             /** 系统主题改变事件的监听函数 */
             listener: OnThemeChangeCallback
         ): void
-
         /** [wx.onUnhandledRejection(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/base/app/app-event/wx.onUnhandledRejection.html)
          *
          * 需要基础库： `2.10.0`
@@ -24404,7 +23165,6 @@ declare namespace WechatMiniprogram {
             /** 用户主动截屏事件的监听函数 */
             listener: OnUserCaptureScreenCallback
         ): void
-
         /** [wx.onVoIPChatInterrupted(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/voip/wx.onVoIPChatInterrupted.html)
          *
          * 需要基础库： `2.7.0`
@@ -24416,7 +23176,6 @@ declare namespace WechatMiniprogram {
             /** 被动断开实时语音通话事件的监听函数 */
             listener: OnVoIPChatInterruptedCallback
         ): void
-
         /** [wx.onVoIPChatMembersChanged(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/voip/wx.onVoIPChatMembersChanged.html)
          *
          * 需要基础库： `2.7.0`
@@ -24428,7 +23187,6 @@ declare namespace WechatMiniprogram {
             /** 实时语音通话成员在线状态变化事件的监听函数 */
             listener: OnVoIPChatMembersChangedCallback
         ): void
-
         /** [wx.onVoIPChatSpeakersChanged(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/voip/wx.onVoIPChatSpeakersChanged.html)
          *
          * 需要基础库： `2.7.0`
@@ -24440,7 +23198,6 @@ declare namespace WechatMiniprogram {
             /** 实时语音通话成员通话状态变化事件的监听函数 */
             listener: OnVoIPChatSpeakersChangedCallback
         ): void
-
         /** [wx.onVoIPChatStateChanged(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/voip/wx.onVoIPChatStateChanged.html)
          *
          * 需要基础库： `2.16.0`
@@ -24452,7 +23209,6 @@ declare namespace WechatMiniprogram {
             /** 房间状态变化事件的监听函数 */
             listener: OnVoIPChatStateChangedCallback
         ): void
-
         /** [wx.onVoIPVideoMembersChanged(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/media/voip/wx.onVoIPVideoMembersChanged.html)
          *
          * 需要基础库： `2.11.0`
@@ -24464,7 +23220,6 @@ declare namespace WechatMiniprogram {
             /** 实时语音通话成员视频状态变化事件的监听函数 */
             listener: OnVoIPVideoMembersChangedCallback
         ): void
-
         /** [wx.onWifiConnected(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.onWifiConnected.html)
          *
          * 需要基础库： `1.6.0`
@@ -24476,7 +23231,6 @@ declare namespace WechatMiniprogram {
             /** 连接上 Wi-Fi 的事件的监听函数 */
             listener: OnWifiConnectedCallback
         ): void
-
         /** [wx.onWifiConnectedWithPartialInfo(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/device/wifi/wx.onWifiConnectedWithPartialInfo.html)
          *
          * 需要基础库： `2.22.0`
@@ -24488,7 +23242,6 @@ declare namespace WechatMiniprogram {
             /** 连接上 Wi-Fi 的事件的监听函数 */
             listener: OnWifiConnectedWithPartialInfoCallback
         ): void
-
         /** [wx.onWindowResize(function listener)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/window/wx.onWindowResize.html)
          *
          * 需要基础库： `2.3.0`
@@ -24584,7 +23337,6 @@ declare namespace WechatMiniprogram {
         openCard<T extends OpenCardOption = OpenCardOption>(
             option: T
         ): PromisifySuccessResult<T, OpenCardOption>
-
         /** [wx.openChannelsActivity(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/channels/wx.openChannelsActivity.html)
          *
          * 需要基础库： `2.19.2`
@@ -24593,7 +23345,6 @@ declare namespace WechatMiniprogram {
          *
          * 打开视频号视频 */
         openChannelsActivity(option: OpenChannelsActivityOption): void
-
         /** [wx.openChannelsEvent(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/channels/wx.openChannelsEvent.html)
          *
          * 需要基础库： `2.21.0`
@@ -24602,7 +23353,6 @@ declare namespace WechatMiniprogram {
          *
          * 打开视频号活动页 */
         openChannelsEvent(option: OpenChannelsEventOption): void
-
         /** [wx.openChannelsLive(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/channels/wx.openChannelsLive.html)
          *
          * 需要基础库： `2.15.0`
@@ -24611,7 +23361,6 @@ declare namespace WechatMiniprogram {
          *
          * 打开视频号直播 */
         openChannelsLive(option: OpenChannelsLiveOption): void
-
         /** [wx.openChannelsUserProfile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/channels/wx.openChannelsUserProfile.html)
          *
          * 需要基础库： `2.21.2`
@@ -24639,7 +23388,6 @@ declare namespace WechatMiniprogram {
 })
          ``` */
         openCustomerServiceChat(option: OpenCustomerServiceChatOption): void
-
         /** [wx.openDocument(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.openDocument.html)
          *
          * 在插件中使用：需要基础库 `2.15.0`
@@ -24862,7 +23610,6 @@ declare namespace WechatMiniprogram {
         playVoice<T extends PlayVoiceOption = PlayVoiceOption>(
             option: T
         ): PromisifySuccessResult<T, PlayVoiceOption>
-
         /** [wx.pluginLogin(Object args)](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.pluginLogin.html)
          *
          * 需要基础库： `2.20.1`
@@ -24903,7 +23650,6 @@ declare namespace WechatMiniprogram {
          *
          * - 开发过程中，可在开发者工具network面板查看预加载情况。 */
         preloadAssets(option: PreloadAssetsOption): void
-
         /** [wx.preloadSkylineView(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/wx.preloadSkylineView.html)
          *
          * 需要基础库： `2.24.7`
@@ -24912,7 +23658,6 @@ declare namespace WechatMiniprogram {
          *
          * 预加载下个页面所需要的 [Skyline](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/introduction.html) 运行环境。 */
         preloadSkylineView(option?: PreloadSkylineViewOption): void
-
         /** [wx.preloadWebview(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/wx.preloadWebview.html)
          *
          * 需要基础库： `2.15.0`
@@ -24950,7 +23695,6 @@ declare namespace WechatMiniprogram {
         previewImage<T extends PreviewImageOption = PreviewImageOption>(
             option: T
         ): PromisifySuccessResult<T, PreviewImageOption>
-
         /** [wx.previewMedia(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewMedia.html)
          *
          * 需要基础库： `2.12.0`
@@ -25178,7 +23922,6 @@ declare namespace WechatMiniprogram {
             /** 上报的自定义数据，key 为配置中的字段名，value 为上报的数据。 */
             data: IAnyObject
         ): void
-
         /** [wx.reportEvent(string eventId, object data)](https://developers.weixin.qq.com/miniprogram/dev/api/data-analysis/wx.reportEvent.html)
          *
          * 需要基础库： `2.14.4`
@@ -25239,7 +23982,6 @@ declare namespace WechatMiniprogram {
             /** 自定义维度 (选填) */
             dimensions?: string | any[]
         ): void
-
         /** [wx.requestOrderPayment(Object args)](https://developers.weixin.qq.com/miniprogram/dev/api/payment/wx.requestOrderPayment.html)
          *
          * 需要基础库： `2.16.0`
@@ -25453,7 +24195,6 @@ declare namespace WechatMiniprogram {
          *
          * 预约视频号直播 */
         reserveChannelsLive(option: ReserveChannelsLiveOption): void
-
         /** [wx.revokeBufferURL(string url)](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.revokeBufferURL.html)
          *
          * 需要基础库： `2.14.0`
@@ -25633,7 +24374,6 @@ declare namespace WechatMiniprogram {
         sendHCEMessage<T extends SendHCEMessageOption = SendHCEMessageOption>(
             option: T
         ): PromisifySuccessResult<T, SendHCEMessageOption>
-
         /** [wx.sendSms(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/sms/wx.sendSms.html)
          *
          * 需要基础库： `2.25.0`
@@ -25814,7 +24554,6 @@ declare namespace WechatMiniprogram {
         setEnableDebug<T extends SetEnableDebugOption = SetEnableDebugOption>(
             option: T
         ): PromisifySuccessResult<T, SetEnableDebugOption>
-
         /** [wx.setInnerAudioOption(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/wx.setInnerAudioOption.html)
          *
          * 需要基础库： `2.3.0`
@@ -26043,7 +24782,6 @@ declare namespace WechatMiniprogram {
         setTopBarText<T extends SetTopBarTextOption = SetTopBarTextOption>(
             option: T
         ): PromisifySuccessResult<T, SetTopBarTextOption>
-
         /** [wx.setVisualEffectOnCapture(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/screen/wx.setVisualEffectOnCapture.html)
          *
          * 需要基础库： `2.20.1`
@@ -26090,7 +24828,6 @@ declare namespace WechatMiniprogram {
         setWifiList<T extends SetWifiListOption = SetWifiListOption>(
             option: T
         ): PromisifySuccessResult<T, SetWifiListOption>
-
         /** [wx.setWindowSize(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/window/wx.setWindowSize.html)
          *
          * 需要基础库： `2.10.1`
@@ -26279,7 +25016,6 @@ declare namespace WechatMiniprogram {
         showShareMenu<T extends ShowShareMenuOption = ShowShareMenuOption>(
             option: T
         ): PromisifySuccessResult<T, ShowShareMenuOption>
-
         /** [wx.showTabBar(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/ui/tab-bar/wx.showTabBar.html)
          *
          * 需要基础库： `1.9.0`
@@ -26459,7 +25195,6 @@ declare namespace WechatMiniprogram {
         startHCE<T extends StartHCEOption = StartHCEOption>(
             option: T
         ): PromisifySuccessResult<T, StartHCEOption>
-
         /** [wx.startLocalServiceDiscovery(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/network/mdns/wx.startLocalServiceDiscovery.html)
          *
          * 需要基础库： `2.4.0`
@@ -26794,7 +25529,6 @@ declare namespace WechatMiniprogram {
          *
          * 停止人脸检测。本接口不再维护，请使用 [wx.createVKSession](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/wx.createVKSession.html) 接口代替。详情参考[人脸检测指南文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/visionkit/face.html) */
         stopFaceDetect(option?: StopFaceDetectOption): void
-
         /** [wx.stopGyroscope(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/gyroscope/wx.stopGyroscope.html)
          *
          * 需要基础库： `2.3.0`
@@ -27050,7 +25784,6 @@ declare namespace WechatMiniprogram {
         vibrateLong<T extends VibrateLongOption = VibrateLongOption>(
             option?: T
         ): PromisifySuccessResult<T, VibrateLongOption>
-
         /** [wx.vibrateShort(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/device/vibrate/wx.vibrateShort.html)
          *
          * 需要基础库： `1.2.0`
@@ -27103,7 +25836,6 @@ declare namespace WechatMiniprogram {
         writeBLECharacteristicValue<T extends WriteBLECharacteristicValueOption = WriteBLECharacteristicValueOption>(
             option: T
         ): PromisifySuccessResult<T, WriteBLECharacteristicValueOption>
-
         /** 小程序云开发 */
         cloud: WxCloud
         /** 文件系统中的用户目录路径 */

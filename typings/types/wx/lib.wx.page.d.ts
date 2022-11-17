@@ -41,7 +41,6 @@ declare namespace WechatMiniprogram.Page {
             options: Options<TData, TCustom>
         ): void
     }
-
     interface ILifetime {
         /** 生命周期回调—监听页面加载
          *
@@ -51,7 +50,6 @@ declare namespace WechatMiniprogram.Page {
             /** 打开当前页面路径中的参数 */
             query: Record<string, string | undefined>
         ): void | Promise<void>
-
         /** 生命周期回调—监听页面显示
          *
          * 页面显示/切入前台时触发。
@@ -66,19 +64,16 @@ declare namespace WechatMiniprogram.Page {
          * 注意：对界面内容进行设置的 API 如`wx.setNavigationBarTitle`，请在`onReady`之后进行。
          */
         onReady(): void | Promise<void>
-
         /** 生命周期回调—监听页面隐藏
          *
          * 页面隐藏/切入后台时触发。 如 `navigateTo` 或底部 `tab` 切换到其他页面，小程序切入后台等。
          */
         onHide(): void | Promise<void>
-
         /** 生命周期回调—监听页面卸载
          *
          * 页面卸载时触发。如`redirectTo`或`navigateBack`到其他页面时。
          */
         onUnload(): void | Promise<void>
-
         /** 监听用户下拉动作
          *
          * 监听用户下拉刷新事件。
@@ -87,7 +82,6 @@ declare namespace WechatMiniprogram.Page {
          * - 当处理完数据刷新后，`wx.stopPullDownRefresh`可以停止当前页面的下拉刷新。
          */
         onPullDownRefresh(): void | Promise<void>
-
         /** 页面上拉触底事件的处理函数
          *
          * 监听用户上拉触底事件。
@@ -95,7 +89,6 @@ declare namespace WechatMiniprogram.Page {
          * - 在触发距离内滑动期间，本事件只会被触发一次。
          */
         onReachBottom(): void | Promise<void>
-
         /** 用户点击右上角转发
          *
          * 监听用户点击页面内转发按钮（`<button>` 组件 `open-type="share"`）或右上角菜单“转发”按钮的行为，并自定义转发内容。
@@ -108,7 +101,6 @@ declare namespace WechatMiniprogram.Page {
             /** 分享发起来源参数 */
             options: IShareAppMessageOption
         ): ICustomShareContent | void
-
         /**
          * 监听右上角菜单“分享到朋友圈”按钮的行为，并自定义分享内容
          *
@@ -145,7 +137,6 @@ declare namespace WechatMiniprogram.Page {
          */
         onAddToFavorites(options: IAddToFavoritesOption): IAddToFavoritesContent
     }
-
     interface InstanceProperties {
         /** 页面的文件路径 */
         is: string

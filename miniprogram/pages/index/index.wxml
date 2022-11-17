@@ -1,4 +1,17 @@
-<!--index.wxml-->
 <view>
-    <t-button type="primary">按钮</t-button>
+
+    <view style="height: {{statusBarHeight}};"></view>
+
+    <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
+
+        <view class="abs" style="left: {{menuButtoMarginRight}}px;">
+            <t-avatar image="https://cdn-we-retail.ym.tencent.com/retail-ui/components-exp/avatar/avatar-v2/1.png" size="small" />
+        </view>
+
+        <view class="f-14 fw-600">
+            见茶思念奶茶店
+        </view>
+
+    </view>
+
 </view>

@@ -2,11 +2,11 @@
   "pages": [
     "pages/index/index"
   ],
+  "lazyCodeLoading": "requiredComponents",
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "见茶思念奶茶店"
+    "navigationStyle": "custom"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
