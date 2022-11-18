@@ -1,10 +1,11 @@
-<view class="flex-c vwh100">
+<view class="flex-c vwh100 black2-bc">
 
     <view style="height: {{statusBarHeight}};"></view>
 
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
         <view class="abs" style="left: {{menuButtonMarginRight}}px;">
-            <t-button t-class="p-0 shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small">
+            <t-button t-class="p-0 shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small"
+                      bind:tap="openPopup">
                 我的
             </t-button>
         </view>
@@ -28,5 +29,28 @@
             </t-button>
         </view>
     </view>
+
+    <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="left">
+        <view class="white1-bc flex-c rel black2-bc" style="width: 73vw; height: 100vh">
+
+            <view class="w100 h-165 abs bc-image"
+                  style="background-image: url('https://cdn-we-retail.ym.tencent.com/miniapp/template/user-center-bg-v1.png');"></view>
+
+            <view style="height: {{statusBarHeight}};"></view>
+
+            <view class="flex-c flex1 m-t-20 rel">
+
+                <view class="flex-center">
+                    <t-avatar
+                            image="https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-1.jpg"
+                            alt="avatar"/>
+                </view>
+
+                <view class="flex-center m-t-13 f-12 fw-600">见茶思念</view>
+
+            </view>
+
+        </view>
+    </t-popup>
 
 </view>
