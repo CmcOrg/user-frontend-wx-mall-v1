@@ -4,8 +4,8 @@ App<IAppOption>({
         statusBarHeight: 0,
         menuButtonHeight: 0,
         menuButtonWidth: 0,
-        menuButtoMarginTop: 0,
-        menuButtoMarginRight: 0,
+        menuButtonMarginTop: 0,
+        menuButtonMarginRight: 0,
     },
     onLaunch() {
         const menuButton = wx.getMenuButtonBoundingClientRect();
@@ -13,10 +13,10 @@ App<IAppOption>({
         wx.getSystemInfo({
             success: (res) => {
                 that.globalData.statusBarHeight = res.statusBarHeight
-                that.globalData.menuButtoMarginTop = menuButton.top - res.statusBarHeight
-                that.globalData.menuButtoMarginRight = res.windowWidth - menuButton.right
-                that.globalData.menuButtonWidth = menuButton.width + that.globalData.menuButtoMarginRight
-                that.globalData.menuButtonHeight = menuButton.height + (that.globalData.menuButtoMarginTop * 2);
+                that.globalData.menuButtonMarginTop = menuButton.top - res.statusBarHeight
+                that.globalData.menuButtonMarginRight = res.windowWidth - menuButton.right
+                that.globalData.menuButtonWidth = menuButton.width + that.globalData.menuButtonMarginRight
+                that.globalData.menuButtonHeight = menuButton.height + (that.globalData.menuButtonMarginTop * 2);
             },
         })
     },

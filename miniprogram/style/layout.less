@@ -161,35 +161,35 @@
         margin-bottom: @i + 0px !important;
     }
 
-    .m-t-b-@{i} {
-        margin-top: @i + 0px !important;
-        margin-bottom: @i + 0px !important;
-    }
+  .m-t-b-@{i} {
+    margin-top: @i + 0px !important;
+    margin-bottom: @i + 0px !important;
+  }
 
-    .pm(@i: (@i + @step), @max: @max, @step: @step);
+  .pm(@i: (@i + @step), @max: @max, @step: @step);
 }
 
-.pm(0, 30, 1);
-.pm(30, 300, 5);
+.pm(0, 60, 1);
+.pm(60, 300, 5);
 
 .font(@i, @max, @step) when (@i <=@max) {
-    .f-@{i} {
-        font-size: @i + 0px !important;
-    }
+  .f-@{i} {
+    font-size: @i + 0px !important;
+  }
 
-    .font(@i: (@i + @step), @max: @max, @step: @step);
+  .font(@i: (@i + @step), @max: @max, @step: @step);
 }
 
-.font(11, 25, 1);
+.font(9, 25, 1);
 
 .wh(@i, @max, @step) when (@i <=@max) {
-    .w-@{i} {
-        width: @i + 0px !important;
-    }
+  .w-@{i} {
+    width: @i + 0px !important;
+  }
 
-    .h-@{i} {
-        height: @i + 0px !important;
-    }
+  .h-@{i} {
+    height: @i + 0px !important;
+  }
 
     .wh(@i: (@i + @step), @max: @max, @step: @step);
 }

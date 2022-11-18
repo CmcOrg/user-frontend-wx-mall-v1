@@ -1,17 +1,29 @@
-<view>
+<view class="flex-c vwh100">
 
     <view style="height: {{statusBarHeight}};"></view>
 
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
-
-        <view class="abs" style="left: {{menuButtoMarginRight}}px;">
-            <t-avatar image="{{userInfo.avatarUrl}}" size="small" />
+        <view class="abs" style="left: {{menuButtonMarginRight}}px;">
+            <t-avatar image="{{userInfo.avatarUrl}}" size="small" t-class="shadow" t-class-content="pink1-bc">
+                <view class="f-9 black1 fw-600 ">登录</view>
+            </t-avatar>
         </view>
-
         <view class="f-14 fw-600">
             见茶思念奶茶店
         </view>
+    </view>
 
+    <view class="flex-1 wh100 rel">
+        <view class="w100 abs" style="top: 0px;">
+            <t-notice-bar visible marquee="{{marquee}}" prefixIcon="sound" t-class="transparent-bc black1"
+                          content="欢迎光临本店">
+            </t-notice-bar>
+        </view>
+        <view class="flex-center wh100 abs">
+            <t-button t-class="index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">堂食</t-button>
+            <t-button t-class="m-l-20 index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">外卖
+            </t-button>
+        </view>
     </view>
 
 </view>
