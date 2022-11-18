@@ -11,7 +11,7 @@ App<IAppOption>({
         const menuButton = wx.getMenuButtonBoundingClientRect();
         const that = this
         wx.getSystemInfo({
-            success: function (res) {
+            success: (res) => {
                 that.globalData.statusBarHeight = res.statusBarHeight
                 that.globalData.menuButtoMarginTop = menuButton.top - res.statusBarHeight
                 that.globalData.menuButtoMarginRight = res.windowWidth - menuButton.right

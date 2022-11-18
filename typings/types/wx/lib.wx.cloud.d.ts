@@ -43,10 +43,10 @@ interface IInitCloudConfig {
     env?:
         | string
         | {
-        database?: string
-        functions?: string
-        storage?: string
-    }
+              database?: string
+              functions?: string
+              storage?: string
+          }
     traceUser?: boolean
 }
 
@@ -74,8 +74,7 @@ interface ICloudMetaData {
     session_id: string
 }
 
-declare class InternalSymbol {
-}
+declare class InternalSymbol {}
 
 interface AnyObject {
     [x: string]: any
@@ -188,12 +187,14 @@ declare namespace ICloud {
         timeout?: number
     }
 
-    type ConnectContainerParam = Omit<ConnectSocketOptions,
-        'success' | 'fail' | 'complete'> &
+    type ConnectContainerParam = Omit<
+        ConnectSocketOptions,
+        'success' | 'fail' | 'complete'
+    > &
         ICloudAPIParam<ConnectContainerResult> & {
-        service: string
-        path?: string
-    }
+            service: string
+            path?: string
+        }
     // === end ===
 
     // === API: uploadFile ===
@@ -261,8 +262,7 @@ declare namespace ICloud {
     }
 
     interface ICloudIDConstructor {
-        new(cloudId: string): CloudID
-
+        new (cloudId: string): CloudID
         (cloudId: string): CloudID
     }
     // === end ===
@@ -279,8 +279,7 @@ declare namespace ICloud {
     }
 
     interface ICDNConstructor {
-        new(options: string | ArrayBuffer | ICDNFilePathSpec): CDN
-
+        new (options: string | ArrayBuffer | ICDNFilePathSpec): CDN
         (options: string | ArrayBuffer | ICDNFilePathSpec): CDN
     }
     // === end ===
@@ -531,8 +530,7 @@ declare namespace DB {
         }
     }
 
-    class DatabaseAggregateCommand {
-    }
+    class DatabaseAggregateCommand {}
 
     enum LOGIC_COMMANDS_LITERAL {
         AND = 'and',
@@ -601,8 +599,7 @@ declare namespace DB {
         SLICE = 'slice'
     }
 
-    class DatabaseProjectionCommand {
-    }
+    class DatabaseProjectionCommand {}
 
     enum UPDATE_COMMANDS_LITERAL {
         // field
@@ -625,19 +622,19 @@ declare namespace DB {
         PULL_ALL = 'pullAll'
     }
 
-    class DatabaseUpdateCommand {
-    }
+    class DatabaseUpdateCommand {}
 
-    class Batch {
-    }
+    class Batch {}
 
     /**
      * A contract that all API provider must adhere to
      */
-    class APIBaseContract<PromiseReturn,
+    class APIBaseContract<
+        PromiseReturn,
         CallbackReturn,
         Param extends IAPIParam,
-        Context = any> {
+        Context = any
+    > {
         getContext(param: Param): Context
 
         /**
@@ -651,46 +648,38 @@ declare namespace DB {
     }
 
     interface IGeoPointConstructor {
-        new(longitude: number, latitide: number): GeoPoint
-
-        new(geojson: IGeoJSONPoint): GeoPoint
-
+        new (longitude: number, latitide: number): GeoPoint
+        new (geojson: IGeoJSONPoint): GeoPoint
         (longitude: number, latitide: number): GeoPoint
-
         (geojson: IGeoJSONPoint): GeoPoint
     }
 
     interface IGeoMultiPointConstructor {
-        new(points: GeoPoint[] | IGeoJSONMultiPoint): GeoMultiPoint
-
+        new (points: GeoPoint[] | IGeoJSONMultiPoint): GeoMultiPoint
         (points: GeoPoint[] | IGeoJSONMultiPoint): GeoMultiPoint
     }
 
     interface IGeoLineStringConstructor {
-        new(points: GeoPoint[] | IGeoJSONLineString): GeoLineString
-
+        new (points: GeoPoint[] | IGeoJSONLineString): GeoLineString
         (points: GeoPoint[] | IGeoJSONLineString): GeoLineString
     }
 
     interface IGeoMultiLineStringConstructor {
-        new(
+        new (
             lineStrings: GeoLineString[] | IGeoJSONMultiLineString
         ): GeoMultiLineString
-
         (
             lineStrings: GeoLineString[] | IGeoJSONMultiLineString
         ): GeoMultiLineString
     }
 
     interface IGeoPolygonConstructor {
-        new(lineStrings: GeoLineString[] | IGeoJSONPolygon): GeoPolygon
-
+        new (lineStrings: GeoLineString[] | IGeoJSONPolygon): GeoPolygon
         (lineStrings: GeoLineString[] | IGeoJSONPolygon): GeoPolygon
     }
 
     interface IGeoMultiPolygonConstructor {
-        new(polygons: GeoPolygon[] | IGeoJSONMultiPolygon): GeoMultiPolygon
-
+        new (polygons: GeoPolygon[] | IGeoJSONMultiPolygon): GeoMultiPolygon
         (polygons: GeoPolygon[] | IGeoJSONMultiPolygon): GeoMultiPolygon
     }
 
@@ -839,8 +828,7 @@ declare namespace DB {
     }
 
     interface IRegExpConstructor {
-        new(options: IRegExpOptions): RegExp
-
+        new (options: IRegExpOptions): RegExp
         (options: IRegExpOptions): RegExp
     }
 
@@ -971,7 +959,11 @@ declare namespace DB {
 
 type Optional<T> = { [K in keyof T]+?: T[K] }
 
-type OQ<T extends Optional<Record<'complete' | 'success' | 'fail', (...args: any[]) => any>>> =
+type OQ<
+    T extends Optional<
+        Record<'complete' | 'success' | 'fail', (...args: any[]) => any>
+    >
+> =
     | (RQ<T> & Required<Pick<T, 'success'>>)
     | (RQ<T> & Required<Pick<T, 'fail'>>)
     | (RQ<T> & Required<Pick<T, 'complete'>>)
@@ -980,4 +972,8 @@ type OQ<T extends Optional<Record<'complete' | 'success' | 'fail', (...args: any
     | (RQ<T> & Required<Pick<T, 'fail' | 'complete'>>)
     | (RQ<T> & Required<Pick<T, 'fail' | 'complete' | 'success'>>)
 
-type RQ<T extends Optional<Record<'complete' | 'success' | 'fail', (...args: any[]) => any>>> = Pick<T, Exclude<keyof T, 'complete' | 'success' | 'fail'>>
+type RQ<
+    T extends Optional<
+        Record<'complete' | 'success' | 'fail', (...args: any[]) => any>
+    >
+> = Pick<T, Exclude<keyof T, 'complete' | 'success' | 'fail'>>

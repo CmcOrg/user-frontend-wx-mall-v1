@@ -32,21 +32,21 @@ declare namespace WechatMiniprogram {
     type IAnyObject = Record<string, any>
     type Optional<F> = F extends (arg: infer P) => infer R ? (arg?: P) => R : F
     type OptionalInterface<T> = { [K in keyof T]: Optional<T[K]> }
-
     interface AsyncMethodOptionLike {
         success?: (...args: any[]) => void
     }
-
-    type PromisifySuccessResult<P,
-        T extends AsyncMethodOptionLike> = P extends {
-            success: any
-        }
+    type PromisifySuccessResult<
+        P,
+        T extends AsyncMethodOptionLike
+    > = P extends {
+        success: any
+    }
         ? void
         : P extends { fail: any }
-            ? void
-            : P extends { complete: any }
-                ? void
-                : Promise<Parameters<Exclude<T['success'], undefined>>[0]>
+        ? void
+        : P extends { complete: any }
+        ? void
+        : Promise<Parameters<Exclude<T['success'], undefined>>[0]>
 
     //  TODO: Extract real definition from `lib.dom.d.ts` to replace this
     type IIRFilterNode = any

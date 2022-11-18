@@ -5,7 +5,7 @@
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
 
         <view class="abs" style="left: {{menuButtoMarginRight}}px;">
-            <t-avatar image="https://cdn-we-retail.ym.tencent.com/retail-ui/components-exp/avatar/avatar-v2/1.png" size="small" />
+            <t-avatar image="{{userInfo.avatarUrl}}" size="small" />
         </view>
 
         <view class="f-14 fw-600">

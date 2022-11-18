@@ -21,21 +21,24 @@ SOFTWARE.
 ***************************************************************************** */
 
 declare namespace WechatMiniprogram.Page {
-    type Instance<TData extends DataOption,
-        TCustom extends CustomOption> = OptionalInterface<ILifetime> &
+    type Instance<
+        TData extends DataOption,
+        TCustom extends CustomOption
+    > = OptionalInterface<ILifetime> &
         InstanceProperties &
         InstanceMethods<TData> &
         Data<TData> &
         TCustom
-    type Options<TData extends DataOption,
-        TCustom extends CustomOption> = (TCustom &
+    type Options<
+        TData extends DataOption,
+        TCustom extends CustomOption
+    > = (TCustom &
         Partial<Data<TData>> &
         Partial<ILifetime> & {
-        options?: Component.ComponentOptions
-    }) &
+            options?: Component.ComponentOptions
+        }) &
         ThisType<Instance<TData, TCustom>>
     type TrivialInstance = Instance<IAnyObject, IAnyObject>
-
     interface Constructor {
         <TData extends DataOption, TCustom extends CustomOption>(
             options: Options<TData, TCustom>
@@ -55,14 +58,13 @@ declare namespace WechatMiniprogram.Page {
          * 页面显示/切入前台时触发。
          */
         onShow(): void | Promise<void>
-
         /** 生命周期回调—监听页面初次渲染完成
-         *
-         * 页面初次渲染完成时触发。一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
-         *
+     *
+     * 页面初次渲染完成时触发。一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
+     *
 
-         * 注意：对界面内容进行设置的 API 如`wx.setNavigationBarTitle`，请在`onReady`之后进行。
-         */
+    * 注意：对界面内容进行设置的 API 如`wx.setNavigationBarTitle`，请在`onReady`之后进行。
+    */
         onReady(): void | Promise<void>
         /** 生命周期回调—监听页面隐藏
          *
