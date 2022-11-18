@@ -4,7 +4,7 @@
 
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
         <view class="abs" style="left: {{menuButtonMarginRight}}px;">
-            <t-button t-class="p-0 shadow pink1-bc f-9 black2 fw-600" variant="text" shape="circle" size="small">
+            <t-button t-class="p-0 shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small">
                 我的
             </t-button>
         </view>
