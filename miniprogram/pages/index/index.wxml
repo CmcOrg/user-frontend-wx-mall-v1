@@ -4,11 +4,11 @@
 
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
         <view class="abs" style="left: {{menuButtonMarginRight}}px;">
-            <t-avatar image="{{userInfo.avatarUrl}}" size="small" t-class="shadow" t-class-content="pink1-bc">
-                <view class="f-10 black1 fw-600 ">登录</view>
-            </t-avatar>
+            <t-button t-class="p-0 shadow pink1-bc f-9 black2 fw-600" variant="text" shape="circle" size="small">
+                我的
+            </t-button>
         </view>
-        <view class="f-13 fw-600 pink1-bc b-r-4 p-l-r-10 p-t-b-5 shadow">
+        <view class="f-13 fw-600">
             见茶思念奶茶店
         </view>
     </view>
@@ -20,8 +20,11 @@
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
-            <t-button t-class="index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">堂食</t-button>
-            <t-button t-class="m-l-30 index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">外卖
+            <t-button t-class="index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">
+                堂食
+            </t-button>
+            <t-button t-class="m-l-30 index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">
+                外卖
             </t-button>
         </view>
     </view>
