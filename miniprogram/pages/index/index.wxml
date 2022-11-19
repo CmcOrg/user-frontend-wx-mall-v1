@@ -17,7 +17,7 @@
     <view class="flex-1 wh100 rel">
         <view class="w100 abs" style="top: 0px;">
             <t-notice-bar visible marquee="{{marquee}}" prefixIcon="sound" t-class="transparent-bc black1"
-                          content="欢迎光临本店">
+                          content="欢迎光临">
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
