@@ -1,5 +1,5 @@
 import {ToastError} from './ToastUtil'
-import {SignOut} from "@/util/UserUtil";
+import {SignOut} from "./UserUtil";
 
 const baseUrl = 'http://localhost:30000'
 

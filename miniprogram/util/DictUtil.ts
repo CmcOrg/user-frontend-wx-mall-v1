@@ -1,6 +1,6 @@
-import MyPageDTO from "@/model/dto/MyPageDTO";
-import {ListToTree} from "@/util/TreeUtil";
-import {ApiResultVO} from "@/util/HttpUtil";
+import MyPageDTO from "../model/dto/MyPageDTO";
+import {ApiResultVO} from "./HttpUtil";
+import {ListToTree} from "./TreeUtil";
 
 // 将 map转换为 下拉选 list
 export function NumberStringMapToSelectList(map: Map<number, string>) {

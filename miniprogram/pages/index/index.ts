@@ -1,7 +1,7 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
-import {NavigateTo} from "@/util/NavigateUtil";
-import {GetJwt} from "@/util/UserUtil";
-import PathConstant from "@/model/constant/PathConstant";
+import {GetJwt} from "../../util/UserUtil";
+import {NavigateTo} from "../../util/NavigateUtil";
+import PathConstant from "../../model/constant/PathConstant";
 
 const app = getApp<IAppOption>()
 

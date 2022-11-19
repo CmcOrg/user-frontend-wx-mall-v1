@@ -1,4 +1,4 @@
-import {ShowToast} from "@/util/ToastUtil";
+import {ShowToast} from "./ToastUtil";
 
 export const InDevMsg = "功能开发中，敬请期待~"
 

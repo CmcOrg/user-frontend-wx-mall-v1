@@ -29,9 +29,6 @@
     "paths": {
       "tdesign-miniprogram/*": [
         "./miniprogram/miniprogram_npm/tdesign-miniprogram/*"
-      ],
-      "@/*": [
-        "miniprogram/*"
       ]
     }
   },
