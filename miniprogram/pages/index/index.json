@@ -5,5 +5,6 @@
     "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-popup": "tdesign-miniprogram/popup/popup"
-  }
+  },
+  "navigationStyle": "custom"
 }

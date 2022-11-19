@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/signIn/signIn"
   ],
   "lazyCodeLoading": "requiredComponents",
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationStyle": "custom"
+    "navigationBarBackgroundColor": "#fff"
   },
   "sitemapLocation": "sitemap.json"
 }

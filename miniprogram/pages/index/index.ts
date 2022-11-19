@@ -1,4 +1,7 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
+import {NavigateTo} from "@/util/NavigateUtil";
+import {GetJwt} from "@/util/UserUtil";
+import PathConstant from "@/model/constant/PathConstant";
 
 const app = getApp<IAppOption>()
 
@@ -17,6 +20,16 @@ Page({
         popupVisible: false,
     } as IIndex,
     onLoad() {
+    },
+    cardClick() {
+        if (GetJwt()) {
+
+        } else {
+            NavigateTo(PathConstant.SIGN_IN_PATH)
+        }
+    },
+    signInClick() {
+        NavigateTo(PathConstant.SIGN_IN_PATH)
     },
     openPopup() {
         this.setData({

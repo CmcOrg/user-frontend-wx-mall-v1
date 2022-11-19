@@ -21,20 +21,19 @@
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
-            <t-button t-class="index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">
+            <t-button t-class="index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
+                      bind:tap="cardClick">
                 堂食
             </t-button>
-            <t-button t-class="m-l-30 index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text">
+            <t-button t-class="m-l-30 index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
+                      bind:tap="cardClick">
                 外卖
             </t-button>
         </view>
     </view>
 
     <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="left">
-        <view class="white1-bc flex-c rel black2-bc" style="width: 73vw; height: 100vh">
-
-            <view class="w100 h-165 abs bc-image"
-                  style="background-image: url('https://cdn-we-retail.ym.tencent.com/miniapp/template/user-center-bg-v1.png');"></view>
+        <view class="white1-bc flex-c rel black2-bc" style="width: 75vw; height: 100vh">
 
             <view style="height: {{statusBarHeight}};"></view>
 
@@ -42,11 +41,13 @@
 
                 <view class="flex-center">
                     <t-avatar
-                            image="https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-1.jpg"
-                            alt="avatar"/>
+                            t-class="pink1-bc shadow black1"
+                            size="large"
+                            icon="user">
+                    </t-avatar>
                 </view>
 
-                <view class="flex-center m-t-13 f-12 fw-600">见茶思念</view>
+                <view class="flex-center m-t-13 f-12 fw-600" bind:tap="signInClick">立即登录</view>
 
             </view>
 

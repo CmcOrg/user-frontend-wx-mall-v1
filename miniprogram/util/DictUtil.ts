@@ -1,0 +1,136 @@
+import MyPageDTO from "@/model/dto/MyPageDTO";
+import {ListToTree} from "@/util/TreeUtil";
+import {ApiResultVO} from "@/util/HttpUtil";
+
+// 将 map转换为 下拉选 list
+export function NumberStringMapToSelectList(map: Map<number, string>) {
+    const resultList: DictLongListVO[] = []
+    map.forEach((value, key) => {
+        resultList.push({
+            value: key,
+            label: value,
+        })
+    })
+    return resultList;
+}
+
+// 根据list和 value，获取字典的 label值
+export function getByValueFromDictList(
+    dictList: DictLongListVO[],
+    value: number,
+    defaultValue: string = '-'
+) {
+    let res: string | undefined = defaultValue
+    dictList.some(item => {
+        if (item.value === value) {
+            res = item.label
+            return true // 结束当前循环
+        }
+        return false
+    })
+    return res
+}
+
+// 根据 list和 valueList，获取字典的 labelList值
+export function getByValueFromDictListPro(
+    dictList: DictLongListVO [],
+    valueList?: number[],
+    defaultValue: string = '-',
+    separator: string = '，'
+) {
+    let resList: string[] = []
+    if (dictList && valueList && valueList.length) {
+        dictList.forEach((item) => {
+            if (valueList.includes(item.value)) {
+                resList.push(item.label)
+            }
+        })
+    }
+    return resList.length ? resList.join(separator) : defaultValue
+}
+
+// 通用的，获取字典集合，方法返回值
+export interface DictLongListVO {
+    label: string // 显示用
+    value: number // 传值用
+}
+
+// 通用的，获取字典集合，方法返回值
+export interface DictStringListVO {
+    label: string // 显示用
+    value: string // 传值用
+}
+
+// 通用的，获取字典集合，接口返回值
+interface IDictResult {
+    name?: string
+    id?: number
+}
+
+// 通用的，获取字典集合
+export function GetDictList<T extends IDictResult>(requestFunction: (value: MyPageDTO | any) => Promise<ApiResultVO<T[]>>, allPropFlag?: boolean) {
+    return new Promise<DictLongListVO[]>(resolve => {
+        requestFunction({pageSize: -1}).then(res => {
+            let dictList: DictLongListVO[] = []
+            if (res.data) {
+                if (allPropFlag) {
+                    dictList = res.data.map(item => ({
+                        ...item,
+                        label: item.name!,
+                        value: item.id!,
+                    }));
+                } else {
+                    dictList = res.data.map(item => ({
+                        label: item.name!,
+                        value: item.id!,
+                    }));
+                }
+            }
+            resolve(dictList)
+        })
+    })
+}
+
+// 通用的，获取字典树集合，方法返回值
+export interface IMyTree extends DictLongListVO {
+    id: number
+    key: number
+    label: string // 备注：和 title是一样的值
+    title: string
+    parentId: number
+    orderNo: number
+    children?: IMyTree []
+}
+
+// 通用的，获取字典树集合，接口返回值
+interface IDictTreeResult {
+    name?: string
+    id?: number
+    parentId?: number
+    orderNo?: number
+}
+
+// 通用的，获取字典树集合
+export function GetDictTreeList<T extends IDictTreeResult>(requestFunction: (value: MyPageDTO) => Promise<ApiResultVO<T[]>>, toTreeFlag: boolean = true) {
+    return new Promise<IMyTree[]>(resolve => {
+        requestFunction({pageSize: -1}).then(res => {
+            let dictList: IMyTree[] = []
+            if (res.data) {
+                dictList = res.data.map(item => ({
+                    id: item.id!,
+                    key: item.id!,
+                    value: item.id!,
+                    label: item.name!,
+                    title: item.name!,
+                    parentId: item.parentId!,
+                    orderNo: item.orderNo!,
+                }));
+            }
+            if (toTreeFlag) {
+                resolve(ListToTree(dictList))
+            } else {
+                resolve(dictList)
+            }
+        })
+    })
+}
