@@ -38,17 +38,19 @@
             <view style="height: {{statusBarHeight}};"></view>
 
             <view class="flex-c flex1 m-t-20 rel">
-
-                <view class="flex-center">
-                    <t-avatar
-                            t-class="pink1-bc shadow black1"
-                            size="large"
-                            icon="user">
-                    </t-avatar>
+                <view>
+                    <view class="flex-center">
+                        <t-avatar
+                                bind:tap="accountClick"
+                                t-class="pink1-bc shadow black1"
+                                size="large"
+                                icon="user">
+                        </t-avatar>
+                    </view>
+                    <view class="flex-center m-t-14 f-12 fw-600">
+                        <view bind:tap="accountClick">立即登录</view>
+                    </view>
                 </view>
-
-                <view class="flex-center m-t-13 f-12 fw-600" bind:tap="signInClick">立即登录</view>
-
             </view>
 
         </view>

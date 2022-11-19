@@ -28,8 +28,12 @@ Page({
             NavigateTo(PathConstant.SIGN_IN_PATH)
         }
     },
-    signInClick() {
-        NavigateTo(PathConstant.SIGN_IN_PATH)
+    accountClick() {
+        if (GetJwt()) {
+
+        } else {
+            NavigateTo(PathConstant.SIGN_IN_PATH)
+        }
     },
     openPopup() {
         this.setData({
