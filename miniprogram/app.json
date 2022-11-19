@@ -6,7 +6,8 @@
   "lazyCodeLoading": "requiredComponents",
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff"
+    "navigationBarBackgroundColor": "#F5F5F5",
+    "backgroundColor": "#F5F5F5"
   },
   "sitemapLocation": "sitemap.json"
 }

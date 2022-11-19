@@ -21,14 +21,16 @@
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
-            <t-button t-class="index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
-                      bind:tap="cardClick">
-                堂食
-            </t-button>
-            <t-button t-class="m-l-30 index-card p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
-                      bind:tap="cardClick">
-                外卖
-            </t-button>
+            <view class="m-b-50">
+                <t-button t-class="p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
+                          bind:tap="cardClick">
+                    堂食
+                </t-button>
+                <t-button t-class="m-l-30 p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
+                          bind:tap="cardClick">
+                    外卖
+                </t-button>
+            </view>
         </view>
     </view>
 
@@ -42,13 +44,13 @@
                     <view class="flex-center">
                         <t-avatar
                                 bind:tap="accountClick"
-                                t-class="pink1-bc shadow black1"
+                                t-class="pink1-bc shadow black1 hand"
                                 size="large"
                                 icon="user">
                         </t-avatar>
                     </view>
                     <view class="flex-center m-t-14 f-12 fw-600">
-                        <view bind:tap="accountClick">立即登录</view>
+                        <view bind:tap="accountClick" class="hand">立即登录</view>
                     </view>
                 </view>
             </view>
