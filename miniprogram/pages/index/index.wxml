@@ -4,10 +4,16 @@
 
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
         <view class="abs" style="left: {{menuButtonMarginRight}}px;">
-            <t-button t-class="p-0 shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small"
-                      bind:tap="openPopup">
-                我的
-            </t-button>
+            <view class="rel">
+                <t-button t-class="p-0 shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small"
+                          bind:tap="openPopup">
+                    我的
+                </t-button>
+                <block wx:if="{{!jwt}}">
+                    <button open-type="getPhoneNumber" bindgetphonenumber="bindGetPhoneNumber"
+                            class="open-type-btn-h"></button>
+                </block>
+            </view>
         </view>
         <view class="f-13 fw-600">
             见茶思念奶茶店
@@ -21,7 +27,7 @@
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
-            <view class="m-b-50">
+            <view class="m-b-30 rel">
                 <t-button t-class="p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
                           bind:tap="cardClick">
                     堂食
@@ -30,6 +36,10 @@
                           bind:tap="cardClick">
                     外卖
                 </t-button>
+                <block wx:if="{{!jwt}}">
+                    <button open-type="getPhoneNumber" bindgetphonenumber="bindGetPhoneNumber"
+                            class="open-type-btn-h"></button>
+                </block>
             </view>
         </view>
     </view>
@@ -44,13 +54,13 @@
                     <view class="flex-center">
                         <t-avatar
                                 bind:tap="accountClick"
-                                t-class="pink1-bc shadow black1 hand"
+                                t-class="pink1-bc shadow black1"
                                 size="large"
                                 icon="user">
                         </t-avatar>
                     </view>
                     <view class="flex-center m-t-14 f-12 fw-600">
-                        <view bind:tap="accountClick" class="hand">立即登录</view>
+                        <view bind:tap="accountClick">nickname</view>
                     </view>
                 </view>
             </view>

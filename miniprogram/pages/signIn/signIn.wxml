@@ -1,9 +1,0 @@
-<view class="flex-c vwh100 black2-bc">
-
-    <view class="flex1 flex-center">
-        <view class="flex-center m-b-50">
-            <t-button t-class="green2-bc white1 p-l-r-50" size="large">微信登录</t-button>
-        </view>
-    </view>
-
-</view>

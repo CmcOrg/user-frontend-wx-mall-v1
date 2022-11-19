@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/signIn/signIn"
+    "pages/index/index"
   ],
   "lazyCodeLoading": "requiredComponents",
   "window": {
