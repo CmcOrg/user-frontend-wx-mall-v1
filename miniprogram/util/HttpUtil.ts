@@ -36,10 +36,10 @@ function $http<T = any, D = any>(url: string,
             timeout: 30 * 60 * 1000, // 默认 30分钟
             header: {...header, category: 4, Authorization: jwt},
             success: (res) => {
-                const data = res.data as ApiResultVO<T>
-                if (data.code !== 200 || !data.successFlag) {
-                    if (data.code === 100111) { // 这个代码表示需要：重新登录
-                        console.log(data.msg)
+                const resData = res.data as ApiResultVO<T>
+                if (resData.code !== 200 || !resData.successFlag) {
+                    if (resData.code === 100111) { // 这个代码表示需要：重新登录
+                        console.log(resData.msg)
                         let retryNumber = 0 // 累计重试次数
                         if (header && header.retryNumber) {
                             retryNumber = header.retryNumber
@@ -48,8 +48,8 @@ function $http<T = any, D = any>(url: string,
                             ToastError("jwt 获取失败，请联系管理员")
                         } else {
                             onlyWxCodeSignIn().then(() => { // 换取最新的 jwt，再执行一遍
-                                $http(url, data, method, {...header, retryNumber: retryNumber + 1}).then(res => {
-                                    return resolve(res)
+                                $http(url, data, method, {...header, retryNumber: retryNumber + 1}).then(resData => {
+                                    return resolve(resData)
                                 }).catch(err => {
                                     return reject(err)
                                 })
@@ -58,12 +58,12 @@ function $http<T = any, D = any>(url: string,
                         }
                     } else {
                         if (!(header && header.hiddenErrorMsg)) {
-                            ToastError(data.msg)
+                            ToastError(resData.msg)
                         }
                     }
-                    return reject(data.msg)
+                    return reject(resData.msg)
                 } else {
-                    return resolve(data)
+                    return resolve(resData)
                 }
             },
             fail: (err) => {
