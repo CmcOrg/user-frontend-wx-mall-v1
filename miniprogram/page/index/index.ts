@@ -1,6 +1,7 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
 import {IAppOption} from "../../../typings";
 import {UserSelfInfoVO} from "../../api/none/UserSelfController";
+import {GetUserInfo} from "../../util/UserUtil";
 
 const app = getApp<IAppOption>()
 
@@ -21,6 +22,14 @@ Page({
         userSelfInfoVO: {} as UserSelfInfoVO, // 登录的用户信息
     } as IIndex,
     onLoad() {
+        // 获取：用户基本信息
+        GetUserInfo().then(res => {
+            this.setData({
+                userSelfInfoVO: res
+            })
+        })
+    },
+    accountClick() {
     },
     cardClick() {
     },

@@ -4,8 +4,6 @@ import {SignWxSignInCode} from "../api/sign/SignWxController";
 import {ShowToast} from "./ToastUtil";
 import {IAppOption} from "../../typings";
 
-const app = getApp<IAppOption>()
-
 // 微信 code登录
 export function WxCodeSignIn() {
     wx.clearStorageSync()
@@ -69,6 +67,7 @@ export async function GetUserInfo() {
 
 // 设置：用户基本信息
 export function SetUserSelfInfo(userInfo: UserSelfInfoVO) {
+    const app = getApp<IAppOption>()
     app.globalData.userSelfInfoVO = userInfo
     wx.setStorageSync(LocalStorageKey.USER_SELF_INFO, userInfo)
 }

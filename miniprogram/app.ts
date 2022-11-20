@@ -1,6 +1,5 @@
 import {IAppOption} from "../typings";
 import {UserSelfInfoVO} from "./api/none/UserSelfController";
-import {GetUserInfo} from "./util/UserUtil";
 
 App<IAppOption>({
     globalData: {
@@ -23,10 +22,6 @@ App<IAppOption>({
                 that.globalData.menuButtonHeight = menuButton.height + (that.globalData.menuButtonMarginTop * 2);
             },
         })
-
-        // 获取：用户基本信息
-        GetUserInfo()
-
     },
 
 })
