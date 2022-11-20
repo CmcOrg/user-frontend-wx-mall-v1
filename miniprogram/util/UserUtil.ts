@@ -1,16 +1,33 @@
-import {ToastSuccess} from "./ToastUtil";
-import {NavigateTo} from "./NavigateUtil";
-import PathConstant from "../model/constant/PathConstant";
 import LocalStorageKey from "../model/constant/LocalStorageKey";
 import {UserSelfInfo, UserSelfInfoVO} from "../api/none/UserSelfController";
+import {SignWxSignInCode} from "../api/sign/SignWxController";
+import {ShowToast} from "./ToastUtil";
+import {IAppOption} from "../../typings";
 
-// 退出登录
-export function SignOut(msg?: string) {
+const app = getApp<IAppOption>()
+
+// 微信 code登录
+export function WxCodeSignIn() {
     wx.clearStorageSync()
-    if (msg) {
-        ToastSuccess(msg)
-    }
-    NavigateTo(PathConstant.INDEX_PATH)
+    return onlyWxCodeSignIn()
+}
+
+// 只执行；微信 code登录
+export function onlyWxCodeSignIn() {
+    return new Promise<string>((resolve) => {
+        wx.login({
+            success(res) {
+                if (res.code) {
+                    SignWxSignInCode({code: res.code}).then(res => {
+                        SetJwt(res.data)
+                        resolve(res.data)
+                    })
+                } else {
+                    ShowToast("登录失败，请联系管理员：errMsg：" + res.errMsg)
+                }
+            }
+        })
+    })
 }
 
 // 获取：jwt
@@ -23,42 +40,35 @@ export function SetJwt(jwt: string) {
     wx.setStorageSync(LocalStorageKey.JWT, jwt)
 }
 
-// 获取：用户基本信息，cacheFlag：如果有缓存值，是否从缓存里面获取值，并且会异步更新缓存值
-export async function GetUserInfo(cacheAndUpdateFlag: boolean) {
+// 获取：用户基本信息
+// 备注：一般使用：const app = getApp<IAppOption>()，app.globalData.userSelfInfoVO，来获取 用户基本信息，基本上不要使用本方法
+export async function GetUserInfo() {
 
     let userInfo = {} as UserSelfInfoVO
 
-    const jwt = GetJwt();
-
-    if (cacheAndUpdateFlag) {
-        if (!jwt) {
-            return userInfo;
-        }
-        userInfo = wx.getStorageSync(LocalStorageKey.USER_SELF_INFO);
-        if (userInfo && userInfo.nickname) {
-            doUserSelfInfo()
-            return userInfo;
-        }
+    if (!GetJwt()) {
+        await WxCodeSignIn()
     }
 
-    if (!jwt) {
-        return userInfo
-    } else {
-        await doUserSelfInfo()
-        return userInfo
-    }
-
-    // 执行：获取：用户基本信息
-    function doUserSelfInfo() {
-        return UserSelfInfo().then(res => {
-            userInfo = res.data
+    userInfo = wx.getStorageSync(LocalStorageKey.USER_SELF_INFO);
+    if (userInfo && userInfo.nickname) {
+        // 异步：更新：用户基本信息
+        UserSelfInfo().then(res => {
             SetUserSelfInfo(res.data)
         })
+    } else {
+        await UserSelfInfo().then(res => {
+            SetUserSelfInfo(res.data)
+            userInfo = res.data
+        })
     }
+
+    return userInfo
 
 }
 
 // 设置：用户基本信息
 export function SetUserSelfInfo(userInfo: UserSelfInfoVO) {
+    app.globalData.userSelfInfoVO = userInfo
     wx.setStorageSync(LocalStorageKey.USER_SELF_INFO, userInfo)
 }
