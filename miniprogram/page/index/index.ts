@@ -1,13 +1,13 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
-import {GetJwt, GetUserInfo} from "../../util/UserUtil";
-import {UserSelfInfoVO} from "../../api/none/UserSelfController";
+import {GetJwt, SetJwt} from "../../util/UserUtil";
 import {ToastSuccess} from "../../util/ToastUtil";
+import {SignWxSignInPhoneCode} from "../../api/sign/SignWxController";
+import {IAppOption} from "../../../typings";
 
 const app = getApp<IAppOption>()
 
 interface IIndex {
     marquee: DrawMarquee
-    userSelfInfoVO: UserSelfInfoVO
 }
 
 Page({
@@ -19,25 +19,21 @@ Page({
             speed: 10
         },
         popupVisible: false,
-        userSelfInfoVO: {},
-        jwt: '',
+        jwt: GetJwt(),
     } as IIndex,
     onLoad() {
-        if (GetJwt()) {
-            GetUserInfo().then(res => {
-                this.setData({
-                    userSelfInfoVO: res
-                })
-            })
-        }
     },
     bindGetPhoneNumber(e: { detail: { code: string; }; }) {
         if (!e.detail.code) {
             return
         }
-        ToastSuccess('登录成功')
-        this.setData({
-            jwt: 'jwt'
+        SignWxSignInPhoneCode({phoneCode: e.detail.code}).then(res => {
+            wx.clearStorageSync()
+            ToastSuccess('欢迎回来~')
+            SetJwt(res.data)
+            this.setData({
+                jwt: res.data
+            })
         })
     },
     cardClick() {

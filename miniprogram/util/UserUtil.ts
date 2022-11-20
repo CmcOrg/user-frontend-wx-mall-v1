@@ -18,6 +18,11 @@ export function GetJwt() {
     return wx.getStorageSync(LocalStorageKey.JWT)
 }
 
+// 设置：jwt
+export function SetJwt(jwt: string) {
+    return wx.setStorageSync(LocalStorageKey.JWT, jwt)
+}
+
 // 获取：用户基本信息
 export async function GetUserInfo() {
     if (GetJwt()) {

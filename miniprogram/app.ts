@@ -1,4 +1,7 @@
-// app.ts
+import {GetJwt, GetUserInfo} from "./util/UserUtil";
+import {IAppOption} from "../typings";
+import {UserSelfInfoVO} from "./api/none/UserSelfController";
+
 App<IAppOption>({
     globalData: {
         statusBarHeight: 0,
@@ -6,6 +9,7 @@ App<IAppOption>({
         menuButtonWidth: 0,
         menuButtonMarginTop: 0,
         menuButtonMarginRight: 0,
+        userSelfInfoVO: {} as UserSelfInfoVO, // 登录的用户信息
     },
     onLaunch() {
         const menuButton = wx.getMenuButtonBoundingClientRect();
@@ -19,5 +23,13 @@ App<IAppOption>({
                 that.globalData.menuButtonHeight = menuButton.height + (that.globalData.menuButtonMarginTop * 2);
             },
         })
+
+        // 获取：登录的用户信息
+        if (GetJwt()) {
+            GetUserInfo().then(res => {
+                that.globalData.userSelfInfoVO = res
+            })
+        }
+
     },
 })

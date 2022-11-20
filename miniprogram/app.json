@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index"
+    "page/index/index"
   ],
   "lazyCodeLoading": "requiredComponents",
   "window": {
