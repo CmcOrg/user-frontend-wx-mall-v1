@@ -1,6 +1,6 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
 import {GetJwt, SetJwt} from "../../util/UserUtil";
-import {ToastSuccess} from "../../util/ToastUtil";
+import {ShowToast, ToastSuccess} from "../../util/ToastUtil";
 import {SignWxSignInPhoneCode} from "../../api/sign/SignWxController";
 import {IAppOption} from "../../../typings";
 
@@ -23,8 +23,9 @@ Page({
     } as IIndex,
     onLoad() {
     },
-    bindGetPhoneNumber(e: { detail: { code: string; }; }) {
+    bindGetPhoneNumber(e: { detail: { code?: string; errMsg?: string }; }) {
         if (!e.detail.code) {
+            ShowToast("操作失败：errMsg：" + e.detail.errMsg)
             return
         }
         SignWxSignInPhoneCode({phoneCode: e.detail.code}).then(res => {
