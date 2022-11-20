@@ -50,8 +50,8 @@ function $http<T = any, D = any>(url: string,
                             onlyWxCodeSignIn().then(() => { // 换取最新的 jwt，再执行一遍
                                 $http(url, data, method, {...header, retryNumber: retryNumber + 1}).then(resData => {
                                     return resolve(resData)
-                                }).catch(err => {
-                                    return reject(err)
+                                }).catch(errMsg => {
+                                    return reject(errMsg)
                                 })
                             })
                             return
