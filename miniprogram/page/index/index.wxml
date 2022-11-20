@@ -52,7 +52,7 @@
                         </t-avatar>
                     </view>
                     <view class="flex-center m-t-14 f-12 fw-600">
-                        <view bind:tap="accountClick">nickname</view>
+                        <view bind:tap="accountClick">{{userSelfInfoVO.nickname}}</view>
                     </view>
                 </view>
             </view>

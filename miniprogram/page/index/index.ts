@@ -1,10 +1,12 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
 import {IAppOption} from "../../../typings";
+import {UserSelfInfoVO} from "../../api/none/UserSelfController";
 
 const app = getApp<IAppOption>()
 
 interface IIndex {
     marquee: DrawMarquee
+    userSelfInfoVO: UserSelfInfoVO,
 }
 
 Page({
@@ -16,6 +18,7 @@ Page({
             speed: 10
         },
         popupVisible: false,
+        userSelfInfoVO: {} as UserSelfInfoVO, // 登录的用户信息
     } as IIndex,
     onLoad() {
     },
