@@ -20,18 +20,45 @@ export function GetJwt() {
 
 // 设置：jwt
 export function SetJwt(jwt: string) {
-    return wx.setStorageSync(LocalStorageKey.JWT, jwt)
+    wx.setStorageSync(LocalStorageKey.JWT, jwt)
 }
 
-// 获取：用户基本信息
-export async function GetUserInfo() {
-    if (GetJwt()) {
-        let userInfo = {} as UserSelfInfoVO
-        await UserSelfInfo().then(res => {
-            userInfo = res.data
-        })
+// 获取：用户基本信息，cacheFlag：如果有缓存值，是否从缓存里面获取值，并且会异步更新缓存值
+export async function GetUserInfo(cacheAndUpdateFlag: boolean) {
+
+    let userInfo = {} as UserSelfInfoVO
+
+    const jwt = GetJwt();
+
+    if (cacheAndUpdateFlag) {
+        if (!jwt) {
+            return userInfo;
+        }
+        userInfo = wx.getStorageSync(LocalStorageKey.USER_SELF_INFO);
+        if (userInfo && userInfo.nickname) {
+            doUserSelfInfo()
+            return userInfo;
+        }
+    }
+
+    if (!jwt) {
         return userInfo
     } else {
-        return {}
+        await doUserSelfInfo()
+        return userInfo
     }
+
+    // 执行：获取：用户基本信息
+    function doUserSelfInfo() {
+        return UserSelfInfo().then(res => {
+            userInfo = res.data
+            SetUserSelfInfo(res.data)
+        })
+    }
+
+}
+
+// 设置：用户基本信息
+export function SetUserSelfInfo(userInfo: UserSelfInfoVO) {
+    wx.setStorageSync(LocalStorageKey.USER_SELF_INFO, userInfo)
 }

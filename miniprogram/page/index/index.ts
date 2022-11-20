@@ -1,7 +1,5 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
-import {GetJwt, SetJwt} from "../../util/UserUtil";
-import {ShowToast, ToastSuccess} from "../../util/ToastUtil";
-import {SignWxSignInPhoneCode} from "../../api/sign/SignWxController";
+import {GetJwt} from "../../util/UserUtil";
 import {IAppOption} from "../../../typings";
 
 const app = getApp<IAppOption>()
@@ -23,20 +21,20 @@ Page({
     } as IIndex,
     onLoad() {
     },
-    bindGetPhoneNumber(e: { detail: { code?: string; errMsg?: string }; }) {
-        if (!e.detail.code) {
-            ShowToast("操作失败：errMsg：" + e.detail.errMsg)
-            return
-        }
-        SignWxSignInPhoneCode({phoneCode: e.detail.code}).then(res => {
-            wx.clearStorageSync()
-            ToastSuccess('欢迎回来~')
-            SetJwt(res.data)
-            this.setData({
-                jwt: res.data
-            })
-        })
-    },
+    // bindGetPhoneNumber(e: { detail: { code?: string; errMsg?: string }; }) {
+    //     if (!e.detail.code) {
+    //         ShowToast("操作失败：errMsg：" + e.detail.errMsg)
+    //         return
+    //     }
+    //     SignWxSignInPhoneCode({phoneCode: e.detail.code}).then(res => {
+    //         wx.clearStorageSync()
+    //         ToastSuccess('欢迎回来~')
+    //         SetJwt(res.data)
+    //         this.setData({
+    //             jwt: res.data
+    //         })
+    //     })
+    // },
     cardClick() {
         if (GetJwt()) {
 

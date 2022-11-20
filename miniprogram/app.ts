@@ -1,6 +1,8 @@
-import {GetJwt, GetUserInfo} from "./util/UserUtil";
+import {GetJwt, GetUserInfo, SetJwt} from "./util/UserUtil";
 import {IAppOption} from "../typings";
 import {UserSelfInfoVO} from "./api/none/UserSelfController";
+import {ShowToast} from "./util/ToastUtil";
+import {SignWxSignInCode} from "./api/sign/SignWxController";
 
 App<IAppOption>({
     globalData: {
@@ -26,10 +28,30 @@ App<IAppOption>({
 
         // 获取：登录的用户信息
         if (GetJwt()) {
-            GetUserInfo().then(res => {
+            doGetUserInfo()
+        } else {
+            wx.clearStorageSync()
+            wx.login({
+                success(res) {
+                    if (res.code) {
+                        SignWxSignInCode({code: res.code}).then(res => {
+                            SetJwt(res.data)
+                            doGetUserInfo()
+                        })
+                    } else {
+                        ShowToast("登录失败：errMsg：" + res.errMsg)
+                    }
+                }
+            })
+        }
+
+        // 执行：获取：登录的用户信息
+        function doGetUserInfo() {
+            GetUserInfo(true).then(res => {
                 that.globalData.userSelfInfoVO = res
             })
         }
 
     },
+
 })
