@@ -56,16 +56,13 @@
                     </view>
                 </view>
 
-                <view class="m-t-30 m-l-r-10 b-r-4 border-a">
+                <view class="m-t-30 m-l-r-10 b-r-4">
                     <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
                             bind:tap="goMyOrderClick">
                         <view class="f-13 fw-600" slot="title">
                             我的订单
                         </view>
                     </t-cell>
-                    <view class="h-5 rel">
-                        <view class="abs wh100 pink1-bc"></view>
-                    </view>
                     <view class="white1-bc flex-center black3">
                         <view wx:for="{{orderCardList}}" wx:key="title"
                               class="p-t-b-12 flex1 flex-center"
