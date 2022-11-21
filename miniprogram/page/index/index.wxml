@@ -68,9 +68,10 @@
                     <view class="flex-center black3">
                         <view wx:for="{{orderCardList}}" wx:key="title"
                               class="p-t-b-12 flex1 flex-c ai-c jc-c f-13"
-                              hover-class="black4-bc" hover-stay-time="70">
+                              hover-class="black4-bc" hover-stay-time="70" bind:tap="orderItemClick"
+                              data-order-type="{{item.orderType}}">
                             <t-badge count="{{item.number}}" max-count="{{99}}" t-class-count="red2-bc">
-                                <t-icon prefix="wr" name="{{item.icon}}" class="{{item.iconClass}}"></t-icon>
+                                <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
                             </t-badge>
                             <view class="f-11 m-t-2">{{item.title}}</view>
                         </view>
