@@ -1,5 +1,4 @@
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
-import {IAppOption} from "../../../typings";
 import {UserSelfInfoVO} from "../../api/none/UserSelfController";
 import {GetUserInfo} from "../../util/UserUtil";
 

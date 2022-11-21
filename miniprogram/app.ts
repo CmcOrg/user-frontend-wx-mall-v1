@@ -1,4 +1,3 @@
-import {IAppOption} from "../typings";
 import {UserSelfInfoVO} from "./api/none/UserSelfController";
 
 App<IAppOption>({
