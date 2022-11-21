@@ -5,7 +5,7 @@
     <view class="w100 flex-center rel" style="height: {{menuButtonHeight}};">
         <view class="abs" style="left: {{menuButtonMarginRight}}px;">
             <view class="rel">
-                <t-button t-class="p-0 shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small"
+                <t-button t-class="shadow pink1-bc f-9 black1 fw-600" variant="text" shape="circle" size="small"
                           bind:tap="openPopup">
                     我的
                 </t-button>
@@ -23,12 +23,12 @@
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
-            <view class="m-b-30 rel">
-                <t-button t-class="p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
+            <view class="m-b-35 rel">
+                <t-button t-class="p-l-r-50 p-t-b-58 shadow f-13 fw-600 pink1-bc" variant="text"
                           bind:tap="cardClick">
                     堂食
                 </t-button>
-                <t-button t-class="m-l-30 p-l-r-50 p-t-b-56 shadow f-13 fw-600 pink1-bc" variant="text"
+                <t-button t-class="m-l-30 p-l-r-50 p-t-b-58 shadow f-13 fw-600 pink1-bc" variant="text"
                           bind:tap="cardClick">
                     外卖
                 </t-button>
@@ -57,17 +57,20 @@
                 </view>
 
                 <view class="m-t-30 m-l-r-10 b-r-4 border-a">
-                    <t-cell t-class="f-12 p-t-b-12" note="全部订单" hover arrow bordered="{{false}}"
+                    <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
                             bind:tap="goMyOrderClick">
                         <view class="f-13 fw-600" slot="title">
                             我的订单
                         </view>
                     </t-cell>
-                    <view class="white1-bc m-t-10 flex-center black3">
-                        <view variant="text" wx:for="{{orderCardList}}" wx:key="title"
-                              class="{{'p-t-b-11' + (index !== 0 ? ' m-l-22' : '')}}"
+                    <view class="h-5 rel">
+                        <view class="abs wh100 pink1-bc"></view>
+                    </view>
+                    <view class="white1-bc flex-center black3">
+                        <view wx:for="{{orderCardList}}" wx:key="title"
+                              class="p-t-b-12 flex1 flex-center"
                               hover-class="black4-bc" hover-stay-time="70">
-                            <view class="f-13 fw-600 wh100">
+                            <view class="f-13 fw-600">
                                 <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
                                 <view class="f-11">{{item.title}}</view>
                             </view>
