@@ -56,7 +56,7 @@
                     </view>
                 </view>
 
-                <view class="m-t-30 b-r-4 white1-bc">
+                <view class="m-t-30 white1-bc">
                     <t-cell-group>
                         <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
                                 bind:tap="myOrderClick">
@@ -78,7 +78,7 @@
                     </view>
                 </view>
 
-                <view class="m-t-15 b-r-4 white1-bc">
+                <view class="m-t-15 white1-bc">
                     <t-cell-group>
                         <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
                                 bind:tap="addressDelivery">
@@ -110,7 +110,7 @@
                     </t-cell-group>
                 </view>
 
-                <view class="m-t-15 b-r-4 white1-bc">
+                <view class="m-t-15 white1-bc">
                     <t-cell-group>
                         <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
                                 bind:tap="InDev">
