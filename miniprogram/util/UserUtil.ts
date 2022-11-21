@@ -2,7 +2,6 @@ import LocalStorageKey from "../model/constant/LocalStorageKey";
 import {UserSelfInfo, UserSelfInfoVO} from "../api/none/UserSelfController";
 import {SignWxSignInCode} from "../api/sign/SignWxController";
 import {ShowToast} from "./ToastUtil";
-import {IAppOption} from "../../typings";
 
 // 微信 code登录
 export function WxCodeSignIn() {

@@ -56,8 +56,10 @@ Page({
         console.log("我的订单")
     },
     accountClick() {
+        console.log("accountClick")
     },
     cardClick() {
+        console.log("cardClick")
     },
     openPopup() {
         this.setData({

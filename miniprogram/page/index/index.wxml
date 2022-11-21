@@ -56,17 +56,21 @@
                     </view>
                 </view>
 
-                <view class="m-t-30">
-                    <t-cell t-class="f-12" note="全部订单" hover arrow bordered="{{false}}" bind:tap="goMyOrderClick">
-                        <view class="f-12 fw-600" slot="title">
+                <view class="m-t-30 m-l-r-10 b-r-4 border-a">
+                    <t-cell t-class="f-12 p-t-b-12" note="全部订单" hover arrow bordered="{{false}}"
+                            bind:tap="goMyOrderClick">
+                        <view class="f-13 fw-600" slot="title">
                             我的订单
                         </view>
                     </t-cell>
-                    <view class="white1-bc p-b-17 flex-center black3">
-                        <view wx:for="{{orderCardList}}" wx:key="title"
-                              class="{{'flex-c ai-c' + (index !== 0 ? ' m-l-20' : '')}}">
-                            <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
-                            <view class="m-t-5 f-11">{{item.title}}</view>
+                    <view class="white1-bc m-t-10 flex-center black3">
+                        <view variant="text" wx:for="{{orderCardList}}" wx:key="title"
+                              class="{{'p-t-b-11' + (index !== 0 ? ' m-l-22' : '')}}"
+                              hover-class="black4-bc" hover-stay-time="70">
+                            <view class="f-13 fw-600 wh100">
+                                <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
+                                <view class="f-11">{{item.title}}</view>
+                            </view>
                         </view>
                     </view>
                 </view>
