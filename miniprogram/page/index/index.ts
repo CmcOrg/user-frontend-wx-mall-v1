@@ -1,3 +1,4 @@
+import {InDev} from "../../util/CommonUtil";
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
 import {UserSelfInfoVO} from "../../api/none/UserSelfController";
 import {GetUserInfo} from "../../util/UserUtil";
@@ -62,14 +63,24 @@ Page({
             })
         })
     },
-    goMyOrderClick() {
+    InDev() {
+        InDev()
+    },
+    addressDelivery() {
+        console.log("收货地址")
+        InDev()
+    },
+    myOrderClick() {
         console.log("我的订单")
+        InDev()
     },
     accountClick() {
         console.log("accountClick")
+        InDev()
     },
     cardClick() {
         console.log("cardClick")
+        InDev()
     },
     openPopup() {
         this.setData({
