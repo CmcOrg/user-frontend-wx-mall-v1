@@ -1,12 +1,26 @@
 {
-  "pages": [
-    "page/index/index"
-  ],
-  "lazyCodeLoading": "requiredComponents",
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#F5F5F5",
-    "backgroundColor": "#F5F5F5"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "page/index/index"
+    ],
+    "subpackages": [
+        {
+            "root": "packageA",
+            "pages": [
+                "page/dinner/dinner"
+            ]
+        },
+        {
+            "root": "packageB",
+            "pages": [
+                "page/takeaway/takeaway"
+            ]
+        }
+    ],
+    "lazyCodeLoading": "requiredComponents",
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#F5F5F5",
+        "backgroundColor": "#F5F5F5"
+    },
+    "sitemapLocation": "sitemap.json"
 }

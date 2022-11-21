@@ -23,7 +23,7 @@
             </t-notice-bar>
         </view>
         <view class="flex-center wh100 abs">
-            <view class="m-b-35 rel">
+            <view class="m-b-40 rel">
                 <t-button t-class="p-l-r-50 p-t-b-58 shadow f-13 fw-600 pink1-bc" variant="text"
                           bind:tap="cardClick">
                     堂食
