@@ -59,7 +59,7 @@
                 <view class="m-t-30 m-l-r-10 b-r-4">
                     <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
                             bind:tap="goMyOrderClick">
-                        <view class="f-13 fw-600" slot="title">
+                        <view class="f-14 fw-600" slot="title">
                             我的订单
                         </view>
                     </t-cell>
@@ -69,7 +69,7 @@
                               hover-class="black4-bc" hover-stay-time="70">
                             <view class="f-13 fw-600">
                                 <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
-                                <view class="f-11">{{item.title}}</view>
+                                <view class="f-11 m-t-2">{{item.title}}</view>
                             </view>
                         </view>
                     </view>
