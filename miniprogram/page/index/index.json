@@ -4,7 +4,8 @@
     "t-button": "tdesign-miniprogram/button/button",
     "t-notice-bar": "tdesign-miniprogram/notice-bar/notice-bar",
     "t-icon": "tdesign-miniprogram/icon/icon",
-    "t-popup": "tdesign-miniprogram/popup/popup"
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-cell": "tdesign-miniprogram/cell/cell"
   },
   "navigationStyle": "custom"
 }

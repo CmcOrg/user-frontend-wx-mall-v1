@@ -4,9 +4,15 @@ import {GetUserInfo} from "../../util/UserUtil";
 
 const app = getApp<IAppOption>()
 
+interface IOrderCardListItem {
+    icon: string,
+    title: string,
+}
+
 interface IIndex {
     marquee: DrawMarquee
-    userSelfInfoVO: UserSelfInfoVO,
+    userSelfInfoVO: UserSelfInfoVO // 登录的用户信息
+    orderCardList: IOrderCardListItem[] // 我的订单 cardList
 }
 
 Page({
@@ -17,8 +23,26 @@ Page({
         marquee: {
             speed: 10
         },
-        popupVisible: false,
-        userSelfInfoVO: {} as UserSelfInfoVO, // 登录的用户信息
+        popupVisible: true,
+        userSelfInfoVO: {} as UserSelfInfoVO,
+        orderCardList: [
+            {
+                icon: "wallet",
+                title: "待付款",
+            },
+            {
+                icon: "package",
+                title: "待收货",
+            },
+            {
+                icon: "comment",
+                title: "待评价",
+            },
+            {
+                icon: "exchang",
+                title: "退款/售后",
+            },
+        ]
     } as IIndex,
     onLoad() {
         // 获取：用户基本信息
@@ -27,6 +51,9 @@ Page({
                 userSelfInfoVO: res
             })
         })
+    },
+    goMyOrderClick() {
+        console.log("我的订单")
     },
     accountClick() {
     },

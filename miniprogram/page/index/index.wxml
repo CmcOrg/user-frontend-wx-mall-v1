@@ -55,8 +55,23 @@
                         <view bind:tap="accountClick">{{userSelfInfoVO.nickname}}</view>
                     </view>
                 </view>
-            </view>
 
+                <view class="m-t-30">
+                    <t-cell t-class="f-12" note="全部订单" hover arrow bordered="{{false}}" bind:tap="goMyOrderClick">
+                        <view class="f-12 fw-600" slot="title">
+                            我的订单
+                        </view>
+                    </t-cell>
+                    <view class="white1-bc p-b-17 flex-center black3">
+                        <view wx:for="{{orderCardList}}" wx:key="title"
+                              class="{{'flex-c ai-c' + (index !== 0 ? ' m-l-20' : '')}}">
+                            <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
+                            <view class="m-t-5 f-11">{{item.title}}</view>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
         </view>
     </t-popup>
 
