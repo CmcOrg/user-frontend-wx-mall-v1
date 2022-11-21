@@ -6,7 +6,8 @@
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
-    "t-cell": "tdesign-miniprogram/cell/cell"
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-badge": "tdesign-miniprogram/badge/badge"
   },
   "navigationStyle": "custom"
 }

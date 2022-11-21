@@ -41,7 +41,7 @@
 
             <view style="height: {{statusBarHeight}};"></view>
 
-            <view class="flex-c flex1 m-t-20 rel">
+            <view class="flex-c flex1 m-t-20 rel p-l-r-10">
                 <view>
                     <view class="flex-center">
                         <t-avatar
@@ -56,23 +56,71 @@
                     </view>
                 </view>
 
-                <view class="m-t-30 m-l-r-10 b-r-4">
-                    <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
-                            bind:tap="goMyOrderClick">
-                        <view class="f-14 fw-600" slot="title">
-                            我的订单
-                        </view>
-                    </t-cell>
-                    <view class="white1-bc flex-center black3">
-                        <view wx:for="{{orderCardList}}" wx:key="title"
-                              class="p-t-b-12 flex1 flex-center"
-                              hover-class="black4-bc" hover-stay-time="70">
-                            <view class="f-13 fw-600">
-                                <t-icon prefix="wr" name="{{item.icon}}" class="f-23"></t-icon>
-                                <view class="f-11 m-t-2">{{item.title}}</view>
+                <view class="m-t-30 b-r-4 white1-bc">
+                    <t-cell-group>
+                        <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
+                                bind:tap="goMyOrderClick">
+                            <view class="f-14 fw-600" slot="title">
+                                我的订单
                             </view>
+                        </t-cell>
+                    </t-cell-group>
+                    <view class="flex-center black3">
+                        <view wx:for="{{orderCardList}}" wx:key="title"
+                              class="p-t-b-12 flex1 flex-c ai-c jc-c f-13"
+                              hover-class="black4-bc" hover-stay-time="70">
+                            <t-badge count="{{item.number}}" max-count="{{99}}" t-class-count="red2-bc">
+                                <t-icon prefix="wr" name="{{item.icon}}" class="{{item.iconClass}}"></t-icon>
+                            </t-badge>
+                            <view class="f-11 m-t-2">{{item.title}}</view>
                         </view>
                     </view>
+                </view>
+
+                <view class="m-t-15 b-r-4 white1-bc">
+                    <t-cell-group>
+                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                                bind:tap="goMyOrderClick">
+                            <view class="f-16" slot="left-icon">
+                                <t-icon prefix="wr" name="location"></t-icon>
+                            </view>
+                            <view class="f-14" slot="title">
+                                收货地址
+                            </view>
+                        </t-cell>
+                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                                bind:tap="goMyOrderClick">
+                            <view class="f-17" slot="left-icon">
+                                <t-icon prefix="wr" name="credit_card"></t-icon>
+                            </view>
+                            <view class="f-14" slot="title">
+                                优惠卷
+                            </view>
+                        </t-cell>
+                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                                bind:tap="goMyOrderClick">
+                            <view class="f-17" slot="left-icon">
+                                <t-icon prefix="wr" name="discount"></t-icon>
+                            </view>
+                            <view class="f-14" slot="title">
+                                积分
+                            </view>
+                        </t-cell>
+                    </t-cell-group>
+                </view>
+
+                <view class="m-t-15 b-r-4 white1-bc">
+                    <t-cell-group>
+                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                                bind:tap="goMyOrderClick">
+                            <view class="f-17" slot="left-icon">
+                                <t-icon prefix="wr" name="service"></t-icon>
+                            </view>
+                            <view class="f-14" slot="title">
+                                联系商家
+                            </view>
+                        </t-cell>
+                    </t-cell-group>
                 </view>
 
             </view>

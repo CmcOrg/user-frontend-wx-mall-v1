@@ -5,8 +5,10 @@ import {GetUserInfo} from "../../util/UserUtil";
 const app = getApp<IAppOption>()
 
 interface IOrderCardListItem {
-    icon: string,
-    title: string,
+    icon: string
+    title: string
+    number: number
+    iconClass: string
 }
 
 interface IIndex {
@@ -29,18 +31,26 @@ Page({
             {
                 icon: "wallet",
                 title: "待付款",
+                number: 0,
+                iconClass: 'f-23',
             },
             {
                 icon: "package",
                 title: "待收货",
+                number: 0,
+                iconClass: 'f-23',
             },
             {
                 icon: "comment",
                 title: "待评价",
+                number: 0,
+                iconClass: 'f-22',
             },
             {
                 icon: "exchang",
                 title: "退款/售后",
+                number: 0,
+                iconClass: 'f-22',
             },
         ]
     } as IIndex,
