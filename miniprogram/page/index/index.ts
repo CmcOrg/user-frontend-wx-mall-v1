@@ -2,6 +2,8 @@ import {InDev} from "../../util/CommonUtil";
 import {DrawMarquee} from "tdesign-miniprogram/notice-bar/type"
 import {UserSelfInfoVO} from "../../api/none/UserSelfController";
 import {GetUserInfo} from "../../util/UserUtil";
+import {NavigateTo} from "../../util/NavigateUtil";
+import PathConstant from "../../model/constant/PathConstant";
 
 const app = getApp<IAppOption>()
 
@@ -26,7 +28,7 @@ Page({
         marquee: {
             speed: 10
         },
-        popupVisible: true,
+        popupVisible: false,
         userSelfInfoVO: {} as UserSelfInfoVO,
         orderCardList: [
             {
@@ -78,9 +80,13 @@ Page({
         console.log("accountClick")
         InDev()
     },
-    cardClick() {
-        console.log("cardClick")
-        InDev()
+    dinnerClick() {
+        console.log("堂食")
+        NavigateTo(PathConstant.DINNER_PATH)
+    },
+    takeawayClick() {
+        console.log("外卖")
+        NavigateTo(PathConstant.TAKEAWAY_PATH)
     },
     openPopup() {
         this.setData({
