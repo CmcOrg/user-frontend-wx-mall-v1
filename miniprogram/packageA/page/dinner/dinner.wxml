@@ -3,16 +3,18 @@
         <t-side-bar-item wx:for="{{categoryList}}" wx:key="index" value="{{index}}"
                          label="{{item.label}}"/>
     </t-side-bar>
-    <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
-        <view wx:for="{{categoryList}}" wx:key="index" class="p-l-r-16">
-            <view class="title p-l-10 m-t-b-4">{{item.title || item.label}}</view>
-            <t-grid column="{{3}}" border="{{false}}">
-                <block wx:for="{{item.itemList}}" wx:key="index" wx:for-item="subItem">
-                    <t-grid-item text="{{subItem.label}}">
+    <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}"
+                 bind:scroll="onScroll">
+        <view class="p-l-r-16 p-b-200 p-t-10">
+            <view wx:for="{{categoryList}}" wx:key="index">
+                <view class="title p-t-10">{{item.title || item.label}}</view>
+                <t-grid column="{{1}}" border="{{false}}">
+                    <t-grid-item wx:for="{{item.itemList}}" wx:key="index" wx:for-item="subItem"
+                                 text="{{subItem.label}}">
                         <t-image shape="round" src="{{subItem.image}}" slot="image" lazy t-class="w-48 h-48"/>
                     </t-grid-item>
-                </block>
-            </t-grid>
+                </t-grid>
+            </view>
         </view>
     </scroll-view>
 </view>

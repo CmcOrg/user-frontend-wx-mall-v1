@@ -1,5 +1,5 @@
 const image = 'https://tdesign.gtimg.com/mobile/%E5%9B%BE%E7%89%87.png';
-const itemList = new Array(90).fill({label: '标题文字', image}, 0, 90);
+const itemList = new Array(20).fill({label: '标题文字', image}, 0, 20);
 
 Page({
     offsetTopList: [],
@@ -42,8 +42,7 @@ Page({
             .selectAll('.title')
             .boundingClientRect((rectList: any) => {
                 this.offsetTopList = rectList.map((item: { top: number; }) => item.top);
-            })
-            .exec();
+            }).exec();
 
     },
     onSideBarChange(e: { detail: { value: number; }; }) {
@@ -66,7 +65,7 @@ Page({
 
         const index = this.offsetTopList.findIndex((item) => item > scrollTop && item - scrollTop <= threshold);
 
-        if (index !== -1) {
+        if (index !== -1 && this.data.sideBarIndex !== index) {
             this.setData({sideBarIndex: index});
         }
 
