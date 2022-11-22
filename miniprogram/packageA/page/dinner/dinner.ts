@@ -53,8 +53,6 @@ const data: IDinner = {
 }
 
 Page({
-    // [0, 1941, 3882, 5823, 7764]
-    // 9905
     itemTitleHeight: 61,
     itemProductHeight: 75,
     itemProductGapHeight: 20, // 间隔高度
@@ -63,7 +61,6 @@ Page({
     data,
     onLoad() {
         this.calcAllHeight() // 计算：整体高度
-
     },
     // 计算：整体高度
     calcAllHeight() {
