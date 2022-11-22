@@ -5,9 +5,10 @@
     </t-side-bar>
     <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}"
                  bind:scroll="onScroll">
-        <view class="p-l-r-16 p-b-200 p-t-10">
+        <view class="p-l-r-16 p-b-200">
             <view wx:for="{{categoryList}}" wx:key="index">
-                <view class="title p-t-10">{{item.title || item.label}}</view>
+                <view class="{{ 'title ' + (index === 0 ? 'p-t-20' : 'p-t-10') }}">{{item.title || item.label}}
+                </view>
                 <t-grid column="{{1}}" border="{{false}}">
                     <t-grid-item wx:for="{{item.itemList}}" wx:key="index" wx:for-item="subItem"
                                  text="{{subItem.label}}">
