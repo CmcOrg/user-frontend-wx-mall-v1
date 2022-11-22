@@ -1,7 +1,7 @@
 <view class="flex vwh100">
     <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
-        <t-side-bar-item wx:for="{{categoryList}}" wx:key="index" value="{{item.value || index}}" label="{{item.label}}"
-                         badge-props="{{item.badgeProps}}"/>
+        <t-side-bar-item wx:for="{{categoryList}}" wx:key="index" value="{{index}}"
+                         label="{{item.label}}"/>
     </t-side-bar>
     <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view wx:for="{{categoryList}}" wx:key="index" class="p-l-r-16">

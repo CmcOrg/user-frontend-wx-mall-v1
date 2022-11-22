@@ -15,9 +15,6 @@ Page({
             {
                 label: '选项',
                 title: '标题',
-                badgeProps: {
-                    dot: true,
-                },
                 items: items.slice(0, 90),
             },
             {
@@ -28,9 +25,6 @@ Page({
             {
                 label: '选项',
                 title: '标题',
-                badgeProps: {
-                    count: 6,
-                },
                 items: items.slice(0, 90),
             },
             {
@@ -41,24 +35,25 @@ Page({
         ],
     },
     onLoad() {
+
         const query = wx.createSelectorQuery().in(this);
 
         query
             .selectAll('.title')
-            .boundingClientRect((rects) => {
-                this.offsetTopList = rects.map((item) => item.top);
+            .boundingClientRect((rectList: any) => {
+                this.offsetTopList = rectList.map((item: { top: number; }) => item.top);
             })
             .exec();
 
     },
-    onSideBarChange(e: { detail: { value: any; }; }) {
+    onSideBarChange(e: { detail: { value: number; }; }) {
 
         const {value} = e.detail;
 
         this.setData({sideBarIndex: value, scrollTop: this.offsetTopList[value]});
 
     },
-    onScroll(e: { detail: { scrollTop: any; }; }) {
+    onScroll(e: { detail: { scrollTop: number; }; }) {
 
         const {scrollTop} = e.detail;
         const threshold = 50; // 下一个标题与顶部的距离
