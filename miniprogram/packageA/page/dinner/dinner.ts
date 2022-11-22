@@ -4,11 +4,6 @@ const itemList = new Array(20).fill({label: '标题文字', image}, 0, 20);
 Page({
     offsetTopList: [],
     data: {
-        imageProps: {
-            lazy: true,
-            width: '50px',
-            height: '50px',
-        },
         sideBarIndex: 0,
         scrollTop: 0,
         categoryList: [
@@ -40,7 +35,9 @@ Page({
         ],
     },
     onLoad() {
-
+        this.imageLoad()
+    },
+    imageLoad() {
         const query = wx.createSelectorQuery().in(this);
 
         query
@@ -48,7 +45,6 @@ Page({
             .boundingClientRect((rectList: any) => {
                 this.offsetTopList = rectList.map((item: { top: number; }) => item.top);
             }).exec();
-
     },
     onSideBarChange(e: { detail: { value: number; }; }) {
 

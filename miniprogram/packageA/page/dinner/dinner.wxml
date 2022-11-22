@@ -7,14 +7,14 @@
                  bind:scroll="onScroll">
         <view class="p-l-r-16 p-b-200">
             <view wx:for="{{categoryList}}" wx:key="index">
-                <view class="{{ 'title ' + (index === 0 ? 'p-t-20' : 'p-t-10') }}">{{item.title || item.label}}
+                <view class="title p-t-b-20">{{item.title || item.label}}
                 </view>
-                <t-grid column="{{1}}" border="{{false}}">
-                    <t-grid-item wx:for="{{item.itemList}}" wx:key="index" wx:for-item="subItem"
-                                 text="{{subItem.label}}" image="{{subItem.image}}"
-                                 image-props="{{imageProps}}">
-                    </t-grid-item>
-                </t-grid>
+                <view class="productItem flex-c" wx:for="{{item.itemList}}" wx:key="subIndex" wx:for-item="subItem"
+                      wx:for-index="subIndex">
+                    <t-image shape="round" bind:load="imageLoad" src="{{subItem.image}}" lazy
+                             t-class="w-50 h-50"/>
+                    <view>{{subItem.label}}</view>
+                </view>
             </view>
         </view>
     </scroll-view>
