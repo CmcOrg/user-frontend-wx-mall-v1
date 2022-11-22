@@ -11,8 +11,8 @@
                 </view>
                 <t-grid column="{{1}}" border="{{false}}">
                     <t-grid-item wx:for="{{item.itemList}}" wx:key="index" wx:for-item="subItem"
-                                 text="{{subItem.label}}">
-                        <t-image shape="round" src="{{subItem.image}}" slot="image" lazy t-class="w-48 h-48"/>
+                                 text="{{subItem.label}}" image="{{subItem.image}}"
+                                 image-props="{{imageProps}}">
                     </t-grid-item>
                 </t-grid>
             </view>
