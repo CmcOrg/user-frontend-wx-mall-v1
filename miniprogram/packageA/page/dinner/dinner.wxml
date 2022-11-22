@@ -6,11 +6,11 @@
     <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view class="p-l-r-16 p-b-200">
             <view wx:for="{{categoryList}}" wx:key="index">
-                <view class="title p-t-b-20">{{item.title || item.label}}
+                <view class="p-t-b-20">{{item.title || item.label}}
                 </view>
                 <view class="productItem flex-c" wx:for="{{item.itemList}}" wx:key="subIndex" wx:for-item="subItem"
                       wx:for-index="subIndex">
-                    <t-image shape="round" bind:load="imageLoad" src="{{subItem.image}}" t-class="w-50 h-50"/>
+                    <t-image shape="round" src="{{subItem.image}}" t-class="w-50 h-50"/>
                     <view>{{subItem.label}}</view>
                 </view>
             </view>
