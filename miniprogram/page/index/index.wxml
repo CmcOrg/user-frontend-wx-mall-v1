@@ -66,7 +66,7 @@
                         </t-cell>
                     </t-cell-group>
                     <view class="flex-center black3">
-                        <view wx:for="{{orderCardList}}" wx:key="title"
+                        <view wx:for="{{orderCardList}}" wx:key="index"
                               class="p-t-b-12 flex1 flex-c ai-c jc-c f-13"
                               hover-class="black4-bc" hover-stay-time="70" bind:tap="orderItemClick"
                               data-order-type="{{item.orderType}}">
