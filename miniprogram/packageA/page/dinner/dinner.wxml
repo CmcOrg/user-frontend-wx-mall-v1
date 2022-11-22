@@ -3,8 +3,7 @@
         <t-side-bar-item wx:for="{{categoryList}}" wx:key="index" value="{{index}}"
                          label="{{item.label}}"/>
     </t-side-bar>
-    <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}"
-                 bind:scroll="onScroll">
+    <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view class="p-l-r-16 p-b-200">
             <view wx:for="{{categoryList}}" wx:key="index">
                 <view class="title p-t-b-20">{{item.title || item.label}}
