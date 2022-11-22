@@ -11,8 +11,7 @@
                 </view>
                 <view class="productItem flex-c" wx:for="{{item.itemList}}" wx:key="subIndex" wx:for-item="subItem"
                       wx:for-index="subIndex">
-                    <t-image shape="round" bind:load="imageLoad" src="{{subItem.image}}" lazy
-                             t-class="w-50 h-50"/>
+                    <t-image shape="round" bind:load="imageLoad" src="{{subItem.image}}" t-class="w-50 h-50"/>
                     <view>{{subItem.label}}</view>
                 </view>
             </view>

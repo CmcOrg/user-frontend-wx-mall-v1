@@ -16,6 +16,15 @@
             ]
         }
     ],
+    "preloadRule": {
+        "page/index/index": {
+            "network": "all",
+            "packages": [
+                "packageA",
+                "packageB"
+            ]
+        }
+    },
     "lazyCodeLoading": "requiredComponents",
     "window": {
         "navigationBarTextStyle": "black",
