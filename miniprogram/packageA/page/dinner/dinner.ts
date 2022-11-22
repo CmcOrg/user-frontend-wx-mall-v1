@@ -6,7 +6,7 @@ Page({
     data: {
         sideBarIndex: 0,
         scrollTop: 0,
-        categories: [
+        categoryList: [
             {
                 label: '选项选项选项',
                 title: '标题',
@@ -52,11 +52,14 @@ Page({
 
     },
     onSideBarChange(e: { detail: { value: any; }; }) {
+
         const {value} = e.detail;
 
         this.setData({sideBarIndex: value, scrollTop: this.offsetTopList[value]});
+
     },
     onScroll(e: { detail: { scrollTop: any; }; }) {
+
         const {scrollTop} = e.detail;
         const threshold = 50; // 下一个标题与顶部的距离
 
@@ -70,5 +73,6 @@ Page({
         if (index > -1) {
             this.setData({sideBarIndex: index});
         }
+
     },
 });
