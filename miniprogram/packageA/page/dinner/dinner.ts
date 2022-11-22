@@ -1,5 +1,5 @@
 const image = 'https://tdesign.gtimg.com/mobile/%E5%9B%BE%E7%89%87.png';
-const items = new Array(90).fill({label: '标题文字', image}, 0, 90);
+const itemList = new Array(90).fill({label: '标题文字', image}, 0, 90);
 
 Page({
     offsetTopList: [],
@@ -10,27 +10,27 @@ Page({
             {
                 label: '选项选项选项',
                 title: '标题',
-                items,
+                itemList,
             },
             {
                 label: '选项',
                 title: '标题',
-                items: items.slice(0, 90),
+                itemList,
             },
             {
                 label: '选项',
                 title: '标题',
-                items: items.slice(0, 90),
+                itemList,
             },
             {
                 label: '选项',
                 title: '标题',
-                items: items.slice(0, 90),
+                itemList,
             },
             {
                 label: '选项',
                 title: '标题',
-                items: items.slice(0, 90),
+                itemList,
             },
         ],
     },
@@ -56,6 +56,7 @@ Page({
     onScroll(e: { detail: { scrollTop: number; }; }) {
 
         const {scrollTop} = e.detail;
+
         const threshold = 50; // 下一个标题与顶部的距离
 
         if (scrollTop < threshold) {
@@ -63,9 +64,9 @@ Page({
             return;
         }
 
-        const index = this.offsetTopList.findIndex((top) => top > scrollTop && top - scrollTop <= threshold);
+        const index = this.offsetTopList.findIndex((item) => item > scrollTop && item - scrollTop <= threshold);
 
-        if (index > -1) {
+        if (index !== -1) {
             this.setData({sideBarIndex: index});
         }
 
