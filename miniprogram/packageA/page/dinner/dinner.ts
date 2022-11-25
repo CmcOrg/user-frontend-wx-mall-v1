@@ -1,15 +1,16 @@
 const image = 'https://tdesign.gtimg.com/mobile/%E5%9B%BE%E7%89%87.png';
-const itemList = new Array(20).fill({label: '标题文字', image}, 0, 20);
+const itemList: ICategoryListItemItemListItem[] = new Array(20).fill({label: '标题文字', image, type: 2}, 0, 20);
+
+type TCategoryListItemItemListItemType = 1 | 2
 
 interface ICategoryListItemItemListItem {
     label: string
-    image: string
+    image?: string
+    type: TCategoryListItemItemListItemType
 }
 
 interface ICategoryListItem {
     label: string,
-    title: string,
-    itemList: ICategoryListItemItemListItem[],
 }
 
 interface IDinner {
@@ -17,6 +18,7 @@ interface IDinner {
     scrollTop: number
     offsetTopList: number[]
     categoryList: ICategoryListItem[]
+    itemList: ICategoryListItemItemListItem[][],
 }
 
 const data: IDinner = {
@@ -26,30 +28,23 @@ const data: IDinner = {
     categoryList: [
         {
             label: '波波奶茶',
-            title: '标题',
-            itemList,
         },
         {
             label: '普通奶茶',
-            title: '标题',
-            itemList,
         },
         {
             label: '果茶',
-            title: '标题',
-            itemList,
         },
         {
             label: '烧仙草',
-            title: '标题',
-            itemList,
         },
         {
             label: '芋圆奶茶',
-            title: '标题',
-            itemList,
         },
     ],
+    itemList: [
+        {label: "波波奶茶", type: 1}, ...itemList
+    ]
 }
 
 Page({
