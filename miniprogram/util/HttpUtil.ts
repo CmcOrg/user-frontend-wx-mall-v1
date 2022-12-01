@@ -1,5 +1,5 @@
 import {ToastError} from './ToastUtil'
-import {GetJwt, onlyWxCodeSignIn} from "./UserUtil";
+import {GetJwt, onlyWxCodeSignIn, RemoveJwt} from "./UserUtil";
 
 const baseUrl = 'http://localhost:30000'
 
@@ -39,7 +39,7 @@ function $http<T = any, D = any>(url: string,
                 const resData = res.data as ApiResultVO<T>
                 if (resData.code !== 200 || !resData.successFlag) {
                     if (resData.code === 100111) { // 这个代码表示需要：重新登录
-                        console.log(resData.msg)
+                        RemoveJwt() // 清除 jwt
                         let retryNumber = 0 // 累计重试次数
                         if (header && header.retryNumber) {
                             retryNumber = header.retryNumber

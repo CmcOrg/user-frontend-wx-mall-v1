@@ -1,7 +1,7 @@
 import LocalStorageKey from "../model/constant/LocalStorageKey";
 import {UserSelfInfo, UserSelfInfoVO} from "../api/none/UserSelfController";
-import {SignWxSignInCode} from "../api/sign/SignWxController";
 import {ShowToast} from "./ToastUtil";
+import {SignWxSignInCode} from "../api/sign/SignWxController";
 
 // 微信 code登录
 export function WxCodeSignIn() {
@@ -35,6 +35,11 @@ export function GetJwt() {
 // 设置：jwt
 export function SetJwt(jwt: string) {
     wx.setStorageSync(LocalStorageKey.JWT, jwt)
+}
+
+// 清除：jwt
+export function RemoveJwt() {
+    wx.removeStorageSync(LocalStorageKey.JWT)
 }
 
 // 获取：用户基本信息
