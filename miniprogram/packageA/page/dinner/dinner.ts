@@ -22,7 +22,9 @@ Page({
     // 获取列表数据
     getListDate() {
         TakeawaySpuUserProduct({scene: 1}).then(res => {
-            console.log(res)
+            this.setData({
+                productList: res.data
+            })
         })
     },
     onSideBarChange(e: { detail: { value: number; }; }) {

@@ -1,17 +1,17 @@
 <view class="flex vwh100">
     <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
-        <t-side-bar-item wx:for="{{categoryList}}" wx:key="index" value="{{index}}"
-                         label="{{item.label}}"/>
+        <t-side-bar-item wx:for="{{productList}}" wx:key="index" value="{{index}}"
+                         label="{{item.name}}"/>
     </t-side-bar>
     <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view class="p-l-r-16 p-b-200">
-            <view wx:for="{{categoryList}}" wx:key="index">
-                <view class="p-t-b-20">{{item.title || item.label}}
+            <view wx:for="{{productList}}" wx:key="index">
+                <view class="p-t-b-20">{{item.name}}
                 </view>
-                <view class="productItem flex-c" wx:for="{{item.itemList}}" wx:key="subIndex" wx:for-item="subItem"
+                <view class="productItem flex-c" wx:for="{{item.takeawaySpuDOList}}" wx:key="subIndex"
+                      wx:for-item="subItem"
                       wx:for-index="subIndex">
-                    <t-image shape="round" src="{{subItem.image}}" t-class="w-50 h-50"/>
-                    <view>{{subItem.label}}</view>
+                    <view>{{subItem.name}}</view>
                 </view>
             </view>
         </view>

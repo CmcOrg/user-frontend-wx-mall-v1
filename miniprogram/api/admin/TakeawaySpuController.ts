@@ -38,5 +38,5 @@ export interface TakeawayCategoryDO {
 
 // 用户获取商品
 export function TakeawaySpuUserProduct(form: TakeawaySpuUserProductDTO) {
-    return $http<TakeawayCategoryDO>('/takeaway/spu/user/product', form)
+    return $http<TakeawayCategoryDO[]>('/takeaway/spu/user/product', form)
 }
