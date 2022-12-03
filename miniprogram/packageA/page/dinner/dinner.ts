@@ -51,17 +51,22 @@ Page({
         this.setData({sideBarIndex: value, scrollTop: this.data.offsetTopList[value]});
     },
     onScroll(e: { detail: { scrollTop: number; }; }) {
-
         const {scrollTop} = e.detail;
-        const threshold = 50; // 下一个标题与顶部的距离
-        if (scrollTop < threshold) {
-            this.setData({sideBarIndex: 0});
-            return;
+        let indexValue = -1;
+        this.data.offsetTopList.some((item, index, array) => {
+            if (index === array.length) {
+                indexValue = index;
+                return true
+            } else if (scrollTop >= item && scrollTop < array[index + 1]) {
+                indexValue = index;
+                return true
+            } else {
+                return false
+            }
+        })
+        if (indexValue !== -1 && this.data.sideBarIndex !== indexValue) {
+            this.setData({sideBarIndex: indexValue});
         }
-        const index = this.data.offsetTopList.findIndex((item) => item > scrollTop && item - scrollTop <= threshold);
-        if (index !== -1 && this.data.sideBarIndex !== index) {
-            this.setData({sideBarIndex: index});
-        }
-
     },
-});
+})
+;
