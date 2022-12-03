@@ -1,4 +1,5 @@
 import {UserSelfInfoVO} from "./api/none/UserSelfController";
+import UpdateManager from "./util/UpdateManager";
 
 App<IAppOption>({
     globalData: {
@@ -21,6 +22,8 @@ App<IAppOption>({
                 that.globalData.menuButtonHeight = menuButton.height + (that.globalData.menuButtonMarginTop * 2);
             },
         })
+        
+        UpdateManager();
     },
 
 })
