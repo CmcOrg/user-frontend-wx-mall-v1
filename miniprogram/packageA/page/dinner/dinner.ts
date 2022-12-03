@@ -1,4 +1,5 @@
 import {TakeawayCategoryDO, TakeawaySpuUserProduct} from "../../../api/admin/TakeawaySpuController";
+import LocalStorageKey from "../../../model/constant/LocalStorageKey";
 
 interface IDinner {
     sideBarIndex: number
@@ -21,10 +22,14 @@ Page({
     },
     // 获取列表数据
     getListDate() {
+        this.setData({
+            productList: wx.getStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT)
+        })
         TakeawaySpuUserProduct({scene: 1}).then(res => {
             this.setData({
                 productList: res.data
             })
+            wx.setStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT, res.data)
         })
     },
     onSideBarChange(e: { detail: { value: number; }; }) {

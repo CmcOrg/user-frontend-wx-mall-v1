@@ -8,7 +8,7 @@
             <view wx:for="{{productList}}" wx:key="index">
                 <view class="p-t-b-20">
                     <view class="fw-600 f-18">{{item.name}}</view>
-                    <view class="p-t-5 black5 f-13">{{item.name}}</view>
+                    <view class="p-t-8 black5 f-13">{{item.name}}</view>
                 </view>
                 <view class="productItem flex-c" wx:for="{{item.takeawaySpuDOList}}" wx:key="subIndex"
                       wx:for-item="subItem"
