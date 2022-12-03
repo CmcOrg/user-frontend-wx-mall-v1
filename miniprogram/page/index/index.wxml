@@ -46,8 +46,9 @@
                     <view class="flex-center">
                         <t-avatar
                                 bind:tap="accountClick"
-                                t-class="pink1-bc shadow black1"
+                                t-class-icon="pink1-bc black1"
                                 size="large"
+                                shape="circle"
                                 icon="user">
                         </t-avatar>
                     </view>
