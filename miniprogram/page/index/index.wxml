@@ -59,7 +59,7 @@
 
                 <view class="m-t-30 white1-bc">
                     <t-cell-group>
-                        <t-cell t-class="f-12 p-t-b-14" note="全部订单" hover arrow bordered="{{false}}"
+                        <t-cell t-class="p-t-b-14" t-class-note="f-12" note="全部订单" hover arrow bordered="{{false}}"
                                 bind:tap="myOrderClick">
                             <view class="f-14 fw-600" slot="title">
                                 我的订单
@@ -81,7 +81,7 @@
 
                 <view class="m-t-15 white1-bc">
                     <t-cell-group>
-                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                        <t-cell t-class="p-t-b-11" hover arrow bordered="{{false}}"
                                 bind:tap="addressDelivery">
                             <view class="f-16" slot="left-icon">
                                 <t-icon prefix="wr" name="location"></t-icon>
@@ -90,7 +90,7 @@
                                 收货地址
                             </view>
                         </t-cell>
-                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                        <t-cell t-class="p-t-b-11" hover arrow bordered="{{false}}"
                                 bind:tap="InDev">
                             <view class="f-17" slot="left-icon">
                                 <t-icon prefix="wr" name="credit_card"></t-icon>
@@ -99,7 +99,7 @@
                                 优惠卷
                             </view>
                         </t-cell>
-                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                        <t-cell t-class="p-t-b-11" hover arrow bordered="{{false}}"
                                 bind:tap="InDev">
                             <view class="f-17" slot="left-icon">
                                 <t-icon prefix="wr" name="discount"></t-icon>
@@ -113,7 +113,7 @@
 
                 <view class="m-t-15 white1-bc">
                     <t-cell-group>
-                        <t-cell t-class="f-12 p-t-b-11" hover arrow bordered="{{false}}"
+                        <t-cell t-class="p-t-b-11" hover arrow bordered="{{false}}"
                                 bind:tap="InDev">
                             <view class="f-17" slot="left-icon">
                                 <t-icon prefix="wr" name="service"></t-icon>

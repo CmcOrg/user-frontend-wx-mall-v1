@@ -6,7 +6,9 @@
     <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
         <view class="p-l-r-16 p-b-200">
             <view wx:for="{{productList}}" wx:key="index">
-                <view class="p-t-b-20">{{item.name}}
+                <view class="p-t-b-20">
+                    <view class="fw-600 f-18">{{item.name}}</view>
+                    <view class="p-t-5 f-13">{{item.name}}</view>
                 </view>
                 <view class="productItem flex-c" wx:for="{{item.takeawaySpuDOList}}" wx:key="subIndex"
                       wx:for-item="subItem"
