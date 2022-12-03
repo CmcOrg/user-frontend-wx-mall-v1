@@ -105,11 +105,9 @@ Page({
         InDev()
     },
     dinnerClick() {
-        console.log("堂食")
         NavigateTo(PathConstant.DINNER_PATH)
     },
     takeawayClick() {
-        console.log("外卖")
         NavigateTo(PathConstant.TAKEAWAY_PATH)
     },
     openPopup() {

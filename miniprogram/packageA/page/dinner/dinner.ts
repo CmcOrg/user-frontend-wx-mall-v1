@@ -1,81 +1,29 @@
-const image = 'https://tdesign.gtimg.com/mobile/%E5%9B%BE%E7%89%87.png';
-const itemList = new Array(20).fill({label: '标题文字', image}, 0, 20);
-
-interface ICategoryListItemItemListItem {
-    label: string
-    image: string
-}
-
-interface ICategoryListItem {
-    label: string,
-    title: string,
-    itemList: ICategoryListItemItemListItem[],
-}
+import {TakeawayCategoryDO, TakeawaySpuUserProduct} from "../../../api/admin/TakeawaySpuController";
 
 interface IDinner {
     sideBarIndex: number
     scrollTop: number
     offsetTopList: number[]
-    categoryList: ICategoryListItem[]
+    productList: TakeawayCategoryDO[]
 }
 
 const data: IDinner = {
     sideBarIndex: 0,
     scrollTop: 0,
     offsetTopList: [],
-    categoryList: [
-        {
-            label: '波波奶茶',
-            title: '标题',
-            itemList,
-        },
-        {
-            label: '普通奶茶',
-            title: '标题',
-            itemList,
-        },
-        {
-            label: '果茶',
-            title: '标题',
-            itemList,
-        },
-        {
-            label: '烧仙草',
-            title: '标题',
-            itemList,
-        },
-        {
-            label: '芋圆奶茶',
-            title: '标题',
-            itemList,
-        },
-    ],
+    productList: [],
 }
 
 Page({
-    itemTitleHeight: 61,
-    itemProductHeight: 75,
-    itemProductGapHeight: 20, // 间隔高度
-    allHeight: 0, // 整体高度
-    marginBottomHeight: 200, // 距离底部的高度
     data,
     onLoad() {
-        this.calcAllHeight() // 计算：整体高度
+        this.getListDate() // 获取列表数据
     },
-    // 计算：整体高度
-    calcAllHeight() {
-
-        this.data.categoryList.forEach((item, index) => {
-            let itemAllHeight = 0 // 这一块分类商品的整体高度
-            itemAllHeight += this.itemTitleHeight
-            itemAllHeight += item.itemList.length * this.itemProductHeight
-            itemAllHeight += (item.itemList.length - 1) * this.itemProductGapHeight
-            this.data.offsetTopList[index] = this.allHeight
-            this.allHeight += itemAllHeight
+    // 获取列表数据
+    getListDate() {
+        TakeawaySpuUserProduct({scene: 1}).then(res => {
+            console.log(res)
         })
-
-        this.allHeight += this.marginBottomHeight
-
     },
     onSideBarChange(e: { detail: { value: number; }; }) {
 
