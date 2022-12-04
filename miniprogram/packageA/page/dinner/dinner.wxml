@@ -75,11 +75,15 @@
             <view class="fw-600 f-20 p-t-20 p-b-10">
                 {{popupSpu.name}}
             </view>
-            <scroll-view scroll-y scroll-with-animation style="height: 50vh;">
+            <scroll-view scroll-y scroll-with-animation style="height: 45vh;">
                 <view class="h-10"></view>
                 <view class="flex1">
-                    <view wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="{{index}}">
-                        {{item.spuSpecJsonListStr}}
+                    <view class="flex productSkuItem" wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="index">
+                        <view wx:for="{{item.spuSpecJsonList}}" wx:key="subIndex"
+                              wx:for-item="subItem"
+                              wx:for-index="subIndex">
+                            {{subItem.name}};
+                        </view>
                     </view>
                 </view>
                 <view class="h-30"></view>
