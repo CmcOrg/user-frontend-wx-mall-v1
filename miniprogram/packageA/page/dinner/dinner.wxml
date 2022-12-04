@@ -71,7 +71,7 @@
     </view>
 
     <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="center">
-        <view class="m-b-80 p-l-r-20 black2-bc" style="width: 80vw;">
+        <view class="p-l-r-20 black2-bc" style="width: 80vw; margin-top: -80px;">
             <view class="fw-600 f-20 p-t-20 p-b-10">
                 {{popupSpu.name}}
             </view>
