@@ -1,10 +1,11 @@
-<view class="flex vwh100">
+<view class="flex vwh100 rel">
     <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
         <t-side-bar-item wx:for="{{productList}}" wx:key="index" value="{{index}}"
                          label="{{item.name}}"/>
     </t-side-bar>
-    <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
-        <view class="p-l-r-16 p-b-200">
+    <scroll-view class="flex1" scroll-y scroll-with-animation scroll-top="{{scrollTop}}"
+                 bind:scroll="onScroll">
+        <view class="p-l-r-16">
             <view wx:for="{{productList}}" wx:key="index">
                 <view class="p-t-b-20 title white1-bc">
                     <view class="fw-600 f-20">{{item.name}}</view>
@@ -20,23 +21,51 @@
                         <view class="flex1 m-l-10 flex-c p-t-b-3">
                             <view class="fw-600 f-16">{{subItem.name}}</view>
                             <view class="flex1 flex ai-e">
-                                <view class="flex ai-b">
-                                    <view class="f-11 fw-600">¥</view>
-                                    <view class="m-l-1 fw-600 f-17">{{ (subItem.takeawaySkuDOList &&
-                                        subItem.takeawaySkuDOList.length) ? subItem.takeawaySkuDOList[0].price : 0}}
+                                <view class="flex ai-c w100">
+                                    <view class="flex ai-b">
+                                        <view class="f-11 fw-600">¥</view>
+                                        <view class="m-l-1 fw-600 f-17">{{ (subItem.takeawaySkuDOList &&
+                                            subItem.takeawaySkuDOList.length) ? subItem.takeawaySkuDOList[0].price : 0}}
+                                        </view>
+                                        <view class="m-l-1 black5 f-11">起</view>
                                     </view>
-                                    <view class="m-l-1 black5 f-11">起</view>
-                                </view>
-                                <view class="flex1 flex jc-e">
-                                    <t-button t-class="m-l-10 p-l-r-5 h-24 f-11 fw-500" theme="primary" size="small">
-                                        选规格
-                                    </t-button>
+                                    <view class="flex1 flex jc-e">
+                                        <t-button t-class="m-l-10 p-l-r-5 h-24 f-10 fw-500" theme="primary"
+                                                  size="small">
+                                            选规格
+                                        </t-button>
+                                    </view>
                                 </view>
                             </view>
                         </view>
+                    </view>
+                    <view wx:if="{{index === productList.length - 1 && subIndex === item.takeawaySpuDOList.length - 1}}"
+                          class="black5 f-13 w100 flex-center h-150 m-b-50">到底啦~
                     </view>
                 </view>
             </view>
         </view>
     </scroll-view>
+
+    <view class="abs" style="bottom: 0; left: 0;">
+        <view class="rel flex vw100 h-60 border-t-1 white1-bc b-r-4">
+            <view class="m-l-20 flex-center">
+                <view class="flex ai-b">
+                    <view class="fw-600 f-13">总计</view>
+                    <view class="m-l-5 f-11 fw-600">¥</view>
+                    <view class="m-l-1 fw-600 f-17">20</view>
+                </view>
+            </view>
+            <view class="flex1 flex-center">
+                <t-button theme="primary" variant="text">
+                    查看已选商品
+                </t-button>
+            </view>
+            <view class="flex jc-e ai-c m-r-20">
+                <t-button theme="primary">
+                    去结算
+                </t-button>
+            </view>
+        </view>
+    </view>
 </view>
