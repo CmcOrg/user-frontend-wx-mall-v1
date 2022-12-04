@@ -16,15 +16,22 @@
                     <view class="flex">
                         <t-image
                                 src="https://cdn-we-retail.ym.tencent.com/tsr/goods/gh-2b.png?imageMogr2/thumbnail/489x540/quality/70/strip/format/webp"
-                                mode="aspectFill" width="120" height="125" shape="round"/>
+                                mode="aspectFill" width="110" height="115" shape="round"/>
                         <view class="flex1 m-l-10 flex-c p-t-b-3">
                             <view class="fw-600 f-16">{{subItem.name}}</view>
                             <view class="flex1 flex ai-e">
-                                <view class="f-12 fw-600 m-b-2">¥</view>
-                                <view class="m-l-2 fw-600 f-17">{{ (subItem.takeawaySkuDOList &&
-                                    subItem.takeawaySkuDOList.length) ? subItem.takeawaySkuDOList[0].price : 0}}
+                                <view class="flex ai-b">
+                                    <view class="f-11 fw-600">¥</view>
+                                    <view class="m-l-1 fw-600 f-17">{{ (subItem.takeawaySkuDOList &&
+                                        subItem.takeawaySkuDOList.length) ? subItem.takeawaySkuDOList[0].price : 0}}
+                                    </view>
+                                    <view class="m-l-1 black5 f-11">起</view>
                                 </view>
-                                <view class="m-l-2 black5 f-11 m-b-1">起</view>
+                                <view class="flex1 flex jc-e">
+                                    <t-button t-class="m-l-10 p-l-r-5 h-24 f-11 fw-500" theme="primary" size="small">
+                                        选规格
+                                    </t-button>
+                                </view>
                             </view>
                         </view>
                     </view>
