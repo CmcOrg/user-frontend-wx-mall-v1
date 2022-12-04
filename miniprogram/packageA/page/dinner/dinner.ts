@@ -4,18 +4,17 @@ import LocalStorageKey from "../../../model/constant/LocalStorageKey";
 interface IDinner {
     sideBarIndex: number
     scrollTop: number
-    offsetTopList: number[]
     productList: TakeawayCategoryDO[]
 }
 
 const data: IDinner = {
     sideBarIndex: 0,
     scrollTop: 0,
-    offsetTopList: [],
     productList: [],
 }
 
 Page({
+    offsetTopList: [],
     data,
     onLoad() {
         this.getListDate() // 获取列表数据
@@ -40,20 +39,17 @@ Page({
         query
             .selectAll('.title')
             .boundingClientRect((rectList: any) => {
-                const offsetTopList = rectList.map((item: { top: number; }) => item.top);
-                this.setData({
-                    offsetTopList
-                })
+                this.offsetTopList = rectList.map((item: { top: number; }) => item.top);
             }).exec();
     },
     onSideBarChange(e: { detail: { value: number; }; }) {
         const {value} = e.detail;
-        this.setData({sideBarIndex: value, scrollTop: this.data.offsetTopList[value]});
+        this.setData({sideBarIndex: value, scrollTop: this.offsetTopList[value]});
     },
     onScroll(e: { detail: { scrollTop: number; }; }) {
         const {scrollTop} = e.detail;
         let indexValue = -1;
-        this.data.offsetTopList.some((item, index, array) => {
+        this.offsetTopList.some((item, index, array) => {
             if (index === array.length) {
                 indexValue = index;
                 return true
