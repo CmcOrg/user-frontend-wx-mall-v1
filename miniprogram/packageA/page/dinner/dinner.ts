@@ -1,24 +1,42 @@
-import {TakeawayCategoryDO, TakeawaySpuUserProduct} from "../../../api/admin/TakeawaySpuController";
+import {TakeawayCategoryDO, TakeawaySpuDO, TakeawaySpuUserProduct} from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
 
 interface IDinner {
     sideBarIndex: number
     scrollTop: number
     productList: TakeawayCategoryDO[]
+    popupVisible: boolean
+    popupSpu: TakeawaySpuDO
 }
 
 const data: IDinner = {
     sideBarIndex: 0,
     scrollTop: 0,
     productList: [],
+    popupVisible: false,
+    popupSpu: {},
 }
 
 Page({
-    offsetTopList: [],
+    offsetTopList: [], // number[]
     data,
     onLoad() {
         this.getListDate() // 获取列表数据
         this.offsetTopListInit()
+    },
+    onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
+        this.setData({
+            popupVisible: e.detail.visible,
+        });
+    },
+    // 点击：选规格
+    chooseSpecClick(e: { currentTarget: { dataset: { spu: TakeawaySpuDO; }; }; }) {
+        this.setData({
+            popupVisible: true,
+        });
+        this.setData({
+            popupSpu: e.currentTarget.dataset.spu
+        })
     },
     // 获取列表数据
     getListDate() {

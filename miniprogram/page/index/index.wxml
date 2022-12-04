@@ -37,7 +37,7 @@
     </view>
 
     <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="left">
-        <view class="white1-bc flex-c rel black2-bc" style="width: 85vw; height: 100vh">
+        <view class="flex-c rel black2-bc vh100" style="width: 85vw">
 
             <view style="height: {{statusBarHeight}};"></view>
 

@@ -31,7 +31,8 @@
                                     </view>
                                     <view class="flex1 flex jc-e">
                                         <t-button t-class="m-l-10 p-l-r-5 h-24 f-10 fw-500" theme="primary"
-                                                  size="small">
+                                                  size="small" data-spu='{{subItem}}'
+                                                  bind:tap="chooseSpecClick">
                                             选规格
                                         </t-button>
                                     </view>
@@ -68,4 +69,22 @@
             </view>
         </view>
     </view>
+
+    <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="center">
+        <view class="m-b-80 p-l-r-20 black2-bc" style="width: 80vw;">
+            <view class="fw-600 f-20 p-t-20 p-b-10">
+                {{popupSpu.name}}
+            </view>
+            <scroll-view scroll-y scroll-with-animation style="height: 50vh;">
+                <view class="h-10"></view>
+                <view class="flex1">
+                    <view wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="{{index}}">
+                        {{item.spuSpecJsonListStr}}
+                    </view>
+                </view>
+                <view class="h-30"></view>
+            </scroll-view>
+        </view>
+    </t-popup>
+
 </view>
