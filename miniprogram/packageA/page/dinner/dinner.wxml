@@ -31,7 +31,7 @@
                                     </view>
                                     <view class="flex1 flex jc-e">
                                         <t-button t-class="m-l-10 p-l-r-5 h-24 f-10 fw-500" theme="primary"
-                                                  size="small" data-spu='{{subItem}}'
+                                                  size="small" data-spu="{{subItem}}"
                                                   bind:tap="chooseSpecClick">
                                             选规格
                                         </t-button>
@@ -78,11 +78,15 @@
             <scroll-view scroll-y scroll-with-animation style="height: 45vh;">
                 <view class="h-10"></view>
                 <view class="flex1">
-                    <view class="flex productSkuItem" wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="index">
+                    <view class="flex jc-sb productSkuItem" wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="index">
                         <view wx:for="{{item.spuSpecJsonList}}" wx:key="subIndex"
                               wx:for-item="subItem"
                               wx:for-index="subIndex">
                             {{subItem.name}};
+                        </view>
+                        <view>
+                            <t-stepper defaultValue="0" min="0" theme="grey" value="{{item.chooseNumber}}"
+                                       bind:change="chooseNumberChange" data-sku="{{item}}"/>
                         </view>
                     </view>
                 </view>

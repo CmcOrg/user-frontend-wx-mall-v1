@@ -4,7 +4,8 @@
     "t-side-bar-item": "tdesign-miniprogram/side-bar-item/side-bar-item",
     "t-image": "tdesign-miniprogram/image/image",
     "t-button": "tdesign-miniprogram/button/button",
-    "t-popup": "tdesign-miniprogram/popup/popup"
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-stepper": "tdesign-miniprogram/stepper/stepper"
   },
   "navigationBarTitleText": "堂食"
 }

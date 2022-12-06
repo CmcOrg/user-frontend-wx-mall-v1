@@ -24,6 +24,9 @@ Page({
         this.getListDate() // 获取列表数据
         this.offsetTopListInit()
     },
+    chooseNumberChange(e: any) {
+        console.log(e)
+    },
     onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
         this.setData({
             popupVisible: e.detail.visible,
