@@ -23,6 +23,7 @@ export interface TakeawaySkuDO {
     enableFlag?: boolean // 是否启用
     delFlag?: boolean // 是否逻辑删除
     remark?: string // 备注
+    chooseNumber?: number // 前端用：当前选择的个数
 }
 
 export interface TakeawaySpuDO {

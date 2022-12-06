@@ -1,12 +1,17 @@
 import {TakeawayCategoryDO, TakeawaySpuDO, TakeawaySpuUserProduct} from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
 
+interface IChooseSkuObj {
+    chooseNumber: number
+}
+
 interface IDinner {
     sideBarIndex: number
     scrollTop: number
     productList: TakeawayCategoryDO[]
     popupVisible: boolean
     popupSpu: TakeawaySpuDO
+    chooseSkuObj: Record<string, IChooseSkuObj>, // id: TakeawaySkuDO
 }
 
 const data: IDinner = {
@@ -15,6 +20,7 @@ const data: IDinner = {
     productList: [],
     popupVisible: false,
     popupSpu: {},
+    chooseSkuObj: {},
 }
 
 Page({
@@ -24,8 +30,11 @@ Page({
         this.getListDate() // 获取列表数据
         this.offsetTopListInit()
     },
-    chooseNumberChange(e: any) {
-        console.log(e)
+    chooseNumberChange(e: { currentTarget: { dataset: { index: number }; }; detail: { value: number }; }) {
+        this.data.popupSpu.takeawaySkuDOList![e.currentTarget.dataset.index].chooseNumber = e.detail.value
+        this.setData({
+            popupSpu: this.data.popupSpu
+        })
     },
     onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
         this.setData({
