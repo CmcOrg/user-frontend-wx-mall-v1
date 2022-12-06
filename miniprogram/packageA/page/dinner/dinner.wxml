@@ -41,7 +41,7 @@
                         </view>
                     </view>
                     <view wx:if="{{index === productList.length - 1 && subIndex === item.takeawaySpuDOList.length - 1}}"
-                          class="black5 f-13 w100 flex-center h-150 m-b-50">到底啦~
+                          class="black5 f-12 w100 flex-center h-150 m-b-50">到底啦~
                     </view>
                 </view>
             </view>
