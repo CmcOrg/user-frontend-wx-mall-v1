@@ -19,7 +19,7 @@ export interface TakeawaySkuDO {
     number?: number // 库存
     spuName?: string // spu名称
     spuSpecJsonListStrSet?: string[] // 规格 json对象集合字符串，例如：[{}]，set
-    spuSpecJsonSet?: TakeawaySpecItemDTO[] // 规格 json对象集合，例如：[{}]
+    spuSpecJsonList?: TakeawaySpecItemDTO[] // 规格 json对象集合，例如：[{}]
     specIdSet?: number[] // 关联的规格主键 idSet
     id?: number // 主键id
     createId?: number // 创建人id
