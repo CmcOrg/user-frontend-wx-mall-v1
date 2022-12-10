@@ -91,7 +91,7 @@
                         </view>
                         <view>
                             <t-stepper defaultValue="0" min="0" theme="grey"
-                                       value="{{item.chooseNumber}}"
+                                       value="{{chooseSkuObj[item.id].chooseNumber}}"
                                        bind:change="chooseNumberChange" data-index="{{index}}"/>
                         </view>
                     </view>

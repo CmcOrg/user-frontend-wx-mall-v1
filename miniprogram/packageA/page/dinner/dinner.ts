@@ -32,7 +32,22 @@ Page({
     onLoad() {
         this.getListDate() // 获取列表数据
         this.offsetTopListInit()
+        this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
     },
+    // 从缓存里初始化：已选择的 sku对象，目的：比如用户再次打开页面，也会选中之前选中的商品
+    initChooseSkuObjFromStorage() {
+        this.doSetChooseSkuObj(wx.getStorageSync(LocalStorageKey.DINNER_CHOOSE_SKU_OBJ) || {});
+    },
+    // 执行：设置 chooseSkuObj
+    doSetChooseSkuObj(newChooseSkuObj: Record<string, TakeawaySkuDO>) {
+        this.setData({
+            chooseSkuObj: newChooseSkuObj
+        }, () => {
+            this.setAllChooseMoney() // 设置：已选商品的总金额
+        })
+        wx.setStorageSync(LocalStorageKey.DINNER_CHOOSE_SKU_OBJ, newChooseSkuObj)
+    },
+    // 选择的数量，发生改变时
     chooseNumberChange(e: { currentTarget: { dataset: { index: number }; }; detail: { value: number }; }) {
         const takeawaySkuDO = this.data.popupSpu.takeawaySkuDOList![e.currentTarget.dataset.index];
         takeawaySkuDO.chooseNumber = e.detail.value
@@ -49,7 +64,7 @@ Page({
                 [key]: undefined
             })
         }
-        this.setAllChooseMoney() // 设置：已选商品的总金额
+        this.doSetChooseSkuObj(this.data.chooseSkuObj) // 执行：设置方法
     },
     // 设置：已选商品的总金额
     setAllChooseMoney() {
