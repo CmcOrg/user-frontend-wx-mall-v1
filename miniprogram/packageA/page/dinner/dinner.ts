@@ -58,7 +58,7 @@ Page({
         const sku = e.currentTarget.dataset.sku
         sku.chooseNumber = e.detail.value
         this.setData({
-            ['chooseSkuObj.' + sku.id]: e.detail.value ? sku : undefined
+            ['chooseSkuObj.' + sku.id]: sku
         }, () => {
             this.doSetChooseSkuObj(this.data.chooseSkuObj, false) // 执行：设置方法
         })
@@ -87,7 +87,7 @@ Page({
             popupVisible: true,
         });
         const spu = e.currentTarget.dataset.spu
-        const limitNumber = 9
+        const limitNumber = 12
         if (spu.takeawaySkuDOList!.length > limitNumber) {
             const takeawaySkuDOList = spu.takeawaySkuDOList!.slice(0, limitNumber);
             this.setData({
@@ -116,7 +116,7 @@ Page({
     doSetProductList(newProductList: TakeawayCategoryDO[], sliceFlag = true) {
         let productList
         if (sliceFlag) {
-            productList = newProductList.slice(0, 1);
+            productList = newProductList.slice(0, 2);
             this.setData({
                 productList
             }, () => {
