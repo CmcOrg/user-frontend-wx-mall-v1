@@ -58,7 +58,7 @@ Page({
         this.setData({
             ['chooseSkuObj.' + sku.id]: e.detail.value ? sku : undefined
         }, () => {
-            this.doSetChooseSkuObj(this.data.chooseSkuObj) // 执行：设置方法
+            this.doSetChooseSkuObj(this.data.chooseSkuObj, false) // 执行：设置方法
         })
     },
     // 设置：已选商品的总金额
@@ -84,22 +84,55 @@ Page({
         this.setData({
             popupVisible: true,
         });
-        this.setData({
-            popupSpu: e.currentTarget.dataset.spu
-        })
+        const spu = e.currentTarget.dataset.spu
+        const limitNumber = 9
+        if (spu.takeawaySkuDOList!.length > limitNumber) {
+            const takeawaySkuDOList = spu.takeawaySkuDOList!.slice(0, limitNumber);
+            this.setData({
+                popupSpu: {...spu, takeawaySkuDOList}
+            }, () => {
+                setTimeout(() => {
+                    this.setData({
+                        popupSpu: spu
+                    })
+                }, 250)
+            })
+        } else {
+            this.setData({
+                popupSpu: spu
+            })
+        }
     },
     // 获取列表数据
     getListDate() {
-        this.setData({
-            productList: wx.getStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT)
-        })
+        this.doSetProductList(wx.getStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT) || [])
         TakeawaySpuUserProduct({scene: 1}).then(res => {
+            this.doSetProductList(res.data, false)
+        })
+    },
+    // 执行：设置 productList
+    doSetProductList(newProductList: TakeawayCategoryDO[], sliceFlag = true) {
+        let productList
+        if (sliceFlag) {
+            productList = newProductList.slice(0, 1);
             this.setData({
-                productList: res.data
+                productList
             }, () => {
-                this.offsetTopListInit()
+                setTimeout(() => {
+                    this.execDoSetProductList(newProductList);
+                }, 250)
             })
-            wx.setStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT, res.data)
+        } else {
+            this.execDoSetProductList(newProductList);
+        }
+    },
+    // 执行：设置 productList
+    execDoSetProductList(newProductList: TakeawayCategoryDO[]) {
+        this.setData({
+            productList: newProductList
+        }, () => {
+            this.offsetTopListInit()
+            wx.setStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT, newProductList)
         })
     },
     offsetTopListInit() {
