@@ -54,7 +54,7 @@
                 <view class="flex ai-b">
                     <view class="fw-600 f-13">总计</view>
                     <view class="m-l-5 f-11 fw-600">¥</view>
-                    <view class="m-l-1 fw-600 f-17">20</view>
+                    <view class="m-l-1 fw-600 f-17">{{allChooseMoney}}</view>
                 </view>
             </view>
             <view class="flex1 flex-center">

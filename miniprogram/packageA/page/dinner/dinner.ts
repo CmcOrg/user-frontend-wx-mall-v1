@@ -1,9 +1,10 @@
-import {TakeawayCategoryDO, TakeawaySpuDO, TakeawaySpuUserProduct} from "../../../api/admin/TakeawaySpuController";
+import {
+    TakeawayCategoryDO,
+    TakeawaySkuDO,
+    TakeawaySpuDO,
+    TakeawaySpuUserProduct
+} from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
-
-interface IChooseSkuObj {
-    chooseNumber: number
-}
 
 interface IDinner {
     sideBarIndex: number
@@ -11,7 +12,8 @@ interface IDinner {
     productList: TakeawayCategoryDO[]
     popupVisible: boolean
     popupSpu: TakeawaySpuDO
-    chooseSkuObj: Record<string, IChooseSkuObj>, // id: TakeawaySkuDO
+    chooseSkuObj: Record<string, TakeawaySkuDO>, // skuId: TakeawaySkuDO
+    allChooseMoney: number,
 }
 
 const data: IDinner = {
@@ -20,7 +22,8 @@ const data: IDinner = {
     productList: [],
     popupVisible: false,
     popupSpu: {},
-    chooseSkuObj: {},
+    chooseSkuObj: {}, // 已选择的 sku对象
+    allChooseMoney: 0, // 已选商品的总金额
 }
 
 Page({
@@ -31,11 +34,35 @@ Page({
         this.offsetTopListInit()
     },
     chooseNumberChange(e: { currentTarget: { dataset: { index: number }; }; detail: { value: number }; }) {
-        this.data.popupSpu.takeawaySkuDOList![e.currentTarget.dataset.index].chooseNumber = e.detail.value
+        const takeawaySkuDO = this.data.popupSpu.takeawaySkuDOList![e.currentTarget.dataset.index];
+        takeawaySkuDO.chooseNumber = e.detail.value
         this.setData({
             popupSpu: this.data.popupSpu
         })
-        console.log(this.data.productList)
+        const key = 'chooseSkuObj.' + takeawaySkuDO.id
+        if (e.detail.value) {
+            this.setData({
+                [key]: takeawaySkuDO
+            })
+        } else {
+            this.setData({
+                [key]: undefined
+            })
+        }
+        this.setAllChooseMoney() // 设置：已选商品的总金额
+    },
+    // 设置：已选商品的总金额
+    setAllChooseMoney() {
+        let allChooseMoney = 0
+        for (let key of Object.keys(this.data.chooseSkuObj)) {
+            let sku = this.data.chooseSkuObj[key];
+            if (sku && sku.chooseNumber && sku.price) {
+                allChooseMoney = allChooseMoney + (sku.chooseNumber * sku.price)
+            }
+        }
+        this.setData({
+            allChooseMoney
+        })
     },
     onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
         this.setData({
