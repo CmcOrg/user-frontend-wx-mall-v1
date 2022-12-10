@@ -35,6 +35,7 @@ Page({
         this.setData({
             popupSpu: this.data.popupSpu
         })
+        console.log(this.data.productList)
     },
     onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
         this.setData({

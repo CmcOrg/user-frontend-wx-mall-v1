@@ -17,7 +17,7 @@ export interface TakeawaySkuDO {
     scene?: 1 | 2 // 场景：1 堂食 2 外卖
     prepareS?: number // 备货时长（秒）
     number?: number // 库存
-    spuFullName?: string // spu名称
+    spuName?: string // spu名称
     spuSpecJsonListStrSet?: string[] // 规格 json对象集合字符串，例如：[{}]，set
     spuSpecJsonSet?: TakeawaySpecItemDTO[] // 规格 json对象集合，例如：[{}]
     specIdSet?: number[] // 关联的规格主键 idSet
