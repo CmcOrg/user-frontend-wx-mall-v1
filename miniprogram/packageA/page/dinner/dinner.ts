@@ -39,38 +39,33 @@ Page({
         this.doSetChooseSkuObj(wx.getStorageSync(LocalStorageKey.DINNER_CHOOSE_SKU_OBJ) || {});
     },
     // 执行：设置 chooseSkuObj
-    doSetChooseSkuObj(newChooseSkuObj: Record<string, TakeawaySkuDO>) {
-        this.setData({
-            chooseSkuObj: newChooseSkuObj
-        }, () => {
+    doSetChooseSkuObj(newChooseSkuObj: Record<string, TakeawaySkuDO>, setDataChooseSkuObjFlag = true) {
+        if (setDataChooseSkuObjFlag) {
+            this.setData({
+                chooseSkuObj: newChooseSkuObj
+            }, () => {
+                this.setAllChooseMoney() // 设置：已选商品的总金额
+            })
+        } else {
             this.setAllChooseMoney() // 设置：已选商品的总金额
-        })
+        }
         wx.setStorageSync(LocalStorageKey.DINNER_CHOOSE_SKU_OBJ, newChooseSkuObj)
     },
     // 选择的数量，发生改变时
-    chooseNumberChange(e: { currentTarget: { dataset: { index: number }; }; detail: { value: number }; }) {
-        const takeawaySkuDO = this.data.popupSpu.takeawaySkuDOList![e.currentTarget.dataset.index];
-        takeawaySkuDO.chooseNumber = e.detail.value
+    chooseNumberChange(e: { currentTarget: { dataset: { sku: TakeawaySkuDO }; }; detail: { value: number }; }) {
+        const sku = e.currentTarget.dataset.sku
+        sku.chooseNumber = e.detail.value
         this.setData({
-            popupSpu: this.data.popupSpu
+            ['chooseSkuObj.' + sku.id]: e.detail.value ? sku : undefined
+        }, () => {
+            this.doSetChooseSkuObj(this.data.chooseSkuObj) // 执行：设置方法
         })
-        const key = 'chooseSkuObj.' + takeawaySkuDO.id
-        if (e.detail.value) {
-            this.setData({
-                [key]: takeawaySkuDO
-            })
-        } else {
-            this.setData({
-                [key]: undefined
-            })
-        }
-        this.doSetChooseSkuObj(this.data.chooseSkuObj) // 执行：设置方法
     },
     // 设置：已选商品的总金额
     setAllChooseMoney() {
         let allChooseMoney = 0
-        for (let key of Object.keys(this.data.chooseSkuObj)) {
-            let sku = this.data.chooseSkuObj[key];
+        for (const key of Object.keys(this.data.chooseSkuObj)) {
+            const sku = this.data.chooseSkuObj[key];
             if (sku && sku.chooseNumber && sku.price) {
                 allChooseMoney = allChooseMoney + (sku.chooseNumber * sku.price)
             }

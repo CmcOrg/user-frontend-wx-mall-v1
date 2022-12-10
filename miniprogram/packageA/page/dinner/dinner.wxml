@@ -90,9 +90,9 @@
                             {{item.price}}元
                         </view>
                         <view>
-                            <t-stepper defaultValue="0" min="0" theme="grey"
+                            <t-stepper defaultValue="0" min="0"
                                        value="{{chooseSkuObj[item.id].chooseNumber}}"
-                                       bind:change="chooseNumberChange" data-index="{{index}}"/>
+                                       bind:change="chooseNumberChange" data-sku="{{item}}"/>
                         </view>
                     </view>
                 </view>
