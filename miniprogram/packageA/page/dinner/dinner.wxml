@@ -80,7 +80,7 @@
                 <view class="flex1">
                     <view class="flex jc-sb productSkuItem" wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="index">
                         <view class="flex">
-                            <view wx:for="{{item.spuSpecJsonList}}" wx:key="subIndex"
+                            <view wx:for="{{item.spuSpecJsonSet}}" wx:key="subIndex"
                                   wx:for-item="subItem"
                                   wx:for-index="subIndex">
                                 {{subItem.name}};
