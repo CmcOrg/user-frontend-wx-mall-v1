@@ -5,6 +5,7 @@ import {
     TakeawaySpuUserProduct
 } from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
+import CommonConstant from "../../../model/constant/CommonConstant";
 
 interface IDinner {
     sideBarIndex: number
@@ -27,6 +28,7 @@ const data: IDinner = {
 }
 
 Page({
+
     offsetTopList: [], // number[]
     data,
     onLoad() {
@@ -95,7 +97,7 @@ Page({
                     this.setData({
                         popupSpu: spu
                     })
-                }, 250)
+                }, CommonConstant.RENDER_DELAY_MS)
             })
         } else {
             this.setData({
@@ -120,7 +122,7 @@ Page({
             }, () => {
                 setTimeout(() => {
                     this.execDoSetProductList(newProductList);
-                }, 250)
+                }, CommonConstant.RENDER_DELAY_MS)
             })
         } else {
             this.execDoSetProductList(newProductList);
