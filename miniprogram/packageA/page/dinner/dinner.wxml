@@ -101,4 +101,8 @@
         </view>
     </t-popup>
 
+    <t-popup visible="{{choosePopupVisible}}" bind:visible-change="onPopupVisibleChange" placement="bottom">
+
+    </t-popup>
+
 </view>

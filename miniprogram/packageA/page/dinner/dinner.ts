@@ -12,6 +12,7 @@ interface IDinner {
     scrollTop: number
     productList: TakeawayCategoryDO[]
     popupVisible: boolean
+    choosePopupVisible: boolean
     popupSpu: TakeawaySpuDO
     chooseSkuObj: Record<string, TakeawaySkuDO>, // skuId: TakeawaySkuDO
     allChooseMoney: number,
@@ -22,6 +23,7 @@ const data: IDinner = {
     scrollTop: 0,
     productList: [],
     popupVisible: false,
+    choosePopupVisible: false,
     popupSpu: {},
     chooseSkuObj: {}, // 已选择的 sku对象
     allChooseMoney: 0, // 已选商品的总金额
@@ -75,6 +77,11 @@ Page({
         this.setData({
             allChooseMoney
         })
+    },
+    onChoosePopupVisibleChange(e: { detail: { visible: boolean; }; }) {
+        this.setData({
+            choosePopupVisible: e.detail.visible,
+        });
     },
     onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
         this.setData({
