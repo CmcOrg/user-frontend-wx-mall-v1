@@ -48,28 +48,6 @@
         </view>
     </scroll-view>
 
-    <view class="abs" style="bottom: 0; left: 0;">
-        <view class="rel flex vw100 h-60 border-t-1 white1-bc b-r-4">
-            <view class="m-l-20 flex-center">
-                <view class="flex ai-b">
-                    <view class="fw-600 f-13">总计</view>
-                    <view class="m-l-5 f-11 fw-600">¥</view>
-                    <view class="m-l-1 fw-600 f-17">{{allChooseMoney}}</view>
-                </view>
-            </view>
-            <view class="flex1 flex-center">
-                <t-button theme="primary" variant="text">
-                    查看已选商品
-                </t-button>
-            </view>
-            <view class="flex jc-e ai-c m-r-20">
-                <t-button theme="primary">
-                    去结算
-                </t-button>
-            </view>
-        </view>
-    </view>
-
     <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="center">
         <view class="p-l-r-20 black2-bc" style="width: 80vw; margin-top: -80px;">
             <view class="fw-600 f-20 p-t-20 p-b-10">
@@ -101,8 +79,47 @@
         </view>
     </t-popup>
 
-    <t-popup visible="{{choosePopupVisible}}" bind:visible-change="onPopupVisibleChange" placement="bottom">
+    <view class="abs" style="bottom: 0; left: 0;">
+        <view class="rel flex vw100 h-60 border-t-1 white1-bc b-r-4">
+            <view class="m-l-20 flex-center">
+                <view class="flex ai-b">
+                    <view class="fw-600 f-13">总计</view>
+                    <view class="m-l-5 f-11 fw-600">¥</view>
+                    <view class="m-l-1 fw-600 f-17">{{allChooseMoney}}</view>
+                </view>
+            </view>
+            <view class="flex1 flex-center">
+                <t-button theme="primary" variant="text" bind:tap="showChooseClick">
+                    查看已选商品
+                </t-button>
+            </view>
+            <view class="flex jc-e ai-c m-r-20">
+                <t-button theme="primary">
+                    去结算
+                </t-button>
+            </view>
+        </view>
+    </view>
 
+    <t-popup visible="{{choosePopupVisible}}" bind:visible-change="onChoosePopupVisibleChange" placement="bottom">
+        <view class="white1-bc flex-c p-20">
+            <view class="flex jc-sb ai-c m-b-10">
+                <view class="fw-600 f-20">已选商品</view>
+                <t-button variant="text" bind:tap="clearChooseClick">
+                    清空
+                </t-button>
+            </view>
+            <scroll-view scroll-y scroll-with-animation style="height: 40vh;">
+                <block wx:for="{{chooseSkuObj}}" wx:key="id" wx:if="{{item.chooseNumber !== 0}}">
+                    <view class="flex">
+                        <view>
+                            {{item.id}}
+                        </view>
+                        <view class="m-l-10">{{item.chooseNumber}}</view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
     </t-popup>
 
 </view>

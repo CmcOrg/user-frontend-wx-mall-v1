@@ -38,6 +38,14 @@ Page({
         this.offsetTopListInit()
         this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
     },
+    clearChooseClick() {
+        this.doSetChooseSkuObj({})
+    },
+    showChooseClick() {
+        this.setData({
+            choosePopupVisible: true
+        });
+    },
     // 从缓存里初始化：已选择的 sku对象，目的：比如用户再次打开页面，也会选中之前选中的商品
     initChooseSkuObjFromStorage() {
         this.doSetChooseSkuObj(wx.getStorageSync(LocalStorageKey.DINNER_CHOOSE_SKU_OBJ) || {});
