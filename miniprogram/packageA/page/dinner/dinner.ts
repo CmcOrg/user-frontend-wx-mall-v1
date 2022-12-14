@@ -5,7 +5,6 @@ import {
     TakeawaySpuUserProduct
 } from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
-import CommonConstant from "../../../model/constant/CommonConstant";
 
 interface IDinner {
     sideBarIndex: number
@@ -87,61 +86,68 @@ Page({
         })
     },
     onChoosePopupVisibleChange(e: { detail: { visible: boolean; }; }) {
+        // setTimeout(() => {
         this.setData({
             choosePopupVisible: e.detail.visible,
         });
+        // }, CommonConstant.CLOSE_DELAY_MS)
     },
     onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
+        // setTimeout(() => {
         this.setData({
             popupVisible: e.detail.visible,
         });
+        // }, CommonConstant.CLOSE_DELAY_MS)
     },
     // 点击：选规格
     chooseSpecClick(e: { currentTarget: { dataset: { spu: TakeawaySpuDO; }; }; }) {
         this.setData({
+            popupSpu: e.currentTarget.dataset.spu
+        })
+        this.setData({
             popupVisible: true,
         });
-        const spu = e.currentTarget.dataset.spu
-        const limitNumber = 12
-        if (spu.takeawaySkuDOList!.length > limitNumber) {
-            const takeawaySkuDOList = spu.takeawaySkuDOList!.slice(0, limitNumber);
-            this.setData({
-                popupSpu: {...spu, takeawaySkuDOList}
-            }, () => {
-                setTimeout(() => {
-                    this.setData({
-                        popupSpu: spu
-                    })
-                }, CommonConstant.RENDER_DELAY_MS)
-            })
-        } else {
-            this.setData({
-                popupSpu: spu
-            })
-        }
+        // const spu = e.currentTarget.dataset.spu
+        // const limitNumber = 12
+        // if (spu.takeawaySkuDOList!.length > limitNumber) {
+        //     const takeawaySkuDOList = spu.takeawaySkuDOList!.slice(0, limitNumber);
+        //     this.setData({
+        //         popupSpu: {...spu, takeawaySkuDOList}
+        //     }, () => {
+        //         setTimeout(() => {
+        //             this.setData({
+        //                 popupSpu: spu
+        //             })
+        //         }, CommonConstant.RENDER_DELAY_MS)
+        //     })
+        // } else {
+        //     this.setData({
+        //         popupSpu: spu
+        //     })
+        // }
     },
     // 获取列表数据
     getListDate() {
         this.doSetProductList(wx.getStorageSync(LocalStorageKey.DINNER_SPU_USER_PRODUCT) || [])
         TakeawaySpuUserProduct({scene: 1}).then(res => {
-            this.doSetProductList(res.data, false)
+            this.doSetProductList(res.data)
         })
     },
     // 执行：设置 productList
-    doSetProductList(newProductList: TakeawayCategoryDO[], sliceFlag = true) {
-        let productList
-        if (sliceFlag) {
-            productList = newProductList.slice(0, 2);
-            this.setData({
-                productList
-            }, () => {
-                setTimeout(() => {
-                    this.execDoSetProductList(newProductList);
-                }, CommonConstant.RENDER_DELAY_MS)
-            })
-        } else {
-            this.execDoSetProductList(newProductList);
-        }
+    doSetProductList(newProductList: TakeawayCategoryDO[]) {
+        // let productList
+        // if (sliceFlag) {
+        //     productList = newProductList.slice(0, 2);
+        //     this.setData({
+        //         productList
+        //     }, () => {
+        //         setTimeout(() => {
+        //             this.execDoSetProductList(newProductList);
+        //         }, CommonConstant.RENDER_DELAY_MS)
+        //     })
+        // } else {
+        this.execDoSetProductList(newProductList);
+        // }
     },
     // 执行：设置 productList
     execDoSetProductList(newProductList: TakeawayCategoryDO[]) {
