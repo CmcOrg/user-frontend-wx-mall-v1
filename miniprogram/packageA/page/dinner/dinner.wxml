@@ -49,22 +49,21 @@
     </scroll-view>
 
     <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="center">
-        <view class="p-l-r-20 black2-bc" style="width: 80vw; margin-top: -80px;">
-            <view class="fw-600 f-20 p-t-20 p-b-10">
+        <view class="p-l-r-20 black2-bc p-b-20" style="width: 80vw; margin-top: -80px;">
+            <view class="fw-600 f-20 p-t-20 p-b-20">
                 {{popupSpu.name}}
             </view>
             <scroll-view scroll-y scroll-with-animation style="height: 45vh;">
-                <view class="h-10"></view>
                 <view class="flex1">
                     <view class="flex jc-sb productSkuItem" wx:for="{{popupSpu.takeawaySkuDOList}}" wx:key="index">
-                        <view class="flex">
+                        <view class="flex f-14">
                             <view wx:for="{{item.spuSpecJsonList}}" wx:key="subIndex"
                                   wx:for-item="subItem"
                                   wx:for-index="subIndex">
                                 {{subItem.name}};
                             </view>
                         </view>
-                        <view class="black5">
+                        <view class="black5 f-13">
                             {{item.price}}元
                         </view>
                         <view>
@@ -74,7 +73,6 @@
                         </view>
                     </view>
                 </view>
-                <view class="h-30"></view>
             </scroll-view>
         </view>
     </t-popup>
@@ -115,7 +113,7 @@
             <scroll-view scroll-y scroll-with-animation style="height: 40vh;">
                 <block wx:for="{{chooseSkuObj}}" wx:key="id" wx:if="{{item.chooseNumber !== 0}}">
                     <view class="flex jc-sb ai-b">
-                        <view class="fw-600 f-15 w-90">
+                        <view class="fw-600 f-14 w-90">
                             {{item.spuName}}
                         </view>
                         <view class="flex f-13 w-90">
