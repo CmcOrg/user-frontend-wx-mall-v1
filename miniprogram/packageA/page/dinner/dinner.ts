@@ -85,19 +85,15 @@ Page({
             allChooseMoney
         })
     },
-    onChoosePopupVisibleChange(e: { detail: { visible: boolean; }; }) {
-        // setTimeout(() => {
+    onChoosePopupVisibleClose() {
         this.setData({
-            choosePopupVisible: e.detail.visible,
+            choosePopupVisible: false,
         });
-        // }, CommonConstant.CLOSE_DELAY_MS)
     },
-    onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
-        // setTimeout(() => {
+    onPopupVisibleClose() {
         this.setData({
-            popupVisible: e.detail.visible,
+            popupVisible: false,
         });
-        // }, CommonConstant.CLOSE_DELAY_MS)
     },
     // 点击：选规格
     chooseSpecClick(e: { currentTarget: { dataset: { spu: TakeawaySpuDO; }; }; }) {

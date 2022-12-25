@@ -36,7 +36,7 @@
         </view>
     </view>
 
-    <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="left">
+    <van-popup show="{{popupVisible}}" bind:close="onPopupVisibleClose" position="left">
         <view class="flex-c rel black2-bc vh100" style="width: 78vw">
 
             <view style="height: {{statusBarHeight}};"></view>
@@ -127,6 +127,6 @@
 
             </view>
         </view>
-    </t-popup>
+    </van-popup>
 
 </view>

@@ -5,7 +5,8 @@
     "t-image": "tdesign-miniprogram/image/image",
     "t-button": "tdesign-miniprogram/button/button",
     "t-popup": "tdesign-miniprogram/popup/popup",
-    "t-stepper": "tdesign-miniprogram/stepper/stepper"
+    "t-stepper": "tdesign-miniprogram/stepper/stepper",
+    "van-popup": "@vant/weapp/popup/index"
   },
   "navigationBarTitleText": "堂食"
 }

@@ -29,6 +29,9 @@
     "paths": {
       "tdesign-miniprogram/*": [
         "./miniprogram/miniprogram_npm/tdesign-miniprogram/*"
+      ],
+      "@vant/weapp/*": [
+        "path/to/node_modules/@vant/weapp/dist/*"
       ]
     }
   },

@@ -115,9 +115,9 @@ Page({
             popupVisible: true
         })
     },
-    onPopupVisibleChange(e: { detail: { visible: boolean; }; }) {
+    onPopupVisibleClose() {
         this.setData({
-            popupVisible: e.detail.visible,
+            popupVisible: false,
         });
     },
 })

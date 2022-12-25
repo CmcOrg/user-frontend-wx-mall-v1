@@ -48,8 +48,9 @@
         </view>
     </scroll-view>
 
-    <t-popup visible="{{popupVisible}}" bind:visible-change="onPopupVisibleChange" placement="center">
-        <view class="p-l-r-20 black2-bc p-b-20" style="width: 80vw; margin-top: -80px;">
+    <van-popup show="{{popupVisible}}" bind:close="onPopupVisibleClose"
+               position="center">
+        <view class="p-l-r-20 black2-bc p-b-20" style="width: 80vw;">
             <view class="fw-600 f-20 p-t-20 p-b-20">
                 {{popupSpu.name}}
             </view>
@@ -75,7 +76,7 @@
                 </view>
             </scroll-view>
         </view>
-    </t-popup>
+    </van-popup>
 
     <view class="abs" style="bottom: 0; left: 0;">
         <view class="rel flex vw100 h-60 border-t-1 white1-bc b-r-4">
@@ -99,7 +100,7 @@
         </view>
     </view>
 
-    <t-popup visible="{{choosePopupVisible}}" bind:visible-change="onChoosePopupVisibleChange" placement="bottom">
+    <van-popup show="{{choosePopupVisible}}" bind:close="onChoosePopupVisibleClose" position="bottom">
         <view class="white1-bc flex-c p-20">
             <view class="flex jc-sb ai-c m-b-10">
                 <view class="fw-600 f-20 flex ai-b">已选商品
@@ -135,6 +136,6 @@
                 </block>
             </scroll-view>
         </view>
-    </t-popup>
+    </van-popup>
 
 </view>
