@@ -7,10 +7,10 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@vant/weapp": "^1.10.10",
-    "tdesign-miniprogram": "^0.31.0"
+    "@vant/weapp": "^1.10.12",
+    "tdesign-miniprogram": "^0.34.0"
   },
   "devDependencies": {
-    "miniprogram-api-typings": "^3.8.1"
+    "miniprogram-api-typings": "^3.9.0"
   }
 }
