@@ -7,7 +7,7 @@
     "t-popup": "tdesign-miniprogram/popup/popup",
     "t-stepper": "tdesign-miniprogram/stepper/stepper",
     "van-popup": "@vant/weapp/popup/index",
-    "t-dialog": "tdesign-miniprogram/dialog/dialog"
+    "van-dialog": "@vant/weapp/dialog/index"
   },
   "navigationBarTitleText": "堂食"
 }

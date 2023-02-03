@@ -5,7 +5,8 @@ import {
     TakeawaySpuUserProduct
 } from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
-import Dialog from "tdesign-miniprogram/dialog/index";
+// @ts-ignore
+import Dialog from '@vant/weapp/dialog/dialog';
 
 interface IDinner {
     sideBarIndex: number
@@ -37,23 +38,13 @@ Page({
         this.offsetTopListInit()
         this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
     },
-    // 弹窗：确认清空已选商品
-    showConfirm() {
-        const dialogConfig = {
-            context: this,
-            title: '提示',
-            content: '确定清空已选商品吗？',
-            confirmBtn: '确定',
-            cancelBtn: '取消',
-        };
-
-        Dialog.confirm(dialogConfig)
-            .then(() => console.log('点击了确定'))
-            .catch(() => console.log('点击了取消'))
-            .finally(() => Dialog.close(dialogConfig));
-    },
     clearChooseClick() {
-        this.doSetChooseSkuObj({})
+        Dialog.confirm({
+            title: '提示',
+            message: '确定清空已选商品吗？',
+        }).then(() => {
+            this.doSetChooseSkuObj({})
+        })
     },
     showChooseClick() {
         this.setData({

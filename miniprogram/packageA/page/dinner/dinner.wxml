@@ -138,6 +138,6 @@
         </view>
     </van-popup>
 
-    <t-dialog id="t-dialog"/>
+    <van-dialog id="van-dialog"/>
 
 </view>
