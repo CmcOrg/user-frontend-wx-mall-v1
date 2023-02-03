@@ -7,6 +7,7 @@ import {
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
 // @ts-ignore
 import Dialog from '@vant/weapp/dialog/dialog';
+import CollUtil from "../../../util/CollUtil";
 
 interface IDinner {
     sideBarIndex: number
@@ -39,11 +40,15 @@ Page({
         this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
     },
     clearChooseClick() {
+        if (CollUtil.isEmpty(Object.keys(this.data.chooseSkuObj))) {
+            return
+        }
         Dialog.confirm({
             title: '提示',
             message: '确定清空已选商品吗？',
         }).then(() => {
             this.doSetChooseSkuObj({})
+        }).catch(() => {
         })
     },
     showChooseClick() {
