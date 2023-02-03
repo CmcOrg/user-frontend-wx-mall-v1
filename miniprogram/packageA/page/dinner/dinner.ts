@@ -5,6 +5,7 @@ import {
     TakeawaySpuUserProduct
 } from "../../../api/admin/TakeawaySpuController";
 import LocalStorageKey from "../../../model/constant/LocalStorageKey";
+import Dialog from "tdesign-miniprogram/dialog/index";
 
 interface IDinner {
     sideBarIndex: number
@@ -29,13 +30,27 @@ const data: IDinner = {
 }
 
 Page({
-
     offsetTopList: [], // number[]
     data,
     onLoad() {
         this.getListDate() // 获取列表数据
         this.offsetTopListInit()
         this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
+    },
+    // 弹窗：确认清空已选商品
+    showConfirm() {
+        const dialogConfig = {
+            context: this,
+            title: '提示',
+            content: '确定清空已选商品吗？',
+            confirmBtn: '确定',
+            cancelBtn: '取消',
+        };
+
+        Dialog.confirm(dialogConfig)
+            .then(() => console.log('点击了确定'))
+            .catch(() => console.log('点击了取消'))
+            .finally(() => Dialog.close(dialogConfig));
     },
     clearChooseClick() {
         this.doSetChooseSkuObj({})
@@ -103,24 +118,6 @@ Page({
         this.setData({
             popupVisible: true,
         });
-        // const spu = e.currentTarget.dataset.spu
-        // const limitNumber = 12
-        // if (spu.takeawaySkuDOList!.length > limitNumber) {
-        //     const takeawaySkuDOList = spu.takeawaySkuDOList!.slice(0, limitNumber);
-        //     this.setData({
-        //         popupSpu: {...spu, takeawaySkuDOList}
-        //     }, () => {
-        //         setTimeout(() => {
-        //             this.setData({
-        //                 popupSpu: spu
-        //             })
-        //         }, CommonConstant.RENDER_DELAY_MS)
-        //     })
-        // } else {
-        //     this.setData({
-        //         popupSpu: spu
-        //     })
-        // }
     },
     // 获取列表数据
     getListDate() {
@@ -131,19 +128,7 @@ Page({
     },
     // 执行：设置 productList
     doSetProductList(newProductList: TakeawayCategoryDO[]) {
-        // let productList
-        // if (sliceFlag) {
-        //     productList = newProductList.slice(0, 2);
-        //     this.setData({
-        //         productList
-        //     }, () => {
-        //         setTimeout(() => {
-        //             this.execDoSetProductList(newProductList);
-        //         }, CommonConstant.RENDER_DELAY_MS)
-        //     })
-        // } else {
         this.execDoSetProductList(newProductList);
-        // }
     },
     // 执行：设置 productList
     execDoSetProductList(newProductList: TakeawayCategoryDO[]) {
@@ -184,5 +169,4 @@ Page({
             this.setData({sideBarIndex: indexValue});
         }
     },
-})
-;
+});
