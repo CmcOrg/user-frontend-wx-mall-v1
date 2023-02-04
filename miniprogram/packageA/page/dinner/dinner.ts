@@ -8,6 +8,8 @@ import LocalStorageKey from "../../../model/constant/LocalStorageKey";
 // @ts-ignore
 import Dialog from '@vant/weapp/dialog/dialog';
 import CollUtil from "../../../util/CollUtil";
+import {NavigateTo} from "../../../util/NavigateUtil";
+import PathConstant from "../../../model/constant/PathConstant";
 
 interface IDinner {
     sideBarIndex: number
@@ -40,6 +42,7 @@ Page({
         this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
     },
     goPayClick() {
+        NavigateTo(PathConstant.DINNER_PAY_PATH)
     },
     clearChooseClick() {
         if (CollUtil.isEmpty(Object.keys(this.data.chooseSkuObj))) {

@@ -6,7 +6,8 @@
         {
             "root": "packageA",
             "pages": [
-                "page/dinner/dinner"
+                "page/dinner/dinner",
+                "page/dinnerPay/dinnerPay"
             ]
         },
         {
