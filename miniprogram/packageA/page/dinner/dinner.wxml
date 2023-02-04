@@ -93,7 +93,7 @@
                 </t-button>
             </view>
             <view class="flex jc-e ai-c m-r-20">
-                <t-button theme="primary">
+                <t-button theme="primary" bind:tap="goPayClick">
                     去结算
                 </t-button>
             </view>

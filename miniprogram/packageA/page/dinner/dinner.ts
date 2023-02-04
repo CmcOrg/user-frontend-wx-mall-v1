@@ -39,6 +39,8 @@ Page({
         this.offsetTopListInit()
         this.initChooseSkuObjFromStorage() // 从缓存里初始化：已选择的 sku对象
     },
+    goPayClick() {
+    },
     clearChooseClick() {
         if (CollUtil.isEmpty(Object.keys(this.data.chooseSkuObj))) {
             return
