@@ -7,7 +7,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@vant/weapp": "^1.10.12",
+    "@vant/weapp": "^1.10.13",
     "tdesign-miniprogram": "^0.34.0"
   },
   "devDependencies": {
